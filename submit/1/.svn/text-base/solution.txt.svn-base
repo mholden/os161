@@ -1,0 +1,23 @@
+Cat and Mouse Problem:
+
+We used locks and CVs to solve the cat/mouse problem. The solution meets the requirements oulined and handles with the starvation problem.
+
+1. Cats and mice wont eat at the same time: 
+This was implemented by using a condition such that a cat would wait on a CV with the lock for the mouse_counter until there are no mice eating at that moment and viceversa for the mice. A counter for both the cats and mice was used to check the condition.
+2. Maximum 2 cats/mice at a time and eating from different plates:
+This was implemented using a condition such that a cat would wait on a CV with the lock for the cat_counter until the food is not full with cats. The same is implemented for the mouse. 
+3. Different bowls:
+When reading and modifying the bowl variables, locks are always used.
+4. Handling starvation:
+The access to the food is granted first come first serve basis for both the cats and mice. However, if a cat wants to access the food and there is only one mouse eating at that moment, it cannot cannot enforce its position before another mouse. This is implemented using a condition such that the cat would wait on a CV with the lock for the next spot until there are either no mice or the food is filled with mice. The same is done for the mouse.
+
+Stoplight Problem:
+
+We used semaphores to solve the traffic/stoplight synchronization problem. Our solution meets all requirements outlined on the lab assignment handout:
+
+1. No two cars are ever in the same portion of the intersection at once. We have a binary semaphore for each portion of the intersection (NW, NE, SW, SE), and use these semaphores to ensure only one car is ever in each portion of the intersection at one time.
+2. No cars going the same way will ever pass each other. In our solution, when a car is in one region, it will acquire its next region's semaphore BEFORE releasing its current regions semaphore. Any car going the same way as this car will need the first semaphore before the second, so if it can't even acquire the first before the other car has already acquired the second, there is no way it will pass the other car.
+3. The message() function is used to print all required messages.
+4. Cars approaching the intersection will enter the intersection in the same order. We use a binary semaphore for each approach direction (N, E, S, W). A car must acquire this semaphore before entering the intersection. Immediately after entering the interesction, the car releases the semaphore and allows for the next approaching car to acquire it.
+5. Two or more cars are allowed in the intersection at once. We allow 3. Allowing 4 would result in potential deadlocks. We simply use a counting semaphore initialized to 3. If there are 3 cars in the intersection, any car attempting to enter the intersection will sleep on this semaphore until one of the current 3 cars leave the intersection.
+
