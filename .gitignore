@@ -1,2 +1,6 @@
 # Object files
 *.o
+
+# Random files
+def.mk
+tags
