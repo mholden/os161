@@ -1,4 +1,4 @@
-cscope 15 /nfs/ug/homes-1/h/holdenma/ece344/os161/kern               0000443103
+cscope 15 /nfs/ug/homes-1/h/holdenma/ece344/os161/kern               0000445734
 	@arch/mips/include/asmdefs.h
 
 4 #iâdeà
@@ -5873,23 +5873,39 @@ tf
 »tv®
  = 0;
 
-124 
+121 
+SYS_Ý’
+:
+
+122 
+”r
+ = 
+	`sys_Ý’
+(
+tf
+->
+tf_a0
+,f->
+tf_a1
+);
+
+128 
 	`k´štf
 ("UnknowÀsysÿÎ %d\n", 
 ÿÎno
 );
 
-125 
+129 
 ”r
  = 
 ENOSYS
 ;
 
-130 ià(
+134 ià(
 ”r
 ) {
 
-136 
+140 
 tf
 ->
 tf_v0
@@ -5897,13 +5913,13 @@ tf_v0
 ”r
 ;
 
-137 
+141 
 tf
 ->
 tf_a3
  = 1;
 
-141 
+145 
 tf
 ->
 tf_v0
@@ -5911,25 +5927,25 @@ tf_v0
 »tv®
 ;
 
-142 
+146 
 tf
 ->
 tf_a3
  = 0;
 
-150 
+154 
 tf
 ->
 tf_•c
  += 4;
 
-153 
+157 
 	`as£¹
 (
 cur¥l
 ==0);
 
-154 
+158 
 	}
 }
 
@@ -18345,7 +18361,7 @@ _OPT_SYNCHPROBS_H_
 
 2 cÚ¡ 
 	gbuždv”siÚ
- = 191;
+ = 193;
 
 3 cÚ¡ 
 	gbuždcÚfig
@@ -45287,6 +45303,14 @@ sys_sbrk
 amouÁ
 );
 
+28 
+sys_Ý’
+(cÚ¡ *
+fž’ame
+, 
+æags
+);
+
 	@include/test.h
 
 1 #iâdeà
@@ -71028,1282 +71052,1294 @@ Elf64_H®f
 	)
 
 145 
-	#ELFOSABI_LINUX
+	#ELFOSABI_GNU
  3
 
 	)
 
 146 
+	#ELFOSABI_LINUX
+ 3
+
+	)
+
+147 
 	#ELFOSABI_SOLARIS
  6
 
 	)
 
-147 
+148 
 	#ELFOSABI_AIX
  7
 
 	)
 
-148 
+149 
 	#ELFOSABI_IRIX
  8
 
 	)
 
-149 
+150 
 	#ELFOSABI_FREEBSD
  9
 
 	)
 
-150 
+151 
 	#ELFOSABI_TRU64
  10
 
 	)
 
-151 
+152 
 	#ELFOSABI_MODESTO
  11
 
 	)
 
-152 
+153 
 	#ELFOSABI_OPENBSD
  12
 
 	)
 
-153 
+154 
+	#ELFOSABI_ARM_AEABI
+ 64
+
+	)
+
+155 
 	#ELFOSABI_ARM
  97
 
 	)
 
-154 
+156 
 	#ELFOSABI_STANDALONE
  255
 
 	)
 
-156 
+158 
 	#EI_ABIVERSION
  8
 
 	)
 
-158 
+160 
 	#EI_PAD
  9
 
 	)
 
-162 
+164 
 	#ET_NONE
  0
 
 	)
 
-163 
+165 
 	#ET_REL
  1
 
 	)
 
-164 
+166 
 	#ET_EXEC
  2
 
 	)
 
-165 
+167 
 	#ET_DYN
  3
 
 	)
 
-166 
+168 
 	#ET_CORE
  4
 
 	)
 
-167 
+169 
 	#ET_NUM
  5
 
 	)
 
-168 
+170 
 	#ET_LOOS
  0xã00
 
 	)
 
-169 
+171 
 	#ET_HIOS
  0xãfà
 
 	)
 
-170 
+172 
 	#ET_LOPROC
  0xff00
 
 	)
 
-171 
+173 
 	#ET_HIPROC
  0xfffà
 
 	)
 
-175 
+177 
 	#EM_NONE
  0
 
 	)
 
-176 
+178 
 	#EM_M32
  1
 
 	)
 
-177 
+179 
 	#EM_SPARC
  2
 
 	)
 
-178 
+180 
 	#EM_386
  3
 
 	)
 
-179 
+181 
 	#EM_68K
  4
 
 	)
 
-180 
+182 
 	#EM_88K
  5
 
 	)
 
-181 
+183 
 	#EM_860
  7
 
 	)
 
-182 
+184 
 	#EM_MIPS
  8
 
 	)
 
-183 
+185 
 	#EM_S370
  9
 
 	)
 
-184 
+186 
 	#EM_MIPS_RS3_LE
  10
 
 	)
 
-186 
+188 
 	#EM_PARISC
  15
 
 	)
 
-187 
+189 
 	#EM_VPP500
  17
 
 	)
 
-188 
+190 
 	#EM_SPARC32PLUS
  18
 
 	)
 
-189 
+191 
 	#EM_960
  19
 
 	)
 
-190 
+192 
 	#EM_PPC
  20
 
 	)
 
-191 
+193 
 	#EM_PPC64
  21
 
 	)
 
-192 
+194 
 	#EM_S390
  22
 
 	)
 
-194 
+196 
 	#EM_V800
  36
 
 	)
 
-195 
+197 
 	#EM_FR20
  37
 
 	)
 
-196 
+198 
 	#EM_RH32
  38
 
 	)
 
-197 
+199 
 	#EM_RCE
  39
 
 	)
 
-198 
+200 
 	#EM_ARM
  40
 
 	)
 
-199 
+201 
 	#EM_FAKE_ALPHA
  41
 
 	)
 
-200 
+202 
 	#EM_SH
  42
 
 	)
 
-201 
+203 
 	#EM_SPARCV9
  43
 
 	)
 
-202 
+204 
 	#EM_TRICORE
  44
 
 	)
 
-203 
+205 
 	#EM_ARC
  45
 
 	)
 
-204 
+206 
 	#EM_H8_300
  46
 
 	)
 
-205 
+207 
 	#EM_H8_300H
  47
 
 	)
 
-206 
+208 
 	#EM_H8S
  48
 
 	)
 
-207 
+209 
 	#EM_H8_500
  49
 
 	)
 
-208 
+210 
 	#EM_IA_64
  50
 
 	)
 
-209 
+211 
 	#EM_MIPS_X
  51
 
 	)
 
-210 
+212 
 	#EM_COLDFIRE
  52
 
 	)
 
-211 
+213 
 	#EM_68HC12
  53
 
 	)
 
-212 
+214 
 	#EM_MMA
  54
 
 	)
 
-213 
+215 
 	#EM_PCP
  55
 
 	)
 
-214 
+216 
 	#EM_NCPU
  56
 
 	)
 
-215 
+217 
 	#EM_NDR1
  57
 
 	)
 
-216 
+218 
 	#EM_STARCORE
  58
 
 	)
 
-217 
+219 
 	#EM_ME16
  59
 
 	)
 
-218 
+220 
 	#EM_ST100
  60
 
 	)
 
-219 
+221 
 	#EM_TINYJ
  61
 
 	)
 
-220 
+222 
 	#EM_X86_64
  62
 
 	)
 
-221 
+223 
 	#EM_PDSP
  63
 
 	)
 
-223 
+225 
 	#EM_FX66
  66
 
 	)
 
-224 
+226 
 	#EM_ST9PLUS
  67
 
 	)
 
-225 
+227 
 	#EM_ST7
  68
 
 	)
 
-226 
+228 
 	#EM_68HC16
  69
 
 	)
 
-227 
+229 
 	#EM_68HC11
  70
 
 	)
 
-228 
+230 
 	#EM_68HC08
  71
 
 	)
 
-229 
+231 
 	#EM_68HC05
  72
 
 	)
 
-230 
+232 
 	#EM_SVX
  73
 
 	)
 
-231 
+233 
 	#EM_ST19
  74
 
 	)
 
-232 
+234 
 	#EM_VAX
  75
 
 	)
 
-233 
+235 
 	#EM_CRIS
  76
 
 	)
 
-234 
+236 
 	#EM_JAVELIN
  77
 
 	)
 
-235 
+237 
 	#EM_FIREPATH
  78
 
 	)
 
-236 
+238 
 	#EM_ZSP
  79
 
 	)
 
-237 
+239 
 	#EM_MMIX
  80
 
 	)
 
-238 
+240 
 	#EM_HUANY
  81
 
 	)
 
-239 
+241 
 	#EM_PRISM
  82
 
 	)
 
-240 
+242 
 	#EM_AVR
  83
 
 	)
 
-241 
+243 
 	#EM_FR30
  84
 
 	)
 
-242 
+244 
 	#EM_D10V
  85
 
 	)
 
-243 
+245 
 	#EM_D30V
  86
 
 	)
 
-244 
+246 
 	#EM_V850
  87
 
 	)
 
-245 
+247 
 	#EM_M32R
  88
 
 	)
 
-246 
+248 
 	#EM_MN10300
  89
 
 	)
 
-247 
+249 
 	#EM_MN10200
  90
 
 	)
 
-248 
+250 
 	#EM_PJ
  91
 
 	)
 
-249 
+251 
 	#EM_OPENRISC
  92
 
 	)
 
-250 
+252 
 	#EM_ARC_A5
  93
 
 	)
 
-251 
+253 
 	#EM_XTENSA
  94
 
 	)
 
-252 
+254 
 	#EM_NUM
  95
 
 	)
 
-258 
+260 
 	#EM_ALPHA
  0x9026
 
 	)
 
-262 
+264 
 	#EV_NONE
  0
 
 	)
 
-263 
+265 
 	#EV_CURRENT
  1
 
 	)
 
-264 
+266 
 	#EV_NUM
  2
 
 	)
 
-270 
+272 
 Elf32_WÜd
  
 	msh_Çme
 ;
 
-271 
+273 
 Elf32_WÜd
  
 	msh_ty³
 ;
 
-272 
+274 
 Elf32_WÜd
  
 	msh_æags
 ;
 
-273 
+275 
 Elf32_Addr
  
 	msh_addr
 ;
 
-274 
+276 
 Elf32_Off
  
 	msh_off£t
 ;
 
-275 
-Elf32_WÜd
- 
-	msh_size
-;
-
-276 
-Elf32_WÜd
- 
-	msh_lšk
-;
-
 277 
 Elf32_WÜd
  
-	msh_šfo
+	msh_size
 ;
 
 278 
 Elf32_WÜd
  
-	msh_add¿lign
+	msh_lšk
 ;
 
 279 
 Elf32_WÜd
  
+	msh_šfo
+;
+
+280 
+Elf32_WÜd
+ 
+	msh_add¿lign
+;
+
+281 
+Elf32_WÜd
+ 
 	msh_’tsize
 ;
 
-280 } 
+282 } 
 	tElf32_Shdr
 ;
 
-284 
+286 
 Elf64_WÜd
  
 	msh_Çme
 ;
 
-285 
+287 
 Elf64_WÜd
  
 	msh_ty³
 ;
 
-286 
+288 
 Elf64_XwÜd
  
 	msh_æags
 ;
 
-287 
+289 
 Elf64_Addr
  
 	msh_addr
 ;
 
-288 
+290 
 Elf64_Off
  
 	msh_off£t
 ;
 
-289 
+291 
 Elf64_XwÜd
  
 	msh_size
 ;
 
-290 
+292 
 Elf64_WÜd
  
 	msh_lšk
 ;
 
-291 
+293 
 Elf64_WÜd
  
 	msh_šfo
 ;
 
-292 
+294 
 Elf64_XwÜd
  
 	msh_add¿lign
 ;
 
-293 
+295 
 Elf64_XwÜd
  
 	msh_’tsize
 ;
 
-294 } 
+296 } 
 	tElf64_Shdr
 ;
 
-298 
+300 
 	#SHN_UNDEF
  0
 
 	)
 
-299 
+301 
 	#SHN_LORESERVE
  0xff00
 
 	)
 
-300 
+302 
 	#SHN_LOPROC
  0xff00
 
 	)
 
-301 
+303 
 	#SHN_BEFORE
  0xff00
 
 	)
 
-303 
+305 
 	#SHN_AFTER
  0xff01
 
 	)
 
-305 
+307 
 	#SHN_HIPROC
  0xff1à
 
 	)
 
-306 
+308 
 	#SHN_LOOS
  0xff20
 
 	)
 
-307 
+309 
 	#SHN_HIOS
  0xff3à
 
 	)
 
-308 
+310 
 	#SHN_ABS
  0xfff1
 
 	)
 
-309 
+311 
 	#SHN_COMMON
  0xfff2
 
 	)
 
-310 
+312 
 	#SHN_XINDEX
  0xfffà
 
 	)
 
-311 
+313 
 	#SHN_HIRESERVE
  0xfffà
 
 	)
 
-315 
+317 
 	#SHT_NULL
  0
 
 	)
 
-316 
+318 
 	#SHT_PROGBITS
  1
 
 	)
 
-317 
+319 
 	#SHT_SYMTAB
  2
 
 	)
 
-318 
+320 
 	#SHT_STRTAB
  3
 
 	)
 
-319 
+321 
 	#SHT_RELA
  4
 
 	)
 
-320 
+322 
 	#SHT_HASH
  5
 
 	)
 
-321 
+323 
 	#SHT_DYNAMIC
  6
 
 	)
 
-322 
+324 
 	#SHT_NOTE
  7
 
 	)
 
-323 
+325 
 	#SHT_NOBITS
  8
 
 	)
 
-324 
+326 
 	#SHT_REL
  9
 
 	)
 
-325 
+327 
 	#SHT_SHLIB
  10
 
 	)
 
-326 
+328 
 	#SHT_DYNSYM
  11
 
 	)
 
-327 
+329 
 	#SHT_INIT_ARRAY
  14
 
 	)
 
-328 
+330 
 	#SHT_FINI_ARRAY
  15
 
 	)
 
-329 
+331 
 	#SHT_PREINIT_ARRAY
  16
 
 	)
 
-330 
+332 
 	#SHT_GROUP
  17
 
 	)
 
-331 
+333 
 	#SHT_SYMTAB_SHNDX
  18
 
 	)
 
-332 
+334 
 	#SHT_NUM
  19
 
 	)
 
-333 
+335 
 	#SHT_LOOS
  0x60000000
 
 	)
 
-334 
+336 
 	#SHT_GNU_ATTRIBUTES
  0x6ffffff5
 
 	)
 
-335 
+337 
 	#SHT_GNU_HASH
  0x6ffffff6
 
 	)
 
-336 
+338 
 	#SHT_GNU_LIBLIST
  0x6ffffff7
 
 	)
 
-337 
+339 
 	#SHT_CHECKSUM
  0x6ffffff8
 
 	)
 
-338 
+340 
 	#SHT_LOSUNW
  0x6fffffç
 
 	)
 
-339 
+341 
 	#SHT_SUNW_move
  0x6fffffç
 
 	)
 
-340 
+342 
 	#SHT_SUNW_COMDAT
  0x6ffffffb
 
 	)
 
-341 
+343 
 	#SHT_SUNW_symšfo
  0x6ffffffc
 
 	)
 
-342 
+344 
 	#SHT_GNU_v”def
  0x6ffffffd
 
 	)
 
-343 
+345 
 	#SHT_GNU_v”Ãed
  0x6fffffã
 
 	)
 
-344 
+346 
 	#SHT_GNU_v”sym
  0x6ffffffà
 
 	)
 
-345 
+347 
 	#SHT_HISUNW
  0x6ffffffà
 
 	)
 
-346 
+348 
 	#SHT_HIOS
  0x6ffffffà
 
 	)
 
-347 
+349 
 	#SHT_LOPROC
  0x70000000
 
 	)
 
-348 
+350 
 	#SHT_HIPROC
  0x7ffffffà
 
 	)
 
-349 
+351 
 	#SHT_LOUSER
  0x80000000
 
 	)
 
-350 
+352 
 	#SHT_HIUSER
  0x8ffffffà
 
 	)
 
-354 
+356 
 	#SHF_WRITE
  (1 << 0è
 
 	)
 
-355 
+357 
 	#SHF_ALLOC
  (1 << 1è
 
 	)
 
-356 
+358 
 	#SHF_EXECINSTR
  (1 << 2è
 
 	)
 
-357 
+359 
 	#SHF_MERGE
  (1 << 4è
 
 	)
 
-358 
+360 
 	#SHF_STRINGS
  (1 << 5è
 
 	)
 
-359 
+361 
 	#SHF_INFO_LINK
  (1 << 6è
 
 	)
 
-360 
+362 
 	#SHF_LINK_ORDER
  (1 << 7è
 
 	)
 
-361 
+363 
 	#SHF_OS_NONCONFORMING
  (1 << 8è
 
 	)
 
-363 
+365 
 	#SHF_GROUP
  (1 << 9è
 
 	)
 
-364 
+366 
 	#SHF_TLS
  (1 << 10è
 
 	)
 
-365 
+367 
 	#SHF_MASKOS
  0x0ff00000
 
 	)
 
-366 
+368 
 	#SHF_MASKPROC
  0xf0000000
 
 	)
 
-367 
+369 
 	#SHF_ORDERED
  (1 << 30è
 
 	)
 
-369 
+371 
 	#SHF_EXCLUDE
  (1 << 31è
 
 	)
 
-373 
+375 
 	#GRP_COMDAT
  0x1
 
 	)
 
-379 
+381 
 Elf32_WÜd
  
 	m¡_Çme
 ;
 
-380 
+382 
 Elf32_Addr
  
 	m¡_v®ue
 ;
 
-381 
+383 
 Elf32_WÜd
  
 	m¡_size
 ;
 
-382 
+384 
 	m¡_šfo
 ;
 
-383 
+385 
 	m¡_Ùh”
 ;
 
-384 
+386 
 Elf32_SeùiÚ
  
 	m¡_shndx
 ;
 
-385 } 
+387 } 
 	tElf32_Sym
 ;
 
-389 
+391 
 Elf64_WÜd
  
 	m¡_Çme
 ;
 
-390 
+392 
 	m¡_šfo
 ;
 
-391 
+393 
 	m¡_Ùh”
 ;
 
-392 
+394 
 Elf64_SeùiÚ
  
 	m¡_shndx
 ;
 
-393 
+395 
 Elf64_Addr
  
 	m¡_v®ue
 ;
 
-394 
+396 
 Elf64_XwÜd
  
 	m¡_size
 ;
 
-395 } 
+397 } 
 	tElf64_Sym
 ;
 
-402 
+404 
 Elf32_H®f
  
 	msi_boundto
 ;
 
-403 
+405 
 Elf32_H®f
  
 	msi_æags
 ;
 
-404 } 
+406 } 
 	tElf32_Symšfo
 ;
 
-408 
+410 
 Elf64_H®f
  
 	msi_boundto
 ;
 
-409 
+411 
 Elf64_H®f
  
 	msi_æags
 ;
 
-410 } 
+412 } 
 	tElf64_Symšfo
 ;
 
-413 
+415 
 	#SYMINFO_BT_SELF
  0xfffà
 
 	)
 
-414 
+416 
 	#SYMINFO_BT_PARENT
  0xffã
 
 	)
 
-415 
+417 
 	#SYMINFO_BT_LOWRESERVE
  0xff00
 
 	)
 
-418 
+420 
 	#SYMINFO_FLG_DIRECT
  0x0001
 
 	)
 
-419 
+421 
 	#SYMINFO_FLG_PASSTHRU
  0x0002
 
 	)
 
-420 
+422 
 	#SYMINFO_FLG_COPY
  0x0004
 
 	)
 
-421 
+423 
 	#SYMINFO_FLG_LAZYLOAD
  0x0008
 
 	)
 
-424 
+426 
 	#SYMINFO_NONE
  0
 
 	)
 
-425 
+427 
 	#SYMINFO_CURRENT
  1
 
 	)
 
-426 
+428 
 	#SYMINFO_NUM
  2
 
 	)
 
-431 
+433 
 	#ELF32_ST_BIND
 (
 v®
@@ -72311,7 +72347,7 @@ v®
 
 	)
 
-432 
+434 
 	#ELF32_ST_TYPE
 (
 v®
@@ -72319,7 +72355,7 @@ v®
 
 	)
 
-433 
+435 
 	#ELF32_ST_INFO
 (
 bšd
@@ -72329,7 +72365,7 @@ ty³
 
 	)
 
-436 
+438 
 	#ELF64_ST_BIND
 (
 v®
@@ -72339,7 +72375,7 @@ v®
 
 	)
 
-437 
+439 
 	#ELF64_ST_TYPE
 (
 v®
@@ -72349,7 +72385,7 @@ v®
 
 	)
 
-438 
+440 
 	#ELF64_ST_INFO
 (
 bšd
@@ -72361,145 +72397,145 @@ ty³
 
 	)
 
-442 
+444 
 	#STB_LOCAL
  0
 
 	)
 
-443 
+445 
 	#STB_GLOBAL
  1
 
 	)
 
-444 
+446 
 	#STB_WEAK
  2
 
 	)
 
-445 
+447 
 	#STB_NUM
  3
 
 	)
 
-446 
+448 
 	#STB_LOOS
  10
 
 	)
 
-447 
+449 
 	#STB_GNU_UNIQUE
  10
 
 	)
 
-448 
+450 
 	#STB_HIOS
  12
 
 	)
 
-449 
+451 
 	#STB_LOPROC
  13
 
 	)
 
-450 
+452 
 	#STB_HIPROC
  15
 
 	)
 
-454 
+456 
 	#STT_NOTYPE
  0
 
 	)
 
-455 
+457 
 	#STT_OBJECT
  1
 
 	)
 
-456 
+458 
 	#STT_FUNC
  2
 
 	)
 
-457 
+459 
 	#STT_SECTION
  3
 
 	)
 
-458 
+460 
 	#STT_FILE
  4
 
 	)
 
-459 
+461 
 	#STT_COMMON
  5
 
 	)
 
-460 
+462 
 	#STT_TLS
  6
 
 	)
 
-461 
+463 
 	#STT_NUM
  7
 
 	)
 
-462 
+464 
 	#STT_LOOS
  10
 
 	)
 
-463 
+465 
 	#STT_GNU_IFUNC
  10
 
 	)
 
-464 
+466 
 	#STT_HIOS
  12
 
 	)
 
-465 
+467 
 	#STT_LOPROC
  13
 
 	)
 
-466 
+468 
 	#STT_HIPROC
  15
 
 	)
 
-473 
+475 
 	#STN_UNDEF
  0
 
 	)
 
-478 
+480 
 	#ELF32_ST_VISIBILITY
 (
 o
@@ -72507,7 +72543,7 @@ o
 
 	)
 
-481 
+483 
 	#ELF64_ST_VISIBILITY
 (
 o
@@ -72517,107 +72553,107 @@ o
 
 	)
 
-484 
+486 
 	#STV_DEFAULT
  0
 
 	)
 
-485 
+487 
 	#STV_INTERNAL
  1
 
 	)
 
-486 
+488 
 	#STV_HIDDEN
  2
 
 	)
 
-487 
+489 
 	#STV_PROTECTED
  3
 
 	)
 
-494 
+496 
 Elf32_Addr
  
 	mr_off£t
 ;
 
-495 
+497 
 Elf32_WÜd
  
 	mr_šfo
 ;
 
-496 } 
+498 } 
 	tElf32_R–
 ;
 
-505 
+507 
 Elf64_Addr
  
 	mr_off£t
 ;
 
-506 
+508 
 Elf64_XwÜd
  
 	mr_šfo
 ;
 
-507 } 
+509 } 
 	tElf64_R–
 ;
 
-513 
+515 
 Elf32_Addr
  
 	mr_off£t
 ;
 
-514 
+516 
 Elf32_WÜd
  
 	mr_šfo
 ;
 
-515 
+517 
 Elf32_SwÜd
  
 	mr_add’d
 ;
 
-516 } 
+518 } 
 	tElf32_R–a
 ;
 
-520 
+522 
 Elf64_Addr
  
 	mr_off£t
 ;
 
-521 
+523 
 Elf64_XwÜd
  
 	mr_šfo
 ;
 
-522 
+524 
 Elf64_SxwÜd
  
 	mr_add’d
 ;
 
-523 } 
+525 } 
 	tElf64_R–a
 ;
 
-527 
+529 
 	#ELF32_R_SYM
 (
 v®
@@ -72625,7 +72661,7 @@ v®
 
 	)
 
-528 
+530 
 	#ELF32_R_TYPE
 (
 v®
@@ -72633,7 +72669,7 @@ v®
 
 	)
 
-529 
+531 
 	#ELF32_R_INFO
 (
 sym
@@ -72643,7 +72679,7 @@ ty³
 
 	)
 
-531 
+533 
 	#ELF64_R_SYM
 (
 i
@@ -72651,7 +72687,7 @@ i
 
 	)
 
-532 
+534 
 	#ELF64_R_TYPE
 (
 i
@@ -72659,7 +72695,7 @@ i
 
 	)
 
-533 
+535 
 	#ELF64_R_INFO
 (
 sym
@@ -72671,685 +72707,697 @@ Elf64_XwÜd
 
 	)
 
-539 
+541 
 Elf32_WÜd
  
 	mp_ty³
 ;
 
-540 
+542 
 Elf32_Off
  
 	mp_off£t
 ;
 
-541 
+543 
 Elf32_Addr
  
 	mp_vaddr
 ;
 
-542 
+544 
 Elf32_Addr
  
 	mp_·ddr
-;
-
-543 
-Elf32_WÜd
- 
-	mp_fžesz
-;
-
-544 
-Elf32_WÜd
- 
-	mp_memsz
 ;
 
 545 
 Elf32_WÜd
  
-	mp_æags
+	mp_fžesz
 ;
 
 546 
 Elf32_WÜd
  
+	mp_memsz
+;
+
+547 
+Elf32_WÜd
+ 
+	mp_æags
+;
+
+548 
+Elf32_WÜd
+ 
 	mp_®ign
 ;
 
-547 } 
+549 } 
 	tElf32_Phdr
 ;
 
-551 
+553 
 Elf64_WÜd
  
 	mp_ty³
 ;
 
-552 
+554 
 Elf64_WÜd
  
 	mp_æags
 ;
 
-553 
+555 
 Elf64_Off
  
 	mp_off£t
 ;
 
-554 
+556 
 Elf64_Addr
  
 	mp_vaddr
 ;
 
-555 
+557 
 Elf64_Addr
  
 	mp_·ddr
 ;
 
-556 
+558 
 Elf64_XwÜd
  
 	mp_fžesz
 ;
 
-557 
+559 
 Elf64_XwÜd
  
 	mp_memsz
 ;
 
-558 
+560 
 Elf64_XwÜd
  
 	mp_®ign
 ;
 
-559 } 
+561 } 
 	tElf64_Phdr
 ;
 
-563 
+567 
+	#PN_XNUM
+ 0xffff
+
+	)
+
+571 
 	#PT_NULL
  0
 
 	)
 
-564 
+572 
 	#PT_LOAD
  1
 
 	)
 
-565 
+573 
 	#PT_DYNAMIC
  2
 
 	)
 
-566 
+574 
 	#PT_INTERP
  3
 
 	)
 
-567 
+575 
 	#PT_NOTE
  4
 
 	)
 
-568 
+576 
 	#PT_SHLIB
  5
 
 	)
 
-569 
+577 
 	#PT_PHDR
  6
 
 	)
 
-570 
+578 
 	#PT_TLS
  7
 
 	)
 
-571 
+579 
 	#PT_NUM
  8
 
 	)
 
-572 
+580 
 	#PT_LOOS
  0x60000000
 
 	)
 
-573 
+581 
 	#PT_GNU_EH_FRAME
  0x6474e550
 
 	)
 
-574 
+582 
 	#PT_GNU_STACK
  0x6474e551
 
 	)
 
-575 
+583 
 	#PT_GNU_RELRO
  0x6474e552
 
 	)
 
-576 
+584 
 	#PT_LOSUNW
  0x6fffffç
 
 	)
 
-577 
+585 
 	#PT_SUNWBSS
  0x6fffffç
 
 	)
 
-578 
+586 
 	#PT_SUNWSTACK
  0x6ffffffb
 
 	)
 
-579 
+587 
 	#PT_HISUNW
  0x6fffffff
 
 	)
 
-580 
+588 
 	#PT_HIOS
  0x6ffffffà
 
 	)
 
-581 
+589 
 	#PT_LOPROC
  0x70000000
 
 	)
 
-582 
+590 
 	#PT_HIPROC
  0x7ffffffà
 
 	)
 
-586 
+594 
 	#PF_X
  (1 << 0è
 
 	)
 
-587 
+595 
 	#PF_W
  (1 << 1è
 
 	)
 
-588 
+596 
 	#PF_R
  (1 << 2è
 
 	)
 
-589 
+597 
 	#PF_MASKOS
  0x0ff00000
 
 	)
 
-590 
+598 
 	#PF_MASKPROC
  0xf0000000
 
 	)
 
-594 
+602 
 	#NT_PRSTATUS
  1
 
 	)
 
-595 
+603 
 	#NT_FPREGSET
  2
 
 	)
 
-596 
+604 
 	#NT_PRPSINFO
  3
 
 	)
 
-597 
+605 
 	#NT_PRXREG
  4
 
 	)
 
-598 
+606 
 	#NT_TASKSTRUCT
  4
 
 	)
 
-599 
+607 
 	#NT_PLATFORM
  5
 
 	)
 
-600 
+608 
 	#NT_AUXV
  6
 
 	)
 
-601 
+609 
 	#NT_GWINDOWS
  7
 
 	)
 
-602 
+610 
 	#NT_ASRS
  8
 
 	)
 
-603 
+611 
 	#NT_PSTATUS
  10
 
 	)
 
-604 
+612 
 	#NT_PSINFO
  13
 
 	)
 
-605 
+613 
 	#NT_PRCRED
  14
 
 	)
 
-606 
+614 
 	#NT_UTSNAME
  15
 
 	)
 
-607 
+615 
 	#NT_LWPSTATUS
  16
 
 	)
 
-608 
+616 
 	#NT_LWPSINFO
  17
 
 	)
 
-609 
+617 
 	#NT_PRFPXREG
  20
 
 	)
 
-610 
+618 
 	#NT_PRXFPREG
  0x46e62b7à
 
 	)
 
-611 
+619 
 	#NT_PPC_VMX
  0x100
 
 	)
 
-612 
+620 
 	#NT_PPC_SPE
  0x101
 
 	)
 
-613 
+621 
 	#NT_PPC_VSX
  0x102
 
 	)
 
-614 
+622 
 	#NT_386_TLS
  0x200
 
 	)
 
-615 
+623 
 	#NT_386_IOPERM
  0x201
 
 	)
 
-619 
+624 
+	#NT_X86_XSTATE
+ 0x202
+
+	)
+
+628 
 	#NT_VERSION
  1
 
 	)
 
-626 
+635 
 Elf32_SwÜd
  
 	md_g
 ;
 
-629 
+638 
 Elf32_WÜd
  
 	md_v®
 ;
 
-630 
+639 
 Elf32_Addr
  
 	md_±r
 ;
 
-631 } 
+640 } 
 	md_un
 ;
 
-632 } 
+641 } 
 	tElf32_Dyn
 ;
 
-636 
+645 
 Elf64_SxwÜd
  
 	md_g
 ;
 
-639 
+648 
 Elf64_XwÜd
  
 	md_v®
 ;
 
-640 
+649 
 Elf64_Addr
  
 	md_±r
 ;
 
-641 } 
+650 } 
 	md_un
 ;
 
-642 } 
+651 } 
 	tElf64_Dyn
 ;
 
-646 
+655 
 	#DT_NULL
  0
 
 	)
 
-647 
+656 
 	#DT_NEEDED
  1
 
 	)
 
-648 
+657 
 	#DT_PLTRELSZ
  2
 
 	)
 
-649 
+658 
 	#DT_PLTGOT
  3
 
 	)
 
-650 
+659 
 	#DT_HASH
  4
 
 	)
 
-651 
+660 
 	#DT_STRTAB
  5
 
 	)
 
-652 
+661 
 	#DT_SYMTAB
  6
 
 	)
 
-653 
+662 
 	#DT_RELA
  7
 
 	)
 
-654 
+663 
 	#DT_RELASZ
  8
 
 	)
 
-655 
+664 
 	#DT_RELAENT
  9
 
 	)
 
-656 
+665 
 	#DT_STRSZ
  10
 
 	)
 
-657 
+666 
 	#DT_SYMENT
  11
 
 	)
 
-658 
+667 
 	#DT_INIT
  12
 
 	)
 
-659 
+668 
 	#DT_FINI
  13
 
 	)
 
-660 
+669 
 	#DT_SONAME
  14
 
 	)
 
-661 
+670 
 	#DT_RPATH
  15
 
 	)
 
-662 
+671 
 	#DT_SYMBOLIC
  16
 
 	)
 
-663 
+672 
 	#DT_REL
  17
 
 	)
 
-664 
+673 
 	#DT_RELSZ
  18
 
 	)
 
-665 
+674 
 	#DT_RELENT
  19
 
 	)
 
-666 
+675 
 	#DT_PLTREL
  20
 
 	)
 
-667 
+676 
 	#DT_DEBUG
  21
 
 	)
 
-668 
+677 
 	#DT_TEXTREL
  22
 
 	)
 
-669 
+678 
 	#DT_JMPREL
  23
 
 	)
 
-670 
+679 
 	#DT_BIND_NOW
  24
 
 	)
 
-671 
+680 
 	#DT_INIT_ARRAY
  25
 
 	)
 
-672 
+681 
 	#DT_FINI_ARRAY
  26
 
 	)
 
-673 
+682 
 	#DT_INIT_ARRAYSZ
  27
 
 	)
 
-674 
+683 
 	#DT_FINI_ARRAYSZ
  28
 
 	)
 
-675 
+684 
 	#DT_RUNPATH
  29
 
 	)
 
-676 
+685 
 	#DT_FLAGS
  30
 
 	)
 
-677 
+686 
 	#DT_ENCODING
  32
 
 	)
 
-678 
+687 
 	#DT_PREINIT_ARRAY
  32
 
 	)
 
-679 
+688 
 	#DT_PREINIT_ARRAYSZ
  33
 
 	)
 
-680 
+689 
 	#DT_NUM
  34
 
 	)
 
-681 
+690 
 	#DT_LOOS
  0x6000000d
 
 	)
 
-682 
+691 
 	#DT_HIOS
  0x6ffff000
 
 	)
 
-683 
+692 
 	#DT_LOPROC
  0x70000000
 
 	)
 
-684 
+693 
 	#DT_HIPROC
  0x7ffffffà
 
 	)
 
-685 
+694 
 	#DT_PROCNUM
  
 DT_MIPS_NUM
@@ -73357,85 +73405,85 @@ DT_MIPS_NUM
 
 	)
 
-690 
+699 
 	#DT_VALRNGLO
  0x6ffffd00
 
 	)
 
-691 
+700 
 	#DT_GNU_PRELINKED
  0x6ffffdf5
 
 	)
 
-692 
+701 
 	#DT_GNU_CONFLICTSZ
  0x6ffffdf6
 
 	)
 
-693 
+702 
 	#DT_GNU_LIBLISTSZ
  0x6ffffdf7
 
 	)
 
-694 
+703 
 	#DT_CHECKSUM
  0x6ffffdf8
 
 	)
 
-695 
+704 
 	#DT_PLTPADSZ
  0x6ffffdf9
 
 	)
 
-696 
+705 
 	#DT_MOVEENT
  0x6ffffdç
 
 	)
 
-697 
+706 
 	#DT_MOVESZ
  0x6ffffdfb
 
 	)
 
-698 
+707 
 	#DT_FEATURE_1
  0x6ffffdfø
 
 	)
 
-699 
+708 
 	#DT_POSFLAG_1
  0x6ffffdfd
 
 	)
 
-701 
+710 
 	#DT_SYMINSZ
  0x6ffffdã
 
 	)
 
-702 
+711 
 	#DT_SYMINENT
  0x6ffffdfà
 
 	)
 
-703 
+712 
 	#DT_VALRNGHI
  0x6ffffdff
 
 	)
 
-704 
+713 
 	#DT_VALTAGIDX
 (
 g
@@ -73445,91 +73493,91 @@ DT_VALRNGHI
 
 	)
 
-705 
+714 
 	#DT_VALNUM
  12
 
 	)
 
-712 
+721 
 	#DT_ADDRRNGLO
  0x6fffã00
 
 	)
 
-713 
+722 
 	#DT_GNU_HASH
  0x6fffãf5
 
 	)
 
-714 
+723 
 	#DT_TLSDESC_PLT
  0x6fffãf6
 
 	)
 
-715 
+724 
 	#DT_TLSDESC_GOT
  0x6fffãf7
 
 	)
 
-716 
+725 
 	#DT_GNU_CONFLICT
  0x6fffãf8
 
 	)
 
-717 
+726 
 	#DT_GNU_LIBLIST
  0x6fffãf9
 
 	)
 
-718 
+727 
 	#DT_CONFIG
  0x6fffãç
 
 	)
 
-719 
+728 
 	#DT_DEPAUDIT
  0x6fffãfb
 
 	)
 
-720 
+729 
 	#DT_AUDIT
  0x6fffãfø
 
 	)
 
-721 
+730 
 	#DT_PLTPAD
  0x6fffãfd
 
 	)
 
-722 
+731 
 	#DT_MOVETAB
  0x6fffãã
 
 	)
 
-723 
+732 
 	#DT_SYMINFO
  0x6fffãfà
 
 	)
 
-724 
+733 
 	#DT_ADDRRNGHI
  0x6fffãff
 
 	)
 
-725 
+734 
 	#DT_ADDRTAGIDX
 (
 g
@@ -73539,61 +73587,61 @@ DT_ADDRRNGHI
 
 	)
 
-726 
+735 
 	#DT_ADDRNUM
  11
 
 	)
 
-730 
+739 
 	#DT_VERSYM
  0x6ffffff0
 
 	)
 
-732 
+741 
 	#DT_RELACOUNT
  0x6ffffff9
 
 	)
 
-733 
+742 
 	#DT_RELCOUNT
  0x6fffffç
 
 	)
 
-736 
+745 
 	#DT_FLAGS_1
  0x6ffffffb
 
 	)
 
-737 
+746 
 	#DT_VERDEF
  0x6ffffffø
 
 	)
 
-739 
+748 
 	#DT_VERDEFNUM
  0x6ffffffd
 
 	)
 
-740 
+749 
 	#DT_VERNEED
  0x6fffffã
 
 	)
 
-742 
+751 
 	#DT_VERNEEDNUM
  0x6ffffffà
 
 	)
 
-743 
+752 
 	#DT_VERSIONTAGIDX
 (
 g
@@ -73603,25 +73651,25 @@ DT_VERNEEDNUM
 
 	)
 
-744 
+753 
 	#DT_VERSIONTAGNUM
  16
 
 	)
 
-748 
+757 
 	#DT_AUXILIARY
  0x7ffffffd
 
 	)
 
-749 
+758 
 	#DT_FILTER
  0x7ffffffà
 
 	)
 
-750 
+759 
 	#DT_EXTRATAGIDX
 (
 g
@@ -73633,813 +73681,813 @@ Elf32_SwÜd
 
 	)
 
-751 
+760 
 	#DT_EXTRANUM
  3
 
 	)
 
-754 
+763 
 	#DF_ORIGIN
  0x00000001
 
 	)
 
-755 
+764 
 	#DF_SYMBOLIC
  0x00000002
 
 	)
 
-756 
+765 
 	#DF_TEXTREL
  0x00000004
 
 	)
 
-757 
+766 
 	#DF_BIND_NOW
  0x00000008
 
 	)
 
-758 
+767 
 	#DF_STATIC_TLS
  0x00000010
 
 	)
 
-762 
+771 
 	#DF_1_NOW
  0x00000001
 
 	)
 
-763 
+772 
 	#DF_1_GLOBAL
  0x00000002
 
 	)
 
-764 
+773 
 	#DF_1_GROUP
  0x00000004
 
 	)
 
-765 
+774 
 	#DF_1_NODELETE
  0x00000008
 
 	)
 
-766 
+775 
 	#DF_1_LOADFLTR
  0x00000010
 
 	)
 
-767 
+776 
 	#DF_1_INITFIRST
  0x00000020
 
 	)
 
-768 
+777 
 	#DF_1_NOOPEN
  0x00000040
 
 	)
 
-769 
+778 
 	#DF_1_ORIGIN
  0x00000080
 
 	)
 
-770 
+779 
 	#DF_1_DIRECT
  0x00000100
 
 	)
 
-771 
+780 
 	#DF_1_TRANS
  0x00000200
 
 	)
 
-772 
+781 
 	#DF_1_INTERPOSE
  0x00000400
 
 	)
 
-773 
+782 
 	#DF_1_NODEFLIB
  0x00000800
 
 	)
 
-774 
+783 
 	#DF_1_NODUMP
  0x00001000
 
 	)
 
-775 
+784 
 	#DF_1_CONFALT
  0x00002000
 
 	)
 
-776 
+785 
 	#DF_1_ENDFILTEE
  0x00004000
 
 	)
 
-777 
+786 
 	#DF_1_DISPRELDNE
  0x00008000
 
 	)
 
-778 
+787 
 	#DF_1_DISPRELPND
  0x00010000
 
 	)
 
-781 
+790 
 	#DTF_1_PARINIT
  0x00000001
 
 	)
 
-782 
+791 
 	#DTF_1_CONFEXP
  0x00000002
 
 	)
 
-785 
+794 
 	#DF_P1_LAZYLOAD
  0x00000001
 
 	)
 
-786 
+795 
 	#DF_P1_GROUPPERM
  0x00000002
 
 	)
 
-793 
+802 
 Elf32_H®f
  
 	mvd_v”siÚ
 ;
 
-794 
+803 
 Elf32_H®f
  
 	mvd_æags
 ;
 
-795 
+804 
 Elf32_H®f
  
 	mvd_ndx
-;
-
-796 
-Elf32_H®f
- 
-	mvd_út
-;
-
-797 
-Elf32_WÜd
- 
-	mvd_hash
-;
-
-798 
-Elf32_WÜd
- 
-	mvd_aux
-;
-
-799 
-Elf32_WÜd
- 
-	mvd_Ãxt
-;
-
-801 } 
-	tElf32_V”def
 ;
 
 805 
+Elf32_H®f
+ 
+	mvd_út
+;
+
+806 
+Elf32_WÜd
+ 
+	mvd_hash
+;
+
+807 
+Elf32_WÜd
+ 
+	mvd_aux
+;
+
+808 
+Elf32_WÜd
+ 
+	mvd_Ãxt
+;
+
+810 } 
+	tElf32_V”def
+;
+
+814 
 Elf64_H®f
  
 	mvd_v”siÚ
 ;
 
-806 
+815 
 Elf64_H®f
  
 	mvd_æags
 ;
 
-807 
+816 
 Elf64_H®f
  
 	mvd_ndx
 ;
 
-808 
+817 
 Elf64_H®f
  
 	mvd_út
 ;
 
-809 
+818 
 Elf64_WÜd
  
 	mvd_hash
 ;
 
-810 
+819 
 Elf64_WÜd
  
 	mvd_aux
 ;
 
-811 
+820 
 Elf64_WÜd
  
 	mvd_Ãxt
 ;
 
-813 } 
+822 } 
 	tElf64_V”def
 ;
 
-817 
+826 
 	#VER_DEF_NONE
  0
 
 	)
 
-818 
+827 
 	#VER_DEF_CURRENT
  1
 
 	)
 
-819 
+828 
 	#VER_DEF_NUM
  2
 
 	)
 
-822 
+831 
 	#VER_FLG_BASE
  0x1
 
 	)
 
-823 
+832 
 	#VER_FLG_WEAK
  0x2
 
 	)
 
-826 
+835 
 	#VER_NDX_LOCAL
  0
 
 	)
 
-827 
+836 
 	#VER_NDX_GLOBAL
  1
 
 	)
 
-828 
+837 
 	#VER_NDX_LORESERVE
  0xff00
 
 	)
 
-829 
+838 
 	#VER_NDX_ELIMINATE
  0xff01
 
 	)
 
-835 
+844 
 Elf32_WÜd
  
 	mvda_Çme
 ;
 
-836 
+845 
 Elf32_WÜd
  
 	mvda_Ãxt
 ;
 
-838 } 
+847 } 
 	tElf32_V”daux
 ;
 
-842 
+851 
 Elf64_WÜd
  
 	mvda_Çme
 ;
 
-843 
+852 
 Elf64_WÜd
  
 	mvda_Ãxt
 ;
 
-845 } 
+854 } 
 	tElf64_V”daux
 ;
 
-852 
+861 
 Elf32_H®f
  
 	mvn_v”siÚ
 ;
 
-853 
+862 
 Elf32_H®f
  
 	mvn_út
-;
-
-854 
-Elf32_WÜd
- 
-	mvn_fže
-;
-
-856 
-Elf32_WÜd
- 
-	mvn_aux
-;
-
-857 
-Elf32_WÜd
- 
-	mvn_Ãxt
-;
-
-859 } 
-	tElf32_V”Ãed
 ;
 
 863 
+Elf32_WÜd
+ 
+	mvn_fže
+;
+
+865 
+Elf32_WÜd
+ 
+	mvn_aux
+;
+
+866 
+Elf32_WÜd
+ 
+	mvn_Ãxt
+;
+
+868 } 
+	tElf32_V”Ãed
+;
+
+872 
 Elf64_H®f
  
 	mvn_v”siÚ
 ;
 
-864 
+873 
 Elf64_H®f
  
 	mvn_út
 ;
 
-865 
+874 
 Elf64_WÜd
  
 	mvn_fže
 ;
 
-867 
+876 
 Elf64_WÜd
  
 	mvn_aux
 ;
 
-868 
+877 
 Elf64_WÜd
  
 	mvn_Ãxt
 ;
 
-870 } 
+879 } 
 	tElf64_V”Ãed
 ;
 
-874 
+883 
 	#VER_NEED_NONE
  0
 
 	)
 
-875 
+884 
 	#VER_NEED_CURRENT
  1
 
 	)
 
-876 
+885 
 	#VER_NEED_NUM
  2
 
 	)
 
-882 
+891 
 Elf32_WÜd
  
 	mvÇ_hash
-;
-
-883 
-Elf32_H®f
- 
-	mvÇ_æags
-;
-
-884 
-Elf32_H®f
- 
-	mvÇ_Ùh”
-;
-
-885 
-Elf32_WÜd
- 
-	mvÇ_Çme
-;
-
-886 
-Elf32_WÜd
- 
-	mvÇ_Ãxt
-;
-
-888 } 
-	tElf32_V”Çux
 ;
 
 892 
+Elf32_H®f
+ 
+	mvÇ_æags
+;
+
+893 
+Elf32_H®f
+ 
+	mvÇ_Ùh”
+;
+
+894 
+Elf32_WÜd
+ 
+	mvÇ_Çme
+;
+
+895 
+Elf32_WÜd
+ 
+	mvÇ_Ãxt
+;
+
+897 } 
+	tElf32_V”Çux
+;
+
+901 
 Elf64_WÜd
  
 	mvÇ_hash
 ;
 
-893 
+902 
 Elf64_H®f
  
 	mvÇ_æags
 ;
 
-894 
+903 
 Elf64_H®f
  
 	mvÇ_Ùh”
 ;
 
-895 
+904 
 Elf64_WÜd
  
 	mvÇ_Çme
 ;
 
-896 
+905 
 Elf64_WÜd
  
 	mvÇ_Ãxt
 ;
 
-898 } 
+907 } 
 	tElf64_V”Çux
 ;
 
-902 
+911 
 	#VER_FLG_WEAK
  0x2
 
 	)
 
-916 
+925 
 ušt32_t
  
 	ma_ty³
-;
-
-919 
-ušt32_t
- 
-	ma_v®
-;
-
-923 } 
-	ma_un
-;
-
-924 } 
-	tElf32_auxv_t
 ;
 
 928 
+ušt32_t
+ 
+	ma_v®
+;
+
+932 } 
+	ma_un
+;
+
+933 } 
+	tElf32_auxv_t
+;
+
+937 
 ušt64_t
  
 	ma_ty³
 ;
 
-931 
+940 
 ušt64_t
  
 	ma_v®
 ;
 
-935 } 
+944 } 
 	ma_un
 ;
 
-936 } 
+945 } 
 	tElf64_auxv_t
 ;
 
-940 
+949 
 	#AT_NULL
  0
 
 	)
 
-941 
+950 
 	#AT_IGNORE
  1
 
 	)
 
-942 
+951 
 	#AT_EXECFD
  2
 
 	)
 
-943 
+952 
 	#AT_PHDR
  3
 
 	)
 
-944 
+953 
 	#AT_PHENT
  4
 
 	)
 
-945 
+954 
 	#AT_PHNUM
  5
 
 	)
 
-946 
+955 
 	#AT_PAGESZ
  6
 
 	)
 
-947 
+956 
 	#AT_BASE
  7
 
 	)
 
-948 
+957 
 	#AT_FLAGS
  8
 
 	)
 
-949 
+958 
 	#AT_ENTRY
  9
 
 	)
 
-950 
+959 
 	#AT_NOTELF
  10
 
 	)
 
-951 
+960 
 	#AT_UID
  11
 
 	)
 
-952 
+961 
 	#AT_EUID
  12
 
 	)
 
-953 
+962 
 	#AT_GID
  13
 
 	)
 
-954 
+963 
 	#AT_EGID
  14
 
 	)
 
-955 
+964 
 	#AT_CLKTCK
  17
 
 	)
 
-958 
+967 
 	#AT_PLATFORM
  15
 
 	)
 
-959 
+968 
 	#AT_HWCAP
  16
 
 	)
 
-964 
+973 
 	#AT_FPUCW
  18
 
 	)
 
-967 
+976 
 	#AT_DCACHEBSIZE
  19
 
 	)
 
-968 
+977 
 	#AT_ICACHEBSIZE
  20
 
 	)
 
-969 
+978 
 	#AT_UCACHEBSIZE
  21
 
 	)
 
-973 
+982 
 	#AT_IGNOREPPC
  22
 
 	)
 
-975 
+984 
 	#AT_SECURE
  23
 
 	)
 
-977 
+986 
 	#AT_BASE_PLATFORM
  24
 
 	)
 
-979 
+988 
 	#AT_RANDOM
  25
 
 	)
 
-981 
+990 
 	#AT_EXECFN
  31
 
 	)
 
-985 
+994 
 	#AT_SYSINFO
  32
 
 	)
 
-986 
+995 
 	#AT_SYSINFO_EHDR
  33
 
 	)
 
-990 
+999 
 	#AT_L1I_CACHESHAPE
  34
 
 	)
 
-991 
+1000 
 	#AT_L1D_CACHESHAPE
  35
 
 	)
 
-992 
+1001 
 	#AT_L2_CACHESHAPE
  36
 
 	)
 
-993 
+1002 
 	#AT_L3_CACHESHAPE
  37
 
 	)
 
-1000 
+1009 
 Elf32_WÜd
  
 	mn_Çmesz
 ;
 
-1001 
+1010 
 Elf32_WÜd
  
 	mn_descsz
 ;
 
-1002 
+1011 
 Elf32_WÜd
  
 	mn_ty³
 ;
 
-1003 } 
+1012 } 
 	tElf32_Nhdr
 ;
 
-1007 
+1016 
 Elf64_WÜd
  
 	mn_Çmesz
 ;
 
-1008 
+1017 
 Elf64_WÜd
  
 	mn_descsz
 ;
 
-1009 
+1018 
 Elf64_WÜd
  
 	mn_ty³
 ;
 
-1010 } 
+1019 } 
 	tElf64_Nhdr
 ;
 
-1015 
+1024 
 	#ELF_NOTE_SOLARIS
  "SUNW SÞ¬is"
 
 	)
 
-1018 
+1027 
 	#ELF_NOTE_GNU
  "GNU"
 
 	)
 
-1024 
+1033 
 	#ELF_NOTE_PAGESIZE_HINT
  1
 
 	)
 
-1035 
+1044 
 	#NT_GNU_ABI_TAG
  1
 
 	)
 
-1036 
+1045 
 	#ELF_NOTE_ABI
  
 NT_GNU_ABI_TAG
@@ -74447,117 +74495,117 @@ NT_GNU_ABI_TAG
 
 	)
 
-1040 
+1049 
 	#ELF_NOTE_OS_LINUX
  0
 
 	)
 
-1041 
+1050 
 	#ELF_NOTE_OS_GNU
  1
 
 	)
 
-1042 
+1051 
 	#ELF_NOTE_OS_SOLARIS2
  2
 
 	)
 
-1043 
+1052 
 	#ELF_NOTE_OS_FREEBSD
  3
 
 	)
 
-1051 
+1060 
 	#NT_GNU_HWCAP
  2
 
 	)
 
-1055 
+1064 
 	#NT_GNU_BUILD_ID
  3
 
 	)
 
-1058 
+1067 
 	#NT_GNU_GOLD_VERSION
  4
 
 	)
 
-1064 
+1073 
 Elf32_XwÜd
  
 	mm_v®ue
 ;
 
-1065 
-Elf32_WÜd
- 
-	mm_šfo
-;
-
-1066 
-Elf32_WÜd
- 
-	mm_poff£t
-;
-
-1067 
-Elf32_H®f
- 
-	mm_»³©
-;
-
-1068 
-Elf32_H®f
- 
-	mm_¡ride
-;
-
-1069 } 
-	tElf32_Move
-;
-
-1073 
-Elf64_XwÜd
- 
-	mm_v®ue
-;
-
 1074 
-Elf64_XwÜd
+Elf32_WÜd
  
 	mm_šfo
 ;
 
 1075 
-Elf64_XwÜd
+Elf32_WÜd
  
 	mm_poff£t
 ;
 
 1076 
-Elf64_H®f
+Elf32_H®f
  
 	mm_»³©
 ;
 
 1077 
-Elf64_H®f
+Elf32_H®f
  
 	mm_¡ride
 ;
 
 1078 } 
+	tElf32_Move
+;
+
+1082 
+Elf64_XwÜd
+ 
+	mm_v®ue
+;
+
+1083 
+Elf64_XwÜd
+ 
+	mm_šfo
+;
+
+1084 
+Elf64_XwÜd
+ 
+	mm_poff£t
+;
+
+1085 
+Elf64_H®f
+ 
+	mm_»³©
+;
+
+1086 
+Elf64_H®f
+ 
+	mm_¡ride
+;
+
+1087 } 
 	tElf64_Move
 ;
 
-1081 
+1090 
 	#ELF32_M_SYM
 (
 šfo
@@ -74565,7 +74613,7 @@ Elf64_H®f
 
 	)
 
-1082 
+1091 
 	#ELF32_M_SIZE
 (
 šfo
@@ -74573,7 +74621,7 @@ Elf64_H®f
 
 	)
 
-1083 
+1092 
 	#ELF32_M_INFO
 (
 sym
@@ -74583,7 +74631,7 @@ size
 
 	)
 
-1085 
+1094 
 	#ELF64_M_SYM
 (
 šfo
@@ -74593,7 +74641,7 @@ size
 
 	)
 
-1086 
+1095 
 	#ELF64_M_SIZE
 (
 šfo
@@ -74603,7 +74651,7 @@ size
 
 	)
 
-1087 
+1096 
 	#ELF64_M_INFO
 (
 sym
@@ -74615,1841 +74663,1853 @@ size
 
 	)
 
-1093 
+1102 
 	#EF_CPU32
  0x00810000
 
 	)
 
-1097 
+1106 
 	#R_68K_NONE
  0
 
 	)
 
-1098 
+1107 
 	#R_68K_32
  1
 
 	)
 
-1099 
+1108 
 	#R_68K_16
  2
 
 	)
 
-1100 
+1109 
 	#R_68K_8
  3
 
 	)
 
-1101 
+1110 
 	#R_68K_PC32
  4
 
 	)
 
-1102 
+1111 
 	#R_68K_PC16
  5
 
 	)
 
-1103 
+1112 
 	#R_68K_PC8
  6
 
 	)
 
-1104 
+1113 
 	#R_68K_GOT32
  7
 
 	)
 
-1105 
+1114 
 	#R_68K_GOT16
  8
 
 	)
 
-1106 
+1115 
 	#R_68K_GOT8
  9
 
 	)
 
-1107 
+1116 
 	#R_68K_GOT32O
  10
 
 	)
 
-1108 
+1117 
 	#R_68K_GOT16O
  11
 
 	)
 
-1109 
+1118 
 	#R_68K_GOT8O
  12
 
 	)
 
-1110 
+1119 
 	#R_68K_PLT32
  13
 
 	)
 
-1111 
+1120 
 	#R_68K_PLT16
  14
 
 	)
 
-1112 
+1121 
 	#R_68K_PLT8
  15
 
 	)
 
-1113 
+1122 
 	#R_68K_PLT32O
  16
 
 	)
 
-1114 
+1123 
 	#R_68K_PLT16O
  17
 
 	)
 
-1115 
+1124 
 	#R_68K_PLT8O
  18
 
 	)
 
-1116 
+1125 
 	#R_68K_COPY
  19
 
 	)
 
-1117 
+1126 
 	#R_68K_GLOB_DAT
  20
 
 	)
 
-1118 
+1127 
 	#R_68K_JMP_SLOT
  21
 
 	)
 
-1119 
+1128 
 	#R_68K_RELATIVE
  22
 
 	)
 
-1120 
+1129 
 	#R_68K_TLS_GD32
  25
 
 	)
 
-1121 
+1130 
 	#R_68K_TLS_GD16
  26
 
 	)
 
-1122 
+1131 
 	#R_68K_TLS_GD8
  27
 
 	)
 
-1123 
+1132 
 	#R_68K_TLS_LDM32
  28
 
 	)
 
-1124 
+1133 
 	#R_68K_TLS_LDM16
  29
 
 	)
 
-1125 
+1134 
 	#R_68K_TLS_LDM8
  30
 
 	)
 
-1126 
+1135 
 	#R_68K_TLS_LDO32
  31
 
 	)
 
-1127 
+1136 
 	#R_68K_TLS_LDO16
  32
 
 	)
 
-1128 
+1137 
 	#R_68K_TLS_LDO8
  33
 
 	)
 
-1129 
+1138 
 	#R_68K_TLS_IE32
  34
 
 	)
 
-1130 
+1139 
 	#R_68K_TLS_IE16
  35
 
 	)
 
-1131 
+1140 
 	#R_68K_TLS_IE8
  36
 
 	)
 
-1132 
+1141 
 	#R_68K_TLS_LE32
  37
 
 	)
 
-1134 
+1143 
 	#R_68K_TLS_LE16
  38
 
 	)
 
-1136 
+1145 
 	#R_68K_TLS_LE8
  39
 
 	)
 
-1138 
+1147 
 	#R_68K_TLS_DTPMOD32
  40
 
 	)
 
-1139 
+1148 
 	#R_68K_TLS_DTPREL32
  41
 
 	)
 
-1140 
+1149 
 	#R_68K_TLS_TPREL32
  42
 
 	)
 
-1142 
+1151 
 	#R_68K_NUM
  43
 
 	)
 
-1148 
+1157 
 	#R_386_NONE
  0
 
 	)
 
-1149 
+1158 
 	#R_386_32
  1
 
 	)
 
-1150 
+1159 
 	#R_386_PC32
  2
 
 	)
 
-1151 
+1160 
 	#R_386_GOT32
  3
 
 	)
 
-1152 
+1161 
 	#R_386_PLT32
  4
 
 	)
 
-1153 
+1162 
 	#R_386_COPY
  5
 
 	)
 
-1154 
+1163 
 	#R_386_GLOB_DAT
  6
 
 	)
 
-1155 
+1164 
 	#R_386_JMP_SLOT
  7
 
 	)
 
-1156 
+1165 
 	#R_386_RELATIVE
  8
 
 	)
 
-1157 
+1166 
 	#R_386_GOTOFF
  9
 
 	)
 
-1158 
+1167 
 	#R_386_GOTPC
  10
 
 	)
 
-1159 
+1168 
 	#R_386_32PLT
  11
 
 	)
 
-1160 
+1169 
 	#R_386_TLS_TPOFF
  14
 
 	)
 
-1161 
+1170 
 	#R_386_TLS_IE
  15
 
 	)
 
-1163 
+1172 
 	#R_386_TLS_GOTIE
  16
 
 	)
 
-1165 
+1174 
 	#R_386_TLS_LE
  17
 
 	)
 
-1167 
+1176 
 	#R_386_TLS_GD
  18
 
 	)
 
-1169 
+1178 
 	#R_386_TLS_LDM
  19
 
 	)
 
-1172 
+1181 
 	#R_386_16
  20
 
 	)
 
-1173 
+1182 
 	#R_386_PC16
  21
 
 	)
 
-1174 
+1183 
 	#R_386_8
  22
 
 	)
 
-1175 
+1184 
 	#R_386_PC8
  23
 
 	)
 
-1176 
+1185 
 	#R_386_TLS_GD_32
  24
 
 	)
 
-1178 
+1187 
 	#R_386_TLS_GD_PUSH
  25
 
 	)
 
-1179 
+1188 
 	#R_386_TLS_GD_CALL
  26
 
 	)
 
-1181 
+1190 
 	#R_386_TLS_GD_POP
  27
 
 	)
 
-1182 
+1191 
 	#R_386_TLS_LDM_32
  28
 
 	)
 
-1184 
+1193 
 	#R_386_TLS_LDM_PUSH
  29
 
 	)
 
-1185 
+1194 
 	#R_386_TLS_LDM_CALL
  30
 
 	)
 
-1187 
+1196 
 	#R_386_TLS_LDM_POP
  31
 
 	)
 
-1188 
+1197 
 	#R_386_TLS_LDO_32
  32
 
 	)
 
-1189 
+1198 
 	#R_386_TLS_IE_32
  33
 
 	)
 
-1191 
+1200 
 	#R_386_TLS_LE_32
  34
 
 	)
 
-1193 
+1202 
 	#R_386_TLS_DTPMOD32
  35
 
 	)
 
-1194 
+1203 
 	#R_386_TLS_DTPOFF32
  36
 
 	)
 
-1195 
+1204 
 	#R_386_TLS_TPOFF32
  37
 
 	)
 
-1197 
+1206 
 	#R_386_TLS_GOTDESC
  39
 
 	)
 
-1198 
+1207 
 	#R_386_TLS_DESC_CALL
  40
 
 	)
 
-1201 
+1210 
 	#R_386_TLS_DESC
  41
 
 	)
 
-1205 
+1214 
 	#R_386_IRELATIVE
  42
 
 	)
 
-1207 
+1216 
 	#R_386_NUM
  43
 
 	)
 
-1213 
+1222 
 	#STT_SPARC_REGISTER
  13
 
 	)
 
-1217 
+1226 
 	#EF_SPARCV9_MM
  3
 
 	)
 
-1218 
+1227 
 	#EF_SPARCV9_TSO
  0
 
 	)
 
-1219 
+1228 
 	#EF_SPARCV9_PSO
  1
 
 	)
 
-1220 
+1229 
 	#EF_SPARCV9_RMO
  2
 
 	)
 
-1221 
+1230 
 	#EF_SPARC_LEDATA
  0x800000
 
 	)
 
-1222 
+1231 
 	#EF_SPARC_EXT_MASK
  0xFFFF00
 
 	)
 
-1223 
+1232 
 	#EF_SPARC_32PLUS
  0x000100
 
 	)
 
-1224 
+1233 
 	#EF_SPARC_SUN_US1
  0x000200
 
 	)
 
-1225 
+1234 
 	#EF_SPARC_HAL_R1
  0x000400
 
 	)
 
-1226 
+1235 
 	#EF_SPARC_SUN_US3
  0x000800
 
 	)
 
-1230 
+1239 
 	#R_SPARC_NONE
  0
 
 	)
 
-1231 
+1240 
 	#R_SPARC_8
  1
 
 	)
 
-1232 
+1241 
 	#R_SPARC_16
  2
 
 	)
 
-1233 
+1242 
 	#R_SPARC_32
  3
 
 	)
 
-1234 
+1243 
 	#R_SPARC_DISP8
  4
 
 	)
 
-1235 
+1244 
 	#R_SPARC_DISP16
  5
 
 	)
 
-1236 
+1245 
 	#R_SPARC_DISP32
  6
 
 	)
 
-1237 
+1246 
 	#R_SPARC_WDISP30
  7
 
 	)
 
-1238 
+1247 
 	#R_SPARC_WDISP22
  8
 
 	)
 
-1239 
+1248 
 	#R_SPARC_HI22
  9
 
 	)
 
-1240 
+1249 
 	#R_SPARC_22
  10
 
 	)
 
-1241 
+1250 
 	#R_SPARC_13
  11
 
 	)
 
-1242 
+1251 
 	#R_SPARC_LO10
  12
 
 	)
 
-1243 
+1252 
 	#R_SPARC_GOT10
  13
 
 	)
 
-1244 
+1253 
 	#R_SPARC_GOT13
  14
 
 	)
 
-1245 
+1254 
 	#R_SPARC_GOT22
  15
 
 	)
 
-1246 
+1255 
 	#R_SPARC_PC10
  16
 
 	)
 
-1247 
+1256 
 	#R_SPARC_PC22
  17
 
 	)
 
-1248 
+1257 
 	#R_SPARC_WPLT30
  18
 
 	)
 
-1249 
+1258 
 	#R_SPARC_COPY
  19
 
 	)
 
-1250 
+1259 
 	#R_SPARC_GLOB_DAT
  20
 
 	)
 
-1251 
+1260 
 	#R_SPARC_JMP_SLOT
  21
 
 	)
 
-1252 
+1261 
 	#R_SPARC_RELATIVE
  22
 
 	)
 
-1253 
+1262 
 	#R_SPARC_UA32
  23
 
 	)
 
-1257 
+1266 
 	#R_SPARC_PLT32
  24
 
 	)
 
-1258 
+1267 
 	#R_SPARC_HIPLT22
  25
 
 	)
 
-1259 
+1268 
 	#R_SPARC_LOPLT10
  26
 
 	)
 
-1260 
+1269 
 	#R_SPARC_PCPLT32
  27
 
 	)
 
-1261 
+1270 
 	#R_SPARC_PCPLT22
  28
 
 	)
 
-1262 
+1271 
 	#R_SPARC_PCPLT10
  29
 
 	)
 
-1263 
+1272 
 	#R_SPARC_10
  30
 
 	)
 
-1264 
+1273 
 	#R_SPARC_11
  31
 
 	)
 
-1265 
+1274 
 	#R_SPARC_64
  32
 
 	)
 
-1266 
+1275 
 	#R_SPARC_OLO10
  33
 
 	)
 
-1267 
+1276 
 	#R_SPARC_HH22
  34
 
 	)
 
-1268 
+1277 
 	#R_SPARC_HM10
  35
 
 	)
 
-1269 
+1278 
 	#R_SPARC_LM22
  36
 
 	)
 
-1270 
+1279 
 	#R_SPARC_PC_HH22
  37
 
 	)
 
-1271 
+1280 
 	#R_SPARC_PC_HM10
  38
 
 	)
 
-1272 
+1281 
 	#R_SPARC_PC_LM22
  39
 
 	)
 
-1273 
+1282 
 	#R_SPARC_WDISP16
  40
 
 	)
 
-1274 
+1283 
 	#R_SPARC_WDISP19
  41
 
 	)
 
-1275 
+1284 
 	#R_SPARC_GLOB_JMP
  42
 
 	)
 
-1276 
+1285 
 	#R_SPARC_7
  43
 
 	)
 
-1277 
+1286 
 	#R_SPARC_5
  44
 
 	)
 
-1278 
+1287 
 	#R_SPARC_6
  45
 
 	)
 
-1279 
+1288 
 	#R_SPARC_DISP64
  46
 
 	)
 
-1280 
+1289 
 	#R_SPARC_PLT64
  47
 
 	)
 
-1281 
+1290 
 	#R_SPARC_HIX22
  48
 
 	)
 
-1282 
+1291 
 	#R_SPARC_LOX10
  49
 
 	)
 
-1283 
+1292 
 	#R_SPARC_H44
  50
 
 	)
 
-1284 
+1293 
 	#R_SPARC_M44
  51
 
 	)
 
-1285 
+1294 
 	#R_SPARC_L44
  52
 
 	)
 
-1286 
+1295 
 	#R_SPARC_REGISTER
  53
 
 	)
 
-1287 
+1296 
 	#R_SPARC_UA64
  54
 
 	)
 
-1288 
+1297 
 	#R_SPARC_UA16
  55
 
 	)
 
-1289 
+1298 
 	#R_SPARC_TLS_GD_HI22
  56
 
 	)
 
-1290 
+1299 
 	#R_SPARC_TLS_GD_LO10
  57
 
 	)
 
-1291 
+1300 
 	#R_SPARC_TLS_GD_ADD
  58
 
 	)
 
-1292 
+1301 
 	#R_SPARC_TLS_GD_CALL
  59
 
 	)
 
-1293 
+1302 
 	#R_SPARC_TLS_LDM_HI22
  60
 
 	)
 
-1294 
+1303 
 	#R_SPARC_TLS_LDM_LO10
  61
 
 	)
 
-1295 
+1304 
 	#R_SPARC_TLS_LDM_ADD
  62
 
 	)
 
-1296 
+1305 
 	#R_SPARC_TLS_LDM_CALL
  63
 
 	)
 
-1297 
+1306 
 	#R_SPARC_TLS_LDO_HIX22
  64
 
 	)
 
-1298 
+1307 
 	#R_SPARC_TLS_LDO_LOX10
  65
 
 	)
 
-1299 
+1308 
 	#R_SPARC_TLS_LDO_ADD
  66
 
 	)
 
-1300 
+1309 
 	#R_SPARC_TLS_IE_HI22
  67
 
 	)
 
-1301 
+1310 
 	#R_SPARC_TLS_IE_LO10
  68
 
 	)
 
-1302 
+1311 
 	#R_SPARC_TLS_IE_LD
  69
 
 	)
 
-1303 
+1312 
 	#R_SPARC_TLS_IE_LDX
  70
 
 	)
 
-1304 
+1313 
 	#R_SPARC_TLS_IE_ADD
  71
 
 	)
 
-1305 
+1314 
 	#R_SPARC_TLS_LE_HIX22
  72
 
 	)
 
-1306 
+1315 
 	#R_SPARC_TLS_LE_LOX10
  73
 
 	)
 
-1307 
+1316 
 	#R_SPARC_TLS_DTPMOD32
  74
 
 	)
 
-1308 
+1317 
 	#R_SPARC_TLS_DTPMOD64
  75
 
 	)
 
-1309 
+1318 
 	#R_SPARC_TLS_DTPOFF32
  76
 
 	)
 
-1310 
+1319 
 	#R_SPARC_TLS_DTPOFF64
  77
 
 	)
 
-1311 
+1320 
 	#R_SPARC_TLS_TPOFF32
  78
 
 	)
 
-1312 
+1321 
 	#R_SPARC_TLS_TPOFF64
  79
 
 	)
 
-1313 
+1322 
 	#R_SPARC_GOTDATA_HIX22
  80
 
 	)
 
-1314 
+1323 
 	#R_SPARC_GOTDATA_LOX10
  81
 
 	)
 
-1315 
+1324 
 	#R_SPARC_GOTDATA_OP_HIX22
  82
 
 	)
 
-1316 
+1325 
 	#R_SPARC_GOTDATA_OP_LOX10
  83
 
 	)
 
-1317 
+1326 
 	#R_SPARC_GOTDATA_OP
  84
 
 	)
 
-1318 
+1327 
 	#R_SPARC_H34
  85
 
 	)
 
-1319 
+1328 
 	#R_SPARC_SIZE32
  86
 
 	)
 
-1320 
+1329 
 	#R_SPARC_SIZE64
  87
 
 	)
 
-1321 
+1330 
+	#R_SPARC_JMP_IREL
+ 248
+
+	)
+
+1331 
+	#R_SPARC_IRELATIVE
+ 249
+
+	)
+
+1332 
 	#R_SPARC_GNU_VTINHERIT
  250
 
 	)
 
-1322 
+1333 
 	#R_SPARC_GNU_VTENTRY
  251
 
 	)
 
-1323 
+1334 
 	#R_SPARC_REV32
  252
 
 	)
 
-1325 
+1336 
 	#R_SPARC_NUM
  253
 
 	)
 
-1329 
+1340 
 	#DT_SPARC_REGISTER
  0x70000001
 
 	)
 
-1330 
+1341 
 	#DT_SPARC_NUM
  2
 
 	)
 
-1334 
+1345 
 	#HWCAP_SPARC_FLUSH
  1
 
 	)
 
-1335 
+1346 
 	#HWCAP_SPARC_STBAR
  2
 
 	)
 
-1336 
+1347 
 	#HWCAP_SPARC_SWAP
  4
 
 	)
 
-1337 
+1348 
 	#HWCAP_SPARC_MULDIV
  8
 
 	)
 
-1338 
+1349 
 	#HWCAP_SPARC_V9
  16
 
 	)
 
-1339 
+1350 
 	#HWCAP_SPARC_ULTRA3
  32
 
 	)
 
-1340 
+1351 
 	#HWCAP_SPARC_BLKINIT
  64
 
 	)
 
-1341 
+1352 
 	#HWCAP_SPARC_N2
  128
 
 	)
 
-1347 
+1358 
 	#EF_MIPS_NOREORDER
  1
 
 	)
 
-1348 
+1359 
 	#EF_MIPS_PIC
  2
 
 	)
 
-1349 
+1360 
 	#EF_MIPS_CPIC
  4
 
 	)
 
-1350 
+1361 
 	#EF_MIPS_XGOT
  8
 
 	)
 
-1351 
+1362 
 	#EF_MIPS_64BIT_WHIRL
  16
 
 	)
 
-1352 
+1363 
 	#EF_MIPS_ABI2
  32
 
 	)
 
-1353 
+1364 
 	#EF_MIPS_ABI_ON32
  64
 
 	)
 
-1354 
+1365 
 	#EF_MIPS_ARCH
  0xf0000000
 
 	)
 
-1358 
+1369 
 	#EF_MIPS_ARCH_1
  0x00000000
 
 	)
 
-1359 
+1370 
 	#EF_MIPS_ARCH_2
  0x10000000
 
 	)
 
-1360 
+1371 
 	#EF_MIPS_ARCH_3
  0x20000000
 
 	)
 
-1361 
+1372 
 	#EF_MIPS_ARCH_4
  0x30000000
 
 	)
 
-1362 
+1373 
 	#EF_MIPS_ARCH_5
  0x40000000
 
 	)
 
-1363 
+1374 
 	#EF_MIPS_ARCH_32
  0x60000000
 
 	)
 
-1364 
+1375 
 	#EF_MIPS_ARCH_64
  0x70000000
 
 	)
 
-1368 
+1379 
 	#E_MIPS_ARCH_1
  0x00000000
 
 	)
 
-1369 
+1380 
 	#E_MIPS_ARCH_2
  0x10000000
 
 	)
 
-1370 
+1381 
 	#E_MIPS_ARCH_3
  0x20000000
 
 	)
 
-1371 
+1382 
 	#E_MIPS_ARCH_4
  0x30000000
 
 	)
 
-1372 
+1383 
 	#E_MIPS_ARCH_5
  0x40000000
 
 	)
 
-1373 
+1384 
 	#E_MIPS_ARCH_32
  0x60000000
 
 	)
 
-1374 
+1385 
 	#E_MIPS_ARCH_64
  0x70000000
 
 	)
 
-1378 
+1389 
 	#SHN_MIPS_ACOMMON
  0xff00
 
 	)
 
-1379 
+1390 
 	#SHN_MIPS_TEXT
  0xff01
 
 	)
 
-1380 
+1391 
 	#SHN_MIPS_DATA
  0xff02
 
 	)
 
-1381 
+1392 
 	#SHN_MIPS_SCOMMON
  0xff03
 
 	)
 
-1382 
+1393 
 	#SHN_MIPS_SUNDEFINED
  0xff04
 
 	)
 
-1386 
+1397 
 	#SHT_MIPS_LIBLIST
  0x70000000
 
 	)
 
-1387 
+1398 
 	#SHT_MIPS_MSYM
  0x70000001
 
 	)
 
-1388 
+1399 
 	#SHT_MIPS_CONFLICT
  0x70000002
 
 	)
 
-1389 
+1400 
 	#SHT_MIPS_GPTAB
  0x70000003
 
 	)
 
-1390 
+1401 
 	#SHT_MIPS_UCODE
  0x70000004
 
 	)
 
-1391 
+1402 
 	#SHT_MIPS_DEBUG
  0x70000005
 
 	)
 
-1392 
+1403 
 	#SHT_MIPS_REGINFO
  0x70000006
 
 	)
 
-1393 
+1404 
 	#SHT_MIPS_PACKAGE
  0x70000007
 
 	)
 
-1394 
+1405 
 	#SHT_MIPS_PACKSYM
  0x70000008
 
 	)
 
-1395 
+1406 
 	#SHT_MIPS_RELD
  0x70000009
 
 	)
 
-1396 
+1407 
 	#SHT_MIPS_IFACE
  0x7000000b
 
 	)
 
-1397 
+1408 
 	#SHT_MIPS_CONTENT
  0x7000000c
 
 	)
 
-1398 
+1409 
 	#SHT_MIPS_OPTIONS
  0x7000000d
 
 	)
 
-1399 
+1410 
 	#SHT_MIPS_SHDR
  0x70000010
 
 	)
 
-1400 
+1411 
 	#SHT_MIPS_FDESC
  0x70000011
 
 	)
 
-1401 
+1412 
 	#SHT_MIPS_EXTSYM
  0x70000012
 
 	)
 
-1402 
+1413 
 	#SHT_MIPS_DENSE
  0x70000013
 
 	)
 
-1403 
+1414 
 	#SHT_MIPS_PDESC
  0x70000014
 
 	)
 
-1404 
+1415 
 	#SHT_MIPS_LOCSYM
  0x70000015
 
 	)
 
-1405 
+1416 
 	#SHT_MIPS_AUXSYM
  0x70000016
 
 	)
 
-1406 
+1417 
 	#SHT_MIPS_OPTSYM
  0x70000017
 
 	)
 
-1407 
+1418 
 	#SHT_MIPS_LOCSTR
  0x70000018
 
 	)
 
-1408 
+1419 
 	#SHT_MIPS_LINE
  0x70000019
 
 	)
 
-1409 
+1420 
 	#SHT_MIPS_RFDESC
  0x7000001a
 
 	)
 
-1410 
+1421 
 	#SHT_MIPS_DELTASYM
  0x7000001b
 
 	)
 
-1411 
+1422 
 	#SHT_MIPS_DELTAINST
  0x7000001c
 
 	)
 
-1412 
+1423 
 	#SHT_MIPS_DELTACLASS
  0x7000001d
 
 	)
 
-1413 
+1424 
 	#SHT_MIPS_DWARF
  0x7000001
 
 	)
 
-1414 
+1425 
 	#SHT_MIPS_DELTADECL
  0x7000001f
 
 	)
 
-1415 
+1426 
 	#SHT_MIPS_SYMBOL_LIB
  0x70000020
 
 	)
 
-1416 
+1427 
 	#SHT_MIPS_EVENTS
  0x70000021
 
 	)
 
-1417 
+1428 
 	#SHT_MIPS_TRANSLATE
  0x70000022
 
 	)
 
-1418 
+1429 
 	#SHT_MIPS_PIXIE
  0x70000023
 
 	)
 
-1419 
+1430 
 	#SHT_MIPS_XLATE
  0x70000024
 
 	)
 
-1420 
+1431 
 	#SHT_MIPS_XLATE_DEBUG
  0x70000025
 
 	)
 
-1421 
+1432 
 	#SHT_MIPS_WHIRL
  0x70000026
 
 	)
 
-1422 
+1433 
 	#SHT_MIPS_EH_REGION
  0x70000027
 
 	)
 
-1423 
+1434 
 	#SHT_MIPS_XLATE_OLD
  0x70000028
 
 	)
 
-1424 
+1435 
 	#SHT_MIPS_PDR_EXCEPTION
  0x70000029
 
 	)
 
-1428 
+1439 
 	#SHF_MIPS_GPREL
  0x10000000
 
 	)
 
-1429 
+1440 
 	#SHF_MIPS_MERGE
  0x20000000
 
 	)
 
-1430 
+1441 
 	#SHF_MIPS_ADDR
  0x40000000
 
 	)
 
-1431 
+1442 
 	#SHF_MIPS_STRINGS
  0x80000000
 
 	)
 
-1432 
+1443 
 	#SHF_MIPS_NOSTRIP
  0x08000000
 
 	)
 
-1433 
+1444 
 	#SHF_MIPS_LOCAL
  0x04000000
 
 	)
 
-1434 
+1445 
 	#SHF_MIPS_NAMES
  0x02000000
 
 	)
 
-1435 
+1446 
 	#SHF_MIPS_NODUPE
  0x01000000
 
 	)
 
-1441 
+1452 
 	#STO_MIPS_DEFAULT
  0x0
 
 	)
 
-1442 
+1453 
 	#STO_MIPS_INTERNAL
  0x1
 
 	)
 
-1443 
+1454 
 	#STO_MIPS_HIDDEN
  0x2
 
 	)
 
-1444 
+1455 
 	#STO_MIPS_PROTECTED
  0x3
 
 	)
 
-1445 
+1456 
 	#STO_MIPS_PLT
  0x8
 
 	)
 
-1446 
+1457 
 	#STO_MIPS_SC_ALIGN_UNUSED
  0xff
 
 	)
 
-1449 
+1460 
 	#STB_MIPS_SPLIT_COMMON
  13
 
 	)
 
-1457 
+1468 
 Elf32_WÜd
  
 	mgt_cu¼’t_g_v®ue
 ;
 
-1458 
+1469 
 Elf32_WÜd
  
 	mgt_unu£d
 ;
 
-1459 } 
+1470 } 
 	mgt_h—d”
 ;
 
-1462 
+1473 
 Elf32_WÜd
  
 	mgt_g_v®ue
 ;
 
-1463 
+1474 
 Elf32_WÜd
  
 	mgt_by‹s
 ;
 
-1464 } 
+1475 } 
 	mgt_’Œy
 ;
 
-1465 } 
+1476 } 
 	tElf32_g±ab
 ;
 
-1471 
+1482 
 Elf32_WÜd
  
 	mri_g´mask
 ;
 
-1472 
+1483 
 Elf32_WÜd
  
 	mri_ýrmask
 [4];
 
-1473 
+1484 
 Elf32_SwÜd
  
 	mri_gp_v®ue
 ;
 
-1474 } 
+1485 } 
 	tElf32_RegInfo
 ;
 
-1480 
+1491 
 	mkšd
 ;
 
-1482 
+1493 
 	msize
 ;
 
-1483 
+1494 
 Elf32_SeùiÚ
  
 	m£ùiÚ
 ;
 
-1485 
+1496 
 Elf32_WÜd
  
 	mšfo
 ;
 
-1486 } 
+1497 } 
 	tElf_O±iÚs
 ;
 
-1490 
+1501 
 	#ODK_NULL
  0
 
 	)
 
-1491 
+1502 
 	#ODK_REGINFO
  1
 
 	)
 
-1492 
+1503 
 	#ODK_EXCEPTIONS
  2
 
 	)
 
-1493 
+1504 
 	#ODK_PAD
  3
 
 	)
 
-1494 
+1505 
 	#ODK_HWPATCH
  4
 
 	)
 
-1495 
+1506 
 	#ODK_FILL
  5
 
 	)
 
-1496 
+1507 
 	#ODK_TAGS
  6
 
 	)
 
-1497 
+1508 
 	#ODK_HWAND
  7
 
 	)
 
-1498 
+1509 
 	#ODK_HWOR
  8
 
 	)
 
-1502 
+1513 
 	#OEX_FPU_MIN
  0x1à
 
 	)
 
-1503 
+1514 
 	#OEX_FPU_MAX
  0x1f00
 
 	)
 
-1504 
+1515 
 	#OEX_PAGE0
  0x10000
 
 	)
 
-1505 
+1516 
 	#OEX_SMM
  0x20000
 
 	)
 
-1506 
+1517 
 	#OEX_FPDBUG
  0x40000
 
 	)
 
-1507 
+1518 
 	#OEX_PRECISEFP
  
 OEX_FPDBUG
@@ -76457,1051 +76517,1051 @@ OEX_FPDBUG
 
 	)
 
-1508 
+1519 
 	#OEX_DISMISS
  0x80000
 
 	)
 
-1510 
+1521 
 	#OEX_FPU_INVAL
  0x10
 
 	)
 
-1511 
+1522 
 	#OEX_FPU_DIV0
  0x08
 
 	)
 
-1512 
+1523 
 	#OEX_FPU_OFLO
  0x04
 
 	)
 
-1513 
+1524 
 	#OEX_FPU_UFLO
  0x02
 
 	)
 
-1514 
+1525 
 	#OEX_FPU_INEX
  0x01
 
 	)
 
-1518 
+1529 
 	#OHW_R4KEOP
  0x1
 
 	)
 
-1519 
+1530 
 	#OHW_R8KPFETCH
  0x2
 
 	)
 
-1520 
+1531 
 	#OHW_R5KEOP
  0x4
 
 	)
 
-1521 
+1532 
 	#OHW_R5KCVTL
  0x8
 
 	)
 
-1523 
+1534 
 	#OPAD_PREFIX
  0x1
 
 	)
 
-1524 
+1535 
 	#OPAD_POSTFIX
  0x2
 
 	)
 
-1525 
+1536 
 	#OPAD_SYMBOL
  0x4
 
 	)
 
-1531 
+1542 
 Elf32_WÜd
  
 	mhwp_æags1
 ;
 
-1532 
+1543 
 Elf32_WÜd
  
 	mhwp_æags2
 ;
 
-1533 } 
+1544 } 
 	tElf_O±iÚs_Hw
 ;
 
-1537 
+1548 
 	#OHWA0_R4KEOP_CHECKED
  0x00000001
 
 	)
 
-1538 
+1549 
 	#OHWA1_R4KEOP_CLEAN
  0x00000002
 
 	)
 
-1542 
+1553 
 	#R_MIPS_NONE
  0
 
 	)
 
-1543 
+1554 
 	#R_MIPS_16
  1
 
 	)
 
-1544 
+1555 
 	#R_MIPS_32
  2
 
 	)
 
-1545 
+1556 
 	#R_MIPS_REL32
  3
 
 	)
 
-1546 
+1557 
 	#R_MIPS_26
  4
 
 	)
 
-1547 
+1558 
 	#R_MIPS_HI16
  5
 
 	)
 
-1548 
+1559 
 	#R_MIPS_LO16
  6
 
 	)
 
-1549 
+1560 
 	#R_MIPS_GPREL16
  7
 
 	)
 
-1550 
+1561 
 	#R_MIPS_LITERAL
  8
 
 	)
 
-1551 
+1562 
 	#R_MIPS_GOT16
  9
 
 	)
 
-1552 
+1563 
 	#R_MIPS_PC16
  10
 
 	)
 
-1553 
+1564 
 	#R_MIPS_CALL16
  11
 
 	)
 
-1554 
+1565 
 	#R_MIPS_GPREL32
  12
 
 	)
 
-1556 
+1567 
 	#R_MIPS_SHIFT5
  16
 
 	)
 
-1557 
+1568 
 	#R_MIPS_SHIFT6
  17
 
 	)
 
-1558 
+1569 
 	#R_MIPS_64
  18
 
 	)
 
-1559 
+1570 
 	#R_MIPS_GOT_DISP
  19
 
 	)
 
-1560 
+1571 
 	#R_MIPS_GOT_PAGE
  20
 
 	)
 
-1561 
+1572 
 	#R_MIPS_GOT_OFST
  21
 
 	)
 
-1562 
+1573 
 	#R_MIPS_GOT_HI16
  22
 
 	)
 
-1563 
+1574 
 	#R_MIPS_GOT_LO16
  23
 
 	)
 
-1564 
+1575 
 	#R_MIPS_SUB
  24
 
 	)
 
-1565 
+1576 
 	#R_MIPS_INSERT_A
  25
 
 	)
 
-1566 
+1577 
 	#R_MIPS_INSERT_B
  26
 
 	)
 
-1567 
+1578 
 	#R_MIPS_DELETE
  27
 
 	)
 
-1568 
+1579 
 	#R_MIPS_HIGHER
  28
 
 	)
 
-1569 
+1580 
 	#R_MIPS_HIGHEST
  29
 
 	)
 
-1570 
+1581 
 	#R_MIPS_CALL_HI16
  30
 
 	)
 
-1571 
+1582 
 	#R_MIPS_CALL_LO16
  31
 
 	)
 
-1572 
+1583 
 	#R_MIPS_SCN_DISP
  32
 
 	)
 
-1573 
+1584 
 	#R_MIPS_REL16
  33
 
 	)
 
-1574 
+1585 
 	#R_MIPS_ADD_IMMEDIATE
  34
 
 	)
 
-1575 
+1586 
 	#R_MIPS_PJUMP
  35
 
 	)
 
-1576 
+1587 
 	#R_MIPS_RELGOT
  36
 
 	)
 
-1577 
+1588 
 	#R_MIPS_JALR
  37
 
 	)
 
-1578 
+1589 
 	#R_MIPS_TLS_DTPMOD32
  38
 
 	)
 
-1579 
+1590 
 	#R_MIPS_TLS_DTPREL32
  39
 
 	)
 
-1580 
+1591 
 	#R_MIPS_TLS_DTPMOD64
  40
 
 	)
 
-1581 
+1592 
 	#R_MIPS_TLS_DTPREL64
  41
 
 	)
 
-1582 
+1593 
 	#R_MIPS_TLS_GD
  42
 
 	)
 
-1583 
+1594 
 	#R_MIPS_TLS_LDM
  43
 
 	)
 
-1584 
+1595 
 	#R_MIPS_TLS_DTPREL_HI16
  44
 
 	)
 
-1585 
+1596 
 	#R_MIPS_TLS_DTPREL_LO16
  45
 
 	)
 
-1586 
+1597 
 	#R_MIPS_TLS_GOTTPREL
  46
 
 	)
 
-1587 
+1598 
 	#R_MIPS_TLS_TPREL32
  47
 
 	)
 
-1588 
+1599 
 	#R_MIPS_TLS_TPREL64
  48
 
 	)
 
-1589 
+1600 
 	#R_MIPS_TLS_TPREL_HI16
  49
 
 	)
 
-1590 
+1601 
 	#R_MIPS_TLS_TPREL_LO16
  50
 
 	)
 
-1591 
+1602 
 	#R_MIPS_GLOB_DAT
  51
 
 	)
 
-1592 
+1603 
 	#R_MIPS_COPY
  126
 
 	)
 
-1593 
+1604 
 	#R_MIPS_JUMP_SLOT
  127
 
 	)
 
-1595 
+1606 
 	#R_MIPS_NUM
  128
 
 	)
 
-1599 
+1610 
 	#PT_MIPS_REGINFO
  0x70000000
 
 	)
 
-1600 
+1611 
 	#PT_MIPS_RTPROC
  0x70000001
 
 	)
 
-1601 
+1612 
 	#PT_MIPS_OPTIONS
  0x70000002
 
 	)
 
-1605 
+1616 
 	#PF_MIPS_LOCAL
  0x10000000
 
 	)
 
-1609 
+1620 
 	#DT_MIPS_RLD_VERSION
  0x70000001
 
 	)
 
-1610 
+1621 
 	#DT_MIPS_TIME_STAMP
  0x70000002
 
 	)
 
-1611 
+1622 
 	#DT_MIPS_ICHECKSUM
  0x70000003
 
 	)
 
-1612 
+1623 
 	#DT_MIPS_IVERSION
  0x70000004
 
 	)
 
-1613 
+1624 
 	#DT_MIPS_FLAGS
  0x70000005
 
 	)
 
-1614 
+1625 
 	#DT_MIPS_BASE_ADDRESS
  0x70000006
 
 	)
 
-1615 
+1626 
 	#DT_MIPS_MSYM
  0x70000007
 
 	)
 
-1616 
+1627 
 	#DT_MIPS_CONFLICT
  0x70000008
 
 	)
 
-1617 
+1628 
 	#DT_MIPS_LIBLIST
  0x70000009
 
 	)
 
-1618 
+1629 
 	#DT_MIPS_LOCAL_GOTNO
  0x7000000¨
 
 	)
 
-1619 
+1630 
 	#DT_MIPS_CONFLICTNO
  0x7000000b
 
 	)
 
-1620 
+1631 
 	#DT_MIPS_LIBLISTNO
  0x70000010
 
 	)
 
-1621 
+1632 
 	#DT_MIPS_SYMTABNO
  0x70000011
 
 	)
 
-1622 
+1633 
 	#DT_MIPS_UNREFEXTNO
  0x70000012
 
 	)
 
-1623 
+1634 
 	#DT_MIPS_GOTSYM
  0x70000013
 
 	)
 
-1624 
+1635 
 	#DT_MIPS_HIPAGENO
  0x70000014
 
 	)
 
-1625 
+1636 
 	#DT_MIPS_RLD_MAP
  0x70000016
 
 	)
 
-1626 
+1637 
 	#DT_MIPS_DELTA_CLASS
  0x70000017
 
 	)
 
-1627 
+1638 
 	#DT_MIPS_DELTA_CLASS_NO
  0x70000018
 
 	)
 
-1629 
+1640 
 	#DT_MIPS_DELTA_INSTANCE
  0x70000019
 
 	)
 
-1630 
+1641 
 	#DT_MIPS_DELTA_INSTANCE_NO
  0x7000001¨
 
 	)
 
-1632 
+1643 
 	#DT_MIPS_DELTA_RELOC
  0x7000001b
 
 	)
 
-1633 
+1644 
 	#DT_MIPS_DELTA_RELOC_NO
  0x7000001ø
 
 	)
 
-1635 
+1646 
 	#DT_MIPS_DELTA_SYM
  0x7000001d
 
 	)
 
-1637 
+1648 
 	#DT_MIPS_DELTA_SYM_NO
  0x7000001
 
 	)
 
-1639 
+1650 
 	#DT_MIPS_DELTA_CLASSSYM
  0x70000020
 
 	)
 
-1641 
+1652 
 	#DT_MIPS_DELTA_CLASSSYM_NO
  0x70000021
 
 	)
 
-1643 
+1654 
 	#DT_MIPS_CXX_FLAGS
  0x70000022
 
 	)
 
-1644 
+1655 
 	#DT_MIPS_PIXIE_INIT
  0x70000023
 
 	)
 
-1645 
+1656 
 	#DT_MIPS_SYMBOL_LIB
  0x70000024
 
 	)
 
-1646 
+1657 
 	#DT_MIPS_LOCALPAGE_GOTIDX
  0x70000025
 
 	)
 
-1647 
+1658 
 	#DT_MIPS_LOCAL_GOTIDX
  0x70000026
 
 	)
 
-1648 
+1659 
 	#DT_MIPS_HIDDEN_GOTIDX
  0x70000027
 
 	)
 
-1649 
+1660 
 	#DT_MIPS_PROTECTED_GOTIDX
  0x70000028
 
 	)
 
-1650 
+1661 
 	#DT_MIPS_OPTIONS
  0x70000029
 
 	)
 
-1651 
+1662 
 	#DT_MIPS_INTERFACE
  0x7000002¨
 
 	)
 
-1652 
+1663 
 	#DT_MIPS_DYNSTR_ALIGN
  0x7000002b
 
 	)
 
-1653 
+1664 
 	#DT_MIPS_INTERFACE_SIZE
  0x7000002ø
 
 	)
 
-1654 
+1665 
 	#DT_MIPS_RLD_TEXT_RESOLVE_ADDR
  0x7000002d
 
 	)
 
-1656 
+1667 
 	#DT_MIPS_PERF_SUFFIX
  0x7000002
 
 	)
 
-1658 
+1669 
 	#DT_MIPS_COMPACT_SIZE
  0x7000002à
 
 	)
 
-1659 
+1670 
 	#DT_MIPS_GP_VALUE
  0x70000030
 
 	)
 
-1660 
+1671 
 	#DT_MIPS_AUX_DYNAMIC
  0x70000031
 
 	)
 
-1662 
+1673 
 	#DT_MIPS_PLTGOT
  0x70000032
 
 	)
 
-1666 
+1677 
 	#DT_MIPS_RWPLT
  0x70000034
 
 	)
 
-1667 
+1678 
 	#DT_MIPS_NUM
  0x35
 
 	)
 
-1671 
+1682 
 	#RHF_NONE
  0
 
 	)
 
-1672 
+1683 
 	#RHF_QUICKSTART
  (1 << 0è
 
 	)
 
-1673 
+1684 
 	#RHF_NOTPOT
  (1 << 1è
 
 	)
 
-1674 
+1685 
 	#RHF_NO_LIBRARY_REPLACEMENT
  (1 << 2è
 
 	)
 
-1675 
+1686 
 	#RHF_NO_MOVE
  (1 << 3)
 
 	)
 
-1676 
+1687 
 	#RHF_SGI_ONLY
  (1 << 4)
 
 	)
 
-1677 
+1688 
 	#RHF_GUARANTEE_INIT
  (1 << 5)
 
 	)
 
-1678 
+1689 
 	#RHF_DELTA_C_PLUS_PLUS
  (1 << 6)
 
 	)
 
-1679 
+1690 
 	#RHF_GUARANTEE_START_INIT
  (1 << 7)
 
 	)
 
-1680 
+1691 
 	#RHF_PIXIE
  (1 << 8)
 
 	)
 
-1681 
+1692 
 	#RHF_DEFAULT_DELAY_LOAD
  (1 << 9)
 
 	)
 
-1682 
+1693 
 	#RHF_REQUICKSTART
  (1 << 10)
 
 	)
 
-1683 
+1694 
 	#RHF_REQUICKSTARTED
  (1 << 11)
 
 	)
 
-1684 
+1695 
 	#RHF_CORD
  (1 << 12)
 
 	)
 
-1685 
+1696 
 	#RHF_NO_UNRES_UNDEF
  (1 << 13)
 
 	)
 
-1686 
+1697 
 	#RHF_RLD_ORDER_SAFE
  (1 << 14)
 
 	)
 
-1692 
-Elf32_WÜd
- 
-	ml_Çme
-;
-
-1693 
-Elf32_WÜd
- 
-	ml_time_¡amp
-;
-
-1694 
-Elf32_WÜd
- 
-	ml_checksum
-;
-
-1695 
-Elf32_WÜd
- 
-	ml_v”siÚ
-;
-
-1696 
-Elf32_WÜd
- 
-	ml_æags
-;
-
-1697 } 
-	tElf32_Lib
-;
-
-1701 
-Elf64_WÜd
- 
-	ml_Çme
-;
-
-1702 
-Elf64_WÜd
- 
-	ml_time_¡amp
-;
-
 1703 
-Elf64_WÜd
+Elf32_WÜd
  
-	ml_checksum
+	ml_Çme
 ;
 
 1704 
+Elf32_WÜd
+ 
+	ml_time_¡amp
+;
+
+1705 
+Elf32_WÜd
+ 
+	ml_checksum
+;
+
+1706 
+Elf32_WÜd
+ 
+	ml_v”siÚ
+;
+
+1707 
+Elf32_WÜd
+ 
+	ml_æags
+;
+
+1708 } 
+	tElf32_Lib
+;
+
+1712 
+Elf64_WÜd
+ 
+	ml_Çme
+;
+
+1713 
+Elf64_WÜd
+ 
+	ml_time_¡amp
+;
+
+1714 
+Elf64_WÜd
+ 
+	ml_checksum
+;
+
+1715 
 Elf64_WÜd
  
 	ml_v”siÚ
 ;
 
-1705 
+1716 
 Elf64_WÜd
  
 	ml_æags
 ;
 
-1706 } 
+1717 } 
 	tElf64_Lib
 ;
 
-1711 
+1722 
 	#LL_NONE
  0
 
 	)
 
-1712 
+1723 
 	#LL_EXACT_MATCH
  (1 << 0è
 
 	)
 
-1713 
+1724 
 	#LL_IGNORE_INT_VER
  (1 << 1è
 
 	)
 
-1714 
+1725 
 	#LL_REQUIRE_MINOR
  (1 << 2)
 
 	)
 
-1715 
+1726 
 	#LL_EXPORTS
  (1 << 3)
 
 	)
 
-1716 
+1727 
 	#LL_DELAY_LOAD
  (1 << 4)
 
 	)
 
-1717 
+1728 
 	#LL_DELTA
  (1 << 5)
 
 	)
 
-1721 
+1732 
 Elf32_Addr
  
 	tElf32_CÚæiù
 ;
 
-1728 
+1739 
 	#EF_PARISC_TRAPNIL
  0x00010000
 
 	)
 
-1729 
+1740 
 	#EF_PARISC_EXT
  0x00020000
 
 	)
 
-1730 
+1741 
 	#EF_PARISC_LSB
  0x00040000
 
 	)
 
-1731 
+1742 
 	#EF_PARISC_WIDE
  0x00080000
 
 	)
 
-1732 
+1743 
 	#EF_PARISC_NO_KABP
  0x00100000
 
 	)
 
-1734 
+1745 
 	#EF_PARISC_LAZYSWAP
  0x00400000
 
 	)
 
-1735 
+1746 
 	#EF_PARISC_ARCH
  0x0000fffà
 
 	)
 
-1739 
+1750 
 	#EFA_PARISC_1_0
  0x020b
 
 	)
 
-1740 
+1751 
 	#EFA_PARISC_1_1
  0x0210
 
 	)
 
-1741 
+1752 
 	#EFA_PARISC_2_0
  0x0214
 
 	)
 
-1745 
+1756 
 	#SHN_PARISC_ANSI_COMMON
  0xff00
 
 	)
 
-1747 
+1758 
 	#SHN_PARISC_HUGE_COMMON
  0xff01
 
 	)
 
-1751 
+1762 
 	#SHT_PARISC_EXT
  0x70000000
 
 	)
 
-1752 
+1763 
 	#SHT_PARISC_UNWIND
  0x70000001
 
 	)
 
-1753 
+1764 
 	#SHT_PARISC_DOC
  0x70000002
 
 	)
 
-1757 
+1768 
 	#SHF_PARISC_SHORT
  0x20000000
 
 	)
 
-1758 
+1769 
 	#SHF_PARISC_HUGE
  0x40000000
 
 	)
 
-1759 
+1770 
 	#SHF_PARISC_SBP
  0x80000000
 
 	)
 
-1763 
+1774 
 	#STT_PARISC_MILLICODE
  13
 
 	)
 
-1765 
+1776 
 	#STT_HP_OPAQUE
  (
 STT_LOOS
@@ -77509,7 +77569,7 @@ STT_LOOS
 
 	)
 
-1766 
+1777 
 	#STT_HP_STUB
  (
 STT_LOOS
@@ -77517,625 +77577,625 @@ STT_LOOS
 
 	)
 
-1770 
+1781 
 	#R_PARISC_NONE
  0
 
 	)
 
-1771 
+1782 
 	#R_PARISC_DIR32
  1
 
 	)
 
-1772 
+1783 
 	#R_PARISC_DIR21L
  2
 
 	)
 
-1773 
+1784 
 	#R_PARISC_DIR17R
  3
 
 	)
 
-1774 
+1785 
 	#R_PARISC_DIR17F
  4
 
 	)
 
-1775 
+1786 
 	#R_PARISC_DIR14R
  6
 
 	)
 
-1776 
+1787 
 	#R_PARISC_PCREL32
  9
 
 	)
 
-1777 
+1788 
 	#R_PARISC_PCREL21L
  10
 
 	)
 
-1778 
+1789 
 	#R_PARISC_PCREL17R
  11
 
 	)
 
-1779 
+1790 
 	#R_PARISC_PCREL17F
  12
 
 	)
 
-1780 
+1791 
 	#R_PARISC_PCREL14R
  14
 
 	)
 
-1781 
+1792 
 	#R_PARISC_DPREL21L
  18
 
 	)
 
-1782 
+1793 
 	#R_PARISC_DPREL14R
  22
 
 	)
 
-1783 
+1794 
 	#R_PARISC_GPREL21L
  26
 
 	)
 
-1784 
+1795 
 	#R_PARISC_GPREL14R
  30
 
 	)
 
-1785 
+1796 
 	#R_PARISC_LTOFF21L
  34
 
 	)
 
-1786 
+1797 
 	#R_PARISC_LTOFF14R
  38
 
 	)
 
-1787 
+1798 
 	#R_PARISC_SECREL32
  41
 
 	)
 
-1788 
+1799 
 	#R_PARISC_SEGBASE
  48
 
 	)
 
-1789 
+1800 
 	#R_PARISC_SEGREL32
  49
 
 	)
 
-1790 
+1801 
 	#R_PARISC_PLTOFF21L
  50
 
 	)
 
-1791 
+1802 
 	#R_PARISC_PLTOFF14R
  54
 
 	)
 
-1792 
+1803 
 	#R_PARISC_LTOFF_FPTR32
  57
 
 	)
 
-1793 
+1804 
 	#R_PARISC_LTOFF_FPTR21L
  58
 
 	)
 
-1794 
+1805 
 	#R_PARISC_LTOFF_FPTR14R
  62
 
 	)
 
-1795 
+1806 
 	#R_PARISC_FPTR64
  64
 
 	)
 
-1796 
+1807 
 	#R_PARISC_PLABEL32
  65
 
 	)
 
-1797 
+1808 
 	#R_PARISC_PLABEL21L
  66
 
 	)
 
-1798 
+1809 
 	#R_PARISC_PLABEL14R
  70
 
 	)
 
-1799 
+1810 
 	#R_PARISC_PCREL64
  72
 
 	)
 
-1800 
+1811 
 	#R_PARISC_PCREL22F
  74
 
 	)
 
-1801 
+1812 
 	#R_PARISC_PCREL14WR
  75
 
 	)
 
-1802 
+1813 
 	#R_PARISC_PCREL14DR
  76
 
 	)
 
-1803 
+1814 
 	#R_PARISC_PCREL16F
  77
 
 	)
 
-1804 
+1815 
 	#R_PARISC_PCREL16WF
  78
 
 	)
 
-1805 
+1816 
 	#R_PARISC_PCREL16DF
  79
 
 	)
 
-1806 
+1817 
 	#R_PARISC_DIR64
  80
 
 	)
 
-1807 
+1818 
 	#R_PARISC_DIR14WR
  83
 
 	)
 
-1808 
+1819 
 	#R_PARISC_DIR14DR
  84
 
 	)
 
-1809 
+1820 
 	#R_PARISC_DIR16F
  85
 
 	)
 
-1810 
+1821 
 	#R_PARISC_DIR16WF
  86
 
 	)
 
-1811 
+1822 
 	#R_PARISC_DIR16DF
  87
 
 	)
 
-1812 
+1823 
 	#R_PARISC_GPREL64
  88
 
 	)
 
-1813 
+1824 
 	#R_PARISC_GPREL14WR
  91
 
 	)
 
-1814 
+1825 
 	#R_PARISC_GPREL14DR
  92
 
 	)
 
-1815 
+1826 
 	#R_PARISC_GPREL16F
  93
 
 	)
 
-1816 
+1827 
 	#R_PARISC_GPREL16WF
  94
 
 	)
 
-1817 
+1828 
 	#R_PARISC_GPREL16DF
  95
 
 	)
 
-1818 
+1829 
 	#R_PARISC_LTOFF64
  96
 
 	)
 
-1819 
+1830 
 	#R_PARISC_LTOFF14WR
  99
 
 	)
 
-1820 
+1831 
 	#R_PARISC_LTOFF14DR
  100
 
 	)
 
-1821 
+1832 
 	#R_PARISC_LTOFF16F
  101
 
 	)
 
-1822 
+1833 
 	#R_PARISC_LTOFF16WF
  102
 
 	)
 
-1823 
+1834 
 	#R_PARISC_LTOFF16DF
  103
 
 	)
 
-1824 
+1835 
 	#R_PARISC_SECREL64
  104
 
 	)
 
-1825 
+1836 
 	#R_PARISC_SEGREL64
  112
 
 	)
 
-1826 
+1837 
 	#R_PARISC_PLTOFF14WR
  115
 
 	)
 
-1827 
+1838 
 	#R_PARISC_PLTOFF14DR
  116
 
 	)
 
-1828 
+1839 
 	#R_PARISC_PLTOFF16F
  117
 
 	)
 
-1829 
+1840 
 	#R_PARISC_PLTOFF16WF
  118
 
 	)
 
-1830 
+1841 
 	#R_PARISC_PLTOFF16DF
  119
 
 	)
 
-1831 
+1842 
 	#R_PARISC_LTOFF_FPTR64
  120
 
 	)
 
-1832 
+1843 
 	#R_PARISC_LTOFF_FPTR14WR
  123
 
 	)
 
-1833 
+1844 
 	#R_PARISC_LTOFF_FPTR14DR
  124
 
 	)
 
-1834 
+1845 
 	#R_PARISC_LTOFF_FPTR16F
  125
 
 	)
 
-1835 
+1846 
 	#R_PARISC_LTOFF_FPTR16WF
  126
 
 	)
 
-1836 
+1847 
 	#R_PARISC_LTOFF_FPTR16DF
  127
 
 	)
 
-1837 
+1848 
 	#R_PARISC_LORESERVE
  128
 
 	)
 
-1838 
+1849 
 	#R_PARISC_COPY
  128
 
 	)
 
-1839 
+1850 
 	#R_PARISC_IPLT
  129
 
 	)
 
-1840 
+1851 
 	#R_PARISC_EPLT
  130
 
 	)
 
-1841 
+1852 
 	#R_PARISC_TPREL32
  153
 
 	)
 
-1842 
+1853 
 	#R_PARISC_TPREL21L
  154
 
 	)
 
-1843 
+1854 
 	#R_PARISC_TPREL14R
  158
 
 	)
 
-1844 
+1855 
 	#R_PARISC_LTOFF_TP21L
  162
 
 	)
 
-1845 
+1856 
 	#R_PARISC_LTOFF_TP14R
  166
 
 	)
 
-1846 
+1857 
 	#R_PARISC_LTOFF_TP14F
  167
 
 	)
 
-1847 
+1858 
 	#R_PARISC_TPREL64
  216
 
 	)
 
-1848 
+1859 
 	#R_PARISC_TPREL14WR
  219
 
 	)
 
-1849 
+1860 
 	#R_PARISC_TPREL14DR
  220
 
 	)
 
-1850 
+1861 
 	#R_PARISC_TPREL16F
  221
 
 	)
 
-1851 
+1862 
 	#R_PARISC_TPREL16WF
  222
 
 	)
 
-1852 
+1863 
 	#R_PARISC_TPREL16DF
  223
 
 	)
 
-1853 
+1864 
 	#R_PARISC_LTOFF_TP64
  224
 
 	)
 
-1854 
+1865 
 	#R_PARISC_LTOFF_TP14WR
  227
 
 	)
 
-1855 
+1866 
 	#R_PARISC_LTOFF_TP14DR
  228
 
 	)
 
-1856 
+1867 
 	#R_PARISC_LTOFF_TP16F
  229
 
 	)
 
-1857 
+1868 
 	#R_PARISC_LTOFF_TP16WF
  230
 
 	)
 
-1858 
+1869 
 	#R_PARISC_LTOFF_TP16DF
  231
 
 	)
 
-1859 
+1870 
 	#R_PARISC_GNU_VTENTRY
  232
 
 	)
 
-1860 
+1871 
 	#R_PARISC_GNU_VTINHERIT
  233
 
 	)
 
-1861 
+1872 
 	#R_PARISC_TLS_GD21L
  234
 
 	)
 
-1862 
+1873 
 	#R_PARISC_TLS_GD14R
  235
 
 	)
 
-1863 
+1874 
 	#R_PARISC_TLS_GDCALL
  236
 
 	)
 
-1864 
+1875 
 	#R_PARISC_TLS_LDM21L
  237
 
 	)
 
-1865 
+1876 
 	#R_PARISC_TLS_LDM14R
  238
 
 	)
 
-1866 
+1877 
 	#R_PARISC_TLS_LDMCALL
  239
 
 	)
 
-1867 
+1878 
 	#R_PARISC_TLS_LDO21L
  240
 
 	)
 
-1868 
+1879 
 	#R_PARISC_TLS_LDO14R
  241
 
 	)
 
-1869 
+1880 
 	#R_PARISC_TLS_DTPMOD32
  242
 
 	)
 
-1870 
+1881 
 	#R_PARISC_TLS_DTPMOD64
  243
 
 	)
 
-1871 
+1882 
 	#R_PARISC_TLS_DTPOFF32
  244
 
 	)
 
-1872 
+1883 
 	#R_PARISC_TLS_DTPOFF64
  245
 
 	)
 
-1873 
+1884 
 	#R_PARISC_TLS_LE21L
  
 R_PARISC_TPREL21L
@@ -78143,7 +78203,7 @@ R_PARISC_TPREL21L
 
 	)
 
-1874 
+1885 
 	#R_PARISC_TLS_LE14R
  
 R_PARISC_TPREL14R
@@ -78151,7 +78211,7 @@ R_PARISC_TPREL14R
 
 	)
 
-1875 
+1886 
 	#R_PARISC_TLS_IE21L
  
 R_PARISC_LTOFF_TP21L
@@ -78159,7 +78219,7 @@ R_PARISC_LTOFF_TP21L
 
 	)
 
-1876 
+1887 
 	#R_PARISC_TLS_IE14R
  
 R_PARISC_LTOFF_TP14R
@@ -78167,7 +78227,7 @@ R_PARISC_LTOFF_TP14R
 
 	)
 
-1877 
+1888 
 	#R_PARISC_TLS_TPREL32
  
 R_PARISC_TPREL32
@@ -78175,7 +78235,7 @@ R_PARISC_TPREL32
 
 	)
 
-1878 
+1889 
 	#R_PARISC_TLS_TPREL64
  
 R_PARISC_TPREL64
@@ -78183,13 +78243,13 @@ R_PARISC_TPREL64
 
 	)
 
-1879 
+1890 
 	#R_PARISC_HIRESERVE
  255
 
 	)
 
-1883 
+1894 
 	#PT_HP_TLS
  (
 PT_LOOS
@@ -78197,7 +78257,7 @@ PT_LOOS
 
 	)
 
-1884 
+1895 
 	#PT_HP_CORE_NONE
  (
 PT_LOOS
@@ -78205,7 +78265,7 @@ PT_LOOS
 
 	)
 
-1885 
+1896 
 	#PT_HP_CORE_VERSION
  (
 PT_LOOS
@@ -78213,7 +78273,7 @@ PT_LOOS
 
 	)
 
-1886 
+1897 
 	#PT_HP_CORE_KERNEL
  (
 PT_LOOS
@@ -78221,7 +78281,7 @@ PT_LOOS
 
 	)
 
-1887 
+1898 
 	#PT_HP_CORE_COMM
  (
 PT_LOOS
@@ -78229,7 +78289,7 @@ PT_LOOS
 
 	)
 
-1888 
+1899 
 	#PT_HP_CORE_PROC
  (
 PT_LOOS
@@ -78237,7 +78297,7 @@ PT_LOOS
 
 	)
 
-1889 
+1900 
 	#PT_HP_CORE_LOADABLE
  (
 PT_LOOS
@@ -78245,7 +78305,7 @@ PT_LOOS
 
 	)
 
-1890 
+1901 
 	#PT_HP_CORE_STACK
  (
 PT_LOOS
@@ -78253,7 +78313,7 @@ PT_LOOS
 
 	)
 
-1891 
+1902 
 	#PT_HP_CORE_SHM
  (
 PT_LOOS
@@ -78261,7 +78321,7 @@ PT_LOOS
 
 	)
 
-1892 
+1903 
 	#PT_HP_CORE_MMF
  (
 PT_LOOS
@@ -78269,7 +78329,7 @@ PT_LOOS
 
 	)
 
-1893 
+1904 
 	#PT_HP_PARALLEL
  (
 PT_LOOS
@@ -78277,7 +78337,7 @@ PT_LOOS
 
 	)
 
-1894 
+1905 
 	#PT_HP_FASTBIND
  (
 PT_LOOS
@@ -78285,7 +78345,7 @@ PT_LOOS
 
 	)
 
-1895 
+1906 
 	#PT_HP_OPT_ANNOT
  (
 PT_LOOS
@@ -78293,7 +78353,7 @@ PT_LOOS
 
 	)
 
-1896 
+1907 
 	#PT_HP_HSL_ANNOT
  (
 PT_LOOS
@@ -78301,7 +78361,7 @@ PT_LOOS
 
 	)
 
-1897 
+1908 
 	#PT_HP_STACK
  (
 PT_LOOS
@@ -78309,349 +78369,349 @@ PT_LOOS
 
 	)
 
-1899 
+1910 
 	#PT_PARISC_ARCHEXT
  0x70000000
 
 	)
 
-1900 
+1911 
 	#PT_PARISC_UNWIND
  0x70000001
 
 	)
 
-1904 
+1915 
 	#PF_PARISC_SBP
  0x08000000
 
 	)
 
-1906 
+1917 
 	#PF_HP_PAGE_SIZE
  0x00100000
 
 	)
 
-1907 
+1918 
 	#PF_HP_FAR_SHARED
  0x00200000
 
 	)
 
-1908 
+1919 
 	#PF_HP_NEAR_SHARED
  0x00400000
 
 	)
 
-1909 
+1920 
 	#PF_HP_CODE
  0x01000000
 
 	)
 
-1910 
+1921 
 	#PF_HP_MODIFY
  0x02000000
 
 	)
 
-1911 
+1922 
 	#PF_HP_LAZYSWAP
  0x04000000
 
 	)
 
-1912 
+1923 
 	#PF_HP_SBP
  0x08000000
 
 	)
 
-1919 
+1930 
 	#EF_ALPHA_32BIT
  1
 
 	)
 
-1920 
+1931 
 	#EF_ALPHA_CANRELAX
  2
 
 	)
 
-1925 
+1936 
 	#SHT_ALPHA_DEBUG
  0x70000001
 
 	)
 
-1926 
+1937 
 	#SHT_ALPHA_REGINFO
  0x70000002
 
 	)
 
-1930 
+1941 
 	#SHF_ALPHA_GPREL
  0x10000000
 
 	)
 
-1933 
+1944 
 	#STO_ALPHA_NOPV
  0x80
 
 	)
 
-1934 
+1945 
 	#STO_ALPHA_STD_GPLOAD
  0x88
 
 	)
 
-1938 
+1949 
 	#R_ALPHA_NONE
  0
 
 	)
 
-1939 
+1950 
 	#R_ALPHA_REFLONG
  1
 
 	)
 
-1940 
+1951 
 	#R_ALPHA_REFQUAD
  2
 
 	)
 
-1941 
+1952 
 	#R_ALPHA_GPREL32
  3
 
 	)
 
-1942 
+1953 
 	#R_ALPHA_LITERAL
  4
 
 	)
 
-1943 
+1954 
 	#R_ALPHA_LITUSE
  5
 
 	)
 
-1944 
+1955 
 	#R_ALPHA_GPDISP
  6
 
 	)
 
-1945 
+1956 
 	#R_ALPHA_BRADDR
  7
 
 	)
 
-1946 
+1957 
 	#R_ALPHA_HINT
  8
 
 	)
 
-1947 
+1958 
 	#R_ALPHA_SREL16
  9
 
 	)
 
-1948 
+1959 
 	#R_ALPHA_SREL32
  10
 
 	)
 
-1949 
+1960 
 	#R_ALPHA_SREL64
  11
 
 	)
 
-1950 
+1961 
 	#R_ALPHA_GPRELHIGH
  17
 
 	)
 
-1951 
+1962 
 	#R_ALPHA_GPRELLOW
  18
 
 	)
 
-1952 
+1963 
 	#R_ALPHA_GPREL16
  19
 
 	)
 
-1953 
+1964 
 	#R_ALPHA_COPY
  24
 
 	)
 
-1954 
+1965 
 	#R_ALPHA_GLOB_DAT
  25
 
 	)
 
-1955 
+1966 
 	#R_ALPHA_JMP_SLOT
  26
 
 	)
 
-1956 
+1967 
 	#R_ALPHA_RELATIVE
  27
 
 	)
 
-1957 
+1968 
 	#R_ALPHA_TLS_GD_HI
  28
 
 	)
 
-1958 
+1969 
 	#R_ALPHA_TLSGD
  29
 
 	)
 
-1959 
+1970 
 	#R_ALPHA_TLS_LDM
  30
 
 	)
 
-1960 
+1971 
 	#R_ALPHA_DTPMOD64
  31
 
 	)
 
-1961 
+1972 
 	#R_ALPHA_GOTDTPREL
  32
 
 	)
 
-1962 
+1973 
 	#R_ALPHA_DTPREL64
  33
 
 	)
 
-1963 
+1974 
 	#R_ALPHA_DTPRELHI
  34
 
 	)
 
-1964 
+1975 
 	#R_ALPHA_DTPRELLO
  35
 
 	)
 
-1965 
+1976 
 	#R_ALPHA_DTPREL16
  36
 
 	)
 
-1966 
+1977 
 	#R_ALPHA_GOTTPREL
  37
 
 	)
 
-1967 
+1978 
 	#R_ALPHA_TPREL64
  38
 
 	)
 
-1968 
+1979 
 	#R_ALPHA_TPRELHI
  39
 
 	)
 
-1969 
+1980 
 	#R_ALPHA_TPRELLO
  40
 
 	)
 
-1970 
+1981 
 	#R_ALPHA_TPREL16
  41
 
 	)
 
-1972 
+1983 
 	#R_ALPHA_NUM
  46
 
 	)
 
-1975 
+1986 
 	#LITUSE_ALPHA_ADDR
  0
 
 	)
 
-1976 
+1987 
 	#LITUSE_ALPHA_BASE
  1
 
 	)
 
-1977 
+1988 
 	#LITUSE_ALPHA_BYTOFF
  2
 
 	)
 
-1978 
+1989 
 	#LITUSE_ALPHA_JSR
  3
 
 	)
 
-1979 
+1990 
 	#LITUSE_ALPHA_TLS_GD
  4
 
 	)
 
-1980 
+1991 
 	#LITUSE_ALPHA_TLS_LDM
  5
 
 	)
 
-1983 
+1994 
 	#DT_ALPHA_PLTRO
  (
 DT_LOPROC
@@ -78659,589 +78719,589 @@ DT_LOPROC
 
 	)
 
-1984 
+1995 
 	#DT_ALPHA_NUM
  1
 
 	)
 
-1989 
+2000 
 	#EF_PPC_EMB
  0x80000000
 
 	)
 
-1992 
+2003 
 	#EF_PPC_RELOCATABLE
  0x00010000
 
 	)
 
-1993 
+2004 
 	#EF_PPC_RELOCATABLE_LIB
  0x00008000
 
 	)
 
-1997 
+2008 
 	#R_PPC_NONE
  0
 
 	)
 
-1998 
+2009 
 	#R_PPC_ADDR32
  1
 
 	)
 
-1999 
+2010 
 	#R_PPC_ADDR24
  2
 
 	)
 
-2000 
+2011 
 	#R_PPC_ADDR16
  3
 
 	)
 
-2001 
+2012 
 	#R_PPC_ADDR16_LO
  4
 
 	)
 
-2002 
+2013 
 	#R_PPC_ADDR16_HI
  5
 
 	)
 
-2003 
+2014 
 	#R_PPC_ADDR16_HA
  6
 
 	)
 
-2004 
+2015 
 	#R_PPC_ADDR14
  7
 
 	)
 
-2005 
+2016 
 	#R_PPC_ADDR14_BRTAKEN
  8
 
 	)
 
-2006 
+2017 
 	#R_PPC_ADDR14_BRNTAKEN
  9
 
 	)
 
-2007 
+2018 
 	#R_PPC_REL24
  10
 
 	)
 
-2008 
+2019 
 	#R_PPC_REL14
  11
 
 	)
 
-2009 
+2020 
 	#R_PPC_REL14_BRTAKEN
  12
 
 	)
 
-2010 
+2021 
 	#R_PPC_REL14_BRNTAKEN
  13
 
 	)
 
-2011 
+2022 
 	#R_PPC_GOT16
  14
 
 	)
 
-2012 
+2023 
 	#R_PPC_GOT16_LO
  15
 
 	)
 
-2013 
+2024 
 	#R_PPC_GOT16_HI
  16
 
 	)
 
-2014 
+2025 
 	#R_PPC_GOT16_HA
  17
 
 	)
 
-2015 
+2026 
 	#R_PPC_PLTREL24
  18
 
 	)
 
-2016 
+2027 
 	#R_PPC_COPY
  19
 
 	)
 
-2017 
+2028 
 	#R_PPC_GLOB_DAT
  20
 
 	)
 
-2018 
+2029 
 	#R_PPC_JMP_SLOT
  21
 
 	)
 
-2019 
+2030 
 	#R_PPC_RELATIVE
  22
 
 	)
 
-2020 
+2031 
 	#R_PPC_LOCAL24PC
  23
 
 	)
 
-2021 
+2032 
 	#R_PPC_UADDR32
  24
 
 	)
 
-2022 
+2033 
 	#R_PPC_UADDR16
  25
 
 	)
 
-2023 
+2034 
 	#R_PPC_REL32
  26
 
 	)
 
-2024 
+2035 
 	#R_PPC_PLT32
  27
 
 	)
 
-2025 
+2036 
 	#R_PPC_PLTREL32
  28
 
 	)
 
-2026 
+2037 
 	#R_PPC_PLT16_LO
  29
 
 	)
 
-2027 
+2038 
 	#R_PPC_PLT16_HI
  30
 
 	)
 
-2028 
+2039 
 	#R_PPC_PLT16_HA
  31
 
 	)
 
-2029 
+2040 
 	#R_PPC_SDAREL16
  32
 
 	)
 
-2030 
+2041 
 	#R_PPC_SECTOFF
  33
 
 	)
 
-2031 
+2042 
 	#R_PPC_SECTOFF_LO
  34
 
 	)
 
-2032 
+2043 
 	#R_PPC_SECTOFF_HI
  35
 
 	)
 
-2033 
+2044 
 	#R_PPC_SECTOFF_HA
  36
 
 	)
 
-2036 
+2047 
 	#R_PPC_TLS
  67
 
 	)
 
-2037 
+2048 
 	#R_PPC_DTPMOD32
  68
 
 	)
 
-2038 
+2049 
 	#R_PPC_TPREL16
  69
 
 	)
 
-2039 
+2050 
 	#R_PPC_TPREL16_LO
  70
 
 	)
 
-2040 
+2051 
 	#R_PPC_TPREL16_HI
  71
 
 	)
 
-2041 
+2052 
 	#R_PPC_TPREL16_HA
  72
 
 	)
 
-2042 
+2053 
 	#R_PPC_TPREL32
  73
 
 	)
 
-2043 
+2054 
 	#R_PPC_DTPREL16
  74
 
 	)
 
-2044 
+2055 
 	#R_PPC_DTPREL16_LO
  75
 
 	)
 
-2045 
+2056 
 	#R_PPC_DTPREL16_HI
  76
 
 	)
 
-2046 
+2057 
 	#R_PPC_DTPREL16_HA
  77
 
 	)
 
-2047 
+2058 
 	#R_PPC_DTPREL32
  78
 
 	)
 
-2048 
+2059 
 	#R_PPC_GOT_TLSGD16
  79
 
 	)
 
-2049 
+2060 
 	#R_PPC_GOT_TLSGD16_LO
  80
 
 	)
 
-2050 
+2061 
 	#R_PPC_GOT_TLSGD16_HI
  81
 
 	)
 
-2051 
+2062 
 	#R_PPC_GOT_TLSGD16_HA
  82
 
 	)
 
-2052 
+2063 
 	#R_PPC_GOT_TLSLD16
  83
 
 	)
 
-2053 
+2064 
 	#R_PPC_GOT_TLSLD16_LO
  84
 
 	)
 
-2054 
+2065 
 	#R_PPC_GOT_TLSLD16_HI
  85
 
 	)
 
-2055 
+2066 
 	#R_PPC_GOT_TLSLD16_HA
  86
 
 	)
 
-2056 
+2067 
 	#R_PPC_GOT_TPREL16
  87
 
 	)
 
-2057 
+2068 
 	#R_PPC_GOT_TPREL16_LO
  88
 
 	)
 
-2058 
+2069 
 	#R_PPC_GOT_TPREL16_HI
  89
 
 	)
 
-2059 
+2070 
 	#R_PPC_GOT_TPREL16_HA
  90
 
 	)
 
-2060 
+2071 
 	#R_PPC_GOT_DTPREL16
  91
 
 	)
 
-2061 
+2072 
 	#R_PPC_GOT_DTPREL16_LO
  92
 
 	)
 
-2062 
+2073 
 	#R_PPC_GOT_DTPREL16_HI
  93
 
 	)
 
-2063 
+2074 
 	#R_PPC_GOT_DTPREL16_HA
  94
 
 	)
 
-2067 
+2078 
 	#R_PPC_EMB_NADDR32
  101
 
 	)
 
-2068 
+2079 
 	#R_PPC_EMB_NADDR16
  102
 
 	)
 
-2069 
+2080 
 	#R_PPC_EMB_NADDR16_LO
  103
 
 	)
 
-2070 
+2081 
 	#R_PPC_EMB_NADDR16_HI
  104
 
 	)
 
-2071 
+2082 
 	#R_PPC_EMB_NADDR16_HA
  105
 
 	)
 
-2072 
+2083 
 	#R_PPC_EMB_SDAI16
  106
 
 	)
 
-2073 
+2084 
 	#R_PPC_EMB_SDA2I16
  107
 
 	)
 
-2074 
+2085 
 	#R_PPC_EMB_SDA2REL
  108
 
 	)
 
-2075 
+2086 
 	#R_PPC_EMB_SDA21
  109
 
 	)
 
-2076 
+2087 
 	#R_PPC_EMB_MRKREF
  110
 
 	)
 
-2077 
+2088 
 	#R_PPC_EMB_RELSEC16
  111
 
 	)
 
-2078 
+2089 
 	#R_PPC_EMB_RELST_LO
  112
 
 	)
 
-2079 
+2090 
 	#R_PPC_EMB_RELST_HI
  113
 
 	)
 
-2080 
+2091 
 	#R_PPC_EMB_RELST_HA
  114
 
 	)
 
-2081 
+2092 
 	#R_PPC_EMB_BIT_FLD
  115
 
 	)
 
-2082 
+2093 
 	#R_PPC_EMB_RELSDA
  116
 
 	)
 
-2085 
+2096 
 	#R_PPC_DIAB_SDA21_LO
  180
 
 	)
 
-2086 
+2097 
 	#R_PPC_DIAB_SDA21_HI
  181
 
 	)
 
-2087 
+2098 
 	#R_PPC_DIAB_SDA21_HA
  182
 
 	)
 
-2088 
+2099 
 	#R_PPC_DIAB_RELSDA_LO
  183
 
 	)
 
-2089 
+2100 
 	#R_PPC_DIAB_RELSDA_HI
  184
 
 	)
 
-2090 
+2101 
 	#R_PPC_DIAB_RELSDA_HA
  185
 
 	)
 
-2093 
+2104 
 	#R_PPC_IRELATIVE
  248
 
 	)
 
-2096 
+2107 
 	#R_PPC_REL16
  249
 
 	)
 
-2097 
+2108 
 	#R_PPC_REL16_LO
  250
 
 	)
 
-2098 
+2109 
 	#R_PPC_REL16_HI
  251
 
 	)
 
-2099 
+2110 
 	#R_PPC_REL16_HA
  252
 
 	)
 
-2103 
+2114 
 	#R_PPC_TOC16
  255
 
 	)
 
-2106 
+2117 
 	#DT_PPC_GOT
  (
 DT_LOPROC
@@ -79249,13 +79309,13 @@ DT_LOPROC
 
 	)
 
-2107 
+2118 
 	#DT_PPC_NUM
  1
 
 	)
 
-2110 
+2121 
 	#R_PPC64_NONE
  
 R_PPC_NONE
@@ -79263,7 +79323,7 @@ R_PPC_NONE
 
 	)
 
-2111 
+2122 
 	#R_PPC64_ADDR32
  
 R_PPC_ADDR32
@@ -79271,7 +79331,7 @@ R_PPC_ADDR32
 
 	)
 
-2112 
+2123 
 	#R_PPC64_ADDR24
  
 R_PPC_ADDR24
@@ -79279,7 +79339,7 @@ R_PPC_ADDR24
 
 	)
 
-2113 
+2124 
 	#R_PPC64_ADDR16
  
 R_PPC_ADDR16
@@ -79287,7 +79347,7 @@ R_PPC_ADDR16
 
 	)
 
-2114 
+2125 
 	#R_PPC64_ADDR16_LO
  
 R_PPC_ADDR16_LO
@@ -79295,7 +79355,7 @@ R_PPC_ADDR16_LO
 
 	)
 
-2115 
+2126 
 	#R_PPC64_ADDR16_HI
  
 R_PPC_ADDR16_HI
@@ -79303,7 +79363,7 @@ R_PPC_ADDR16_HI
 
 	)
 
-2116 
+2127 
 	#R_PPC64_ADDR16_HA
  
 R_PPC_ADDR16_HA
@@ -79311,7 +79371,7 @@ R_PPC_ADDR16_HA
 
 	)
 
-2117 
+2128 
 	#R_PPC64_ADDR14
  
 R_PPC_ADDR14
@@ -79319,7 +79379,7 @@ R_PPC_ADDR14
 
 	)
 
-2118 
+2129 
 	#R_PPC64_ADDR14_BRTAKEN
  
 R_PPC_ADDR14_BRTAKEN
@@ -79327,7 +79387,7 @@ R_PPC_ADDR14_BRTAKEN
 
 	)
 
-2119 
+2130 
 	#R_PPC64_ADDR14_BRNTAKEN
  
 R_PPC_ADDR14_BRNTAKEN
@@ -79335,7 +79395,7 @@ R_PPC_ADDR14_BRNTAKEN
 
 	)
 
-2120 
+2131 
 	#R_PPC64_REL24
  
 R_PPC_REL24
@@ -79343,7 +79403,7 @@ R_PPC_REL24
 
 	)
 
-2121 
+2132 
 	#R_PPC64_REL14
  
 R_PPC_REL14
@@ -79351,7 +79411,7 @@ R_PPC_REL14
 
 	)
 
-2122 
+2133 
 	#R_PPC64_REL14_BRTAKEN
  
 R_PPC_REL14_BRTAKEN
@@ -79359,7 +79419,7 @@ R_PPC_REL14_BRTAKEN
 
 	)
 
-2123 
+2134 
 	#R_PPC64_REL14_BRNTAKEN
  
 R_PPC_REL14_BRNTAKEN
@@ -79367,7 +79427,7 @@ R_PPC_REL14_BRNTAKEN
 
 	)
 
-2124 
+2135 
 	#R_PPC64_GOT16
  
 R_PPC_GOT16
@@ -79375,7 +79435,7 @@ R_PPC_GOT16
 
 	)
 
-2125 
+2136 
 	#R_PPC64_GOT16_LO
  
 R_PPC_GOT16_LO
@@ -79383,7 +79443,7 @@ R_PPC_GOT16_LO
 
 	)
 
-2126 
+2137 
 	#R_PPC64_GOT16_HI
  
 R_PPC_GOT16_HI
@@ -79391,7 +79451,7 @@ R_PPC_GOT16_HI
 
 	)
 
-2127 
+2138 
 	#R_PPC64_GOT16_HA
  
 R_PPC_GOT16_HA
@@ -79399,7 +79459,7 @@ R_PPC_GOT16_HA
 
 	)
 
-2129 
+2140 
 	#R_PPC64_COPY
  
 R_PPC_COPY
@@ -79407,7 +79467,7 @@ R_PPC_COPY
 
 	)
 
-2130 
+2141 
 	#R_PPC64_GLOB_DAT
  
 R_PPC_GLOB_DAT
@@ -79415,7 +79475,7 @@ R_PPC_GLOB_DAT
 
 	)
 
-2131 
+2142 
 	#R_PPC64_JMP_SLOT
  
 R_PPC_JMP_SLOT
@@ -79423,7 +79483,7 @@ R_PPC_JMP_SLOT
 
 	)
 
-2132 
+2143 
 	#R_PPC64_RELATIVE
  
 R_PPC_RELATIVE
@@ -79431,7 +79491,7 @@ R_PPC_RELATIVE
 
 	)
 
-2134 
+2145 
 	#R_PPC64_UADDR32
  
 R_PPC_UADDR32
@@ -79439,7 +79499,7 @@ R_PPC_UADDR32
 
 	)
 
-2135 
+2146 
 	#R_PPC64_UADDR16
  
 R_PPC_UADDR16
@@ -79447,7 +79507,7 @@ R_PPC_UADDR16
 
 	)
 
-2136 
+2147 
 	#R_PPC64_REL32
  
 R_PPC_REL32
@@ -79455,7 +79515,7 @@ R_PPC_REL32
 
 	)
 
-2137 
+2148 
 	#R_PPC64_PLT32
  
 R_PPC_PLT32
@@ -79463,7 +79523,7 @@ R_PPC_PLT32
 
 	)
 
-2138 
+2149 
 	#R_PPC64_PLTREL32
  
 R_PPC_PLTREL32
@@ -79471,7 +79531,7 @@ R_PPC_PLTREL32
 
 	)
 
-2139 
+2150 
 	#R_PPC64_PLT16_LO
  
 R_PPC_PLT16_LO
@@ -79479,7 +79539,7 @@ R_PPC_PLT16_LO
 
 	)
 
-2140 
+2151 
 	#R_PPC64_PLT16_HI
  
 R_PPC_PLT16_HI
@@ -79487,7 +79547,7 @@ R_PPC_PLT16_HI
 
 	)
 
-2141 
+2152 
 	#R_PPC64_PLT16_HA
  
 R_PPC_PLT16_HA
@@ -79495,7 +79555,7 @@ R_PPC_PLT16_HA
 
 	)
 
-2143 
+2154 
 	#R_PPC64_SECTOFF
  
 R_PPC_SECTOFF
@@ -79503,7 +79563,7 @@ R_PPC_SECTOFF
 
 	)
 
-2144 
+2155 
 	#R_PPC64_SECTOFF_LO
  
 R_PPC_SECTOFF_LO
@@ -79511,7 +79571,7 @@ R_PPC_SECTOFF_LO
 
 	)
 
-2145 
+2156 
 	#R_PPC64_SECTOFF_HI
  
 R_PPC_SECTOFF_HI
@@ -79519,7 +79579,7 @@ R_PPC_SECTOFF_HI
 
 	)
 
-2146 
+2157 
 	#R_PPC64_SECTOFF_HA
  
 R_PPC_SECTOFF_HA
@@ -79527,463 +79587,463 @@ R_PPC_SECTOFF_HA
 
 	)
 
-2147 
+2158 
 	#R_PPC64_ADDR30
  37
 
 	)
 
-2148 
+2159 
 	#R_PPC64_ADDR64
  38
 
 	)
 
-2149 
+2160 
 	#R_PPC64_ADDR16_HIGHER
  39
 
 	)
 
-2150 
+2161 
 	#R_PPC64_ADDR16_HIGHERA
  40
 
 	)
 
-2151 
+2162 
 	#R_PPC64_ADDR16_HIGHEST
  41
 
 	)
 
-2152 
+2163 
 	#R_PPC64_ADDR16_HIGHESTA
  42
 
 	)
 
-2153 
+2164 
 	#R_PPC64_UADDR64
  43
 
 	)
 
-2154 
+2165 
 	#R_PPC64_REL64
  44
 
 	)
 
-2155 
+2166 
 	#R_PPC64_PLT64
  45
 
 	)
 
-2156 
+2167 
 	#R_PPC64_PLTREL64
  46
 
 	)
 
-2157 
+2168 
 	#R_PPC64_TOC16
  47
 
 	)
 
-2158 
+2169 
 	#R_PPC64_TOC16_LO
  48
 
 	)
 
-2159 
+2170 
 	#R_PPC64_TOC16_HI
  49
 
 	)
 
-2160 
+2171 
 	#R_PPC64_TOC16_HA
  50
 
 	)
 
-2161 
+2172 
 	#R_PPC64_TOC
  51
 
 	)
 
-2162 
+2173 
 	#R_PPC64_PLTGOT16
  52
 
 	)
 
-2163 
+2174 
 	#R_PPC64_PLTGOT16_LO
  53
 
 	)
 
-2164 
+2175 
 	#R_PPC64_PLTGOT16_HI
  54
 
 	)
 
-2165 
+2176 
 	#R_PPC64_PLTGOT16_HA
  55
 
 	)
 
-2167 
+2178 
 	#R_PPC64_ADDR16_DS
  56
 
 	)
 
-2168 
+2179 
 	#R_PPC64_ADDR16_LO_DS
  57
 
 	)
 
-2169 
+2180 
 	#R_PPC64_GOT16_DS
  58
 
 	)
 
-2170 
+2181 
 	#R_PPC64_GOT16_LO_DS
  59
 
 	)
 
-2171 
+2182 
 	#R_PPC64_PLT16_LO_DS
  60
 
 	)
 
-2172 
+2183 
 	#R_PPC64_SECTOFF_DS
  61
 
 	)
 
-2173 
+2184 
 	#R_PPC64_SECTOFF_LO_DS
  62
 
 	)
 
-2174 
+2185 
 	#R_PPC64_TOC16_DS
  63
 
 	)
 
-2175 
+2186 
 	#R_PPC64_TOC16_LO_DS
  64
 
 	)
 
-2176 
+2187 
 	#R_PPC64_PLTGOT16_DS
  65
 
 	)
 
-2177 
+2188 
 	#R_PPC64_PLTGOT16_LO_DS
  66
 
 	)
 
-2180 
+2191 
 	#R_PPC64_TLS
  67
 
 	)
 
-2181 
+2192 
 	#R_PPC64_DTPMOD64
  68
 
 	)
 
-2182 
+2193 
 	#R_PPC64_TPREL16
  69
 
 	)
 
-2183 
+2194 
 	#R_PPC64_TPREL16_LO
  70
 
 	)
 
-2184 
+2195 
 	#R_PPC64_TPREL16_HI
  71
 
 	)
 
-2185 
+2196 
 	#R_PPC64_TPREL16_HA
  72
 
 	)
 
-2186 
+2197 
 	#R_PPC64_TPREL64
  73
 
 	)
 
-2187 
+2198 
 	#R_PPC64_DTPREL16
  74
 
 	)
 
-2188 
+2199 
 	#R_PPC64_DTPREL16_LO
  75
 
 	)
 
-2189 
+2200 
 	#R_PPC64_DTPREL16_HI
  76
 
 	)
 
-2190 
+2201 
 	#R_PPC64_DTPREL16_HA
  77
 
 	)
 
-2191 
+2202 
 	#R_PPC64_DTPREL64
  78
 
 	)
 
-2192 
+2203 
 	#R_PPC64_GOT_TLSGD16
  79
 
 	)
 
-2193 
+2204 
 	#R_PPC64_GOT_TLSGD16_LO
  80
 
 	)
 
-2194 
+2205 
 	#R_PPC64_GOT_TLSGD16_HI
  81
 
 	)
 
-2195 
+2206 
 	#R_PPC64_GOT_TLSGD16_HA
  82
 
 	)
 
-2196 
+2207 
 	#R_PPC64_GOT_TLSLD16
  83
 
 	)
 
-2197 
+2208 
 	#R_PPC64_GOT_TLSLD16_LO
  84
 
 	)
 
-2198 
+2209 
 	#R_PPC64_GOT_TLSLD16_HI
  85
 
 	)
 
-2199 
+2210 
 	#R_PPC64_GOT_TLSLD16_HA
  86
 
 	)
 
-2200 
+2211 
 	#R_PPC64_GOT_TPREL16_DS
  87
 
 	)
 
-2201 
+2212 
 	#R_PPC64_GOT_TPREL16_LO_DS
  88
 
 	)
 
-2202 
+2213 
 	#R_PPC64_GOT_TPREL16_HI
  89
 
 	)
 
-2203 
+2214 
 	#R_PPC64_GOT_TPREL16_HA
  90
 
 	)
 
-2204 
+2215 
 	#R_PPC64_GOT_DTPREL16_DS
  91
 
 	)
 
-2205 
+2216 
 	#R_PPC64_GOT_DTPREL16_LO_DS
  92
 
 	)
 
-2206 
+2217 
 	#R_PPC64_GOT_DTPREL16_HI
  93
 
 	)
 
-2207 
+2218 
 	#R_PPC64_GOT_DTPREL16_HA
  94
 
 	)
 
-2208 
+2219 
 	#R_PPC64_TPREL16_DS
  95
 
 	)
 
-2209 
+2220 
 	#R_PPC64_TPREL16_LO_DS
  96
 
 	)
 
-2210 
+2221 
 	#R_PPC64_TPREL16_HIGHER
  97
 
 	)
 
-2211 
+2222 
 	#R_PPC64_TPREL16_HIGHERA
  98
 
 	)
 
-2212 
+2223 
 	#R_PPC64_TPREL16_HIGHEST
  99
 
 	)
 
-2213 
+2224 
 	#R_PPC64_TPREL16_HIGHESTA
  100
 
 	)
 
-2214 
+2225 
 	#R_PPC64_DTPREL16_DS
  101
 
 	)
 
-2215 
+2226 
 	#R_PPC64_DTPREL16_LO_DS
  102
 
 	)
 
-2216 
+2227 
 	#R_PPC64_DTPREL16_HIGHER
  103
 
 	)
 
-2217 
+2228 
 	#R_PPC64_DTPREL16_HIGHERA
  104
 
 	)
 
-2218 
+2229 
 	#R_PPC64_DTPREL16_HIGHEST
  105
 
 	)
 
-2219 
+2230 
 	#R_PPC64_DTPREL16_HIGHESTA
  106
 
 	)
 
-2222 
+2233 
 	#R_PPC64_JMP_IREL
  247
 
 	)
 
-2223 
+2234 
 	#R_PPC64_IRELATIVE
  248
 
 	)
 
-2224 
+2235 
 	#R_PPC64_REL16
  249
 
 	)
 
-2225 
+2236 
 	#R_PPC64_REL16_LO
  250
 
 	)
 
-2226 
+2237 
 	#R_PPC64_REL16_HI
  251
 
 	)
 
-2227 
+2238 
 	#R_PPC64_REL16_HA
  252
 
 	)
 
-2230 
+2241 
 	#DT_PPC64_GLINK
  (
 DT_LOPROC
@@ -79991,7 +80051,7 @@ DT_LOPROC
 
 	)
 
-2231 
+2242 
 	#DT_PPC64_OPD
  (
 DT_LOPROC
@@ -79999,7 +80059,7 @@ DT_LOPROC
 
 	)
 
-2232 
+2243 
 	#DT_PPC64_OPDSZ
  (
 DT_LOPROC
@@ -80007,121 +80067,121 @@ DT_LOPROC
 
 	)
 
-2233 
+2244 
 	#DT_PPC64_NUM
  3
 
 	)
 
-2239 
+2250 
 	#EF_ARM_RELEXEC
  0x01
 
 	)
 
-2240 
+2251 
 	#EF_ARM_HASENTRY
  0x02
 
 	)
 
-2241 
+2252 
 	#EF_ARM_INTERWORK
  0x04
 
 	)
 
-2242 
+2253 
 	#EF_ARM_APCS_26
  0x08
 
 	)
 
-2243 
+2254 
 	#EF_ARM_APCS_FLOAT
  0x10
 
 	)
 
-2244 
+2255 
 	#EF_ARM_PIC
  0x20
 
 	)
 
-2245 
+2256 
 	#EF_ARM_ALIGN8
  0x40
 
 	)
 
-2246 
+2257 
 	#EF_ARM_NEW_ABI
  0x80
 
 	)
 
-2247 
+2258 
 	#EF_ARM_OLD_ABI
  0x100
 
 	)
 
-2248 
+2259 
 	#EF_ARM_SOFT_FLOAT
  0x200
 
 	)
 
-2249 
+2260 
 	#EF_ARM_VFP_FLOAT
  0x400
 
 	)
 
-2250 
+2261 
 	#EF_ARM_MAVERICK_FLOAT
  0x800
 
 	)
 
-2255 
+2266 
 	#EF_ARM_SYMSARESORTED
  0x04
 
 	)
 
-2256 
+2267 
 	#EF_ARM_DYNSYMSUSESEGIDX
  0x08
 
 	)
 
-2257 
+2268 
 	#EF_ARM_MAPSYMSFIRST
  0x10
 
 	)
 
-2258 
+2269 
 	#EF_ARM_EABIMASK
  0XFF000000
 
 	)
 
-2261 
+2272 
 	#EF_ARM_BE8
  0x00800000
 
 	)
 
-2262 
+2273 
 	#EF_ARM_LE8
  0x00400000
 
 	)
 
-2264 
+2275 
 	#EF_ARM_EABI_VERSION
 (
 æags
@@ -80131,43 +80191,43 @@ EF_ARM_EABIMASK
 
 	)
 
-2265 
+2276 
 	#EF_ARM_EABI_UNKNOWN
  0x00000000
 
 	)
 
-2266 
+2277 
 	#EF_ARM_EABI_VER1
  0x01000000
 
 	)
 
-2267 
+2278 
 	#EF_ARM_EABI_VER2
  0x02000000
 
 	)
 
-2268 
+2279 
 	#EF_ARM_EABI_VER3
  0x03000000
 
 	)
 
-2269 
+2280 
 	#EF_ARM_EABI_VER4
  0x04000000
 
 	)
 
-2270 
+2281 
 	#EF_ARM_EABI_VER5
  0x05000000
 
 	)
 
-2273 
+2284 
 	#STT_ARM_TFUNC
  
 STT_LOPROC
@@ -80175,7 +80235,7 @@ STT_LOPROC
 
 	)
 
-2274 
+2285 
 	#STT_ARM_16BIT
  
 STT_HIPROC
@@ -80183,37 +80243,37 @@ STT_HIPROC
 
 	)
 
-2277 
+2288 
 	#SHF_ARM_ENTRYSECT
  0x10000000
 
 	)
 
-2278 
+2289 
 	#SHF_ARM_COMDEF
  0x80000000
 
 	)
 
-2282 
+2293 
 	#PF_ARM_SB
  0x10000000
 
 	)
 
-2284 
+2295 
 	#PF_ARM_PI
  0x20000000
 
 	)
 
-2285 
+2296 
 	#PF_ARM_ABS
  0x40000000
 
 	)
 
-2288 
+2299 
 	#PT_ARM_EXIDX
  (
 PT_LOPROC
@@ -80221,7 +80281,7 @@ PT_LOPROC
 
 	)
 
-2291 
+2302 
 	#SHT_ARM_EXIDX
  (
 SHT_LOPROC
@@ -80229,7 +80289,7 @@ SHT_LOPROC
 
 	)
 
-2292 
+2303 
 	#SHT_ARM_PREEMPTMAP
  (
 SHT_LOPROC
@@ -80237,7 +80297,7 @@ SHT_LOPROC
 
 	)
 
-2293 
+2304 
 	#SHT_ARM_ATTRIBUTES
  (
 SHT_LOPROC
@@ -80245,331 +80305,331 @@ SHT_LOPROC
 
 	)
 
-2298 
+2309 
 	#R_ARM_NONE
  0
 
 	)
 
-2299 
+2310 
 	#R_ARM_PC24
  1
 
 	)
 
-2300 
+2311 
 	#R_ARM_ABS32
  2
 
 	)
 
-2301 
+2312 
 	#R_ARM_REL32
  3
 
 	)
 
-2302 
+2313 
 	#R_ARM_PC13
  4
 
 	)
 
-2303 
+2314 
 	#R_ARM_ABS16
  5
 
 	)
 
-2304 
+2315 
 	#R_ARM_ABS12
  6
 
 	)
 
-2305 
+2316 
 	#R_ARM_THM_ABS5
  7
 
 	)
 
-2306 
+2317 
 	#R_ARM_ABS8
  8
 
 	)
 
-2307 
+2318 
 	#R_ARM_SBREL32
  9
 
 	)
 
-2308 
+2319 
 	#R_ARM_THM_PC22
  10
 
 	)
 
-2309 
+2320 
 	#R_ARM_THM_PC8
  11
 
 	)
 
-2310 
+2321 
 	#R_ARM_AMP_VCALL9
  12
 
 	)
 
-2311 
+2322 
 	#R_ARM_SWI24
  13
 
 	)
 
-2312 
+2323 
 	#R_ARM_THM_SWI8
  14
 
 	)
 
-2313 
+2324 
 	#R_ARM_XPC25
  15
 
 	)
 
-2314 
+2325 
 	#R_ARM_THM_XPC22
  16
 
 	)
 
-2315 
+2326 
 	#R_ARM_TLS_DTPMOD32
  17
 
 	)
 
-2316 
+2327 
 	#R_ARM_TLS_DTPOFF32
  18
 
 	)
 
-2317 
+2328 
 	#R_ARM_TLS_TPOFF32
  19
 
 	)
 
-2318 
+2329 
 	#R_ARM_COPY
  20
 
 	)
 
-2319 
+2330 
 	#R_ARM_GLOB_DAT
  21
 
 	)
 
-2320 
+2331 
 	#R_ARM_JUMP_SLOT
  22
 
 	)
 
-2321 
+2332 
 	#R_ARM_RELATIVE
  23
 
 	)
 
-2322 
+2333 
 	#R_ARM_GOTOFF
  24
 
 	)
 
-2323 
+2334 
 	#R_ARM_GOTPC
  25
 
 	)
 
-2324 
+2335 
 	#R_ARM_GOT32
  26
 
 	)
 
-2325 
+2336 
 	#R_ARM_PLT32
  27
 
 	)
 
-2326 
+2337 
 	#R_ARM_ALU_PCREL_7_0
  32
 
 	)
 
-2327 
+2338 
 	#R_ARM_ALU_PCREL_15_8
  33
 
 	)
 
-2328 
+2339 
 	#R_ARM_ALU_PCREL_23_15
  34
 
 	)
 
-2329 
+2340 
 	#R_ARM_LDR_SBREL_11_0
  35
 
 	)
 
-2330 
+2341 
 	#R_ARM_ALU_SBREL_19_12
  36
 
 	)
 
-2331 
+2342 
 	#R_ARM_ALU_SBREL_27_20
  37
 
 	)
 
-2332 
+2343 
 	#R_ARM_GNU_VTENTRY
  100
 
 	)
 
-2333 
+2344 
 	#R_ARM_GNU_VTINHERIT
  101
 
 	)
 
-2334 
+2345 
 	#R_ARM_THM_PC11
  102
 
 	)
 
-2335 
+2346 
 	#R_ARM_THM_PC9
  103
 
 	)
 
-2336 
+2347 
 	#R_ARM_TLS_GD32
  104
 
 	)
 
-2338 
+2349 
 	#R_ARM_TLS_LDM32
  105
 
 	)
 
-2340 
+2351 
 	#R_ARM_TLS_LDO32
  106
 
 	)
 
-2342 
+2353 
 	#R_ARM_TLS_IE32
  107
 
 	)
 
-2344 
+2355 
 	#R_ARM_TLS_LE32
  108
 
 	)
 
-2346 
+2357 
 	#R_ARM_RXPC25
  249
 
 	)
 
-2347 
+2358 
 	#R_ARM_RSBREL32
  250
 
 	)
 
-2348 
+2359 
 	#R_ARM_THM_RPC22
  251
 
 	)
 
-2349 
+2360 
 	#R_ARM_RREL32
  252
 
 	)
 
-2350 
+2361 
 	#R_ARM_RABS22
  253
 
 	)
 
-2351 
+2362 
 	#R_ARM_RPC24
  254
 
 	)
 
-2352 
+2363 
 	#R_ARM_RBASE
  255
 
 	)
 
-2354 
+2365 
 	#R_ARM_NUM
  256
 
 	)
 
-2359 
+2370 
 	#EF_IA_64_MASKOS
  0x0000000à
 
 	)
 
-2360 
+2371 
 	#EF_IA_64_ABI64
  0x00000010
 
 	)
 
-2361 
+2372 
 	#EF_IA_64_ARCH
  0xff000000
 
 	)
 
-2364 
+2375 
 	#PT_IA_64_ARCHEXT
  (
 PT_LOPROC
@@ -80577,7 +80637,7 @@ PT_LOPROC
 
 	)
 
-2365 
+2376 
 	#PT_IA_64_UNWIND
  (
 PT_LOPROC
@@ -80585,7 +80645,7 @@ PT_LOPROC
 
 	)
 
-2366 
+2377 
 	#PT_IA_64_HP_OPT_ANOT
  (
 PT_LOOS
@@ -80593,7 +80653,7 @@ PT_LOOS
 
 	)
 
-2367 
+2378 
 	#PT_IA_64_HP_HSL_ANOT
  (
 PT_LOOS
@@ -80601,7 +80661,7 @@ PT_LOOS
 
 	)
 
-2368 
+2379 
 	#PT_IA_64_HP_STACK
  (
 PT_LOOS
@@ -80609,13 +80669,13 @@ PT_LOOS
 
 	)
 
-2371 
+2382 
 	#PF_IA_64_NORECOV
  0x80000000
 
 	)
 
-2374 
+2385 
 	#SHT_IA_64_EXT
  (
 SHT_LOPROC
@@ -80623,7 +80683,7 @@ SHT_LOPROC
 
 	)
 
-2375 
+2386 
 	#SHT_IA_64_UNWIND
  (
 SHT_LOPROC
@@ -80631,19 +80691,19 @@ SHT_LOPROC
 
 	)
 
-2378 
+2389 
 	#SHF_IA_64_SHORT
  0x10000000
 
 	)
 
-2379 
+2390 
 	#SHF_IA_64_NORECOV
  0x20000000
 
 	)
 
-2382 
+2393 
 	#DT_IA_64_PLT_RESERVE
  (
 DT_LOPROC
@@ -80651,1831 +80711,2011 @@ DT_LOPROC
 
 	)
 
-2383 
+2394 
 	#DT_IA_64_NUM
  1
 
 	)
 
-2386 
+2397 
 	#R_IA64_NONE
  0x00
 
 	)
 
-2387 
+2398 
 	#R_IA64_IMM14
  0x21
 
 	)
 
-2388 
+2399 
 	#R_IA64_IMM22
  0x22
 
 	)
 
-2389 
+2400 
 	#R_IA64_IMM64
  0x23
 
 	)
 
-2390 
+2401 
 	#R_IA64_DIR32MSB
  0x24
 
 	)
 
-2391 
+2402 
 	#R_IA64_DIR32LSB
  0x25
 
 	)
 
-2392 
+2403 
 	#R_IA64_DIR64MSB
  0x26
 
 	)
 
-2393 
+2404 
 	#R_IA64_DIR64LSB
  0x27
 
 	)
 
-2394 
+2405 
 	#R_IA64_GPREL22
  0x2¨
 
 	)
 
-2395 
+2406 
 	#R_IA64_GPREL64I
  0x2b
 
 	)
 
-2396 
+2407 
 	#R_IA64_GPREL32MSB
  0x2ø
 
 	)
 
-2397 
+2408 
 	#R_IA64_GPREL32LSB
  0x2d
 
 	)
 
-2398 
+2409 
 	#R_IA64_GPREL64MSB
  0x2
 
 	)
 
-2399 
+2410 
 	#R_IA64_GPREL64LSB
  0x2à
 
 	)
 
-2400 
+2411 
 	#R_IA64_LTOFF22
  0x32
 
 	)
 
-2401 
+2412 
 	#R_IA64_LTOFF64I
  0x33
 
 	)
 
-2402 
+2413 
 	#R_IA64_PLTOFF22
  0x3¨
 
 	)
 
-2403 
+2414 
 	#R_IA64_PLTOFF64I
  0x3b
 
 	)
 
-2404 
+2415 
 	#R_IA64_PLTOFF64MSB
  0x3
 
 	)
 
-2405 
+2416 
 	#R_IA64_PLTOFF64LSB
  0x3à
 
 	)
 
-2406 
+2417 
 	#R_IA64_FPTR64I
  0x43
 
 	)
 
-2407 
+2418 
 	#R_IA64_FPTR32MSB
  0x44
 
 	)
 
-2408 
+2419 
 	#R_IA64_FPTR32LSB
  0x45
 
 	)
 
-2409 
+2420 
 	#R_IA64_FPTR64MSB
  0x46
 
 	)
 
-2410 
+2421 
 	#R_IA64_FPTR64LSB
  0x47
 
 	)
 
-2411 
+2422 
 	#R_IA64_PCREL60B
  0x48
 
 	)
 
-2412 
+2423 
 	#R_IA64_PCREL21B
  0x49
 
 	)
 
-2413 
+2424 
 	#R_IA64_PCREL21M
  0x4¨
 
 	)
 
-2414 
+2425 
 	#R_IA64_PCREL21F
  0x4b
 
 	)
 
-2415 
+2426 
 	#R_IA64_PCREL32MSB
  0x4ø
 
 	)
 
-2416 
+2427 
 	#R_IA64_PCREL32LSB
  0x4d
 
 	)
 
-2417 
+2428 
 	#R_IA64_PCREL64MSB
  0x4
 
 	)
 
-2418 
+2429 
 	#R_IA64_PCREL64LSB
  0x4à
 
 	)
 
-2419 
+2430 
 	#R_IA64_LTOFF_FPTR22
  0x52
 
 	)
 
-2420 
+2431 
 	#R_IA64_LTOFF_FPTR64I
  0x53
 
 	)
 
-2421 
+2432 
 	#R_IA64_LTOFF_FPTR32MSB
  0x54
 
 	)
 
-2422 
+2433 
 	#R_IA64_LTOFF_FPTR32LSB
  0x55
 
 	)
 
-2423 
+2434 
 	#R_IA64_LTOFF_FPTR64MSB
  0x56
 
 	)
 
-2424 
+2435 
 	#R_IA64_LTOFF_FPTR64LSB
  0x57
 
 	)
 
-2425 
+2436 
 	#R_IA64_SEGREL32MSB
  0x5ø
 
 	)
 
-2426 
+2437 
 	#R_IA64_SEGREL32LSB
  0x5d
 
 	)
 
-2427 
+2438 
 	#R_IA64_SEGREL64MSB
  0x5
 
 	)
 
-2428 
+2439 
 	#R_IA64_SEGREL64LSB
  0x5à
 
 	)
 
-2429 
+2440 
 	#R_IA64_SECREL32MSB
  0x64
 
 	)
 
-2430 
+2441 
 	#R_IA64_SECREL32LSB
  0x65
 
 	)
 
-2431 
+2442 
 	#R_IA64_SECREL64MSB
  0x66
 
 	)
 
-2432 
+2443 
 	#R_IA64_SECREL64LSB
  0x67
 
 	)
 
-2433 
+2444 
 	#R_IA64_REL32MSB
  0x6ø
 
 	)
 
-2434 
+2445 
 	#R_IA64_REL32LSB
  0x6d
 
 	)
 
-2435 
+2446 
 	#R_IA64_REL64MSB
  0x6
 
 	)
 
-2436 
+2447 
 	#R_IA64_REL64LSB
  0x6à
 
 	)
 
-2437 
+2448 
 	#R_IA64_LTV32MSB
  0x74
 
 	)
 
-2438 
+2449 
 	#R_IA64_LTV32LSB
  0x75
 
 	)
 
-2439 
+2450 
 	#R_IA64_LTV64MSB
  0x76
 
 	)
 
-2440 
+2451 
 	#R_IA64_LTV64LSB
  0x77
 
 	)
 
-2441 
+2452 
 	#R_IA64_PCREL21BI
  0x79
 
 	)
 
-2442 
+2453 
 	#R_IA64_PCREL22
  0x7¨
 
 	)
 
-2443 
+2454 
 	#R_IA64_PCREL64I
  0x7b
 
 	)
 
-2444 
+2455 
 	#R_IA64_IPLTMSB
  0x80
 
 	)
 
-2445 
+2456 
 	#R_IA64_IPLTLSB
  0x81
 
 	)
 
-2446 
+2457 
 	#R_IA64_COPY
  0x84
 
 	)
 
-2447 
+2458 
 	#R_IA64_SUB
  0x85
 
 	)
 
-2448 
+2459 
 	#R_IA64_LTOFF22X
  0x86
 
 	)
 
-2449 
+2460 
 	#R_IA64_LDXMOV
  0x87
 
 	)
 
-2450 
+2461 
 	#R_IA64_TPREL14
  0x91
 
 	)
 
-2451 
+2462 
 	#R_IA64_TPREL22
  0x92
 
 	)
 
-2452 
+2463 
 	#R_IA64_TPREL64I
  0x93
 
 	)
 
-2453 
+2464 
 	#R_IA64_TPREL64MSB
  0x96
 
 	)
 
-2454 
+2465 
 	#R_IA64_TPREL64LSB
  0x97
 
 	)
 
-2455 
+2466 
 	#R_IA64_LTOFF_TPREL22
  0x9¨
 
 	)
 
-2456 
+2467 
 	#R_IA64_DTPMOD64MSB
  0xa6
 
 	)
 
-2457 
+2468 
 	#R_IA64_DTPMOD64LSB
  0xa7
 
 	)
 
-2458 
+2469 
 	#R_IA64_LTOFF_DTPMOD22
  0x¯
 
 	)
 
-2459 
+2470 
 	#R_IA64_DTPREL14
  0xb1
 
 	)
 
-2460 
+2471 
 	#R_IA64_DTPREL22
  0xb2
 
 	)
 
-2461 
+2472 
 	#R_IA64_DTPREL64I
  0xb3
 
 	)
 
-2462 
+2473 
 	#R_IA64_DTPREL32MSB
  0xb4
 
 	)
 
-2463 
+2474 
 	#R_IA64_DTPREL32LSB
  0xb5
 
 	)
 
-2464 
+2475 
 	#R_IA64_DTPREL64MSB
  0xb6
 
 	)
 
-2465 
+2476 
 	#R_IA64_DTPREL64LSB
  0xb7
 
 	)
 
-2466 
+2477 
 	#R_IA64_LTOFF_DTPREL22
  0xb¨
 
 	)
 
-2471 
+2482 
+	#EF_SH_MACH_MASK
+ 0x1f
+
+	)
+
+2483 
+	#EF_SH_UNKNOWN
+ 0x0
+
+	)
+
+2484 
+	#EF_SH1
+ 0x1
+
+	)
+
+2485 
+	#EF_SH2
+ 0x2
+
+	)
+
+2486 
+	#EF_SH3
+ 0x3
+
+	)
+
+2487 
+	#EF_SH_DSP
+ 0x4
+
+	)
+
+2488 
+	#EF_SH3_DSP
+ 0x5
+
+	)
+
+2489 
+	#EF_SH4AL_DSP
+ 0x6
+
+	)
+
+2490 
+	#EF_SH3E
+ 0x8
+
+	)
+
+2491 
+	#EF_SH4
+ 0x9
+
+	)
+
+2492 
+	#EF_SH2E
+ 0xb
+
+	)
+
+2493 
+	#EF_SH4A
+ 0xc
+
+	)
+
+2494 
+	#EF_SH2A
+ 0xd
+
+	)
+
+2495 
+	#EF_SH4_NOFPU
+ 0x10
+
+	)
+
+2496 
+	#EF_SH4A_NOFPU
+ 0x11
+
+	)
+
+2497 
+	#EF_SH4_NOMMU_NOFPU
+ 0x12
+
+	)
+
+2498 
+	#EF_SH2A_NOFPU
+ 0x13
+
+	)
+
+2499 
+	#EF_SH3_NOMMU
+ 0x14
+
+	)
+
+2500 
+	#EF_SH2A_SH4_NOFPU
+ 0x15
+
+	)
+
+2501 
+	#EF_SH2A_SH3_NOFPU
+ 0x16
+
+	)
+
+2502 
+	#EF_SH2A_SH4
+ 0x17
+
+	)
+
+2503 
+	#EF_SH2A_SH3E
+ 0x18
+
+	)
+
+2506 
 	#R_SH_NONE
  0
 
 	)
 
-2472 
+2507 
 	#R_SH_DIR32
  1
 
 	)
 
-2473 
+2508 
 	#R_SH_REL32
  2
 
 	)
 
-2474 
+2509 
 	#R_SH_DIR8WPN
  3
 
 	)
 
-2475 
+2510 
 	#R_SH_IND12W
  4
 
 	)
 
-2476 
+2511 
 	#R_SH_DIR8WPL
  5
 
 	)
 
-2477 
+2512 
 	#R_SH_DIR8WPZ
  6
 
 	)
 
-2478 
+2513 
 	#R_SH_DIR8BP
  7
 
 	)
 
-2479 
+2514 
 	#R_SH_DIR8W
  8
 
 	)
 
-2480 
+2515 
 	#R_SH_DIR8L
  9
 
 	)
 
-2481 
+2516 
 	#R_SH_SWITCH16
  25
 
 	)
 
-2482 
+2517 
 	#R_SH_SWITCH32
  26
 
 	)
 
-2483 
+2518 
 	#R_SH_USES
  27
 
 	)
 
-2484 
+2519 
 	#R_SH_COUNT
  28
 
 	)
 
-2485 
+2520 
 	#R_SH_ALIGN
  29
 
 	)
 
-2486 
+2521 
 	#R_SH_CODE
  30
 
 	)
 
-2487 
+2522 
 	#R_SH_DATA
  31
 
 	)
 
-2488 
+2523 
 	#R_SH_LABEL
  32
 
 	)
 
-2489 
+2524 
 	#R_SH_SWITCH8
  33
 
 	)
 
-2490 
+2525 
 	#R_SH_GNU_VTINHERIT
  34
 
 	)
 
-2491 
+2526 
 	#R_SH_GNU_VTENTRY
  35
 
 	)
 
-2492 
+2527 
 	#R_SH_TLS_GD_32
  144
 
 	)
 
-2493 
+2528 
 	#R_SH_TLS_LD_32
  145
 
 	)
 
-2494 
+2529 
 	#R_SH_TLS_LDO_32
  146
 
 	)
 
-2495 
+2530 
 	#R_SH_TLS_IE_32
  147
 
 	)
 
-2496 
+2531 
 	#R_SH_TLS_LE_32
  148
 
 	)
 
-2497 
+2532 
 	#R_SH_TLS_DTPMOD32
  149
 
 	)
 
-2498 
+2533 
 	#R_SH_TLS_DTPOFF32
  150
 
 	)
 
-2499 
+2534 
 	#R_SH_TLS_TPOFF32
  151
 
 	)
 
-2500 
+2535 
 	#R_SH_GOT32
  160
 
 	)
 
-2501 
+2536 
 	#R_SH_PLT32
  161
 
 	)
 
-2502 
+2537 
 	#R_SH_COPY
  162
 
 	)
 
-2503 
+2538 
 	#R_SH_GLOB_DAT
  163
 
 	)
 
-2504 
+2539 
 	#R_SH_JMP_SLOT
  164
 
 	)
 
-2505 
+2540 
 	#R_SH_RELATIVE
  165
 
 	)
 
-2506 
+2541 
 	#R_SH_GOTOFF
  166
 
 	)
 
-2507 
+2542 
 	#R_SH_GOTPC
  167
 
 	)
 
-2509 
+2544 
 	#R_SH_NUM
  256
 
 	)
 
-2513 
+2550 
+	#EF_S390_HIGH_GPRS
+ 0x00000001
+
+	)
+
+2554 
 	#R_390_NONE
  0
 
 	)
 
-2514 
+2555 
 	#R_390_8
  1
 
 	)
 
-2515 
+2556 
 	#R_390_12
  2
 
 	)
 
-2516 
+2557 
 	#R_390_16
  3
 
 	)
 
-2517 
+2558 
 	#R_390_32
  4
 
 	)
 
-2518 
+2559 
 	#R_390_PC32
  5
 
 	)
 
-2519 
+2560 
 	#R_390_GOT12
  6
 
 	)
 
-2520 
+2561 
 	#R_390_GOT32
  7
 
 	)
 
-2521 
+2562 
 	#R_390_PLT32
  8
 
 	)
 
-2522 
+2563 
 	#R_390_COPY
  9
 
 	)
 
-2523 
+2564 
 	#R_390_GLOB_DAT
  10
 
 	)
 
-2524 
+2565 
 	#R_390_JMP_SLOT
  11
 
 	)
 
-2525 
+2566 
 	#R_390_RELATIVE
  12
 
 	)
 
-2526 
+2567 
 	#R_390_GOTOFF32
  13
 
 	)
 
-2527 
+2568 
 	#R_390_GOTPC
  14
 
 	)
 
-2528 
+2569 
 	#R_390_GOT16
  15
 
 	)
 
-2529 
+2570 
 	#R_390_PC16
  16
 
 	)
 
-2530 
+2571 
 	#R_390_PC16DBL
  17
 
 	)
 
-2531 
+2572 
 	#R_390_PLT16DBL
  18
 
 	)
 
-2532 
+2573 
 	#R_390_PC32DBL
  19
 
 	)
 
-2533 
+2574 
 	#R_390_PLT32DBL
  20
 
 	)
 
-2534 
+2575 
 	#R_390_GOTPCDBL
  21
 
 	)
 
-2535 
+2576 
 	#R_390_64
  22
 
 	)
 
-2536 
+2577 
 	#R_390_PC64
  23
 
 	)
 
-2537 
+2578 
 	#R_390_GOT64
  24
 
 	)
 
-2538 
+2579 
 	#R_390_PLT64
  25
 
 	)
 
-2539 
+2580 
 	#R_390_GOTENT
  26
 
 	)
 
-2540 
+2581 
 	#R_390_GOTOFF16
  27
 
 	)
 
-2541 
+2582 
 	#R_390_GOTOFF64
  28
 
 	)
 
-2542 
+2583 
 	#R_390_GOTPLT12
  29
 
 	)
 
-2543 
+2584 
 	#R_390_GOTPLT16
  30
 
 	)
 
-2544 
+2585 
 	#R_390_GOTPLT32
  31
 
 	)
 
-2545 
+2586 
 	#R_390_GOTPLT64
  32
 
 	)
 
-2546 
+2587 
 	#R_390_GOTPLTENT
  33
 
 	)
 
-2547 
+2588 
 	#R_390_PLTOFF16
  34
 
 	)
 
-2548 
+2589 
 	#R_390_PLTOFF32
  35
 
 	)
 
-2549 
+2590 
 	#R_390_PLTOFF64
  36
 
 	)
 
-2550 
+2591 
 	#R_390_TLS_LOAD
  37
 
 	)
 
-2551 
+2592 
 	#R_390_TLS_GDCALL
  38
 
 	)
 
-2553 
+2594 
 	#R_390_TLS_LDCALL
  39
 
 	)
 
-2555 
+2596 
 	#R_390_TLS_GD32
  40
 
 	)
 
-2557 
+2598 
 	#R_390_TLS_GD64
  41
 
 	)
 
-2559 
+2600 
 	#R_390_TLS_GOTIE12
  42
 
 	)
 
-2561 
+2602 
 	#R_390_TLS_GOTIE32
  43
 
 	)
 
-2563 
+2604 
 	#R_390_TLS_GOTIE64
  44
 
 	)
 
-2565 
+2606 
 	#R_390_TLS_LDM32
  45
 
 	)
 
-2567 
+2608 
 	#R_390_TLS_LDM64
  46
 
 	)
 
-2569 
+2610 
 	#R_390_TLS_IE32
  47
 
 	)
 
-2571 
+2612 
 	#R_390_TLS_IE64
  48
 
 	)
 
-2573 
+2614 
 	#R_390_TLS_IEENT
  49
 
 	)
 
-2575 
+2616 
 	#R_390_TLS_LE32
  50
 
 	)
 
-2577 
+2618 
 	#R_390_TLS_LE64
  51
 
 	)
 
-2579 
+2620 
 	#R_390_TLS_LDO32
  52
 
 	)
 
-2581 
+2622 
 	#R_390_TLS_LDO64
  53
 
 	)
 
-2583 
+2624 
 	#R_390_TLS_DTPMOD
  54
 
 	)
 
-2584 
+2625 
 	#R_390_TLS_DTPOFF
  55
 
 	)
 
-2585 
+2626 
 	#R_390_TLS_TPOFF
  56
 
 	)
 
-2587 
+2628 
 	#R_390_20
  57
 
 	)
 
-2588 
+2629 
 	#R_390_GOT20
  58
 
 	)
 
-2589 
+2630 
 	#R_390_GOTPLT20
  59
 
 	)
 
-2590 
+2631 
 	#R_390_TLS_GOTIE20
  60
 
 	)
 
-2593 
+2634 
 	#R_390_NUM
  61
 
 	)
 
-2597 
+2638 
 	#R_CRIS_NONE
  0
 
 	)
 
-2598 
+2639 
 	#R_CRIS_8
  1
 
 	)
 
-2599 
+2640 
 	#R_CRIS_16
  2
 
 	)
 
-2600 
+2641 
 	#R_CRIS_32
  3
 
 	)
 
-2601 
+2642 
 	#R_CRIS_8_PCREL
  4
 
 	)
 
-2602 
+2643 
 	#R_CRIS_16_PCREL
  5
 
 	)
 
-2603 
+2644 
 	#R_CRIS_32_PCREL
  6
 
 	)
 
-2604 
+2645 
 	#R_CRIS_GNU_VTINHERIT
  7
 
 	)
 
-2605 
+2646 
 	#R_CRIS_GNU_VTENTRY
  8
 
 	)
 
-2606 
+2647 
 	#R_CRIS_COPY
  9
 
 	)
 
-2607 
+2648 
 	#R_CRIS_GLOB_DAT
  10
 
 	)
 
-2608 
+2649 
 	#R_CRIS_JUMP_SLOT
  11
 
 	)
 
-2609 
+2650 
 	#R_CRIS_RELATIVE
  12
 
 	)
 
-2610 
+2651 
 	#R_CRIS_16_GOT
  13
 
 	)
 
-2611 
+2652 
 	#R_CRIS_32_GOT
  14
 
 	)
 
-2612 
+2653 
 	#R_CRIS_16_GOTPLT
  15
 
 	)
 
-2613 
+2654 
 	#R_CRIS_32_GOTPLT
  16
 
 	)
 
-2614 
+2655 
 	#R_CRIS_32_GOTREL
  17
 
 	)
 
-2615 
+2656 
 	#R_CRIS_32_PLT_GOTREL
  18
 
 	)
 
-2616 
+2657 
 	#R_CRIS_32_PLT_PCREL
  19
 
 	)
 
-2618 
+2659 
 	#R_CRIS_NUM
  20
 
 	)
 
-2622 
+2663 
 	#R_X86_64_NONE
  0
 
 	)
 
-2623 
+2664 
 	#R_X86_64_64
  1
 
 	)
 
-2624 
+2665 
 	#R_X86_64_PC32
  2
 
 	)
 
-2625 
+2666 
 	#R_X86_64_GOT32
  3
 
 	)
 
-2626 
+2667 
 	#R_X86_64_PLT32
  4
 
 	)
 
-2627 
+2668 
 	#R_X86_64_COPY
  5
 
 	)
 
-2628 
+2669 
 	#R_X86_64_GLOB_DAT
  6
 
 	)
 
-2629 
+2670 
 	#R_X86_64_JUMP_SLOT
  7
 
 	)
 
-2630 
+2671 
 	#R_X86_64_RELATIVE
  8
 
 	)
 
-2631 
+2672 
 	#R_X86_64_GOTPCREL
  9
 
 	)
 
-2633 
+2674 
 	#R_X86_64_32
  10
 
 	)
 
-2634 
+2675 
 	#R_X86_64_32S
  11
 
 	)
 
-2635 
+2676 
 	#R_X86_64_16
  12
 
 	)
 
-2636 
+2677 
 	#R_X86_64_PC16
  13
 
 	)
 
-2637 
+2678 
 	#R_X86_64_8
  14
 
 	)
 
-2638 
+2679 
 	#R_X86_64_PC8
  15
 
 	)
 
-2639 
+2680 
 	#R_X86_64_DTPMOD64
  16
 
 	)
 
-2640 
+2681 
 	#R_X86_64_DTPOFF64
  17
 
 	)
 
-2641 
+2682 
 	#R_X86_64_TPOFF64
  18
 
 	)
 
-2642 
+2683 
 	#R_X86_64_TLSGD
  19
 
 	)
 
-2644 
+2685 
 	#R_X86_64_TLSLD
  20
 
 	)
 
-2646 
+2687 
 	#R_X86_64_DTPOFF32
  21
 
 	)
 
-2647 
+2688 
 	#R_X86_64_GOTTPOFF
  22
 
 	)
 
-2649 
+2690 
 	#R_X86_64_TPOFF32
  23
 
 	)
 
-2650 
+2691 
 	#R_X86_64_PC64
  24
 
 	)
 
-2651 
+2692 
 	#R_X86_64_GOTOFF64
  25
 
 	)
 
-2652 
+2693 
 	#R_X86_64_GOTPC32
  26
 
 	)
 
-2655 
+2695 
+	#R_X86_64_GOT64
+ 27
+
+	)
+
+2696 
+	#R_X86_64_GOTPCREL64
+ 28
+
+	)
+
+2698 
+	#R_X86_64_GOTPC64
+ 29
+
+	)
+
+2699 
+	#R_X86_64_GOTPLT64
+ 30
+
+	)
+
+2700 
+	#R_X86_64_PLTOFF64
+ 31
+
+	)
+
+2702 
+	#R_X86_64_SIZE32
+ 32
+
+	)
+
+2703 
+	#R_X86_64_SIZE64
+ 33
+
+	)
+
+2704 
 	#R_X86_64_GOTPC32_TLSDESC
  34
 
 	)
 
-2656 
+2705 
 	#R_X86_64_TLSDESC_CALL
  35
 
 	)
 
-2658 
+2707 
 	#R_X86_64_TLSDESC
  36
 
 	)
 
-2659 
+2708 
 	#R_X86_64_IRELATIVE
  37
 
 	)
 
-2661 
+2710 
 	#R_X86_64_NUM
  38
 
 	)
 
-2665 
+2714 
 	#R_MN10300_NONE
  0
 
 	)
 
-2666 
+2715 
 	#R_MN10300_32
  1
 
 	)
 
-2667 
+2716 
 	#R_MN10300_16
  2
 
 	)
 
-2668 
+2717 
 	#R_MN10300_8
  3
 
 	)
 
-2669 
+2718 
 	#R_MN10300_PCREL32
  4
 
 	)
 
-2670 
+2719 
 	#R_MN10300_PCREL16
  5
 
 	)
 
-2671 
+2720 
 	#R_MN10300_PCREL8
  6
 
 	)
 
-2672 
+2721 
 	#R_MN10300_GNU_VTINHERIT
  7
 
 	)
 
-2673 
+2722 
 	#R_MN10300_GNU_VTENTRY
  8
 
 	)
 
-2674 
+2723 
 	#R_MN10300_24
  9
 
 	)
 
-2675 
+2724 
 	#R_MN10300_GOTPC32
  10
 
 	)
 
-2676 
+2725 
 	#R_MN10300_GOTPC16
  11
 
 	)
 
-2677 
+2726 
 	#R_MN10300_GOTOFF32
  12
 
 	)
 
-2678 
+2727 
 	#R_MN10300_GOTOFF24
  13
 
 	)
 
-2679 
+2728 
 	#R_MN10300_GOTOFF16
  14
 
 	)
 
-2680 
+2729 
 	#R_MN10300_PLT32
  15
 
 	)
 
-2681 
+2730 
 	#R_MN10300_PLT16
  16
 
 	)
 
-2682 
+2731 
 	#R_MN10300_GOT32
  17
 
 	)
 
-2683 
+2732 
 	#R_MN10300_GOT24
  18
 
 	)
 
-2684 
+2733 
 	#R_MN10300_GOT16
  19
 
 	)
 
-2685 
+2734 
 	#R_MN10300_COPY
  20
 
 	)
 
-2686 
+2735 
 	#R_MN10300_GLOB_DAT
  21
 
 	)
 
-2687 
+2736 
 	#R_MN10300_JMP_SLOT
  22
 
 	)
 
-2688 
+2737 
 	#R_MN10300_RELATIVE
  23
 
 	)
 
-2690 
+2739 
 	#R_MN10300_NUM
  24
 
 	)
 
-2694 
+2743 
 	#R_M32R_NONE
  0
 
 	)
 
-2695 
+2744 
 	#R_M32R_16
  1
 
 	)
 
-2696 
+2745 
 	#R_M32R_32
  2
 
 	)
 
-2697 
+2746 
 	#R_M32R_24
  3
 
 	)
 
-2698 
+2747 
 	#R_M32R_10_PCREL
  4
 
 	)
 
-2699 
+2748 
 	#R_M32R_18_PCREL
  5
 
 	)
 
-2700 
+2749 
 	#R_M32R_26_PCREL
  6
 
 	)
 
-2701 
+2750 
 	#R_M32R_HI16_ULO
  7
 
 	)
 
-2702 
+2751 
 	#R_M32R_HI16_SLO
  8
 
 	)
 
-2703 
+2752 
 	#R_M32R_LO16
  9
 
 	)
 
-2704 
+2753 
 	#R_M32R_SDA16
  10
 
 	)
 
-2705 
+2754 
 	#R_M32R_GNU_VTINHERIT
  11
 
 	)
 
-2706 
+2755 
 	#R_M32R_GNU_VTENTRY
  12
 
 	)
 
-2708 
+2757 
 	#R_M32R_16_RELA
  33
 
 	)
 
-2709 
+2758 
 	#R_M32R_32_RELA
  34
 
 	)
 
-2710 
+2759 
 	#R_M32R_24_RELA
  35
 
 	)
 
-2711 
+2760 
 	#R_M32R_10_PCREL_RELA
  36
 
 	)
 
-2712 
+2761 
 	#R_M32R_18_PCREL_RELA
  37
 
 	)
 
-2713 
+2762 
 	#R_M32R_26_PCREL_RELA
  38
 
 	)
 
-2714 
+2763 
 	#R_M32R_HI16_ULO_RELA
  39
 
 	)
 
-2715 
+2764 
 	#R_M32R_HI16_SLO_RELA
  40
 
 	)
 
-2716 
+2765 
 	#R_M32R_LO16_RELA
  41
 
 	)
 
-2717 
+2766 
 	#R_M32R_SDA16_RELA
  42
 
 	)
 
-2718 
+2767 
 	#R_M32R_RELA_GNU_VTINHERIT
  43
 
 	)
 
-2719 
+2768 
 	#R_M32R_RELA_GNU_VTENTRY
  44
 
 	)
 
-2720 
+2769 
 	#R_M32R_REL32
  45
 
 	)
 
-2722 
+2771 
 	#R_M32R_GOT24
  48
 
 	)
 
-2723 
+2772 
 	#R_M32R_26_PLTREL
  49
 
 	)
 
-2724 
+2773 
 	#R_M32R_COPY
  50
 
 	)
 
-2725 
+2774 
 	#R_M32R_GLOB_DAT
  51
 
 	)
 
-2726 
+2775 
 	#R_M32R_JMP_SLOT
  52
 
 	)
 
-2727 
+2776 
 	#R_M32R_RELATIVE
  53
 
 	)
 
-2728 
+2777 
 	#R_M32R_GOTOFF
  54
 
 	)
 
-2729 
+2778 
 	#R_M32R_GOTPC24
  55
 
 	)
 
-2730 
+2779 
 	#R_M32R_GOT16_HI_ULO
  56
 
 	)
 
-2732 
+2781 
 	#R_M32R_GOT16_HI_SLO
  57
 
 	)
 
-2734 
+2783 
 	#R_M32R_GOT16_LO
  58
 
 	)
 
-2735 
+2784 
 	#R_M32R_GOTPC_HI_ULO
  59
 
 	)
 
-2737 
+2786 
 	#R_M32R_GOTPC_HI_SLO
  60
 
 	)
 
-2739 
+2788 
 	#R_M32R_GOTPC_LO
  61
 
 	)
 
-2741 
+2790 
 	#R_M32R_GOTOFF_HI_ULO
  62
 
 	)
 
-2743 
+2792 
 	#R_M32R_GOTOFF_HI_SLO
  63
 
 	)
 
-2745 
+2794 
 	#R_M32R_GOTOFF_LO
  64
 
 	)
 
-2746 
+2795 
 	#R_M32R_NUM
  256
 
 	)
 
-2749 
+2798 
 	g__END_DECLS
 
 
@@ -82487,125 +82727,133 @@ DT_LOPROC
 
 	@/usr/include/features.h
 
-19 #iâdef 
+20 #iâdef 
 _FEATURES_H
 
 
-20 
+21 
 	#_FEATURES_H
  1
 
 	)
 
-95 #undeà
+97 #undeà
 __USE_ISOC99
 
 
-96 #undeà
+98 #undeà
 __USE_ISOC95
 
 
-97 #undeà
+99 #undeà
 __USE_POSIX
 
 
-98 #undeà
+100 #undeà
 __USE_POSIX2
 
 
-99 #undeà
+101 #undeà
 __USE_POSIX199309
 
 
-100 #undeà
+102 #undeà
 __USE_POSIX199506
 
 
-101 #undeà
+103 #undeà
 __USE_XOPEN
 
 
-102 #undeà
+104 #undeà
 __USE_XOPEN_EXTENDED
 
 
-103 #undeà
+105 #undeà
 __USE_UNIX98
 
 
-104 #undeà
+106 #undeà
 __USE_XOPEN2K
 
 
-105 #undeà
-__USE_XOPEN2K8
-
-
-106 #undeà
-__USE_LARGEFILE
-
-
 107 #undeà
-__USE_LARGEFILE64
+__USE_XOPEN2KXSI
 
 
 108 #undeà
-__USE_FILE_OFFSET64
+__USE_XOPEN2K8
 
 
 109 #undeà
-__USE_BSD
+__USE_XOPEN2K8XSI
 
 
 110 #undeà
-__USE_SVID
+__USE_LARGEFILE
 
 
 111 #undeà
-__USE_MISC
+__USE_LARGEFILE64
 
 
 112 #undeà
-__USE_ATFILE
+__USE_FILE_OFFSET64
 
 
 113 #undeà
-__USE_GNU
+__USE_BSD
 
 
 114 #undeà
-__USE_REENTRANT
+__USE_SVID
 
 
 115 #undeà
-__USE_FORTIFY_LEVEL
+__USE_MISC
 
 
 116 #undeà
-__FAVOR_BSD
+__USE_ATFILE
 
 
 117 #undeà
+__USE_GNU
+
+
+118 #undeà
+__USE_REENTRANT
+
+
+119 #undeà
+__USE_FORTIFY_LEVEL
+
+
+120 #undeà
+__FAVOR_BSD
+
+
+121 #undeà
 __KERNEL_STRICT_NAMES
 
 
-121 #iâdeà
+125 #iâdeà
 _LOOSE_KERNEL_NAMES
 
 
-122 
+126 
 	#__KERNEL_STRICT_NAMES
 
 
 	)
 
-126 
+130 
 	#__USE_ANSI
  1
 
 	)
 
-135 #ià
+139 #ià
 defšed
  
 __GNUC__
@@ -82613,7 +82861,7 @@ __GNUC__
 __GNUC_MINOR__
 
 
-136 
+140 
 	#__GNUC_PREREQ
 (
 maj
@@ -82621,7 +82869,7 @@ maj
 mš
 ) \
 
-137 ((
+141 ((
 __GNUC__
  << 16è+ 
 __GNUC_MINOR__
@@ -82633,7 +82881,7 @@ mš
 
 	)
 
-139 
+143 
 	#__GNUC_PREREQ
 (
 maj
@@ -82643,13 +82891,13 @@ mš
 
 	)
 
-144 #ià
+148 #ià
 defšed
  
 _BSD_SOURCE
  && \
 
-145 !(
+149 !(
 defšed
  
 	g_POSIX_SOURCE
@@ -82657,123 +82905,127 @@ defšed
 	g_POSIX_C_SOURCE
  || \
 
-146 
+150 
 defšed
  
 	g_XOPEN_SOURCE
  || defšed 
-	g_XOPEN_SOURCE_EXTENDED
- || \
-
-147 
-defšed
- 
 	g_GNU_SOURCE
  || defšed 
 	g_SVID_SOURCE
 )
 
-148 
+151 
 	#__FAVOR_BSD
  1
 
 	)
 
-152 #ifdeà
+155 #ifdeà
 _GNU_SOURCE
 
 
-153 #undeà
+156 #undeà
+_ISOC95_SOURCE
+
+
+157 
+	#_ISOC95_SOURCE
+ 1
+
+	)
+
+158 #undeà
 _ISOC99_SOURCE
 
 
-154 
+159 
 	#_ISOC99_SOURCE
  1
 
 	)
 
-155 #undeà
+160 #undeà
 _POSIX_SOURCE
 
 
-156 
+161 
 	#_POSIX_SOURCE
  1
 
 	)
 
-157 #undeà
+162 #undeà
 _POSIX_C_SOURCE
 
 
-158 
+163 
 	#_POSIX_C_SOURCE
  200809L
 
 	)
 
-159 #undeà
+164 #undeà
 _XOPEN_SOURCE
 
 
-160 
+165 
 	#_XOPEN_SOURCE
  700
 
 	)
 
-161 #undeà
+166 #undeà
 _XOPEN_SOURCE_EXTENDED
 
 
-162 
+167 
 	#_XOPEN_SOURCE_EXTENDED
  1
 
 	)
 
-163 #undeà
+168 #undeà
 _LARGEFILE64_SOURCE
 
 
-164 
+169 
 	#_LARGEFILE64_SOURCE
  1
 
 	)
 
-165 #undeà
+170 #undeà
 _BSD_SOURCE
 
 
-166 
+171 
 	#_BSD_SOURCE
  1
 
 	)
 
-167 #undeà
+172 #undeà
 _SVID_SOURCE
 
 
-168 
+173 
 	#_SVID_SOURCE
  1
 
 	)
 
-169 #undeà
+174 #undeà
 _ATFILE_SOURCE
 
 
-170 
+175 
 	#_ATFILE_SOURCE
  1
 
 	)
 
-175 #ià(!
+180 #ià(!
 defšed
  
 __STRICT_ANSI__
@@ -82781,7 +83033,7 @@ __STRICT_ANSI__
 _ISOC99_SOURCE
  && \
 
-176 !
+181 !
 defšed
  
 	g_POSIX_SOURCE
@@ -82789,35 +83041,29 @@ defšed
 	g_POSIX_C_SOURCE
  && \
 
-177 !
+182 !
 defšed
  
 	g_XOPEN_SOURCE
  && !defšed 
-	g_XOPEN_SOURCE_EXTENDED
- && \
-
-178 !
-defšed
- 
 	g_BSD_SOURCE
  && !defšed 
 	g_SVID_SOURCE
 )
 
-179 
+183 
 	#_BSD_SOURCE
  1
 
 	)
 
-180 
+184 
 	#_SVID_SOURCE
  1
 
 	)
 
-187 #ià(
+191 #ià(
 defšed
  
 _ISOC99_SOURCE
@@ -82825,19 +83071,19 @@ _ISOC99_SOURCE
 _ISOC9X_SOURCE
  \
 
-188 || (
+192 || (
 defšed
  
 	g__STDC_VERSION__
  && __STDC_VERSION__ >= 199901L))
 
-189 
+193 
 	#__USE_ISOC99
  1
 
 	)
 
-193 #ià(
+197 #ià(
 defšed
  
 _ISOC99_SOURCE
@@ -82845,19 +83091,19 @@ _ISOC99_SOURCE
 _ISOC9X_SOURCE
  \
 
-194 || (
+198 || (
 defšed
  
 __STDC_VERSION__
  && __STDC_VERSION__ >= 199409L))
 
-195 
+199 
 	#__USE_ISOC95
  1
 
 	)
 
-200 #ià((!
+204 #ià((!
 defšed
  
 __STRICT_ANSI__
@@ -82865,7 +83111,7 @@ __STRICT_ANSI__
 _XOPEN_SOURCE
  - 0) >= 500) && \
 
-201 !
+205 !
 defšed
  
 _POSIX_SOURCE
@@ -82873,61 +83119,61 @@ _POSIX_SOURCE
 _POSIX_C_SOURCE
 )
 
-202 
+206 
 	#_POSIX_SOURCE
  1
 
 	)
 
-203 #ià
+207 #ià
 defšed
  
 _XOPEN_SOURCE
  && (_XOPEN_SOURCE - 0) < 500
 
-204 
+208 
 	#_POSIX_C_SOURCE
  2
 
 	)
 
-205 #–ià
+209 #–ià
 defšed
  
 _XOPEN_SOURCE
  && (_XOPEN_SOURCE - 0) < 600
 
-206 
+210 
 	#_POSIX_C_SOURCE
  199506L
 
 	)
 
-207 #–ià
+211 #–ià
 defšed
  
 _XOPEN_SOURCE
  && (_XOPEN_SOURCE - 0) < 700
 
-208 
+212 
 	#_POSIX_C_SOURCE
  200112L
 
 	)
 
-210 
+214 
 	#_POSIX_C_SOURCE
  200809L
 
 	)
 
-212 
+216 
 	#__USE_POSIX_IMPLICITLY
  1
 
 	)
 
-215 #ià
+219 #ià
 defšed
  
 _POSIX_SOURCE
@@ -82937,13 +83183,13 @@ _POSIX_C_SOURCE
 _XOPEN_SOURCE
 
 
-216 
+220 
 	#__USE_POSIX
  1
 
 	)
 
-219 #ià
+223 #ià
 defšed
  
 _POSIX_C_SOURCE
@@ -82951,181 +83197,213 @@ _POSIX_C_SOURCE
 _XOPEN_SOURCE
 
 
-220 
-	#__USE_POSIX2
- 1
-
-	)
-
-223 #ià(
-_POSIX_C_SOURCE
- - 0) >= 199309L
-
 224 
-	#__USE_POSIX199309
+	#__USE_POSIX2
  1
 
 	)
 
 227 #ià(
 _POSIX_C_SOURCE
- - 0) >= 199506L
+ - 0) >= 199309L
 
 228 
-	#__USE_POSIX199506
+	#__USE_POSIX199309
  1
 
 	)
 
 231 #ià(
 _POSIX_C_SOURCE
- - 0) >= 200112L
+ - 0) >= 199506L
 
 232 
+	#__USE_POSIX199506
+ 1
+
+	)
+
+235 #ià(
+_POSIX_C_SOURCE
+ - 0) >= 200112L
+
+236 
 	#__USE_XOPEN2K
  1
 
 	)
 
-233 #undeà
-__USE_ISOC99
+237 #undeà
+__USE_ISOC95
 
-
-234 
-	#__USE_ISOC99
- 1
-
-	)
-
-237 #ià(
-_POSIX_C_SOURCE
- - 0) >= 200809L
 
 238 
-	#__USE_XOPEN2K8
+	#__USE_ISOC95
  1
 
 	)
 
 239 #undeà
-_ATFILE_SOURCE
-
-
-240 
-	#_ATFILE_SOURCE
- 1
-
-	)
-
-243 #ifdef 
-_XOPEN_SOURCE
-
-
-244 
-	#__USE_XOPEN
- 1
-
-	)
-
-245 #ià(
-_XOPEN_SOURCE
- - 0) >= 500
-
-246 
-	#__USE_XOPEN_EXTENDED
- 1
-
-	)
-
-247 
-	#__USE_UNIX98
- 1
-
-	)
-
-248 #undeà
-_LARGEFILE_SOURCE
-
-
-249 
-	#_LARGEFILE_SOURCE
- 1
-
-	)
-
-250 #ià(
-_XOPEN_SOURCE
- - 0) >= 600
-
-251 #ià(
-_XOPEN_SOURCE
- - 0) >= 700
-
-252 
-	#__USE_XOPEN2K8
- 1
-
-	)
-
-254 
-	#__USE_XOPEN2K
- 1
-
-	)
-
-255 #undeà
 __USE_ISOC99
 
 
-256 
+240 
 	#__USE_ISOC99
  1
 
 	)
 
-259 #ifdeà
-_XOPEN_SOURCE_EXTENDED
+243 #ià(
+_POSIX_C_SOURCE
+ - 0) >= 200809L
+
+244 
+	#__USE_XOPEN2K8
+ 1
+
+	)
+
+245 #undeà
+_ATFILE_SOURCE
 
 
-260 
+246 
+	#_ATFILE_SOURCE
+ 1
+
+	)
+
+249 #ifdef 
+_XOPEN_SOURCE
+
+
+250 
+	#__USE_XOPEN
+ 1
+
+	)
+
+251 #ià(
+_XOPEN_SOURCE
+ - 0) >= 500
+
+252 
 	#__USE_XOPEN_EXTENDED
  1
 
 	)
 
-265 #ifdeà
+253 
+	#__USE_UNIX98
+ 1
+
+	)
+
+254 #undeà
 _LARGEFILE_SOURCE
 
 
+255 
+	#_LARGEFILE_SOURCE
+ 1
+
+	)
+
+256 #ià(
+_XOPEN_SOURCE
+ - 0) >= 600
+
+257 #ià(
+_XOPEN_SOURCE
+ - 0) >= 700
+
+258 
+	#__USE_XOPEN2K8
+ 1
+
+	)
+
+259 
+	#__USE_XOPEN2K8XSI
+ 1
+
+	)
+
+261 
+	#__USE_XOPEN2K
+ 1
+
+	)
+
+262 
+	#__USE_XOPEN2KXSI
+ 1
+
+	)
+
+263 #undeà
+__USE_ISOC95
+
+
+264 
+	#__USE_ISOC95
+ 1
+
+	)
+
+265 #undeà
+__USE_ISOC99
+
+
 266 
-	#__USE_LARGEFILE
+	#__USE_ISOC99
  1
 
 	)
 
 269 #ifdeà
-_LARGEFILE64_SOURCE
+_XOPEN_SOURCE_EXTENDED
 
 
 270 
+	#__USE_XOPEN_EXTENDED
+ 1
+
+	)
+
+275 #ifdeà
+_LARGEFILE_SOURCE
+
+
+276 
+	#__USE_LARGEFILE
+ 1
+
+	)
+
+279 #ifdeà
+_LARGEFILE64_SOURCE
+
+
+280 
 	#__USE_LARGEFILE64
  1
 
 	)
 
-273 #ià
+283 #ià
 defšed
  
 _FILE_OFFSET_BITS
  && _FILE_OFFSET_BITS == 64
 
-274 
+284 
 	#__USE_FILE_OFFSET64
  1
 
 	)
 
-277 #ià
+287 #ià
 defšed
  
 _BSD_SOURCE
@@ -83133,53 +83411,53 @@ _BSD_SOURCE
 _SVID_SOURCE
 
 
-278 
+288 
 	#__USE_MISC
  1
 
 	)
 
-281 #ifdef 
+291 #ifdef 
 _BSD_SOURCE
 
 
-282 
+292 
 	#__USE_BSD
  1
 
 	)
 
-285 #ifdef 
+295 #ifdef 
 _SVID_SOURCE
 
 
-286 
+296 
 	#__USE_SVID
  1
 
 	)
 
-289 #ifdef 
+299 #ifdef 
 _ATFILE_SOURCE
 
 
-290 
+300 
 	#__USE_ATFILE
  1
 
 	)
 
-293 #ifdef 
+303 #ifdef 
 _GNU_SOURCE
 
 
-294 
+304 
 	#__USE_GNU
  1
 
 	)
 
-297 #ià
+307 #ià
 defšed
  
 _REENTRANT
@@ -83187,19 +83465,19 @@ _REENTRANT
 _THREAD_SAFE
 
 
-298 
+308 
 	#__USE_REENTRANT
  1
 
 	)
 
-301 #ià
+311 #ià
 defšed
  
 _FORTIFY_SOURCE
  && _FORTIFY_SOURCE > 0 \
 
-302 && 
+312 && 
 __GNUC_PREREQ
  (4, 1è&& 
 defšed
@@ -83207,61 +83485,61 @@ defšed
 	g__OPTIMIZE__
  && __OPTIMIZE__ > 0
 
-303 #ià
+313 #ià
 _FORTIFY_SOURCE
  > 1
 
-304 
+314 
 	#__USE_FORTIFY_LEVEL
  2
 
 	)
 
-306 
+316 
 	#__USE_FORTIFY_LEVEL
  1
 
 	)
 
-309 
+319 
 	#__USE_FORTIFY_LEVEL
  0
 
 	)
 
-313 
+323 
 	~<b™s/´edefs.h
 >
 
-316 
+326 
 	#__STDC_ISO_10646__
  200009L
 
 	)
 
-324 #undeà
+334 #undeà
 __GNU_LIBRARY__
 
 
-325 
+335 
 	#__GNU_LIBRARY__
  6
 
 	)
 
-329 
+339 
 	#__GLIBC__
  2
 
 	)
 
-330 
+340 
 	#__GLIBC_MINOR__
- 11
+ 13
 
 	)
 
-332 
+342 
 	#__GLIBC_PREREQ
 (
 maj
@@ -83269,7 +83547,7 @@ maj
 mš
 ) \
 
-333 ((
+343 ((
 __GLIBC__
  << 16è+ 
 __GLIBC_MINOR__
@@ -83281,13 +83559,13 @@ mš
 
 	)
 
-336 #ià
+346 #ià
 defšed
  
 __GNUC__
  \
 
-337 || (
+347 || (
 defšed
  
 	g__PGI
@@ -83295,7 +83573,7 @@ defšed
 	g__i386__
  ) \
 
-338 || (
+348 || (
 defšed
  
 	g__INTEL_COMPILER
@@ -83305,31 +83583,31 @@ defšed
 	g__Ÿ64__
 )) \
 
-339 || (
+349 || (
 defšed
  
 	g__STDC_VERSION__
  && __STDC_VERSION__ >= 199901L)
 
-340 
+350 
 	#__GLIBC_HAVE_LONG_LONG
  1
 
 	)
 
-344 #iâdeà
+354 #iâdeà
 __ASSEMBLER__
 
 
-345 #iâdeà
+355 #iâdeà
 _SYS_CDEFS_H
 
 
-346 
+356 
 	~<sys/cdefs.h
 >
 
-351 #ià
+361 #ià
 defšed
  
 __USE_FILE_OFFSET64
@@ -83337,19 +83615,19 @@ __USE_FILE_OFFSET64
 __REDIRECT
 
 
-352 
+362 
 	#__USE_LARGEFILE
  1
 
 	)
 
-353 
+363 
 	#__USE_LARGEFILE64
  1
 
 	)
 
-359 #ià
+369 #ià
 __GNUC_PREREQ
  (2, 7è&& 
 defšed
@@ -83357,7 +83635,7 @@ defšed
 __OPTIMIZE__
  \
 
-360 && !
+370 && !
 defšed
  
 	g__OPTIMIZE_SIZE__
@@ -83365,19 +83643,19 @@ defšed
 	g__NO_INLINE__
  \
 
-361 && 
+371 && 
 defšed
  
 	g__ex‹º_šlše
 
 
-362 
+372 
 	#__USE_EXTERN_INLINES
  1
 
 	)
 
-367 #ià
+377 #ià
 __GNUC_PREREQ
  (2, 7è&& 
 defšed
@@ -83385,7 +83663,7 @@ defšed
 __OPTIMIZE__
  \
 
-368 && (
+378 && (
 defšed
  
 	g_LIBC
@@ -83395,19 +83673,19 @@ defšed
 	g__NO_INLINE__
  \
 
-369 && 
+379 && 
 defšed
  
 	g__ex‹º_šlše
 
 
-370 
+380 
 	#__USE_EXTERN_INLINES_IN_LIBC
  1
 
 	)
 
-378 
+388 
 	~<gnu/¡ubs.h
 >
 
@@ -84532,6 +84810,14 @@ __NR_chroÙ
 	)
 
 23 
+	#SYS_þock_adjtime
+ 
+__NR_þock_adjtime
+
+
+	)
+
+24 
 	#SYS_þock_g‘»s
  
 __NR_þock_g‘»s
@@ -84539,7 +84825,7 @@ __NR_þock_g‘»s
 
 	)
 
-24 
+25 
 	#SYS_þock_g‘time
  
 __NR_þock_g‘time
@@ -84547,7 +84833,7 @@ __NR_þock_g‘time
 
 	)
 
-25 
+26 
 	#SYS_þock_Çno¦“p
  
 __NR_þock_Çno¦“p
@@ -84555,7 +84841,7 @@ __NR_þock_Çno¦“p
 
 	)
 
-26 
+27 
 	#SYS_þock_£‰ime
  
 __NR_þock_£‰ime
@@ -84563,7 +84849,7 @@ __NR_þock_£‰ime
 
 	)
 
-27 
+28 
 	#SYS_þÚe
  
 __NR_þÚe
@@ -84571,7 +84857,7 @@ __NR_þÚe
 
 	)
 
-28 
+29 
 	#SYS_þo£
  
 __NR_þo£
@@ -84579,7 +84865,7 @@ __NR_þo£
 
 	)
 
-29 
+30 
 	#SYS_ü—t
  
 __NR_ü—t
@@ -84587,7 +84873,7 @@ __NR_ü—t
 
 	)
 
-30 
+31 
 	#SYS_ü—‹_moduË
  
 __NR_ü—‹_moduË
@@ -84595,7 +84881,7 @@ __NR_ü—‹_moduË
 
 	)
 
-31 
+32 
 	#SYS_d–‘e_moduË
  
 __NR_d–‘e_moduË
@@ -84603,7 +84889,7 @@ __NR_d–‘e_moduË
 
 	)
 
-32 
+33 
 	#SYS_dup
  
 __NR_dup
@@ -84611,7 +84897,7 @@ __NR_dup
 
 	)
 
-33 
+34 
 	#SYS_dup2
  
 __NR_dup2
@@ -84619,7 +84905,7 @@ __NR_dup2
 
 	)
 
-34 
+35 
 	#SYS_dup3
  
 __NR_dup3
@@ -84627,7 +84913,7 @@ __NR_dup3
 
 	)
 
-35 
+36 
 	#SYS_•Þl_ü—‹
  
 __NR_•Þl_ü—‹
@@ -84635,7 +84921,7 @@ __NR_•Þl_ü—‹
 
 	)
 
-36 
+37 
 	#SYS_•Þl_ü—‹1
  
 __NR_•Þl_ü—‹1
@@ -84643,7 +84929,7 @@ __NR_•Þl_ü—‹1
 
 	)
 
-37 
+38 
 	#SYS_•Þl_ùl
  
 __NR_•Þl_ùl
@@ -84651,7 +84937,7 @@ __NR_•Þl_ùl
 
 	)
 
-38 
+39 
 	#SYS_•Þl_pwa™
  
 __NR_•Þl_pwa™
@@ -84659,7 +84945,7 @@ __NR_•Þl_pwa™
 
 	)
 
-39 
+40 
 	#SYS_•Þl_wa™
  
 __NR_•Þl_wa™
@@ -84667,7 +84953,7 @@ __NR_•Þl_wa™
 
 	)
 
-40 
+41 
 	#SYS_ev’tfd
  
 __NR_ev’tfd
@@ -84675,7 +84961,7 @@ __NR_ev’tfd
 
 	)
 
-41 
+42 
 	#SYS_ev’tfd2
  
 __NR_ev’tfd2
@@ -84683,7 +84969,7 @@ __NR_ev’tfd2
 
 	)
 
-42 
+43 
 	#SYS_execve
  
 __NR_execve
@@ -84691,7 +84977,7 @@ __NR_execve
 
 	)
 
-43 
+44 
 	#SYS_ex™
  
 __NR_ex™
@@ -84699,7 +84985,7 @@ __NR_ex™
 
 	)
 
-44 
+45 
 	#SYS_ex™_group
  
 __NR_ex™_group
@@ -84707,7 +84993,7 @@ __NR_ex™_group
 
 	)
 
-45 
+46 
 	#SYS_çcûs§t
  
 __NR_çcûs§t
@@ -84715,7 +85001,7 @@ __NR_çcûs§t
 
 	)
 
-46 
+47 
 	#SYS_çdvi£64
  
 __NR_çdvi£64
@@ -84723,7 +85009,7 @@ __NR_çdvi£64
 
 	)
 
-47 
+48 
 	#SYS_çÎoÿ‹
  
 __NR_çÎoÿ‹
@@ -84731,7 +85017,23 @@ __NR_çÎoÿ‹
 
 	)
 
-48 
+49 
+	#SYS_çnÙify_š™
+ 
+__NR_çnÙify_š™
+
+
+	)
+
+50 
+	#SYS_çnÙify_m¬k
+ 
+__NR_çnÙify_m¬k
+
+
+	)
+
+51 
 	#SYS_fchdœ
  
 __NR_fchdœ
@@ -84739,7 +85041,7 @@ __NR_fchdœ
 
 	)
 
-49 
+52 
 	#SYS_fchmod
  
 __NR_fchmod
@@ -84747,7 +85049,7 @@ __NR_fchmod
 
 	)
 
-50 
+53 
 	#SYS_fchmod©
  
 __NR_fchmod©
@@ -84755,7 +85057,7 @@ __NR_fchmod©
 
 	)
 
-51 
+54 
 	#SYS_fchown
  
 __NR_fchown
@@ -84763,7 +85065,7 @@ __NR_fchown
 
 	)
 
-52 
+55 
 	#SYS_fchowÇt
  
 __NR_fchowÇt
@@ -84771,7 +85073,7 @@ __NR_fchowÇt
 
 	)
 
-53 
+56 
 	#SYS_fúŽ
  
 __NR_fúŽ
@@ -84779,7 +85081,7 @@ __NR_fúŽ
 
 	)
 
-54 
+57 
 	#SYS_fd©async
  
 __NR_fd©async
@@ -84787,7 +85089,7 @@ __NR_fd©async
 
 	)
 
-55 
+58 
 	#SYS_fg‘x©Œ
  
 __NR_fg‘x©Œ
@@ -84795,7 +85097,7 @@ __NR_fg‘x©Œ
 
 	)
 
-56 
+59 
 	#SYS_æi¡x©Œ
  
 __NR_æi¡x©Œ
@@ -84803,7 +85105,7 @@ __NR_æi¡x©Œ
 
 	)
 
-57 
+60 
 	#SYS_æock
  
 __NR_æock
@@ -84811,7 +85113,7 @@ __NR_æock
 
 	)
 
-58 
+61 
 	#SYS_fÜk
  
 __NR_fÜk
@@ -84819,7 +85121,7 @@ __NR_fÜk
 
 	)
 
-59 
+62 
 	#SYS_äemovex©Œ
  
 __NR_äemovex©Œ
@@ -84827,7 +85129,7 @@ __NR_äemovex©Œ
 
 	)
 
-60 
+63 
 	#SYS_f£tx©Œ
  
 __NR_f£tx©Œ
@@ -84835,7 +85137,7 @@ __NR_f£tx©Œ
 
 	)
 
-61 
+64 
 	#SYS_f¡©
  
 __NR_f¡©
@@ -84843,7 +85145,7 @@ __NR_f¡©
 
 	)
 
-62 
+65 
 	#SYS_f¡©fs
  
 __NR_f¡©fs
@@ -84851,7 +85153,7 @@ __NR_f¡©fs
 
 	)
 
-63 
+66 
 	#SYS_fsync
  
 __NR_fsync
@@ -84859,7 +85161,7 @@ __NR_fsync
 
 	)
 
-64 
+67 
 	#SYS_árunÿ‹
  
 __NR_árunÿ‹
@@ -84867,7 +85169,7 @@ __NR_árunÿ‹
 
 	)
 
-65 
+68 
 	#SYS_fu‹x
  
 __NR_fu‹x
@@ -84875,7 +85177,7 @@ __NR_fu‹x
 
 	)
 
-66 
+69 
 	#SYS_futime§t
  
 __NR_futime§t
@@ -84883,7 +85185,7 @@ __NR_futime§t
 
 	)
 
-67 
+70 
 	#SYS_g‘_k”Ãl_syms
  
 __NR_g‘_k”Ãl_syms
@@ -84891,7 +85193,7 @@ __NR_g‘_k”Ãl_syms
 
 	)
 
-68 
+71 
 	#SYS_g‘_mempÞicy
  
 __NR_g‘_mempÞicy
@@ -84899,7 +85201,7 @@ __NR_g‘_mempÞicy
 
 	)
 
-69 
+72 
 	#SYS_g‘_robu¡_li¡
  
 __NR_g‘_robu¡_li¡
@@ -84907,7 +85209,7 @@ __NR_g‘_robu¡_li¡
 
 	)
 
-70 
+73 
 	#SYS_g‘_th»ad_¬—
  
 __NR_g‘_th»ad_¬—
@@ -84915,2011 +85217,7 @@ __NR_g‘_th»ad_¬—
 
 	)
 
-71 
-	#SYS_g‘cwd
- 
-__NR_g‘cwd
-
-
-	)
-
-72 
-	#SYS_g‘d’ts
- 
-__NR_g‘d’ts
-
-
-	)
-
-73 
-	#SYS_g‘d’ts64
- 
-__NR_g‘d’ts64
-
-
-	)
-
 74 
-	#SYS_g‘egid
- 
-__NR_g‘egid
-
-
-	)
-
-75 
-	#SYS_g‘euid
- 
-__NR_g‘euid
-
-
-	)
-
-76 
-	#SYS_g‘gid
- 
-__NR_g‘gid
-
-
-	)
-
-77 
-	#SYS_g‘groups
- 
-__NR_g‘groups
-
-
-	)
-
-78 
-	#SYS_g‘™im”
- 
-__NR_g‘™im”
-
-
-	)
-
-79 
-	#SYS_g‘pgid
- 
-__NR_g‘pgid
-
-
-	)
-
-80 
-	#SYS_g‘pg½
- 
-__NR_g‘pg½
-
-
-	)
-
-81 
-	#SYS_g‘pid
- 
-__NR_g‘pid
-
-
-	)
-
-82 
-	#SYS_g‘pmsg
- 
-__NR_g‘pmsg
-
-
-	)
-
-83 
-	#SYS_g‘µid
- 
-__NR_g‘µid
-
-
-	)
-
-84 
-	#SYS_g‘´iÜ™y
- 
-__NR_g‘´iÜ™y
-
-
-	)
-
-85 
-	#SYS_g‘»sgid
- 
-__NR_g‘»sgid
-
-
-	)
-
-86 
-	#SYS_g‘»suid
- 
-__NR_g‘»suid
-
-
-	)
-
-87 
-	#SYS_g‘¾im™
- 
-__NR_g‘¾im™
-
-
-	)
-
-88 
-	#SYS_g‘ru§ge
- 
-__NR_g‘ru§ge
-
-
-	)
-
-89 
-	#SYS_g‘sid
- 
-__NR_g‘sid
-
-
-	)
-
-90 
-	#SYS_g‘tid
- 
-__NR_g‘tid
-
-
-	)
-
-91 
-	#SYS_g‘timeofday
- 
-__NR_g‘timeofday
-
-
-	)
-
-92 
-	#SYS_g‘uid
- 
-__NR_g‘uid
-
-
-	)
-
-93 
-	#SYS_g‘x©Œ
- 
-__NR_g‘x©Œ
-
-
-	)
-
-94 
-	#SYS_š™_moduË
- 
-__NR_š™_moduË
-
-
-	)
-
-95 
-	#SYS_šÙify_add_w©ch
- 
-__NR_šÙify_add_w©ch
-
-
-	)
-
-96 
-	#SYS_šÙify_š™
- 
-__NR_šÙify_š™
-
-
-	)
-
-97 
-	#SYS_šÙify_š™1
- 
-__NR_šÙify_š™1
-
-
-	)
-
-98 
-	#SYS_šÙify_rm_w©ch
- 
-__NR_šÙify_rm_w©ch
-
-
-	)
-
-99 
-	#SYS_io_ÿnûl
- 
-__NR_io_ÿnûl
-
-
-	)
-
-100 
-	#SYS_io_de¡roy
- 
-__NR_io_de¡roy
-
-
-	)
-
-101 
-	#SYS_io_g‘ev’ts
- 
-__NR_io_g‘ev’ts
-
-
-	)
-
-102 
-	#SYS_io_£tup
- 
-__NR_io_£tup
-
-
-	)
-
-103 
-	#SYS_io_subm™
- 
-__NR_io_subm™
-
-
-	)
-
-104 
-	#SYS_ioùl
- 
-__NR_ioùl
-
-
-	)
-
-105 
-	#SYS_iÝ”m
- 
-__NR_iÝ”m
-
-
-	)
-
-106 
-	#SYS_iÝl
- 
-__NR_iÝl
-
-
-	)
-
-107 
-	#SYS_iÝrio_g‘
- 
-__NR_iÝrio_g‘
-
-
-	)
-
-108 
-	#SYS_iÝrio_£t
- 
-__NR_iÝrio_£t
-
-
-	)
-
-109 
-	#SYS_kexec_lßd
- 
-__NR_kexec_lßd
-
-
-	)
-
-110 
-	#SYS_keyùl
- 
-__NR_keyùl
-
-
-	)
-
-111 
-	#SYS_kžl
- 
-__NR_kžl
-
-
-	)
-
-112 
-	#SYS_lchown
- 
-__NR_lchown
-
-
-	)
-
-113 
-	#SYS_lg‘x©Œ
- 
-__NR_lg‘x©Œ
-
-
-	)
-
-114 
-	#SYS_lšk
- 
-__NR_lšk
-
-
-	)
-
-115 
-	#SYS_lšk©
- 
-__NR_lšk©
-
-
-	)
-
-116 
-	#SYS_li¡x©Œ
- 
-__NR_li¡x©Œ
-
-
-	)
-
-117 
-	#SYS_Îi¡x©Œ
- 
-__NR_Îi¡x©Œ
-
-
-	)
-
-118 
-	#SYS_lookup_dcook›
- 
-__NR_lookup_dcook›
-
-
-	)
-
-119 
-	#SYS_Ìemovex©Œ
- 
-__NR_Ìemovex©Œ
-
-
-	)
-
-120 
-	#SYS_l£ek
- 
-__NR_l£ek
-
-
-	)
-
-121 
-	#SYS_l£tx©Œ
- 
-__NR_l£tx©Œ
-
-
-	)
-
-122 
-	#SYS_l¡©
- 
-__NR_l¡©
-
-
-	)
-
-123 
-	#SYS_madvi£
- 
-__NR_madvi£
-
-
-	)
-
-124 
-	#SYS_mbšd
- 
-__NR_mbšd
-
-
-	)
-
-125 
-	#SYS_mig¿‹_·ges
- 
-__NR_mig¿‹_·ges
-
-
-	)
-
-126 
-	#SYS_mšcÜe
- 
-__NR_mšcÜe
-
-
-	)
-
-127 
-	#SYS_mkdœ
- 
-__NR_mkdœ
-
-
-	)
-
-128 
-	#SYS_mkdœ©
- 
-__NR_mkdœ©
-
-
-	)
-
-129 
-	#SYS_mknod
- 
-__NR_mknod
-
-
-	)
-
-130 
-	#SYS_mknod©
- 
-__NR_mknod©
-
-
-	)
-
-131 
-	#SYS_mlock
- 
-__NR_mlock
-
-
-	)
-
-132 
-	#SYS_mlock®l
- 
-__NR_mlock®l
-
-
-	)
-
-133 
-	#SYS_mm­
- 
-__NR_mm­
-
-
-	)
-
-134 
-	#SYS_modify_ldt
- 
-__NR_modify_ldt
-
-
-	)
-
-135 
-	#SYS_mouÁ
- 
-__NR_mouÁ
-
-
-	)
-
-136 
-	#SYS_move_·ges
- 
-__NR_move_·ges
-
-
-	)
-
-137 
-	#SYS_m´Ùeù
- 
-__NR_m´Ùeù
-
-
-	)
-
-138 
-	#SYS_mq_g‘£‰r
- 
-__NR_mq_g‘£‰r
-
-
-	)
-
-139 
-	#SYS_mq_nÙify
- 
-__NR_mq_nÙify
-
-
-	)
-
-140 
-	#SYS_mq_Ý’
- 
-__NR_mq_Ý’
-
-
-	)
-
-141 
-	#SYS_mq_timed»ûive
- 
-__NR_mq_timed»ûive
-
-
-	)
-
-142 
-	#SYS_mq_timed£nd
- 
-__NR_mq_timed£nd
-
-
-	)
-
-143 
-	#SYS_mq_uÆšk
- 
-__NR_mq_uÆšk
-
-
-	)
-
-144 
-	#SYS_m»m­
- 
-__NR_m»m­
-
-
-	)
-
-145 
-	#SYS_msync
- 
-__NR_msync
-
-
-	)
-
-146 
-	#SYS_muÆock
- 
-__NR_muÆock
-
-
-	)
-
-147 
-	#SYS_muÆock®l
- 
-__NR_muÆock®l
-
-
-	)
-
-148 
-	#SYS_munm­
- 
-__NR_munm­
-
-
-	)
-
-149 
-	#SYS_Çno¦“p
- 
-__NR_Çno¦“p
-
-
-	)
-
-150 
-	#SYS_nfs£rvùl
- 
-__NR_nfs£rvùl
-
-
-	)
-
-151 
-	#SYS_Ý’
- 
-__NR_Ý’
-
-
-	)
-
-152 
-	#SYS_Ý’©
- 
-__NR_Ý’©
-
-
-	)
-
-153 
-	#SYS_·u£
- 
-__NR_·u£
-
-
-	)
-
-154 
-	#SYS_³rf_ev’t_Ý’
- 
-__NR_³rf_ev’t_Ý’
-
-
-	)
-
-155 
-	#SYS_³rsÚ®™y
- 
-__NR_³rsÚ®™y
-
-
-	)
-
-156 
-	#SYS_pe
- 
-__NR_pe
-
-
-	)
-
-157 
-	#SYS_pe2
- 
-__NR_pe2
-
-
-	)
-
-158 
-	#SYS_pivÙ_roÙ
- 
-__NR_pivÙ_roÙ
-
-
-	)
-
-159 
-	#SYS_pÞl
- 
-__NR_pÞl
-
-
-	)
-
-160 
-	#SYS_µÞl
- 
-__NR_µÞl
-
-
-	)
-
-161 
-	#SYS_´ùl
- 
-__NR_´ùl
-
-
-	)
-
-162 
-	#SYS_´—d64
- 
-__NR_´—d64
-
-
-	)
-
-163 
-	#SYS_´—dv
- 
-__NR_´—dv
-
-
-	)
-
-164 
-	#SYS_p£Ëù6
- 
-__NR_p£Ëù6
-
-
-	)
-
-165 
-	#SYS_±¿û
- 
-__NR_±¿û
-
-
-	)
-
-166 
-	#SYS_pumsg
- 
-__NR_pumsg
-
-
-	)
-
-167 
-	#SYS_pwr™e64
- 
-__NR_pwr™e64
-
-
-	)
-
-168 
-	#SYS_pwr™ev
- 
-__NR_pwr™ev
-
-
-	)
-
-169 
-	#SYS_qu”y_moduË
- 
-__NR_qu”y_moduË
-
-
-	)
-
-170 
-	#SYS_quÙaùl
- 
-__NR_quÙaùl
-
-
-	)
-
-171 
-	#SYS_»ad
- 
-__NR_»ad
-
-
-	)
-
-172 
-	#SYS_»adah—d
- 
-__NR_»adah—d
-
-
-	)
-
-173 
-	#SYS_»adlšk
- 
-__NR_»adlšk
-
-
-	)
-
-174 
-	#SYS_»adlšk©
- 
-__NR_»adlšk©
-
-
-	)
-
-175 
-	#SYS_»adv
- 
-__NR_»adv
-
-
-	)
-
-176 
-	#SYS_»boÙ
- 
-__NR_»boÙ
-
-
-	)
-
-177 
-	#SYS_»m­_fže_·ges
- 
-__NR_»m­_fže_·ges
-
-
-	)
-
-178 
-	#SYS_»movex©Œ
- 
-__NR_»movex©Œ
-
-
-	)
-
-179 
-	#SYS_»Çme
- 
-__NR_»Çme
-
-
-	)
-
-180 
-	#SYS_»Çm—t
- 
-__NR_»Çm—t
-
-
-	)
-
-181 
-	#SYS_»que¡_key
- 
-__NR_»que¡_key
-
-
-	)
-
-182 
-	#SYS_»¡¬t_sysÿÎ
- 
-__NR_»¡¬t_sysÿÎ
-
-
-	)
-
-183 
-	#SYS_rmdœ
- 
-__NR_rmdœ
-
-
-	)
-
-184 
-	#SYS_¹_sigaùiÚ
- 
-__NR_¹_sigaùiÚ
-
-
-	)
-
-185 
-	#SYS_¹_sig³ndšg
- 
-__NR_¹_sig³ndšg
-
-
-	)
-
-186 
-	#SYS_¹_sig´ocmask
- 
-__NR_¹_sig´ocmask
-
-
-	)
-
-187 
-	#SYS_¹_sigqueuešfo
- 
-__NR_¹_sigqueuešfo
-
-
-	)
-
-188 
-	#SYS_¹_sig»tuº
- 
-__NR_¹_sig»tuº
-
-
-	)
-
-189 
-	#SYS_¹_sigsu¥’d
- 
-__NR_¹_sigsu¥’d
-
-
-	)
-
-190 
-	#SYS_¹_sigtimedwa™
- 
-__NR_¹_sigtimedwa™
-
-
-	)
-
-191 
-	#SYS_¹_tgsigqueuešfo
- 
-__NR_¹_tgsigqueuešfo
-
-
-	)
-
-192 
-	#SYS_sched_g‘_´iÜ™y_max
- 
-__NR_sched_g‘_´iÜ™y_max
-
-
-	)
-
-193 
-	#SYS_sched_g‘_´iÜ™y_mš
- 
-__NR_sched_g‘_´iÜ™y_mš
-
-
-	)
-
-194 
-	#SYS_sched_g‘affš™y
- 
-__NR_sched_g‘affš™y
-
-
-	)
-
-195 
-	#SYS_sched_g‘·¿m
- 
-__NR_sched_g‘·¿m
-
-
-	)
-
-196 
-	#SYS_sched_g‘scheduËr
- 
-__NR_sched_g‘scheduËr
-
-
-	)
-
-197 
-	#SYS_sched_¼_g‘_š‹rv®
- 
-__NR_sched_¼_g‘_š‹rv®
-
-
-	)
-
-198 
-	#SYS_sched_£ffš™y
- 
-__NR_sched_£ffš™y
-
-
-	)
-
-199 
-	#SYS_sched_£¬am
- 
-__NR_sched_£¬am
-
-
-	)
-
-200 
-	#SYS_sched_£tscheduËr
- 
-__NR_sched_£tscheduËr
-
-
-	)
-
-201 
-	#SYS_sched_y›ld
- 
-__NR_sched_y›ld
-
-
-	)
-
-202 
-	#SYS_£Ëù
- 
-__NR_£Ëù
-
-
-	)
-
-203 
-	#SYS_£ndfže
- 
-__NR_£ndfže
-
-
-	)
-
-204 
-	#SYS_£t_mempÞicy
- 
-__NR_£t_mempÞicy
-
-
-	)
-
-205 
-	#SYS_£t_robu¡_li¡
- 
-__NR_£t_robu¡_li¡
-
-
-	)
-
-206 
-	#SYS_£t_th»ad_¬—
- 
-__NR_£t_th»ad_¬—
-
-
-	)
-
-207 
-	#SYS_£t_tid_add»ss
- 
-__NR_£t_tid_add»ss
-
-
-	)
-
-208 
-	#SYS_£tdomašÇme
- 
-__NR_£tdomašÇme
-
-
-	)
-
-209 
-	#SYS_£tfsgid
- 
-__NR_£tfsgid
-
-
-	)
-
-210 
-	#SYS_£tfsuid
- 
-__NR_£tfsuid
-
-
-	)
-
-211 
-	#SYS_£tgid
- 
-__NR_£tgid
-
-
-	)
-
-212 
-	#SYS_£tgroups
- 
-__NR_£tgroups
-
-
-	)
-
-213 
-	#SYS_£tho¡Çme
- 
-__NR_£tho¡Çme
-
-
-	)
-
-214 
-	#SYS_£t™im”
- 
-__NR_£t™im”
-
-
-	)
-
-215 
-	#SYS_£gid
- 
-__NR_£gid
-
-
-	)
-
-216 
-	#SYS_£riÜ™y
- 
-__NR_£riÜ™y
-
-
-	)
-
-217 
-	#SYS_£Œegid
- 
-__NR_£Œegid
-
-
-	)
-
-218 
-	#SYS_£Œesgid
- 
-__NR_£Œesgid
-
-
-	)
-
-219 
-	#SYS_£Œesuid
- 
-__NR_£Œesuid
-
-
-	)
-
-220 
-	#SYS_£Œeuid
- 
-__NR_£Œeuid
-
-
-	)
-
-221 
-	#SYS_£Œlim™
- 
-__NR_£Œlim™
-
-
-	)
-
-222 
-	#SYS_£tsid
- 
-__NR_£tsid
-
-
-	)
-
-223 
-	#SYS_£‰imeofday
- 
-__NR_£‰imeofday
-
-
-	)
-
-224 
-	#SYS_£tuid
- 
-__NR_£tuid
-
-
-	)
-
-225 
-	#SYS_£tx©Œ
- 
-__NR_£tx©Œ
-
-
-	)
-
-226 
-	#SYS_sig®t¡ack
- 
-__NR_sig®t¡ack
-
-
-	)
-
-227 
-	#SYS_sigÇlfd
- 
-__NR_sigÇlfd
-
-
-	)
-
-228 
-	#SYS_sigÇlfd4
- 
-__NR_sigÇlfd4
-
-
-	)
-
-229 
-	#SYS_¥liû
- 
-__NR_¥liû
-
-
-	)
-
-230 
-	#SYS_¡©
- 
-__NR_¡©
-
-
-	)
-
-231 
-	#SYS_¡©fs
- 
-__NR_¡©fs
-
-
-	)
-
-232 
-	#SYS_sw­off
- 
-__NR_sw­off
-
-
-	)
-
-233 
-	#SYS_sw­Ú
- 
-__NR_sw­Ú
-
-
-	)
-
-234 
-	#SYS_symlšk
- 
-__NR_symlšk
-
-
-	)
-
-235 
-	#SYS_symlšk©
- 
-__NR_symlšk©
-
-
-	)
-
-236 
-	#SYS_sync
- 
-__NR_sync
-
-
-	)
-
-237 
-	#SYS_sync_fže_¿nge
- 
-__NR_sync_fže_¿nge
-
-
-	)
-
-238 
-	#SYS_sysfs
- 
-__NR_sysfs
-
-
-	)
-
-239 
-	#SYS_sysšfo
- 
-__NR_sysšfo
-
-
-	)
-
-240 
-	#SYS_sy¦og
- 
-__NR_sy¦og
-
-
-	)
-
-241 
-	#SYS_‹e
- 
-__NR_‹e
-
-
-	)
-
-242 
-	#SYS_tgkžl
- 
-__NR_tgkžl
-
-
-	)
-
-243 
-	#SYS_time
- 
-__NR_time
-
-
-	)
-
-244 
-	#SYS_tim”_ü—‹
- 
-__NR_tim”_ü—‹
-
-
-	)
-
-245 
-	#SYS_tim”_d–‘e
- 
-__NR_tim”_d–‘e
-
-
-	)
-
-246 
-	#SYS_tim”_g‘ov”run
- 
-__NR_tim”_g‘ov”run
-
-
-	)
-
-247 
-	#SYS_tim”_g‘time
- 
-__NR_tim”_g‘time
-
-
-	)
-
-248 
-	#SYS_tim”_£‰ime
- 
-__NR_tim”_£‰ime
-
-
-	)
-
-249 
-	#SYS_tim”fd_ü—‹
- 
-__NR_tim”fd_ü—‹
-
-
-	)
-
-250 
-	#SYS_tim”fd_g‘time
- 
-__NR_tim”fd_g‘time
-
-
-	)
-
-251 
-	#SYS_tim”fd_£‰ime
- 
-__NR_tim”fd_£‰ime
-
-
-	)
-
-252 
-	#SYS_times
- 
-__NR_times
-
-
-	)
-
-253 
-	#SYS_tkžl
- 
-__NR_tkžl
-
-
-	)
-
-254 
-	#SYS_Œunÿ‹
- 
-__NR_Œunÿ‹
-
-
-	)
-
-255 
-	#SYS_umask
- 
-__NR_umask
-
-
-	)
-
-256 
-	#SYS_umouÁ2
- 
-__NR_umouÁ2
-
-
-	)
-
-257 
-	#SYS_uÇme
- 
-__NR_uÇme
-
-
-	)
-
-258 
-	#SYS_uÆšk
- 
-__NR_uÆšk
-
-
-	)
-
-259 
-	#SYS_uÆšk©
- 
-__NR_uÆšk©
-
-
-	)
-
-260 
-	#SYS_unsh¬e
- 
-__NR_unsh¬e
-
-
-	)
-
-261 
-	#SYS_u£lib
- 
-__NR_u£lib
-
-
-	)
-
-262 
-	#SYS_u¡©
- 
-__NR_u¡©
-
-
-	)
-
-263 
-	#SYS_utime
- 
-__NR_utime
-
-
-	)
-
-264 
-	#SYS_utim’§t
- 
-__NR_utim’§t
-
-
-	)
-
-265 
-	#SYS_utimes
- 
-__NR_utimes
-
-
-	)
-
-266 
-	#SYS_vfÜk
- 
-__NR_vfÜk
-
-
-	)
-
-267 
-	#SYS_vhªgup
- 
-__NR_vhªgup
-
-
-	)
-
-268 
-	#SYS_vm¥liû
- 
-__NR_vm¥liû
-
-
-	)
-
-269 
-	#SYS_v£rv”
- 
-__NR_v£rv”
-
-
-	)
-
-270 
-	#SYS_wa™4
- 
-__NR_wa™4
-
-
-	)
-
-271 
-	#SYS_wa™id
- 
-__NR_wa™id
-
-
-	)
-
-272 
-	#SYS_wr™e
- 
-__NR_wr™e
-
-
-	)
-
-273 
-	#SYS_wr™ev
- 
-__NR_wr™ev
-
-
-	)
-
-274 #ià
-__WORDSIZE
- == 64
-
-275 
-	#SYS_acû±
- 
-__NR_acû±
-
-
-	)
-
-276 
-	#SYS_acû±4
- 
-__NR_acû±4
-
-
-	)
-
-277 
-	#SYS_¬ch_´ùl
- 
-__NR_¬ch_´ùl
-
-
-	)
-
-278 
-	#SYS_bšd
- 
-__NR_bšd
-
-
-	)
-
-279 
-	#SYS_cÚÃù
- 
-__NR_cÚÃù
-
-
-	)
-
-280 
-	#SYS_•Þl_ùl_Þd
- 
-__NR_•Þl_ùl_Þd
-
-
-	)
-
-281 
-	#SYS_•Þl_wa™_Þd
- 
-__NR_•Þl_wa™_Þd
-
-
-	)
-
-282 
-	#SYS_g‘³”Çme
- 
-__NR_g‘³”Çme
-
-
-	)
-
-283 
-	#SYS_g‘sockÇme
- 
-__NR_g‘sockÇme
-
-
-	)
-
-284 
-	#SYS_g‘sockÝt
- 
-__NR_g‘sockÝt
-
-
-	)
-
-285 
-	#SYS_li¡’
- 
-__NR_li¡’
-
-
-	)
-
-286 
-	#SYS_msgùl
- 
-__NR_msgùl
-
-
-	)
-
-287 
-	#SYS_msgg‘
- 
-__NR_msgg‘
-
-
-	)
-
-288 
-	#SYS_msgrcv
- 
-__NR_msgrcv
-
-
-	)
-
-289 
-	#SYS_msg¢d
- 
-__NR_msg¢d
-
-
-	)
-
-290 
-	#SYS_Ãwf¡©©
- 
-__NR_Ãwf¡©©
-
-
-	)
-
-291 
-	#SYS_»cväom
- 
-__NR_»cväom
-
-
-	)
-
-292 
-	#SYS_»cvmsg
- 
-__NR_»cvmsg
-
-
-	)
-
-293 
-	#SYS_£cur™y
- 
-__NR_£cur™y
-
-
-	)
-
-294 
-	#SYS_£mùl
- 
-__NR_£mùl
-
-
-	)
-
-295 
-	#SYS_£mg‘
- 
-__NR_£mg‘
-
-
-	)
-
-296 
-	#SYS_£mÝ
- 
-__NR_£mÝ
-
-
-	)
-
-297 
-	#SYS_£mtimedÝ
- 
-__NR_£mtimedÝ
-
-
-	)
-
-298 
-	#SYS_£ndmsg
- 
-__NR_£ndmsg
-
-
-	)
-
-299 
-	#SYS_£ndto
- 
-__NR_£ndto
-
-
-	)
-
-300 
-	#SYS_£tsockÝt
- 
-__NR_£tsockÝt
-
-
-	)
-
-301 
-	#SYS_shm©
- 
-__NR_shm©
-
-
-	)
-
-302 
-	#SYS_shmùl
- 
-__NR_shmùl
-
-
-	)
-
-303 
-	#SYS_shmdt
- 
-__NR_shmdt
-
-
-	)
-
-304 
-	#SYS_shmg‘
- 
-__NR_shmg‘
-
-
-	)
-
-305 
-	#SYS_shutdown
- 
-__NR_shutdown
-
-
-	)
-
-306 
-	#SYS_sock‘
- 
-__NR_sock‘
-
-
-	)
-
-307 
-	#SYS_sock‘·œ
- 
-__NR_sock‘·œ
-
-
-	)
-
-308 
-	#SYS_tuxÿÎ
- 
-__NR_tuxÿÎ
-
-
-	)
-
-310 
-	#SYS__Î£ek
- 
-__NR__Î£ek
-
-
-	)
-
-311 
-	#SYS__Ãw£Ëù
- 
-__NR__Ãw£Ëù
-
-
-	)
-
-312 
-	#SYS_bdæush
- 
-__NR_bdæush
-
-
-	)
-
-313 
-	#SYS_b»ak
- 
-__NR_b»ak
-
-
-	)
-
-314 
-	#SYS_chown32
- 
-__NR_chown32
-
-
-	)
-
-315 
-	#SYS_çdvi£64_64
- 
-__NR_çdvi£64_64
-
-
-	)
-
-316 
-	#SYS_fchown32
- 
-__NR_fchown32
-
-
-	)
-
-317 
-	#SYS_fúŽ64
- 
-__NR_fúŽ64
-
-
-	)
-
-318 
-	#SYS_f¡©64
- 
-__NR_f¡©64
-
-
-	)
-
-319 
-	#SYS_f¡©©64
- 
-__NR_f¡©©64
-
-
-	)
-
-320 
-	#SYS_f¡©fs64
- 
-__NR_f¡©fs64
-
-
-	)
-
-321 
-	#SYS_áime
- 
-__NR_áime
-
-
-	)
-
-322 
-	#SYS_árunÿ‹64
- 
-__NR_árunÿ‹64
-
-
-	)
-
-323 
 	#SYS_g‘ýu
  
 __NR_g‘ýu
@@ -86927,7 +85225,2083 @@ __NR_g‘ýu
 
 	)
 
+75 
+	#SYS_g‘cwd
+ 
+__NR_g‘cwd
+
+
+	)
+
+76 
+	#SYS_g‘d’ts
+ 
+__NR_g‘d’ts
+
+
+	)
+
+77 
+	#SYS_g‘d’ts64
+ 
+__NR_g‘d’ts64
+
+
+	)
+
+78 
+	#SYS_g‘egid
+ 
+__NR_g‘egid
+
+
+	)
+
+79 
+	#SYS_g‘euid
+ 
+__NR_g‘euid
+
+
+	)
+
+80 
+	#SYS_g‘gid
+ 
+__NR_g‘gid
+
+
+	)
+
+81 
+	#SYS_g‘groups
+ 
+__NR_g‘groups
+
+
+	)
+
+82 
+	#SYS_g‘™im”
+ 
+__NR_g‘™im”
+
+
+	)
+
+83 
+	#SYS_g‘pgid
+ 
+__NR_g‘pgid
+
+
+	)
+
+84 
+	#SYS_g‘pg½
+ 
+__NR_g‘pg½
+
+
+	)
+
+85 
+	#SYS_g‘pid
+ 
+__NR_g‘pid
+
+
+	)
+
+86 
+	#SYS_g‘pmsg
+ 
+__NR_g‘pmsg
+
+
+	)
+
+87 
+	#SYS_g‘µid
+ 
+__NR_g‘µid
+
+
+	)
+
+88 
+	#SYS_g‘´iÜ™y
+ 
+__NR_g‘´iÜ™y
+
+
+	)
+
+89 
+	#SYS_g‘»sgid
+ 
+__NR_g‘»sgid
+
+
+	)
+
+90 
+	#SYS_g‘»suid
+ 
+__NR_g‘»suid
+
+
+	)
+
+91 
+	#SYS_g‘¾im™
+ 
+__NR_g‘¾im™
+
+
+	)
+
+92 
+	#SYS_g‘ru§ge
+ 
+__NR_g‘ru§ge
+
+
+	)
+
+93 
+	#SYS_g‘sid
+ 
+__NR_g‘sid
+
+
+	)
+
+94 
+	#SYS_g‘tid
+ 
+__NR_g‘tid
+
+
+	)
+
+95 
+	#SYS_g‘timeofday
+ 
+__NR_g‘timeofday
+
+
+	)
+
+96 
+	#SYS_g‘uid
+ 
+__NR_g‘uid
+
+
+	)
+
+97 
+	#SYS_g‘x©Œ
+ 
+__NR_g‘x©Œ
+
+
+	)
+
+98 
+	#SYS_š™_moduË
+ 
+__NR_š™_moduË
+
+
+	)
+
+99 
+	#SYS_šÙify_add_w©ch
+ 
+__NR_šÙify_add_w©ch
+
+
+	)
+
+100 
+	#SYS_šÙify_š™
+ 
+__NR_šÙify_š™
+
+
+	)
+
+101 
+	#SYS_šÙify_š™1
+ 
+__NR_šÙify_š™1
+
+
+	)
+
+102 
+	#SYS_šÙify_rm_w©ch
+ 
+__NR_šÙify_rm_w©ch
+
+
+	)
+
+103 
+	#SYS_io_ÿnûl
+ 
+__NR_io_ÿnûl
+
+
+	)
+
+104 
+	#SYS_io_de¡roy
+ 
+__NR_io_de¡roy
+
+
+	)
+
+105 
+	#SYS_io_g‘ev’ts
+ 
+__NR_io_g‘ev’ts
+
+
+	)
+
+106 
+	#SYS_io_£tup
+ 
+__NR_io_£tup
+
+
+	)
+
+107 
+	#SYS_io_subm™
+ 
+__NR_io_subm™
+
+
+	)
+
+108 
+	#SYS_ioùl
+ 
+__NR_ioùl
+
+
+	)
+
+109 
+	#SYS_iÝ”m
+ 
+__NR_iÝ”m
+
+
+	)
+
+110 
+	#SYS_iÝl
+ 
+__NR_iÝl
+
+
+	)
+
+111 
+	#SYS_iÝrio_g‘
+ 
+__NR_iÝrio_g‘
+
+
+	)
+
+112 
+	#SYS_iÝrio_£t
+ 
+__NR_iÝrio_£t
+
+
+	)
+
+113 
+	#SYS_kexec_lßd
+ 
+__NR_kexec_lßd
+
+
+	)
+
+114 
+	#SYS_keyùl
+ 
+__NR_keyùl
+
+
+	)
+
+115 
+	#SYS_kžl
+ 
+__NR_kžl
+
+
+	)
+
+116 
+	#SYS_lchown
+ 
+__NR_lchown
+
+
+	)
+
+117 
+	#SYS_lg‘x©Œ
+ 
+__NR_lg‘x©Œ
+
+
+	)
+
+118 
+	#SYS_lšk
+ 
+__NR_lšk
+
+
+	)
+
+119 
+	#SYS_lšk©
+ 
+__NR_lšk©
+
+
+	)
+
+120 
+	#SYS_li¡x©Œ
+ 
+__NR_li¡x©Œ
+
+
+	)
+
+121 
+	#SYS_Îi¡x©Œ
+ 
+__NR_Îi¡x©Œ
+
+
+	)
+
+122 
+	#SYS_lookup_dcook›
+ 
+__NR_lookup_dcook›
+
+
+	)
+
+123 
+	#SYS_Ìemovex©Œ
+ 
+__NR_Ìemovex©Œ
+
+
+	)
+
+124 
+	#SYS_l£ek
+ 
+__NR_l£ek
+
+
+	)
+
+125 
+	#SYS_l£tx©Œ
+ 
+__NR_l£tx©Œ
+
+
+	)
+
+126 
+	#SYS_l¡©
+ 
+__NR_l¡©
+
+
+	)
+
+127 
+	#SYS_madvi£
+ 
+__NR_madvi£
+
+
+	)
+
+128 
+	#SYS_mbšd
+ 
+__NR_mbšd
+
+
+	)
+
+129 
+	#SYS_mig¿‹_·ges
+ 
+__NR_mig¿‹_·ges
+
+
+	)
+
+130 
+	#SYS_mšcÜe
+ 
+__NR_mšcÜe
+
+
+	)
+
+131 
+	#SYS_mkdœ
+ 
+__NR_mkdœ
+
+
+	)
+
+132 
+	#SYS_mkdœ©
+ 
+__NR_mkdœ©
+
+
+	)
+
+133 
+	#SYS_mknod
+ 
+__NR_mknod
+
+
+	)
+
+134 
+	#SYS_mknod©
+ 
+__NR_mknod©
+
+
+	)
+
+135 
+	#SYS_mlock
+ 
+__NR_mlock
+
+
+	)
+
+136 
+	#SYS_mlock®l
+ 
+__NR_mlock®l
+
+
+	)
+
+137 
+	#SYS_mm­
+ 
+__NR_mm­
+
+
+	)
+
+138 
+	#SYS_modify_ldt
+ 
+__NR_modify_ldt
+
+
+	)
+
+139 
+	#SYS_mouÁ
+ 
+__NR_mouÁ
+
+
+	)
+
+140 
+	#SYS_move_·ges
+ 
+__NR_move_·ges
+
+
+	)
+
+141 
+	#SYS_m´Ùeù
+ 
+__NR_m´Ùeù
+
+
+	)
+
+142 
+	#SYS_mq_g‘£‰r
+ 
+__NR_mq_g‘£‰r
+
+
+	)
+
+143 
+	#SYS_mq_nÙify
+ 
+__NR_mq_nÙify
+
+
+	)
+
+144 
+	#SYS_mq_Ý’
+ 
+__NR_mq_Ý’
+
+
+	)
+
+145 
+	#SYS_mq_timed»ûive
+ 
+__NR_mq_timed»ûive
+
+
+	)
+
+146 
+	#SYS_mq_timed£nd
+ 
+__NR_mq_timed£nd
+
+
+	)
+
+147 
+	#SYS_mq_uÆšk
+ 
+__NR_mq_uÆšk
+
+
+	)
+
+148 
+	#SYS_m»m­
+ 
+__NR_m»m­
+
+
+	)
+
+149 
+	#SYS_msync
+ 
+__NR_msync
+
+
+	)
+
+150 
+	#SYS_muÆock
+ 
+__NR_muÆock
+
+
+	)
+
+151 
+	#SYS_muÆock®l
+ 
+__NR_muÆock®l
+
+
+	)
+
+152 
+	#SYS_munm­
+ 
+__NR_munm­
+
+
+	)
+
+153 
+	#SYS_Çme_to_hªdË_©
+ 
+__NR_Çme_to_hªdË_©
+
+
+	)
+
+154 
+	#SYS_Çno¦“p
+ 
+__NR_Çno¦“p
+
+
+	)
+
+155 
+	#SYS_nfs£rvùl
+ 
+__NR_nfs£rvùl
+
+
+	)
+
+156 
+	#SYS_Ý’
+ 
+__NR_Ý’
+
+
+	)
+
+157 
+	#SYS_Ý’_by_hªdË_©
+ 
+__NR_Ý’_by_hªdË_©
+
+
+	)
+
+158 
+	#SYS_Ý’©
+ 
+__NR_Ý’©
+
+
+	)
+
+159 
+	#SYS_·u£
+ 
+__NR_·u£
+
+
+	)
+
+160 
+	#SYS_³rf_ev’t_Ý’
+ 
+__NR_³rf_ev’t_Ý’
+
+
+	)
+
+161 
+	#SYS_³rsÚ®™y
+ 
+__NR_³rsÚ®™y
+
+
+	)
+
+162 
+	#SYS_pe
+ 
+__NR_pe
+
+
+	)
+
+163 
+	#SYS_pe2
+ 
+__NR_pe2
+
+
+	)
+
+164 
+	#SYS_pivÙ_roÙ
+ 
+__NR_pivÙ_roÙ
+
+
+	)
+
+165 
+	#SYS_pÞl
+ 
+__NR_pÞl
+
+
+	)
+
+166 
+	#SYS_µÞl
+ 
+__NR_µÞl
+
+
+	)
+
+167 
+	#SYS_´ùl
+ 
+__NR_´ùl
+
+
+	)
+
+168 
+	#SYS_´—d64
+ 
+__NR_´—d64
+
+
+	)
+
+169 
+	#SYS_´—dv
+ 
+__NR_´—dv
+
+
+	)
+
+170 
+	#SYS_´lim™64
+ 
+__NR_´lim™64
+
+
+	)
+
+171 
+	#SYS_´oûss_vm_»adv
+ 
+__NR_´oûss_vm_»adv
+
+
+	)
+
+172 
+	#SYS_´oûss_vm_wr™ev
+ 
+__NR_´oûss_vm_wr™ev
+
+
+	)
+
+173 
+	#SYS_p£Ëù6
+ 
+__NR_p£Ëù6
+
+
+	)
+
+174 
+	#SYS_±¿û
+ 
+__NR_±¿û
+
+
+	)
+
+175 
+	#SYS_pumsg
+ 
+__NR_pumsg
+
+
+	)
+
+176 
+	#SYS_pwr™e64
+ 
+__NR_pwr™e64
+
+
+	)
+
+177 
+	#SYS_pwr™ev
+ 
+__NR_pwr™ev
+
+
+	)
+
+178 
+	#SYS_qu”y_moduË
+ 
+__NR_qu”y_moduË
+
+
+	)
+
+179 
+	#SYS_quÙaùl
+ 
+__NR_quÙaùl
+
+
+	)
+
+180 
+	#SYS_»ad
+ 
+__NR_»ad
+
+
+	)
+
+181 
+	#SYS_»adah—d
+ 
+__NR_»adah—d
+
+
+	)
+
+182 
+	#SYS_»adlšk
+ 
+__NR_»adlšk
+
+
+	)
+
+183 
+	#SYS_»adlšk©
+ 
+__NR_»adlšk©
+
+
+	)
+
+184 
+	#SYS_»adv
+ 
+__NR_»adv
+
+
+	)
+
+185 
+	#SYS_»boÙ
+ 
+__NR_»boÙ
+
+
+	)
+
+186 
+	#SYS_»cvmmsg
+ 
+__NR_»cvmmsg
+
+
+	)
+
+187 
+	#SYS_»m­_fže_·ges
+ 
+__NR_»m­_fže_·ges
+
+
+	)
+
+188 
+	#SYS_»movex©Œ
+ 
+__NR_»movex©Œ
+
+
+	)
+
+189 
+	#SYS_»Çme
+ 
+__NR_»Çme
+
+
+	)
+
+190 
+	#SYS_»Çm—t
+ 
+__NR_»Çm—t
+
+
+	)
+
+191 
+	#SYS_»que¡_key
+ 
+__NR_»que¡_key
+
+
+	)
+
+192 
+	#SYS_»¡¬t_sysÿÎ
+ 
+__NR_»¡¬t_sysÿÎ
+
+
+	)
+
+193 
+	#SYS_rmdœ
+ 
+__NR_rmdœ
+
+
+	)
+
+194 
+	#SYS_¹_sigaùiÚ
+ 
+__NR_¹_sigaùiÚ
+
+
+	)
+
+195 
+	#SYS_¹_sig³ndšg
+ 
+__NR_¹_sig³ndšg
+
+
+	)
+
+196 
+	#SYS_¹_sig´ocmask
+ 
+__NR_¹_sig´ocmask
+
+
+	)
+
+197 
+	#SYS_¹_sigqueuešfo
+ 
+__NR_¹_sigqueuešfo
+
+
+	)
+
+198 
+	#SYS_¹_sig»tuº
+ 
+__NR_¹_sig»tuº
+
+
+	)
+
+199 
+	#SYS_¹_sigsu¥’d
+ 
+__NR_¹_sigsu¥’d
+
+
+	)
+
+200 
+	#SYS_¹_sigtimedwa™
+ 
+__NR_¹_sigtimedwa™
+
+
+	)
+
+201 
+	#SYS_¹_tgsigqueuešfo
+ 
+__NR_¹_tgsigqueuešfo
+
+
+	)
+
+202 
+	#SYS_sched_g‘_´iÜ™y_max
+ 
+__NR_sched_g‘_´iÜ™y_max
+
+
+	)
+
+203 
+	#SYS_sched_g‘_´iÜ™y_mš
+ 
+__NR_sched_g‘_´iÜ™y_mš
+
+
+	)
+
+204 
+	#SYS_sched_g‘affš™y
+ 
+__NR_sched_g‘affš™y
+
+
+	)
+
+205 
+	#SYS_sched_g‘·¿m
+ 
+__NR_sched_g‘·¿m
+
+
+	)
+
+206 
+	#SYS_sched_g‘scheduËr
+ 
+__NR_sched_g‘scheduËr
+
+
+	)
+
+207 
+	#SYS_sched_¼_g‘_š‹rv®
+ 
+__NR_sched_¼_g‘_š‹rv®
+
+
+	)
+
+208 
+	#SYS_sched_£ffš™y
+ 
+__NR_sched_£ffš™y
+
+
+	)
+
+209 
+	#SYS_sched_£¬am
+ 
+__NR_sched_£¬am
+
+
+	)
+
+210 
+	#SYS_sched_£tscheduËr
+ 
+__NR_sched_£tscheduËr
+
+
+	)
+
+211 
+	#SYS_sched_y›ld
+ 
+__NR_sched_y›ld
+
+
+	)
+
+212 
+	#SYS_£Ëù
+ 
+__NR_£Ëù
+
+
+	)
+
+213 
+	#SYS_£ndfže
+ 
+__NR_£ndfže
+
+
+	)
+
+214 
+	#SYS_£ndmmsg
+ 
+__NR_£ndmmsg
+
+
+	)
+
+215 
+	#SYS_£t_mempÞicy
+ 
+__NR_£t_mempÞicy
+
+
+	)
+
+216 
+	#SYS_£t_robu¡_li¡
+ 
+__NR_£t_robu¡_li¡
+
+
+	)
+
+217 
+	#SYS_£t_th»ad_¬—
+ 
+__NR_£t_th»ad_¬—
+
+
+	)
+
+218 
+	#SYS_£t_tid_add»ss
+ 
+__NR_£t_tid_add»ss
+
+
+	)
+
+219 
+	#SYS_£tdomašÇme
+ 
+__NR_£tdomašÇme
+
+
+	)
+
+220 
+	#SYS_£tfsgid
+ 
+__NR_£tfsgid
+
+
+	)
+
+221 
+	#SYS_£tfsuid
+ 
+__NR_£tfsuid
+
+
+	)
+
+222 
+	#SYS_£tgid
+ 
+__NR_£tgid
+
+
+	)
+
+223 
+	#SYS_£tgroups
+ 
+__NR_£tgroups
+
+
+	)
+
+224 
+	#SYS_£tho¡Çme
+ 
+__NR_£tho¡Çme
+
+
+	)
+
+225 
+	#SYS_£t™im”
+ 
+__NR_£t™im”
+
+
+	)
+
+226 
+	#SYS_£Šs
+ 
+__NR_£Šs
+
+
+	)
+
+227 
+	#SYS_£gid
+ 
+__NR_£gid
+
+
+	)
+
+228 
+	#SYS_£riÜ™y
+ 
+__NR_£riÜ™y
+
+
+	)
+
+229 
+	#SYS_£Œegid
+ 
+__NR_£Œegid
+
+
+	)
+
+230 
+	#SYS_£Œesgid
+ 
+__NR_£Œesgid
+
+
+	)
+
+231 
+	#SYS_£Œesuid
+ 
+__NR_£Œesuid
+
+
+	)
+
+232 
+	#SYS_£Œeuid
+ 
+__NR_£Œeuid
+
+
+	)
+
+233 
+	#SYS_£Œlim™
+ 
+__NR_£Œlim™
+
+
+	)
+
+234 
+	#SYS_£tsid
+ 
+__NR_£tsid
+
+
+	)
+
+235 
+	#SYS_£‰imeofday
+ 
+__NR_£‰imeofday
+
+
+	)
+
+236 
+	#SYS_£tuid
+ 
+__NR_£tuid
+
+
+	)
+
+237 
+	#SYS_£tx©Œ
+ 
+__NR_£tx©Œ
+
+
+	)
+
+238 
+	#SYS_sig®t¡ack
+ 
+__NR_sig®t¡ack
+
+
+	)
+
+239 
+	#SYS_sigÇlfd
+ 
+__NR_sigÇlfd
+
+
+	)
+
+240 
+	#SYS_sigÇlfd4
+ 
+__NR_sigÇlfd4
+
+
+	)
+
+241 
+	#SYS_¥liû
+ 
+__NR_¥liû
+
+
+	)
+
+242 
+	#SYS_¡©
+ 
+__NR_¡©
+
+
+	)
+
+243 
+	#SYS_¡©fs
+ 
+__NR_¡©fs
+
+
+	)
+
+244 
+	#SYS_sw­off
+ 
+__NR_sw­off
+
+
+	)
+
+245 
+	#SYS_sw­Ú
+ 
+__NR_sw­Ú
+
+
+	)
+
+246 
+	#SYS_symlšk
+ 
+__NR_symlšk
+
+
+	)
+
+247 
+	#SYS_symlšk©
+ 
+__NR_symlšk©
+
+
+	)
+
+248 
+	#SYS_sync
+ 
+__NR_sync
+
+
+	)
+
+249 
+	#SYS_sync_fže_¿nge
+ 
+__NR_sync_fže_¿nge
+
+
+	)
+
+250 
+	#SYS_syncfs
+ 
+__NR_syncfs
+
+
+	)
+
+251 
+	#SYS_sysfs
+ 
+__NR_sysfs
+
+
+	)
+
+252 
+	#SYS_sysšfo
+ 
+__NR_sysšfo
+
+
+	)
+
+253 
+	#SYS_sy¦og
+ 
+__NR_sy¦og
+
+
+	)
+
+254 
+	#SYS_‹e
+ 
+__NR_‹e
+
+
+	)
+
+255 
+	#SYS_tgkžl
+ 
+__NR_tgkžl
+
+
+	)
+
+256 
+	#SYS_time
+ 
+__NR_time
+
+
+	)
+
+257 
+	#SYS_tim”_ü—‹
+ 
+__NR_tim”_ü—‹
+
+
+	)
+
+258 
+	#SYS_tim”_d–‘e
+ 
+__NR_tim”_d–‘e
+
+
+	)
+
+259 
+	#SYS_tim”_g‘ov”run
+ 
+__NR_tim”_g‘ov”run
+
+
+	)
+
+260 
+	#SYS_tim”_g‘time
+ 
+__NR_tim”_g‘time
+
+
+	)
+
+261 
+	#SYS_tim”_£‰ime
+ 
+__NR_tim”_£‰ime
+
+
+	)
+
+262 
+	#SYS_tim”fd_ü—‹
+ 
+__NR_tim”fd_ü—‹
+
+
+	)
+
+263 
+	#SYS_tim”fd_g‘time
+ 
+__NR_tim”fd_g‘time
+
+
+	)
+
+264 
+	#SYS_tim”fd_£‰ime
+ 
+__NR_tim”fd_£‰ime
+
+
+	)
+
+265 
+	#SYS_times
+ 
+__NR_times
+
+
+	)
+
+266 
+	#SYS_tkžl
+ 
+__NR_tkžl
+
+
+	)
+
+267 
+	#SYS_Œunÿ‹
+ 
+__NR_Œunÿ‹
+
+
+	)
+
+268 
+	#SYS_umask
+ 
+__NR_umask
+
+
+	)
+
+269 
+	#SYS_umouÁ2
+ 
+__NR_umouÁ2
+
+
+	)
+
+270 
+	#SYS_uÇme
+ 
+__NR_uÇme
+
+
+	)
+
+271 
+	#SYS_uÆšk
+ 
+__NR_uÆšk
+
+
+	)
+
+272 
+	#SYS_uÆšk©
+ 
+__NR_uÆšk©
+
+
+	)
+
+273 
+	#SYS_unsh¬e
+ 
+__NR_unsh¬e
+
+
+	)
+
+274 
+	#SYS_u£lib
+ 
+__NR_u£lib
+
+
+	)
+
+275 
+	#SYS_u¡©
+ 
+__NR_u¡©
+
+
+	)
+
+276 
+	#SYS_utime
+ 
+__NR_utime
+
+
+	)
+
+277 
+	#SYS_utim’§t
+ 
+__NR_utim’§t
+
+
+	)
+
+278 
+	#SYS_utimes
+ 
+__NR_utimes
+
+
+	)
+
+279 
+	#SYS_vfÜk
+ 
+__NR_vfÜk
+
+
+	)
+
+280 
+	#SYS_vhªgup
+ 
+__NR_vhªgup
+
+
+	)
+
+281 
+	#SYS_vm¥liû
+ 
+__NR_vm¥liû
+
+
+	)
+
+282 
+	#SYS_v£rv”
+ 
+__NR_v£rv”
+
+
+	)
+
+283 
+	#SYS_wa™4
+ 
+__NR_wa™4
+
+
+	)
+
+284 
+	#SYS_wa™id
+ 
+__NR_wa™id
+
+
+	)
+
+285 
+	#SYS_wr™e
+ 
+__NR_wr™e
+
+
+	)
+
+286 
+	#SYS_wr™ev
+ 
+__NR_wr™ev
+
+
+	)
+
+287 #ià
+__WORDSIZE
+ == 64
+
+288 
+	#SYS_acû±
+ 
+__NR_acû±
+
+
+	)
+
+289 
+	#SYS_acû±4
+ 
+__NR_acû±4
+
+
+	)
+
+290 
+	#SYS_¬ch_´ùl
+ 
+__NR_¬ch_´ùl
+
+
+	)
+
+291 
+	#SYS_bšd
+ 
+__NR_bšd
+
+
+	)
+
+292 
+	#SYS_cÚÃù
+ 
+__NR_cÚÃù
+
+
+	)
+
+293 
+	#SYS_•Þl_ùl_Þd
+ 
+__NR_•Þl_ùl_Þd
+
+
+	)
+
+294 
+	#SYS_•Þl_wa™_Þd
+ 
+__NR_•Þl_wa™_Þd
+
+
+	)
+
+295 
+	#SYS_g‘³”Çme
+ 
+__NR_g‘³”Çme
+
+
+	)
+
+296 
+	#SYS_g‘sockÇme
+ 
+__NR_g‘sockÇme
+
+
+	)
+
+297 
+	#SYS_g‘sockÝt
+ 
+__NR_g‘sockÝt
+
+
+	)
+
+298 
+	#SYS_li¡’
+ 
+__NR_li¡’
+
+
+	)
+
+299 
+	#SYS_msgùl
+ 
+__NR_msgùl
+
+
+	)
+
+300 
+	#SYS_msgg‘
+ 
+__NR_msgg‘
+
+
+	)
+
+301 
+	#SYS_msgrcv
+ 
+__NR_msgrcv
+
+
+	)
+
+302 
+	#SYS_msg¢d
+ 
+__NR_msg¢d
+
+
+	)
+
+303 
+	#SYS_Ãwf¡©©
+ 
+__NR_Ãwf¡©©
+
+
+	)
+
+304 
+	#SYS_»cväom
+ 
+__NR_»cväom
+
+
+	)
+
+305 
+	#SYS_»cvmsg
+ 
+__NR_»cvmsg
+
+
+	)
+
+306 
+	#SYS_£cur™y
+ 
+__NR_£cur™y
+
+
+	)
+
+307 
+	#SYS_£mùl
+ 
+__NR_£mùl
+
+
+	)
+
+308 
+	#SYS_£mg‘
+ 
+__NR_£mg‘
+
+
+	)
+
+309 
+	#SYS_£mÝ
+ 
+__NR_£mÝ
+
+
+	)
+
+310 
+	#SYS_£mtimedÝ
+ 
+__NR_£mtimedÝ
+
+
+	)
+
+311 
+	#SYS_£ndmsg
+ 
+__NR_£ndmsg
+
+
+	)
+
+312 
+	#SYS_£ndto
+ 
+__NR_£ndto
+
+
+	)
+
+313 
+	#SYS_£tsockÝt
+ 
+__NR_£tsockÝt
+
+
+	)
+
+314 
+	#SYS_shm©
+ 
+__NR_shm©
+
+
+	)
+
+315 
+	#SYS_shmùl
+ 
+__NR_shmùl
+
+
+	)
+
+316 
+	#SYS_shmdt
+ 
+__NR_shmdt
+
+
+	)
+
+317 
+	#SYS_shmg‘
+ 
+__NR_shmg‘
+
+
+	)
+
+318 
+	#SYS_shutdown
+ 
+__NR_shutdown
+
+
+	)
+
+319 
+	#SYS_sock‘
+ 
+__NR_sock‘
+
+
+	)
+
+320 
+	#SYS_sock‘·œ
+ 
+__NR_sock‘·œ
+
+
+	)
+
+321 
+	#SYS_tuxÿÎ
+ 
+__NR_tuxÿÎ
+
+
+	)
+
+323 
+	#SYS__Î£ek
+ 
+__NR__Î£ek
+
+
+	)
+
 324 
+	#SYS__Ãw£Ëù
+ 
+__NR__Ãw£Ëù
+
+
+	)
+
+325 
+	#SYS_bdæush
+ 
+__NR_bdæush
+
+
+	)
+
+326 
+	#SYS_b»ak
+ 
+__NR_b»ak
+
+
+	)
+
+327 
+	#SYS_chown32
+ 
+__NR_chown32
+
+
+	)
+
+328 
+	#SYS_çdvi£64_64
+ 
+__NR_çdvi£64_64
+
+
+	)
+
+329 
+	#SYS_fchown32
+ 
+__NR_fchown32
+
+
+	)
+
+330 
+	#SYS_fúŽ64
+ 
+__NR_fúŽ64
+
+
+	)
+
+331 
+	#SYS_f¡©64
+ 
+__NR_f¡©64
+
+
+	)
+
+332 
+	#SYS_f¡©©64
+ 
+__NR_f¡©©64
+
+
+	)
+
+333 
+	#SYS_f¡©fs64
+ 
+__NR_f¡©fs64
+
+
+	)
+
+334 
+	#SYS_áime
+ 
+__NR_áime
+
+
+	)
+
+335 
+	#SYS_árunÿ‹64
+ 
+__NR_árunÿ‹64
+
+
+	)
+
+336 
 	#SYS_g‘egid32
  
 __NR_g‘egid32
@@ -86935,7 +87309,7 @@ __NR_g‘egid32
 
 	)
 
-325 
+337 
 	#SYS_g‘euid32
  
 __NR_g‘euid32
@@ -86943,7 +87317,7 @@ __NR_g‘euid32
 
 	)
 
-326 
+338 
 	#SYS_g‘gid32
  
 __NR_g‘gid32
@@ -86951,7 +87325,7 @@ __NR_g‘gid32
 
 	)
 
-327 
+339 
 	#SYS_g‘groups32
  
 __NR_g‘groups32
@@ -86959,7 +87333,7 @@ __NR_g‘groups32
 
 	)
 
-328 
+340 
 	#SYS_g‘»sgid32
  
 __NR_g‘»sgid32
@@ -86967,7 +87341,7 @@ __NR_g‘»sgid32
 
 	)
 
-329 
+341 
 	#SYS_g‘»suid32
  
 __NR_g‘»suid32
@@ -86975,7 +87349,7 @@ __NR_g‘»suid32
 
 	)
 
-330 
+342 
 	#SYS_g‘uid32
  
 __NR_g‘uid32
@@ -86983,7 +87357,7 @@ __NR_g‘uid32
 
 	)
 
-331 
+343 
 	#SYS_g‰y
  
 __NR_g‰y
@@ -86991,7 +87365,7 @@ __NR_g‰y
 
 	)
 
-332 
+344 
 	#SYS_idË
  
 __NR_idË
@@ -86999,7 +87373,7 @@ __NR_idË
 
 	)
 
-333 
+345 
 	#SYS_c
  
 __NR_c
@@ -87007,7 +87381,7 @@ __NR_c
 
 	)
 
-334 
+346 
 	#SYS_lchown32
  
 __NR_lchown32
@@ -87015,7 +87389,7 @@ __NR_lchown32
 
 	)
 
-335 
+347 
 	#SYS_lock
  
 __NR_lock
@@ -87023,7 +87397,7 @@ __NR_lock
 
 	)
 
-336 
+348 
 	#SYS_l¡©64
  
 __NR_l¡©64
@@ -87031,7 +87405,7 @@ __NR_l¡©64
 
 	)
 
-337 
+349 
 	#SYS_madvi£1
  
 __NR_madvi£1
@@ -87039,7 +87413,7 @@ __NR_madvi£1
 
 	)
 
-338 
+350 
 	#SYS_mm­2
  
 __NR_mm­2
@@ -87047,7 +87421,7 @@ __NR_mm­2
 
 	)
 
-339 
+351 
 	#SYS_mpx
  
 __NR_mpx
@@ -87055,7 +87429,7 @@ __NR_mpx
 
 	)
 
-340 
+352 
 	#SYS_niû
  
 __NR_niû
@@ -87063,7 +87437,7 @@ __NR_niû
 
 	)
 
-341 
+353 
 	#SYS_Þdf¡©
  
 __NR_Þdf¡©
@@ -87071,7 +87445,7 @@ __NR_Þdf¡©
 
 	)
 
-342 
+354 
 	#SYS_Þdl¡©
  
 __NR_Þdl¡©
@@ -87079,7 +87453,7 @@ __NR_Þdl¡©
 
 	)
 
-343 
+355 
 	#SYS_ÞdÞduÇme
  
 __NR_ÞdÞduÇme
@@ -87087,7 +87461,7 @@ __NR_ÞdÞduÇme
 
 	)
 
-344 
+356 
 	#SYS_Þd¡©
  
 __NR_Þd¡©
@@ -87095,7 +87469,7 @@ __NR_Þd¡©
 
 	)
 
-345 
+357 
 	#SYS_ÞduÇme
  
 __NR_ÞduÇme
@@ -87103,7 +87477,7 @@ __NR_ÞduÇme
 
 	)
 
-346 
+358 
 	#SYS_´of
  
 __NR_´of
@@ -87111,7 +87485,7 @@ __NR_´of
 
 	)
 
-347 
+359 
 	#SYS_´ofž
  
 __NR_´ofž
@@ -87119,7 +87493,7 @@ __NR_´ofž
 
 	)
 
-348 
+360 
 	#SYS_»addœ
  
 __NR_»addœ
@@ -87127,7 +87501,7 @@ __NR_»addœ
 
 	)
 
-349 
+361 
 	#SYS_£ndfže64
  
 __NR_£ndfže64
@@ -87135,7 +87509,7 @@ __NR_£ndfže64
 
 	)
 
-350 
+362 
 	#SYS_£tfsgid32
  
 __NR_£tfsgid32
@@ -87143,7 +87517,7 @@ __NR_£tfsgid32
 
 	)
 
-351 
+363 
 	#SYS_£tfsuid32
  
 __NR_£tfsuid32
@@ -87151,7 +87525,7 @@ __NR_£tfsuid32
 
 	)
 
-352 
+364 
 	#SYS_£tgid32
  
 __NR_£tgid32
@@ -87159,7 +87533,7 @@ __NR_£tgid32
 
 	)
 
-353 
+365 
 	#SYS_£tgroups32
  
 __NR_£tgroups32
@@ -87167,7 +87541,7 @@ __NR_£tgroups32
 
 	)
 
-354 
+366 
 	#SYS_£Œegid32
  
 __NR_£Œegid32
@@ -87175,7 +87549,7 @@ __NR_£Œegid32
 
 	)
 
-355 
+367 
 	#SYS_£Œesgid32
  
 __NR_£Œesgid32
@@ -87183,7 +87557,7 @@ __NR_£Œesgid32
 
 	)
 
-356 
+368 
 	#SYS_£Œesuid32
  
 __NR_£Œesuid32
@@ -87191,7 +87565,7 @@ __NR_£Œesuid32
 
 	)
 
-357 
+369 
 	#SYS_£Œeuid32
  
 __NR_£Œeuid32
@@ -87199,7 +87573,7 @@ __NR_£Œeuid32
 
 	)
 
-358 
+370 
 	#SYS_£tuid32
  
 __NR_£tuid32
@@ -87207,7 +87581,7 @@ __NR_£tuid32
 
 	)
 
-359 
+371 
 	#SYS_sg‘mask
  
 __NR_sg‘mask
@@ -87215,7 +87589,7 @@ __NR_sg‘mask
 
 	)
 
-360 
+372 
 	#SYS_sigaùiÚ
  
 __NR_sigaùiÚ
@@ -87223,7 +87597,7 @@ __NR_sigaùiÚ
 
 	)
 
-361 
+373 
 	#SYS_sigÇl
  
 __NR_sigÇl
@@ -87231,7 +87605,7 @@ __NR_sigÇl
 
 	)
 
-362 
+374 
 	#SYS_sig³ndšg
  
 __NR_sig³ndšg
@@ -87239,7 +87613,7 @@ __NR_sig³ndšg
 
 	)
 
-363 
+375 
 	#SYS_sig´ocmask
  
 __NR_sig´ocmask
@@ -87247,7 +87621,7 @@ __NR_sig´ocmask
 
 	)
 
-364 
+376 
 	#SYS_sig»tuº
  
 __NR_sig»tuº
@@ -87255,7 +87629,7 @@ __NR_sig»tuº
 
 	)
 
-365 
+377 
 	#SYS_sigsu¥’d
  
 __NR_sigsu¥’d
@@ -87263,7 +87637,7 @@ __NR_sigsu¥’d
 
 	)
 
-366 
+378 
 	#SYS_sock‘ÿÎ
  
 __NR_sock‘ÿÎ
@@ -87271,7 +87645,7 @@ __NR_sock‘ÿÎ
 
 	)
 
-367 
+379 
 	#SYS_s£tmask
  
 __NR_s£tmask
@@ -87279,7 +87653,7 @@ __NR_s£tmask
 
 	)
 
-368 
+380 
 	#SYS_¡©64
  
 __NR_¡©64
@@ -87287,7 +87661,7 @@ __NR_¡©64
 
 	)
 
-369 
+381 
 	#SYS_¡©fs64
  
 __NR_¡©fs64
@@ -87295,7 +87669,7 @@ __NR_¡©fs64
 
 	)
 
-370 
+382 
 	#SYS_¡ime
  
 __NR_¡ime
@@ -87303,7 +87677,7 @@ __NR_¡ime
 
 	)
 
-371 
+383 
 	#SYS_¡ty
  
 __NR_¡ty
@@ -87311,7 +87685,7 @@ __NR_¡ty
 
 	)
 
-372 
+384 
 	#SYS_Œunÿ‹64
  
 __NR_Œunÿ‹64
@@ -87319,7 +87693,7 @@ __NR_Œunÿ‹64
 
 	)
 
-373 
+385 
 	#SYS_ug‘¾im™
  
 __NR_ug‘¾im™
@@ -87327,7 +87701,7 @@ __NR_ug‘¾im™
 
 	)
 
-374 
+386 
 	#SYS_ulim™
  
 __NR_ulim™
@@ -87335,7 +87709,7 @@ __NR_ulim™
 
 	)
 
-375 
+387 
 	#SYS_umouÁ
  
 __NR_umouÁ
@@ -87343,7 +87717,7 @@ __NR_umouÁ
 
 	)
 
-376 
+388 
 	#SYS_vm86
  
 __NR_vm86
@@ -87351,7 +87725,7 @@ __NR_vm86
 
 	)
 
-377 
+389 
 	#SYS_vm86Þd
  
 __NR_vm86Þd
@@ -87359,7 +87733,7 @@ __NR_vm86Þd
 
 	)
 
-378 
+390 
 	#SYS_wa™pid
  
 __NR_wa™pid
@@ -88519,11 +88893,33 @@ __STDC_VERSION__
 
 	)
 
-353 
+353 #ià
+__GNUC__
+ >= 3
+
+354 
+	#__glibc_uÆik–y
+(
+cÚd
+è
+	`__bužtš_ex³ù
+((cÚd), 0)
+
+	)
+
+356 
+	#__glibc_uÆik–y
+(
+cÚd
+è(cÚd)
+
+	)
+
+359 
 	~<b™s/wÜdsize.h
 >
 
-355 #ià
+361 #ià
 defšed
  
 __LONG_DOUBLE_MATH_OPTIONAL
@@ -88531,17 +88927,17 @@ __LONG_DOUBLE_MATH_OPTIONAL
 __NO_LONG_DOUBLE_MATH
 
 
-356 
+362 
 	#__LDBL_COMPAT
  1
 
 	)
 
-357 #ifdeà
+363 #ifdeà
 __REDIRECT
 
 
-358 
+364 
 	#__LDBL_REDIR1
 (
 Çme
@@ -88555,7 +88951,7 @@ __REDIRECT
 
 	)
 
-359 
+365 
 	#__LDBL_REDIR
 (
 Çme
@@ -88563,7 +88959,7 @@ __REDIRECT
 ´Ùo
 ) \
 
-360 
+366 
 	`__LDBL_REDIR1
  (
 Çme
@@ -88575,7 +88971,7 @@ __Ædbl_
 
 	)
 
-361 
+367 
 	#__LDBL_REDIR1_NTH
 (
 Çme
@@ -88589,7 +88985,7 @@ __Ædbl_
 
 	)
 
-362 
+368 
 	#__LDBL_REDIR_NTH
 (
 Çme
@@ -88597,7 +88993,7 @@ __Ædbl_
 ´Ùo
 ) \
 
-363 
+369 
 	`__LDBL_REDIR1_NTH
  (
 Çme
@@ -88609,7 +89005,7 @@ __Ædbl_
 
 	)
 
-364 
+370 
 	#__LDBL_REDIR1_DECL
 (
 Çme
@@ -88617,7 +89013,7 @@ __Ædbl_
 ®Ÿs
 ) \
 
-365 
+371 
 	`__ty³of
  (
 Çme
@@ -88629,13 +89025,13 @@ __Ædbl_
 
 	)
 
-366 
+372 
 	#__LDBL_REDIR_DECL
 (
 Çme
 ) \
 
-367 
+373 
 	`__ty³of
  (
 Çme
@@ -88647,7 +89043,7 @@ __Ædbl_
 
 	)
 
-368 
+374 
 	#__REDIRECT_LDBL
 (
 Çme
@@ -88657,7 +89053,7 @@ __Ædbl_
 ®Ÿs
 ) \
 
-369 
+375 
 	`__LDBL_REDIR1
  (
 Çme
@@ -88671,7 +89067,7 @@ __Ædbl_
 
 	)
 
-370 
+376 
 	#__REDIRECT_NTH_LDBL
 (
 Çme
@@ -88681,7 +89077,7 @@ __Ædbl_
 ®Ÿs
 ) \
 
-371 
+377 
 	`__LDBL_REDIR1_NTH
  (
 Çme
@@ -88695,7 +89091,7 @@ __Ædbl_
 
 	)
 
-374 #ià!
+380 #ià!
 defšed
  
 __LDBL_COMPAT
@@ -88703,7 +89099,7 @@ __LDBL_COMPAT
 __REDIRECT
 
 
-375 
+381 
 	#__LDBL_REDIR1
 (
 Çme
@@ -88715,7 +89111,7 @@ __REDIRECT
 	)
 proto
 
-376 
+382 
 	#__LDBL_REDIR
 (
 Çme
@@ -88725,7 +89121,7 @@ proto
 	)
 proto
 
-377 
+383 
 	#__LDBL_REDIR1_NTH
 (
 Çme
@@ -88739,7 +89135,7 @@ __THROW
 
 	)
 
-378 
+384 
 	#__LDBL_REDIR_NTH
 (
 Çme
@@ -88751,7 +89147,7 @@ __THROW
 
 	)
 
-379 
+385 
 	#__LDBL_REDIR_DECL
 (
 Çme
@@ -88759,11 +89155,11 @@ __THROW
 
 	)
 
-380 #ifdeà
+386 #ifdeà
 __REDIRECT
 
 
-381 
+387 
 	#__REDIRECT_LDBL
 (
 Çme
@@ -88777,7 +89173,7 @@ __REDIRECT
 
 	)
 
-382 
+388 
 	#__REDIRECT_NTH_LDBL
 (
 Çme
@@ -88787,7 +89183,7 @@ __REDIRECT
 ®Ÿs
 ) \
 
-383 
+389 
 	`__REDIRECT_NTH
  (
 Çme
@@ -88905,13 +89301,119 @@ _LIBC
 
 	)
 
+	@/usr/include/gnu/stubs-64.h
+
+6 #ifdeà
+_LIBC
+
+
+7 #”rÜ 
+AµliÿtiÚs
+ 
+may
+ 
+nÙ
+ 
+defše
+ 
+the
+ 
+maüo
+ 
+_LIBC
+
+
+10 
+	#__¡ub_bdæush
+
+
+	)
+
+11 
+	#__¡ub_chæags
+
+
+	)
+
+12 
+	#__¡ub_ç‰ach
+
+
+	)
+
+13 
+	#__¡ub_fchæags
+
+
+	)
+
+14 
+	#__¡ub_fd‘ach
+
+
+	)
+
+15 
+	#__¡ub_g‘msg
+
+
+	)
+
+16 
+	#__¡ub_g‰y
+
+
+	)
+
+17 
+	#__¡ub_lchmod
+
+
+	)
+
+18 
+	#__¡ub_putmsg
+
+
+	)
+
+19 
+	#__¡ub_»voke
+
+
+	)
+
+20 
+	#__¡ub_£Žogš
+
+
+	)
+
+21 
+	#__¡ub_sig»tuº
+
+
+	)
+
+22 
+	#__¡ub_s¡k
+
+
+	)
+
+23 
+	#__¡ub_¡ty
+
+
+	)
+
 	@
 1
 .
 1
 /usr/include
-198
-4264
+199
+4292
 arch/mips/include/asmdefs.h
 arch/mips/include/bus.h
 arch/mips/include/ktypes.h
@@ -89110,3 +89612,4 @@ vm/vm.c
 /usr/include/gnu/stubs.h
 /usr/include/sys/cdefs.h
 /usr/include/gnu/stubs-32.h
+/usr/include/gnu/stubs-64.h

@@ -25,5 +25,6 @@ pid_t sys_execv(struct trapframe *tf);
 int sys_waitpid(pid_t pid, int *returncode, int options);
 int sys_read(int filehandle, void *buf, size_t size);
 void* sys_sbrk(intptr_t amount);
-
+int sys_open(const char *filename, int flags);
+int sys_close(int fd);
 #endif /* _SYSCALL_H_ */

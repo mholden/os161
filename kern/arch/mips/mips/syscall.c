@@ -116,8 +116,16 @@ mips_syscall(struct trapframe *tf)
 	    case SYS_execv:
 	    	err = sys_execv(tf);
 	    	retval = 0;
-	    break;
+	   	break;
+	    
+	    case SYS_open:
+	   	err = sys_open(tf->tf_a0, tf->tf_a1);
+ 	    	break;
 
+	    case SYS_close:
+		err = sys_close(tf->tf_a0);
+	    	break; 
+	   
 	    /* Add stuff here */
  
 	    default:

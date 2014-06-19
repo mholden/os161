@@ -393,6 +393,8 @@ file 	  userprog/syscalls_asst2/sys_waitpid.c
 file 	  userprog/syscalls_asst2/sys_read.c
 file	  userprog/syscalls_asst2/sys_execv.c
 file	  userprog/syscalls_asst3/sys_sbrk.c
+file	  userprog/syscalls_asst4/sys_open.c
+file	  userprog/syscalls_asst4/sys_close.c
 
 #
 # Virtual memory system
