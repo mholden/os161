@@ -379,6 +379,11 @@ pcb_list.o: ${S}/thread/pcb_list.c
 SRCS+=${S}/thread/pcb_list.c
 OBJS+=pcb_list.o
 
+fd.o: ${S}/thread/fd.c
+	${COMPILE.c} ${S}/thread/fd.c
+SRCS+=${S}/thread/fd.c
+OBJS+=fd.o
+
 main.o: ${S}/main/main.c
 	${COMPILE.c} ${S}/main/main.c
 SRCS+=${S}/main/main.c
@@ -458,6 +463,16 @@ sys_close.o: ${S}/userprog/syscalls_asst4/sys_close.c
 	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_close.c
 SRCS+=${S}/userprog/syscalls_asst4/sys_close.c
 OBJS+=sys_close.o
+
+sys_fstat.o: ${S}/userprog/syscalls_asst4/sys_fstat.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_fstat.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_fstat.c
+OBJS+=sys_fstat.o
+
+sys_lseek.o: ${S}/userprog/syscalls_asst4/sys_lseek.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_lseek.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_lseek.c
+OBJS+=sys_lseek.o
 
 vm.o: ${S}/vm/vm.c
 	${COMPILE.c} ${S}/vm/vm.c

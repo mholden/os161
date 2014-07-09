@@ -379,9 +379,10 @@ MAXPROCS	./testbin/farm/farm.c	17;"	d	file:
 MAXPROCS	./testbin/kitchen/kitchen.c	14;"	d	file:
 MAXPROCS	./testbin/sty/sty.c	15;"	d	file:
 MAXSTRING	./testbin/tictac/tictac.c	23;"	d	file:
+MAX_FILES_PER_THREAD	./kern/include/fd.h	11;"	d
 MAX_NUM_PROCESSES	./kern/include/pcb_list.h	16;"	d
-MAX_PARAMS_EXECV	./kern/include/syscall.h	11;"	d
-MAX_STRLENGHT_EXECV	./kern/include/syscall.h	12;"	d
+MAX_PARAMS_EXECV	./kern/include/syscall.h	12;"	d
+MAX_STRLENGHT_EXECV	./kern/include/syscall.h	13;"	d
 MAX_TYPES	./lib/libc/random.c	151;"	d	file:
 MBLOCKSHIFT	./lib/libc/malloc.c	49;"	d	file:
 MBLOCKSIZE	./lib/libc/malloc.c	48;"	d	file:
@@ -451,22 +452,27 @@ OPT_DUMBVM	./kern/compile/ASST0/opt-dumbvm.h	4;"	d
 OPT_DUMBVM	./kern/compile/ASST1/opt-dumbvm.h	4;"	d
 OPT_DUMBVM	./kern/compile/ASST2/opt-dumbvm.h	4;"	d
 OPT_DUMBVM	./kern/compile/ASST3/opt-dumbvm.h	4;"	d
+OPT_DUMBVM	./kern/compile/ASST4/opt-dumbvm.h	4;"	d
 OPT_NET	./kern/compile/ASST0/opt-net.h	4;"	d
 OPT_NET	./kern/compile/ASST1/opt-net.h	4;"	d
 OPT_NET	./kern/compile/ASST2/opt-net.h	4;"	d
 OPT_NET	./kern/compile/ASST3/opt-net.h	4;"	d
+OPT_NET	./kern/compile/ASST4/opt-net.h	4;"	d
 OPT_NETFS	./kern/compile/ASST0/opt-netfs.h	4;"	d
 OPT_NETFS	./kern/compile/ASST1/opt-netfs.h	4;"	d
 OPT_NETFS	./kern/compile/ASST2/opt-netfs.h	4;"	d
 OPT_NETFS	./kern/compile/ASST3/opt-netfs.h	4;"	d
+OPT_NETFS	./kern/compile/ASST4/opt-netfs.h	4;"	d
 OPT_SFS	./kern/compile/ASST0/opt-sfs.h	4;"	d
 OPT_SFS	./kern/compile/ASST1/opt-sfs.h	4;"	d
 OPT_SFS	./kern/compile/ASST2/opt-sfs.h	4;"	d
 OPT_SFS	./kern/compile/ASST3/opt-sfs.h	4;"	d
+OPT_SFS	./kern/compile/ASST4/opt-sfs.h	4;"	d
 OPT_SYNCHPROBS	./kern/compile/ASST0/opt-synchprobs.h	4;"	d
 OPT_SYNCHPROBS	./kern/compile/ASST1/opt-synchprobs.h	4;"	d
 OPT_SYNCHPROBS	./kern/compile/ASST2/opt-synchprobs.h	4;"	d
 OPT_SYNCHPROBS	./kern/compile/ASST3/opt-synchprobs.h	4;"	d
+OPT_SYNCHPROBS	./kern/compile/ASST4/opt-synchprobs.h	4;"	d
 OVERHEAD	./testbin/malloctest/malloctest.c	26;"	d	file:
 O_ACCMODE	./kern/include/kern/unistd.h	19;"	d
 O_APPEND	./kern/include/kern/unistd.h	16;"	d
@@ -767,6 +773,7 @@ _AUTOCONF_H_	./kern/compile/ASST0/autoconf.h	3;"	d
 _AUTOCONF_H_	./kern/compile/ASST1/autoconf.h	3;"	d
 _AUTOCONF_H_	./kern/compile/ASST2/autoconf.h	3;"	d
 _AUTOCONF_H_	./kern/compile/ASST3/autoconf.h	3;"	d
+_AUTOCONF_H_	./kern/compile/ASST4/autoconf.h	3;"	d
 _BIG_ENDIAN	./kern/arch/mips/include/types.h	66;"	d
 _BITMAP_H_	./kern/include/bitmap.h	2;"	d
 _CLOCK_H_	./kern/include/clock.h	2;"	d
@@ -776,6 +783,7 @@ _ELF_H_	./kern/include/elf.h	2;"	d
 _EMUFS_H_	./kern/include/emufs.h	2;"	d
 _ERRNO_H_	./include/errno.h	2;"	d
 _ERR_H_	./include/err.h	2;"	d
+_FD_H_	./kern/include/fd.h	2;"	d
 _FS_H_	./kern/include/fs.h	2;"	d
 _GENERIC_BEEP_H_	./kern/dev/generic/beep.h	2;"	d
 _GENERIC_CONSOLE_H_	./kern/dev/generic/console.h	2;"	d
@@ -817,22 +825,27 @@ _OPT_DUMBVM_H_	./kern/compile/ASST0/opt-dumbvm.h	3;"	d
 _OPT_DUMBVM_H_	./kern/compile/ASST1/opt-dumbvm.h	3;"	d
 _OPT_DUMBVM_H_	./kern/compile/ASST2/opt-dumbvm.h	3;"	d
 _OPT_DUMBVM_H_	./kern/compile/ASST3/opt-dumbvm.h	3;"	d
+_OPT_DUMBVM_H_	./kern/compile/ASST4/opt-dumbvm.h	3;"	d
 _OPT_NETFS_H_	./kern/compile/ASST0/opt-netfs.h	3;"	d
 _OPT_NETFS_H_	./kern/compile/ASST1/opt-netfs.h	3;"	d
 _OPT_NETFS_H_	./kern/compile/ASST2/opt-netfs.h	3;"	d
 _OPT_NETFS_H_	./kern/compile/ASST3/opt-netfs.h	3;"	d
+_OPT_NETFS_H_	./kern/compile/ASST4/opt-netfs.h	3;"	d
 _OPT_NET_H_	./kern/compile/ASST0/opt-net.h	3;"	d
 _OPT_NET_H_	./kern/compile/ASST1/opt-net.h	3;"	d
 _OPT_NET_H_	./kern/compile/ASST2/opt-net.h	3;"	d
 _OPT_NET_H_	./kern/compile/ASST3/opt-net.h	3;"	d
+_OPT_NET_H_	./kern/compile/ASST4/opt-net.h	3;"	d
 _OPT_SFS_H_	./kern/compile/ASST0/opt-sfs.h	3;"	d
 _OPT_SFS_H_	./kern/compile/ASST1/opt-sfs.h	3;"	d
 _OPT_SFS_H_	./kern/compile/ASST2/opt-sfs.h	3;"	d
 _OPT_SFS_H_	./kern/compile/ASST3/opt-sfs.h	3;"	d
+_OPT_SFS_H_	./kern/compile/ASST4/opt-sfs.h	3;"	d
 _OPT_SYNCHPROBS_H_	./kern/compile/ASST0/opt-synchprobs.h	3;"	d
 _OPT_SYNCHPROBS_H_	./kern/compile/ASST1/opt-synchprobs.h	3;"	d
 _OPT_SYNCHPROBS_H_	./kern/compile/ASST2/opt-synchprobs.h	3;"	d
 _OPT_SYNCHPROBS_H_	./kern/compile/ASST3/opt-synchprobs.h	3;"	d
+_OPT_SYNCHPROBS_H_	./kern/compile/ASST4/opt-synchprobs.h	3;"	d
 _PATH_RANDOM	./testbin/malloctest/malloctest.c	18;"	d	file:
 _PATH_SHELL	./kern/main/menu.c	25;"	d	file:
 _PCB_LIST_H_	./kern/include/pcb_list.h	2;"	d
@@ -907,6 +920,7 @@ a1	./kern/arch/mips/include/asmdefs.h	15;"	d
 a2	./kern/arch/mips/include/asmdefs.h	16;"	d
 a3	./kern/arch/mips/include/asmdefs.h	17;"	d
 abort	./lib/libc/abort.c	/^abort(void)$/;"	f
+acquire_fd	./kern/thread/fd.c	/^int acquire_fd(struct vnode* file){$/;"	f
 acquire_pid	./kern/thread/pcb_list.c	/^pid_t acquire_pid(void){$/;"	f
 addeq	./testbin/parallelvm/parallelvm.c	/^addeq(struct matrix *m1, const struct matrix *m2)$/;"	f	file:
 addrspace	./kern/include/addrspace.h	/^struct addrspace {$/;"	s
@@ -983,50 +997,62 @@ autoconf_beep	./kern/compile/ASST0/autoconf.c	/^autoconf_beep(struct beep_softc 
 autoconf_beep	./kern/compile/ASST1/autoconf.c	/^autoconf_beep(struct beep_softc *bus, int busunit)$/;"	f	file:
 autoconf_beep	./kern/compile/ASST2/autoconf.c	/^autoconf_beep(struct beep_softc *bus, int busunit)$/;"	f	file:
 autoconf_beep	./kern/compile/ASST3/autoconf.c	/^autoconf_beep(struct beep_softc *bus, int busunit)$/;"	f	file:
+autoconf_beep	./kern/compile/ASST4/autoconf.c	/^autoconf_beep(struct beep_softc *bus, int busunit)$/;"	f	file:
 autoconf_con	./kern/compile/ASST0/autoconf.c	/^autoconf_con(struct con_softc *bus, int busunit)$/;"	f	file:
 autoconf_con	./kern/compile/ASST1/autoconf.c	/^autoconf_con(struct con_softc *bus, int busunit)$/;"	f	file:
 autoconf_con	./kern/compile/ASST2/autoconf.c	/^autoconf_con(struct con_softc *bus, int busunit)$/;"	f	file:
 autoconf_con	./kern/compile/ASST3/autoconf.c	/^autoconf_con(struct con_softc *bus, int busunit)$/;"	f	file:
+autoconf_con	./kern/compile/ASST4/autoconf.c	/^autoconf_con(struct con_softc *bus, int busunit)$/;"	f	file:
 autoconf_emu	./kern/compile/ASST0/autoconf.c	/^autoconf_emu(struct emu_softc *bus, int busunit)$/;"	f	file:
 autoconf_emu	./kern/compile/ASST1/autoconf.c	/^autoconf_emu(struct emu_softc *bus, int busunit)$/;"	f	file:
 autoconf_emu	./kern/compile/ASST2/autoconf.c	/^autoconf_emu(struct emu_softc *bus, int busunit)$/;"	f	file:
 autoconf_emu	./kern/compile/ASST3/autoconf.c	/^autoconf_emu(struct emu_softc *bus, int busunit)$/;"	f	file:
+autoconf_emu	./kern/compile/ASST4/autoconf.c	/^autoconf_emu(struct emu_softc *bus, int busunit)$/;"	f	file:
 autoconf_lamebus	./kern/compile/ASST0/autoconf.c	/^autoconf_lamebus(struct lamebus_softc *bus, int busunit)$/;"	f
 autoconf_lamebus	./kern/compile/ASST1/autoconf.c	/^autoconf_lamebus(struct lamebus_softc *bus, int busunit)$/;"	f
 autoconf_lamebus	./kern/compile/ASST2/autoconf.c	/^autoconf_lamebus(struct lamebus_softc *bus, int busunit)$/;"	f
 autoconf_lamebus	./kern/compile/ASST3/autoconf.c	/^autoconf_lamebus(struct lamebus_softc *bus, int busunit)$/;"	f
+autoconf_lamebus	./kern/compile/ASST4/autoconf.c	/^autoconf_lamebus(struct lamebus_softc *bus, int busunit)$/;"	f
 autoconf_lhd	./kern/compile/ASST0/autoconf.c	/^autoconf_lhd(struct lhd_softc *bus, int busunit)$/;"	f	file:
 autoconf_lhd	./kern/compile/ASST1/autoconf.c	/^autoconf_lhd(struct lhd_softc *bus, int busunit)$/;"	f	file:
 autoconf_lhd	./kern/compile/ASST2/autoconf.c	/^autoconf_lhd(struct lhd_softc *bus, int busunit)$/;"	f	file:
 autoconf_lhd	./kern/compile/ASST3/autoconf.c	/^autoconf_lhd(struct lhd_softc *bus, int busunit)$/;"	f	file:
+autoconf_lhd	./kern/compile/ASST4/autoconf.c	/^autoconf_lhd(struct lhd_softc *bus, int busunit)$/;"	f	file:
 autoconf_lrandom	./kern/compile/ASST0/autoconf.c	/^autoconf_lrandom(struct lrandom_softc *bus, int busunit)$/;"	f	file:
 autoconf_lrandom	./kern/compile/ASST1/autoconf.c	/^autoconf_lrandom(struct lrandom_softc *bus, int busunit)$/;"	f	file:
 autoconf_lrandom	./kern/compile/ASST2/autoconf.c	/^autoconf_lrandom(struct lrandom_softc *bus, int busunit)$/;"	f	file:
 autoconf_lrandom	./kern/compile/ASST3/autoconf.c	/^autoconf_lrandom(struct lrandom_softc *bus, int busunit)$/;"	f	file:
+autoconf_lrandom	./kern/compile/ASST4/autoconf.c	/^autoconf_lrandom(struct lrandom_softc *bus, int busunit)$/;"	f	file:
 autoconf_lser	./kern/compile/ASST0/autoconf.c	/^autoconf_lser(struct lser_softc *bus, int busunit)$/;"	f	file:
 autoconf_lser	./kern/compile/ASST1/autoconf.c	/^autoconf_lser(struct lser_softc *bus, int busunit)$/;"	f	file:
 autoconf_lser	./kern/compile/ASST2/autoconf.c	/^autoconf_lser(struct lser_softc *bus, int busunit)$/;"	f	file:
 autoconf_lser	./kern/compile/ASST3/autoconf.c	/^autoconf_lser(struct lser_softc *bus, int busunit)$/;"	f	file:
+autoconf_lser	./kern/compile/ASST4/autoconf.c	/^autoconf_lser(struct lser_softc *bus, int busunit)$/;"	f	file:
 autoconf_ltimer	./kern/compile/ASST0/autoconf.c	/^autoconf_ltimer(struct ltimer_softc *bus, int busunit)$/;"	f	file:
 autoconf_ltimer	./kern/compile/ASST1/autoconf.c	/^autoconf_ltimer(struct ltimer_softc *bus, int busunit)$/;"	f	file:
 autoconf_ltimer	./kern/compile/ASST2/autoconf.c	/^autoconf_ltimer(struct ltimer_softc *bus, int busunit)$/;"	f	file:
 autoconf_ltimer	./kern/compile/ASST3/autoconf.c	/^autoconf_ltimer(struct ltimer_softc *bus, int busunit)$/;"	f	file:
+autoconf_ltimer	./kern/compile/ASST4/autoconf.c	/^autoconf_ltimer(struct ltimer_softc *bus, int busunit)$/;"	f	file:
 autoconf_ltrace	./kern/compile/ASST0/autoconf.c	/^autoconf_ltrace(struct ltrace_softc *bus, int busunit)$/;"	f	file:
 autoconf_ltrace	./kern/compile/ASST1/autoconf.c	/^autoconf_ltrace(struct ltrace_softc *bus, int busunit)$/;"	f	file:
 autoconf_ltrace	./kern/compile/ASST2/autoconf.c	/^autoconf_ltrace(struct ltrace_softc *bus, int busunit)$/;"	f	file:
 autoconf_ltrace	./kern/compile/ASST3/autoconf.c	/^autoconf_ltrace(struct ltrace_softc *bus, int busunit)$/;"	f	file:
+autoconf_ltrace	./kern/compile/ASST4/autoconf.c	/^autoconf_ltrace(struct ltrace_softc *bus, int busunit)$/;"	f	file:
 autoconf_pseudorand	./kern/compile/ASST0/autoconf.c	/^autoconf_pseudorand(struct pseudorand_softc *bus, int busunit)$/;"	f
 autoconf_pseudorand	./kern/compile/ASST1/autoconf.c	/^autoconf_pseudorand(struct pseudorand_softc *bus, int busunit)$/;"	f
 autoconf_pseudorand	./kern/compile/ASST2/autoconf.c	/^autoconf_pseudorand(struct pseudorand_softc *bus, int busunit)$/;"	f
 autoconf_pseudorand	./kern/compile/ASST3/autoconf.c	/^autoconf_pseudorand(struct pseudorand_softc *bus, int busunit)$/;"	f
+autoconf_pseudorand	./kern/compile/ASST4/autoconf.c	/^autoconf_pseudorand(struct pseudorand_softc *bus, int busunit)$/;"	f
 autoconf_random	./kern/compile/ASST0/autoconf.c	/^autoconf_random(struct random_softc *bus, int busunit)$/;"	f	file:
 autoconf_random	./kern/compile/ASST1/autoconf.c	/^autoconf_random(struct random_softc *bus, int busunit)$/;"	f	file:
 autoconf_random	./kern/compile/ASST2/autoconf.c	/^autoconf_random(struct random_softc *bus, int busunit)$/;"	f	file:
 autoconf_random	./kern/compile/ASST3/autoconf.c	/^autoconf_random(struct random_softc *bus, int busunit)$/;"	f	file:
+autoconf_random	./kern/compile/ASST4/autoconf.c	/^autoconf_random(struct random_softc *bus, int busunit)$/;"	f	file:
 autoconf_rtclock	./kern/compile/ASST0/autoconf.c	/^autoconf_rtclock(struct rtclock_softc *bus, int busunit)$/;"	f	file:
 autoconf_rtclock	./kern/compile/ASST1/autoconf.c	/^autoconf_rtclock(struct rtclock_softc *bus, int busunit)$/;"	f	file:
 autoconf_rtclock	./kern/compile/ASST2/autoconf.c	/^autoconf_rtclock(struct rtclock_softc *bus, int busunit)$/;"	f	file:
 autoconf_rtclock	./kern/compile/ASST3/autoconf.c	/^autoconf_rtclock(struct rtclock_softc *bus, int busunit)$/;"	f	file:
+autoconf_rtclock	./kern/compile/ASST4/autoconf.c	/^autoconf_rtclock(struct rtclock_softc *bus, int busunit)$/;"	f	file:
 backsp	./kern/lib/kgets.c	/^backsp(void)$/;"	f	file:
 badbuf_fstat	./testbin/badcall/bad_stat.c	/^badbuf_fstat(struct stat *sb)$/;"	f	file:
 badbuf_lstat	./testbin/badcall/bad_stat.c	/^badbuf_lstat(struct stat *sb)$/;"	f	file:
@@ -1074,10 +1100,12 @@ buildconfig	./kern/compile/ASST0/vers.c	/^const char buildconfig[] = "ASST0";$/;
 buildconfig	./kern/compile/ASST1/vers.c	/^const char buildconfig[] = "ASST1";$/;"	v
 buildconfig	./kern/compile/ASST2/vers.c	/^const char buildconfig[] = "ASST2";$/;"	v
 buildconfig	./kern/compile/ASST3/vers.c	/^const char buildconfig[] = "ASST3";$/;"	v
+buildconfig	./kern/compile/ASST4/vers.c	/^const char buildconfig[] = "ASST4";$/;"	v
 buildversion	./kern/compile/ASST0/vers.c	/^const int buildversion = 36;$/;"	v
 buildversion	./kern/compile/ASST1/vers.c	/^const int buildversion = 30;$/;"	v
 buildversion	./kern/compile/ASST2/vers.c	/^const int buildversion = 74;$/;"	v
-buildversion	./kern/compile/ASST3/vers.c	/^const int buildversion = 191;$/;"	v
+buildversion	./kern/compile/ASST3/vers.c	/^const int buildversion = 193;$/;"	v
+buildversion	./kern/compile/ASST4/vers.c	/^const int buildversion = 17;$/;"	v
 bus_map_area	./kern/arch/mips/include/bus.h	20;"	d
 bus_read_register	./kern/arch/mips/include/bus.h	17;"	d
 bus_write_register	./kern/arch/mips/include/bus.h	14;"	d
@@ -1418,8 +1446,11 @@ f	./testbin/badcall/driver.c	/^	void (*f)(void);$/;"	m	struct:__anon13	file:
 f	./testbin/crash/crash.c	/^	func f;$/;"	m	struct:__anon16	file:
 fail	./kern/test/synchtest.c	/^fail(unsigned long num, const char *msg)$/;"	f	file:
 fbuffer	./testbin/f_test/f_test.c	/^char fbuffer[BUFFER_SIZE];$/;"	v
+fd	./kern/include/fd.h	/^struct fd {$/;"	s
 fd	./sbin/dumpsfs/disk.c	/^static int fd=-1;$/;"	v	file:
 fd	./sbin/mksfs/disk.c	/^static int fd=-1;$/;"	v	file:
+file	./kern/include/fd.h	/^	struct vnode* file;$/;"	m	struct:fd	typeref:struct:fd::vnode
+file_descriptors	./kern/include/thread.h	/^	struct fd* file_descriptors[MAX_FILES_PER_THREAD];$/;"	m	struct:thread	typeref:struct:thread::fd
 fill_deadbeef	./kern/lib/kheap.c	/^fill_deadbeef(void *vptr, size_t len)$/;"	f	file:
 fillchar	./lib/libc/__printf.c	/^	int fillchar;$/;"	m	struct:__anon11	file:
 fillrand	./testbin/randcall/main.c	/^fillrand(void *p, size_t len)$/;"	f	file:
@@ -1739,6 +1770,7 @@ main	./testbin/kitchen/kitchen.c	/^main(void)$/;"	f
 main	./testbin/malloctest/malloctest.c	/^main(int argc, char *argv[])$/;"	f
 main	./testbin/matmult/matmult-orig.c	/^main()$/;"	f
 main	./testbin/matmult/matmult.c	/^main()$/;"	f
+main	./testbin/openclosetest/openclosetest.c	/^main(int argc, char *argv[])$/;"	f
 main	./testbin/palin/palin.c	/^main()$/;"	f
 main	./testbin/parallelvm/parallelvm.c	/^main()$/;"	f
 main	./testbin/randcall/main.c	/^main(int argc, char *argv[])$/;"	f
@@ -1854,42 +1886,52 @@ nextunit_beep	./kern/compile/ASST0/autoconf.c	/^static int nextunit_beep;$/;"	v	
 nextunit_beep	./kern/compile/ASST1/autoconf.c	/^static int nextunit_beep;$/;"	v	file:
 nextunit_beep	./kern/compile/ASST2/autoconf.c	/^static int nextunit_beep;$/;"	v	file:
 nextunit_beep	./kern/compile/ASST3/autoconf.c	/^static int nextunit_beep;$/;"	v	file:
+nextunit_beep	./kern/compile/ASST4/autoconf.c	/^static int nextunit_beep;$/;"	v	file:
 nextunit_con	./kern/compile/ASST0/autoconf.c	/^static int nextunit_con;$/;"	v	file:
 nextunit_con	./kern/compile/ASST1/autoconf.c	/^static int nextunit_con;$/;"	v	file:
 nextunit_con	./kern/compile/ASST2/autoconf.c	/^static int nextunit_con;$/;"	v	file:
 nextunit_con	./kern/compile/ASST3/autoconf.c	/^static int nextunit_con;$/;"	v	file:
+nextunit_con	./kern/compile/ASST4/autoconf.c	/^static int nextunit_con;$/;"	v	file:
 nextunit_emu	./kern/compile/ASST0/autoconf.c	/^static int nextunit_emu;$/;"	v	file:
 nextunit_emu	./kern/compile/ASST1/autoconf.c	/^static int nextunit_emu;$/;"	v	file:
 nextunit_emu	./kern/compile/ASST2/autoconf.c	/^static int nextunit_emu;$/;"	v	file:
 nextunit_emu	./kern/compile/ASST3/autoconf.c	/^static int nextunit_emu;$/;"	v	file:
+nextunit_emu	./kern/compile/ASST4/autoconf.c	/^static int nextunit_emu;$/;"	v	file:
 nextunit_lhd	./kern/compile/ASST0/autoconf.c	/^static int nextunit_lhd;$/;"	v	file:
 nextunit_lhd	./kern/compile/ASST1/autoconf.c	/^static int nextunit_lhd;$/;"	v	file:
 nextunit_lhd	./kern/compile/ASST2/autoconf.c	/^static int nextunit_lhd;$/;"	v	file:
 nextunit_lhd	./kern/compile/ASST3/autoconf.c	/^static int nextunit_lhd;$/;"	v	file:
+nextunit_lhd	./kern/compile/ASST4/autoconf.c	/^static int nextunit_lhd;$/;"	v	file:
 nextunit_lrandom	./kern/compile/ASST0/autoconf.c	/^static int nextunit_lrandom;$/;"	v	file:
 nextunit_lrandom	./kern/compile/ASST1/autoconf.c	/^static int nextunit_lrandom;$/;"	v	file:
 nextunit_lrandom	./kern/compile/ASST2/autoconf.c	/^static int nextunit_lrandom;$/;"	v	file:
 nextunit_lrandom	./kern/compile/ASST3/autoconf.c	/^static int nextunit_lrandom;$/;"	v	file:
+nextunit_lrandom	./kern/compile/ASST4/autoconf.c	/^static int nextunit_lrandom;$/;"	v	file:
 nextunit_lser	./kern/compile/ASST0/autoconf.c	/^static int nextunit_lser;$/;"	v	file:
 nextunit_lser	./kern/compile/ASST1/autoconf.c	/^static int nextunit_lser;$/;"	v	file:
 nextunit_lser	./kern/compile/ASST2/autoconf.c	/^static int nextunit_lser;$/;"	v	file:
 nextunit_lser	./kern/compile/ASST3/autoconf.c	/^static int nextunit_lser;$/;"	v	file:
+nextunit_lser	./kern/compile/ASST4/autoconf.c	/^static int nextunit_lser;$/;"	v	file:
 nextunit_ltimer	./kern/compile/ASST0/autoconf.c	/^static int nextunit_ltimer;$/;"	v	file:
 nextunit_ltimer	./kern/compile/ASST1/autoconf.c	/^static int nextunit_ltimer;$/;"	v	file:
 nextunit_ltimer	./kern/compile/ASST2/autoconf.c	/^static int nextunit_ltimer;$/;"	v	file:
 nextunit_ltimer	./kern/compile/ASST3/autoconf.c	/^static int nextunit_ltimer;$/;"	v	file:
+nextunit_ltimer	./kern/compile/ASST4/autoconf.c	/^static int nextunit_ltimer;$/;"	v	file:
 nextunit_ltrace	./kern/compile/ASST0/autoconf.c	/^static int nextunit_ltrace;$/;"	v	file:
 nextunit_ltrace	./kern/compile/ASST1/autoconf.c	/^static int nextunit_ltrace;$/;"	v	file:
 nextunit_ltrace	./kern/compile/ASST2/autoconf.c	/^static int nextunit_ltrace;$/;"	v	file:
 nextunit_ltrace	./kern/compile/ASST3/autoconf.c	/^static int nextunit_ltrace;$/;"	v	file:
+nextunit_ltrace	./kern/compile/ASST4/autoconf.c	/^static int nextunit_ltrace;$/;"	v	file:
 nextunit_random	./kern/compile/ASST0/autoconf.c	/^static int nextunit_random;$/;"	v	file:
 nextunit_random	./kern/compile/ASST1/autoconf.c	/^static int nextunit_random;$/;"	v	file:
 nextunit_random	./kern/compile/ASST2/autoconf.c	/^static int nextunit_random;$/;"	v	file:
 nextunit_random	./kern/compile/ASST3/autoconf.c	/^static int nextunit_random;$/;"	v	file:
+nextunit_random	./kern/compile/ASST4/autoconf.c	/^static int nextunit_random;$/;"	v	file:
 nextunit_rtclock	./kern/compile/ASST0/autoconf.c	/^static int nextunit_rtclock;$/;"	v	file:
 nextunit_rtclock	./kern/compile/ASST1/autoconf.c	/^static int nextunit_rtclock;$/;"	v	file:
 nextunit_rtclock	./kern/compile/ASST2/autoconf.c	/^static int nextunit_rtclock;$/;"	v	file:
 nextunit_rtclock	./kern/compile/ASST3/autoconf.c	/^static int nextunit_rtclock;$/;"	v	file:
+nextunit_rtclock	./kern/compile/ASST4/autoconf.c	/^static int nextunit_rtclock;$/;"	v	file:
 nextwrite	./kern/lib/queue.c	/^	int nextwrite;	\/\/ next element to write to (was head)$/;"	m	struct:queue	file:
 nfree	./kern/lib/kheap.c	/^	u_int16_t nfree;$/;"	m	struct:pageref	file:
 npids	./testbin/farm/farm.c	/^static int pids[MAXPROCS], npids;$/;"	v	file:
@@ -1995,6 +2037,7 @@ pseudoconfig	./kern/compile/ASST0/autoconf.c	/^pseudoconfig(void)$/;"	f
 pseudoconfig	./kern/compile/ASST1/autoconf.c	/^pseudoconfig(void)$/;"	f
 pseudoconfig	./kern/compile/ASST2/autoconf.c	/^pseudoconfig(void)$/;"	f
 pseudoconfig	./kern/compile/ASST3/autoconf.c	/^pseudoconfig(void)$/;"	f
+pseudoconfig	./kern/compile/ASST4/autoconf.c	/^pseudoconfig(void)$/;"	f
 pseudorand_randmax	./kern/dev/generic/pseudorand.c	/^pseudorand_randmax(void *devdata)$/;"	f
 pseudorand_random	./kern/dev/generic/pseudorand.c	/^pseudorand_random(void *devdata)$/;"	f
 pseudorand_read	./kern/dev/generic/pseudorand.c	/^pseudorand_read(void *devdata, struct uio *uio)$/;"	f
@@ -2320,11 +2363,15 @@ symlink_badpath2	./testbin/badcall/common_path.c	/^symlink_badpath2(const char *
 symlink_empty1	./testbin/badcall/bad_symlink.c	/^symlink_empty1(void)$/;"	f	file:
 symlink_empty2	./testbin/badcall/bad_symlink.c	/^symlink_empty2(void)$/;"	f	file:
 sys__exit	./kern/userprog/syscalls_asst2/sys__exit.c	/^void sys__exit(int exit_code){$/;"	f
+sys_close	./kern/userprog/syscalls_asst4/sys_close.c	/^int sys_close(int fd){$/;"	f
 sys_errlist	./kern/include/kern/errmsg.h	/^const char *const sys_errlist[] = {$/;"	v
 sys_execv	./kern/userprog/syscalls_asst2/sys_execv.c	/^sys_execv(struct trapframe *tf)$/;"	f
 sys_fork	./kern/userprog/syscalls_asst2/sys_fork.c	/^pid_t sys_fork(struct trapframe *tf){$/;"	f
+sys_fstat	./kern/userprog/syscalls_asst4/sys_fstat.c	/^int sys_fstat(int fd, struct stat *buf){$/;"	f
 sys_getpid	./kern/userprog/syscalls_asst2/sys_getpid.c	/^pid_t sys_getpid(void){$/;"	f
+sys_lseek	./kern/userprog/syscalls_asst4/sys_lseek.c	/^off_t sys_lseek(int filehandle, off_t pos, int code){$/;"	f
 sys_nerr	./kern/include/kern/errmsg.h	/^const int sys_nerr = sizeof(sys_errlist)\/sizeof(const char *);$/;"	v
+sys_open	./kern/userprog/syscalls_asst4/sys_open.c	/^int sys_open(const char *filename, int flags){$/;"	f
 sys_read	./kern/userprog/syscalls_asst2/sys_read.c	/^int sys_read(int filehandle, void *buf, size_t max_size){$/;"	f
 sys_reboot	./kern/main/main.c	/^sys_reboot(int code)$/;"	f
 sys_sbrk	./kern/userprog/syscalls_asst3/sys_sbrk.c	/^void* sys_sbrk(intptr_t amount){$/;"	f
@@ -2510,46 +2557,57 @@ tryattach_beep_to_ltimer	./kern/compile/ASST0/autoconf.c	/^tryattach_beep_to_lti
 tryattach_beep_to_ltimer	./kern/compile/ASST1/autoconf.c	/^tryattach_beep_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
 tryattach_beep_to_ltimer	./kern/compile/ASST2/autoconf.c	/^tryattach_beep_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
 tryattach_beep_to_ltimer	./kern/compile/ASST3/autoconf.c	/^tryattach_beep_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
+tryattach_beep_to_ltimer	./kern/compile/ASST4/autoconf.c	/^tryattach_beep_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
 tryattach_con_to_lser	./kern/compile/ASST0/autoconf.c	/^tryattach_con_to_lser(int devunit, struct lser_softc *bus, int busunit)$/;"	f	file:
 tryattach_con_to_lser	./kern/compile/ASST1/autoconf.c	/^tryattach_con_to_lser(int devunit, struct lser_softc *bus, int busunit)$/;"	f	file:
 tryattach_con_to_lser	./kern/compile/ASST2/autoconf.c	/^tryattach_con_to_lser(int devunit, struct lser_softc *bus, int busunit)$/;"	f	file:
 tryattach_con_to_lser	./kern/compile/ASST3/autoconf.c	/^tryattach_con_to_lser(int devunit, struct lser_softc *bus, int busunit)$/;"	f	file:
+tryattach_con_to_lser	./kern/compile/ASST4/autoconf.c	/^tryattach_con_to_lser(int devunit, struct lser_softc *bus, int busunit)$/;"	f	file:
 tryattach_emu_to_lamebus	./kern/compile/ASST0/autoconf.c	/^tryattach_emu_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_emu_to_lamebus	./kern/compile/ASST1/autoconf.c	/^tryattach_emu_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_emu_to_lamebus	./kern/compile/ASST2/autoconf.c	/^tryattach_emu_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_emu_to_lamebus	./kern/compile/ASST3/autoconf.c	/^tryattach_emu_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
+tryattach_emu_to_lamebus	./kern/compile/ASST4/autoconf.c	/^tryattach_emu_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lhd_to_lamebus	./kern/compile/ASST0/autoconf.c	/^tryattach_lhd_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lhd_to_lamebus	./kern/compile/ASST1/autoconf.c	/^tryattach_lhd_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lhd_to_lamebus	./kern/compile/ASST2/autoconf.c	/^tryattach_lhd_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lhd_to_lamebus	./kern/compile/ASST3/autoconf.c	/^tryattach_lhd_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
+tryattach_lhd_to_lamebus	./kern/compile/ASST4/autoconf.c	/^tryattach_lhd_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lrandom_to_lamebus	./kern/compile/ASST0/autoconf.c	/^tryattach_lrandom_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lrandom_to_lamebus	./kern/compile/ASST1/autoconf.c	/^tryattach_lrandom_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lrandom_to_lamebus	./kern/compile/ASST2/autoconf.c	/^tryattach_lrandom_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lrandom_to_lamebus	./kern/compile/ASST3/autoconf.c	/^tryattach_lrandom_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
+tryattach_lrandom_to_lamebus	./kern/compile/ASST4/autoconf.c	/^tryattach_lrandom_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lser_to_lamebus	./kern/compile/ASST0/autoconf.c	/^tryattach_lser_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lser_to_lamebus	./kern/compile/ASST1/autoconf.c	/^tryattach_lser_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lser_to_lamebus	./kern/compile/ASST2/autoconf.c	/^tryattach_lser_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_lser_to_lamebus	./kern/compile/ASST3/autoconf.c	/^tryattach_lser_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
+tryattach_lser_to_lamebus	./kern/compile/ASST4/autoconf.c	/^tryattach_lser_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_ltimer_to_lamebus	./kern/compile/ASST0/autoconf.c	/^tryattach_ltimer_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_ltimer_to_lamebus	./kern/compile/ASST1/autoconf.c	/^tryattach_ltimer_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_ltimer_to_lamebus	./kern/compile/ASST2/autoconf.c	/^tryattach_ltimer_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_ltimer_to_lamebus	./kern/compile/ASST3/autoconf.c	/^tryattach_ltimer_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
+tryattach_ltimer_to_lamebus	./kern/compile/ASST4/autoconf.c	/^tryattach_ltimer_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_ltrace_to_lamebus	./kern/compile/ASST0/autoconf.c	/^tryattach_ltrace_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_ltrace_to_lamebus	./kern/compile/ASST1/autoconf.c	/^tryattach_ltrace_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_ltrace_to_lamebus	./kern/compile/ASST2/autoconf.c	/^tryattach_ltrace_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_ltrace_to_lamebus	./kern/compile/ASST3/autoconf.c	/^tryattach_ltrace_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
+tryattach_ltrace_to_lamebus	./kern/compile/ASST4/autoconf.c	/^tryattach_ltrace_to_lamebus(int devunit, struct lamebus_softc *bus, int busunit)$/;"	f	file:
 tryattach_random_to_lrandom	./kern/compile/ASST0/autoconf.c	/^tryattach_random_to_lrandom(int devunit, struct lrandom_softc *bus, int busunit)$/;"	f	file:
 tryattach_random_to_lrandom	./kern/compile/ASST1/autoconf.c	/^tryattach_random_to_lrandom(int devunit, struct lrandom_softc *bus, int busunit)$/;"	f	file:
 tryattach_random_to_lrandom	./kern/compile/ASST2/autoconf.c	/^tryattach_random_to_lrandom(int devunit, struct lrandom_softc *bus, int busunit)$/;"	f	file:
 tryattach_random_to_lrandom	./kern/compile/ASST3/autoconf.c	/^tryattach_random_to_lrandom(int devunit, struct lrandom_softc *bus, int busunit)$/;"	f	file:
+tryattach_random_to_lrandom	./kern/compile/ASST4/autoconf.c	/^tryattach_random_to_lrandom(int devunit, struct lrandom_softc *bus, int busunit)$/;"	f	file:
 tryattach_random_to_pseudorand	./kern/compile/ASST0/autoconf.c	/^tryattach_random_to_pseudorand(int devunit, struct pseudorand_softc *bus, int busunit)$/;"	f	file:
 tryattach_random_to_pseudorand	./kern/compile/ASST1/autoconf.c	/^tryattach_random_to_pseudorand(int devunit, struct pseudorand_softc *bus, int busunit)$/;"	f	file:
 tryattach_random_to_pseudorand	./kern/compile/ASST2/autoconf.c	/^tryattach_random_to_pseudorand(int devunit, struct pseudorand_softc *bus, int busunit)$/;"	f	file:
 tryattach_random_to_pseudorand	./kern/compile/ASST3/autoconf.c	/^tryattach_random_to_pseudorand(int devunit, struct pseudorand_softc *bus, int busunit)$/;"	f	file:
+tryattach_random_to_pseudorand	./kern/compile/ASST4/autoconf.c	/^tryattach_random_to_pseudorand(int devunit, struct pseudorand_softc *bus, int busunit)$/;"	f	file:
 tryattach_rtclock_to_ltimer	./kern/compile/ASST0/autoconf.c	/^tryattach_rtclock_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
 tryattach_rtclock_to_ltimer	./kern/compile/ASST1/autoconf.c	/^tryattach_rtclock_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
 tryattach_rtclock_to_ltimer	./kern/compile/ASST2/autoconf.c	/^tryattach_rtclock_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
 tryattach_rtclock_to_ltimer	./kern/compile/ASST3/autoconf.c	/^tryattach_rtclock_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
+tryattach_rtclock_to_ltimer	./kern/compile/ASST4/autoconf.c	/^tryattach_rtclock_to_ltimer(int devunit, struct ltimer_softc *bus, int busunit)$/;"	f	file:
 trycalls	./testbin/randcall/calls.c	/^trycalls(int asst, int dofork, int count)$/;"	f
 tryfunc	./testbin/randcall/calls.c	/^typedef void (*tryfunc)(int dofork);$/;"	t	file:
 tsem	./kern/test/threadtest.c	/^static struct semaphore *tsem = NULL;$/;"	v	typeref:struct:semaphore	file:

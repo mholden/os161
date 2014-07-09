@@ -1,19 +1,25 @@
 #include <types.h>
+#include <lib.h>
 #include <kern/errno.h>
 #include <syscall.h>
+#include <vfs.h>
+#include <vnode.h>
+#include <fd.h>
 
 /*
  *  The open() syscall.
  */
 
 int sys_open(const char *filename, int flags){
-	(void) filename;
-	(void) flags;
-	return EUNIMP;
+	
+	/* Should error check inputs (valid pointer? valid flags?) */
+	int err, ret;
+	struct vnode *file = NULL; 
 
-	/*
-	 * 1. Error check (valid pointer? valid flags?)
-	 * 2. Allocate a file descriptor from curthread->fd array
-	 * 3. Call vfs_open()
-	 */
+	/* This may destroy filename.. copy it somewhere if needed */
+	err = vfs_open(filename, flags, &file);
+	if(err)	return err;
+
+	ret = acquire_fd(file);
+	return ret;
 }

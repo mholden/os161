@@ -79,8 +79,8 @@ mips_syscall(struct trapframe *tf)
 		break;
 
 	    case SYS_write:
-		err = sys_write(tf->tf_a0, (void *) tf->tf_a1, tf->tf_a2);
-		retval = 1; // hack version for puchar
+		retval = sys_write(tf->tf_a0, (void *) tf->tf_a1, tf->tf_a2);
+		//retval = 1; // previous hack version for puchar
 		break;
 		
 	    case SYS__exit:
@@ -119,13 +119,21 @@ mips_syscall(struct trapframe *tf)
 	   	break;
 	    
 	    case SYS_open:
-	   	err = sys_open(tf->tf_a0, tf->tf_a1);
+	   	err = sys_open((char *) tf->tf_a0, tf->tf_a1);
  	    	break;
 
 	    case SYS_close:
 		err = sys_close(tf->tf_a0);
 	    	break; 
-	   
+
+	    case SYS_fstat:
+		err = sys_fstat(tf->tf_a0, (struct stat *) tf->tf_a1);
+		break;
+	  
+	    case SYS_lseek:
+		retval = sys_lseek(tf->tf_a0, tf->tf_a1, tf->tf_a2);
+		break;
+ 
 	    /* Add stuff here */
  
 	    default:

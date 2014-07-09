@@ -3,6 +3,7 @@
 
 #include <kern/types.h>
 #include <machine/trapframe.h>
+#include <kern/stat.h>
 
 /*
  * Max number of paramenters for passing into a new process through execv
@@ -26,5 +27,7 @@ int sys_waitpid(pid_t pid, int *returncode, int options);
 int sys_read(int filehandle, void *buf, size_t size);
 void* sys_sbrk(intptr_t amount);
 int sys_open(const char *filename, int flags);
-int sys_close(int fd);
+int sys_close(int filehandle);
+int sys_fstat(int fd, struct stat *buf);
+off_t sys_lseek(int filehandle, off_t pos, int code);
 #endif /* _SYSCALL_H_ */

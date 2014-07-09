@@ -7,7 +7,7 @@
 
 /* Get machine-dependent stuff */
 #include <machine/pcb.h>
-
+#include <fd.h>
 
 struct addrspace;
 
@@ -37,6 +37,9 @@ struct thread {
 	 * and is manipulated by the virtual filesystem (VFS) code.
 	 */
 	struct vnode *t_cwd;
+
+	/* Array of file descriptor pointers */
+	struct fd* file_descriptors[MAX_FILES_PER_THREAD];
 };
 
 /* Call once during startup to allocate data structures. */

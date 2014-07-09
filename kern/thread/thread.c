@@ -61,6 +61,11 @@ thread_create(const char *name)
 
 	thread->t_cwd = NULL;
 	
+	int i;
+	for(i=0; i < MAX_FILES_PER_THREAD; i++){
+		thread->file_descriptors[i] = NULL;
+	}
+	
 	// If you add things to the thread structure, be sure to initialize
 	// them here.
 	
@@ -490,6 +495,8 @@ thread_exit(void)
 		VOP_DECREF(curthread->t_cwd);
 		curthread->t_cwd = NULL;
 	}
+
+	/* DEAL WITH FILE_DESCRIPTOR STUFF */
 
 	assert(numthreads>0);
 	numthreads--;

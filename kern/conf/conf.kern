@@ -366,6 +366,7 @@ file      thread/synch.c
 file      thread/scheduler.c
 file      thread/thread.c
 file      thread/pcb_list.c
+file	  thread/fd.c
 
 #
 # Main/toplevel stuff
@@ -395,6 +396,8 @@ file	  userprog/syscalls_asst2/sys_execv.c
 file	  userprog/syscalls_asst3/sys_sbrk.c
 file	  userprog/syscalls_asst4/sys_open.c
 file	  userprog/syscalls_asst4/sys_close.c
+file	  userprog/syscalls_asst4/sys_fstat.c
+file 	  userprog/syscalls_asst4/sys_lseek.c
 
 #
 # Virtual memory system
