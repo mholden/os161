@@ -4,15 +4,29 @@
 #include <err.h>
 
 int
-main(int argc, char *argv[])
+main()
 {
-	int fd, err;
-
-	if (argc!=2) errx(1, "Usage: openclosetest <filename>");
+	int fd0, fd1, fd2;
+	char *error = "Error.\n", *done = "Done openclosetest.\n";
 	
-	fd = open(argv[1], O_RDWR);
-	if (fd<0) write(0, "Error on open().\n", 0);
-	else write(0, "Looks like open() worked.\n", 0);
+	fd0 = open("lhd1raw:", O_RDWR);
+	if (fd0 < 0) write(1, error, strlen(error));
+
+	/* Assumes we have done a mksfs lhd1raw: vol0 and a mount */	
+	fd1 = open("vol0:file0", O_RDWR | O_CREAT);
+	if (fd1 < 0) write(1, error, strlen(error));
+	
+	fd2 = open("vol0:file1", O_RDWR | O_CREAT);
+	if (fd2 < 0) write(1, error, strlen(error));
+
+	close(fd1);
+
+	write(1, done, strlen(done));
+
+	/* 
+	 * Leave fd0 and fd2 unclosed.. make sure thread_exit 
+	 * cleans things up properly.
+	 */
 
 	return 0;
 }

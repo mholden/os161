@@ -12,17 +12,10 @@
  */
 
 int sys_close(int filehandle){
-	
 	if(filehandle < 0 || !(curthread->file_descriptors[filehandle])) return EBADF;
 
-	vfs_close(curthread->file_descriptors[filehandle]->file);
-	
-	/* 
-	 * Like vfs_open(), I'll assume the file system code takes care of either freeing or
-	 * 'reclaiming' the vnode, and will just worry about freeing my fd structure.
-	 */
-
-	release_fd(filehandle);
+	/* close_file does all the work here */
+	close_file(filehandle);
 
 	return 0;
 }

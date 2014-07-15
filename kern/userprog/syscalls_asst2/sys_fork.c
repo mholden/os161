@@ -4,6 +4,7 @@
 #include <pcb_list.h>
 #include <lib.h>
 #include <synch.h>
+#include <thread.h>
 
 /* 
  * The fork() syscall.

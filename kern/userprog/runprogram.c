@@ -14,6 +14,9 @@
 #include <vm.h>
 #include <vfs.h>
 #include <test.h>
+#include <fd.h>
+#include <synch.h>
+#include <vnode.h>
 
 /*
  * Load program "progname" and start running it in usermode.
@@ -82,6 +85,11 @@ runprogram(char *progname, char **args, int argc)
 	curthread->t_vmspace = as_create(progname);
 
 	if (curthread->t_vmspace==NULL) {
+		/* 
+		 * This is messy and returns an incorrect error in some cases..
+		 * obviously we had no idea what was going on with the filesystem
+		 * when writing as_create().. should probably clean this up.
+		 */
 		return ENOMEM;
 	}
 
@@ -91,6 +99,7 @@ runprogram(char *progname, char **args, int argc)
 	/* Open the file. */
 	result = vfs_open(progname, O_RDONLY, &v);
 	if (result) {
+		//kprintf("Error is here.\n");
 		return result;
 	}
 
@@ -113,6 +122,89 @@ runprogram(char *progname, char **args, int argc)
 		/* thread_exit destroys curthread->t_vmspace */
 		return result;
 	}
+	
+	/* Set up our standard file descriptors */
+	struct vnode *confile;
+	int flags, opened_flag, j;
+	int *ref_count;
+	
+	char *filename = "con:";
+	char *filename_cp = kmalloc(strlen(filename) + 1);
+	if(filename_cp == NULL) return ENOMEM;
+	
+	struct lock *con_lock;
+	char *lock_name = kmalloc(strlen(filename) + 6);
+	if(lock_name == NULL){
+		kfree(filename_cp);
+		return ENOMEM;
+	}
+	strcpy(lock_name, filename);
+	strcat(lock_name, "_lock"); 
+	con_lock = lock_create(lock_name);
+	/* lock_create makes an internal copy of lock_name */
+	kfree(lock_name);
+	if(con_lock == NULL){
+		kfree(filename_cp);
+		return ENOMEM;
+	}
+
+	strcpy(filename_cp, filename);
+	result = vfs_open(filename_cp, O_RDWR, &confile);
+        kfree(filename_cp);
+	if (result) {
+		lock_destroy(con_lock);
+                return result;
+        }
+
+	/* Set up our reference count */
+	ref_count = kmalloc(sizeof(int));
+	if(ref_count == NULL){
+		lock_destroy(con_lock);
+                vfs_close(confile);
+                return ENOMEM;
+	}
+	*ref_count = 3;
+	
+	/* Add con: to our file_table structure */
+	result = add_file_node(confile, con_lock, ref_count);
+	if (result) {
+		kfree(ref_count);
+		lock_destroy(con_lock);
+		vfs_close(confile);
+		return result;
+	}
+	
+	for(i = 0; i < 3; i++){
+		assert(curthread->file_descriptors[i] == NULL);
+
+		/* stdin is read only, the other two are write only */
+		if(i == 0){ 
+			flags = O_RDONLY;
+			/* vfs_open only called once, so only set open flag once */
+			opened_flag = 1;
+		}
+		else{
+			flags = O_WRONLY;
+			opened_flag = 0;
+		}
+		result = init_fd(i, confile, filename, 0, flags, opened_flag);
+		if(result){
+			for(j = 0; j == i; j++){
+				release_fd(i);
+			}
+			kfree(ref_count);
+			lock_destroy(con_lock);
+			vfs_close(confile);
+			return result;
+		}
+	}	
+
+	/*
+	 * Increment reference count on confile since we only opened
+	 * it once but attached it to 3 file descriptors.. 
+	 */
+	VOP_INCREF(confile);
+	VOP_INCREF(confile);
 
 	/*
 	 * Alright, let the real coding begin. We're gunna page fault

@@ -1,9 +1,11 @@
 #ifndef _PCB_LIST_H_
 #define _PCB_LIST_H_
 
-#include <thread.h>
-#include <synch.h>
 #include <kern/types.h>
+
+struct thread;
+struct lock;
+struct cv;
 
 /*
  * Definition of a pcb_node, and our pcb_list functions. These structures

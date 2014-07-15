@@ -18,15 +18,15 @@
 
 
 int sys_reboot(int code);
-int sys_write(int filehandle, const void *buf, size_t size);
+int sys_write(int filehandle, const void *buf, size_t size, int *ret);
 void sys__exit(int exit_code);
 pid_t sys_getpid(void);
 pid_t sys_fork(struct trapframe *tf);
 pid_t sys_execv(struct trapframe *tf);
 int sys_waitpid(pid_t pid, int *returncode, int options);
-int sys_read(int filehandle, void *buf, size_t size);
+int sys_read(int filehandle, void *buf, size_t size, int *ret);
 void* sys_sbrk(intptr_t amount);
-int sys_open(const char *filename, int flags);
+int sys_open(const char *filename, int flags, int *ret);
 int sys_close(int filehandle);
 int sys_fstat(int fd, struct stat *buf);
 off_t sys_lseek(int filehandle, off_t pos, int code);

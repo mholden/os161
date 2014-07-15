@@ -1,6 +1,7 @@
 #include <types.h>
 #include <syscall.h>
 #include <machine/trapframe.h>
+#include <machine/pcb.h>
 #include <pcb_list.h>
 #include <lib.h>
 #include <synch.h>
@@ -10,6 +11,7 @@
 #include <curthread.h>
 #include <vfs.h>
 #include <vm.h>
+#include <thread.h>
 
 /*
  * The execv syscall

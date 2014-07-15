@@ -14,6 +14,7 @@
 #include <vnode.h>
 #include <pcb_list.h>
 #include <synch.h>
+#include <fd.h>
 #include "opt-synchprobs.h"
 
 /* States a thread can be in. */
@@ -222,9 +223,17 @@ thread_bootstrap(void)
 	 */
 	pcb_list_root = NULL;
 	for(i = 0; i < MAX_NUM_PROCESSES; i++) pid_avail[i] = 1;
-	pcb_list_lock = lock_create("pcb_list_lock"); // I SHOULD PROBABLY LOCK_DESTROY THESE SOMEWHERE IN SHUTDOWN??
-	pcb_fork_lock = lock_create("pcb_fork_lock"); // it doesn't look like any other locks are ever destroyed though, 
-	pid_avail_lock = lock_create("pid_avail_lock"); // so maybe we're okay
+	pcb_list_lock = lock_create("pcb_list_lock");
+	if(pcb_list_lock == NULL) panic("thread_bootstrap: Out of memory\n");
+	pcb_fork_lock = lock_create("pcb_fork_lock");
+	if(pcb_fork_lock == NULL) panic("thread_bootstrap: Out of memory\n");
+	pid_avail_lock = lock_create("pid_avail_lock"); 
+	if(pid_avail_lock == NULL) panic("thread_bootstrap: Out of memory\n");
+
+	/* Initialize our file lock data structure (and its lock) */
+	for(i = 0; i < MAX_NUM_PROCESSES * MAX_FILES_PER_THREAD; i++) file_table[i] = NULL;
+	file_table_lock = lock_create("file_table_lock");
+	if(file_table_lock == NULL) panic("thread_bootstrap: Out of memory\n");
 
 	/* Done */
 	return me;
@@ -298,6 +307,53 @@ thread_fork(const char *name,
 			return result;
 		}
 		else as_activate(curthread->t_vmspace);	/* flush TLB stuff? */
+	}
+	
+	/* Inherit the current file descriptors */
+	int i;
+	for(i = 0; i < MAX_FILES_PER_THREAD; i++){
+		if(curthread->file_descriptors[i] == NULL) continue;
+
+		newguy->file_descriptors[i] = kmalloc(sizeof(struct fd));
+		if(newguy->file_descriptors[i] == NULL){
+			if (newguy->t_cwd != NULL) {
+                                VOP_DECREF(newguy->t_cwd);
+                        }
+			kfree(newguy->t_stack);
+                        kfree(newguy->t_name);
+                        kfree(newguy);
+			return ENOMEM;
+		}
+
+		*(newguy->file_descriptors[i]) = *(curthread->file_descriptors[i]);
+
+		/* None of these file were 'opened'.. see fd.h */
+		newguy->file_descriptors[i]->opened = 0;
+
+		/* Deep copy filename */
+		newguy->file_descriptors[i]->filename = kstrdup(curthread->file_descriptors[i]->filename);
+		if(newguy->file_descriptors[i]->filename == NULL){
+			if (newguy->t_cwd != NULL) {
+                                VOP_DECREF(newguy->t_cwd);
+                        }
+                        kfree(newguy->t_stack);
+                        kfree(newguy->t_name);
+                        kfree(newguy);
+                        return ENOMEM;
+		}
+
+		/* Increment refcounts as necessary */
+		result = inc_refcount(newguy->file_descriptors[i]->file);
+		if(result){
+			if (newguy->t_cwd != NULL) {
+                                VOP_DECREF(newguy->t_cwd);
+                        }
+                        kfree(newguy->t_stack);
+                        kfree(newguy->t_name);
+                        kfree(newguy);
+                        return ENOMEM;
+		}
+		VOP_INCREF(newguy->file_descriptors[i]->file);
 	}
 
 	/* Set up the pcb (this arranges for func to be called) */
@@ -496,7 +552,12 @@ thread_exit(void)
 		curthread->t_cwd = NULL;
 	}
 
-	/* DEAL WITH FILE_DESCRIPTOR STUFF */
+	int i;
+	for(i = 0; i < MAX_FILES_PER_THREAD; i++){
+		/* Clean up files */
+		if(curthread->file_descriptors[i] == NULL) continue;
+		else close_file(i);
+	}
 
 	assert(numthreads>0);
 	numthreads--;

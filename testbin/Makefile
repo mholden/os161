@@ -47,7 +47,7 @@ all depend tags clean install:
 	(cd malloctest && $(MAKE) $@)
 	(cd forkexecbomb && $(MAKE) $@)
 	(cd stacktest && $(MAKE) $@)
-	(cd writetest && $(MAKE) $@)
+	(cd writereadtest && $(MAKE) $@)
 	(cd openclosetest && $(MAKE) $@)
 
 # But not:
