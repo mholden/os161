@@ -49,6 +49,7 @@ all depend tags clean install:
 	(cd stacktest && $(MAKE) $@)
 	(cd writereadtest && $(MAKE) $@)
 	(cd openclosetest && $(MAKE) $@)
+	(cd filesyscalls && $(MAKE) $@)
 
 # But not:
 #    malloctest     (no malloc/free until you write it)

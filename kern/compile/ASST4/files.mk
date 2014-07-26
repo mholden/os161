@@ -474,6 +474,56 @@ sys_lseek.o: ${S}/userprog/syscalls_asst4/sys_lseek.c
 SRCS+=${S}/userprog/syscalls_asst4/sys_lseek.c
 OBJS+=sys_lseek.o
 
+sys_remove.o: ${S}/userprog/syscalls_asst4/sys_remove.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_remove.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_remove.c
+OBJS+=sys_remove.o
+
+sys_chdir.o: ${S}/userprog/syscalls_asst4/sys_chdir.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_chdir.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_chdir.c
+OBJS+=sys_chdir.o
+
+sys___getcwd.o: ${S}/userprog/syscalls_asst4/sys___getcwd.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys___getcwd.c
+SRCS+=${S}/userprog/syscalls_asst4/sys___getcwd.c
+OBJS+=sys___getcwd.o
+
+sys_mkdir.o: ${S}/userprog/syscalls_asst4/sys_mkdir.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_mkdir.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_mkdir.c
+OBJS+=sys_mkdir.o
+
+sys_rmdir.o: ${S}/userprog/syscalls_asst4/sys_rmdir.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_rmdir.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_rmdir.c
+OBJS+=sys_rmdir.o
+
+sys_rename.o: ${S}/userprog/syscalls_asst4/sys_rename.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_rename.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_rename.c
+OBJS+=sys_rename.o
+
+sys_sync.o: ${S}/userprog/syscalls_asst4/sys_sync.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_sync.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_sync.c
+OBJS+=sys_sync.o
+
+sys_fsync.o: ${S}/userprog/syscalls_asst4/sys_fsync.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_fsync.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_fsync.c
+OBJS+=sys_fsync.o
+
+sys_getdirentry.o: ${S}/userprog/syscalls_asst4/sys_getdirentry.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_getdirentry.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_getdirentry.c
+OBJS+=sys_getdirentry.o
+
+sys_dup2.o: ${S}/userprog/syscalls_asst4/sys_dup2.c
+	${COMPILE.c} ${S}/userprog/syscalls_asst4/sys_dup2.c
+SRCS+=${S}/userprog/syscalls_asst4/sys_dup2.c
+OBJS+=sys_dup2.o
+
 vm.o: ${S}/vm/vm.c
 	${COMPILE.c} ${S}/vm/vm.c
 SRCS+=${S}/vm/vm.c

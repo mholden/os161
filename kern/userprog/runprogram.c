@@ -125,58 +125,25 @@ runprogram(char *progname, char **args, int argc)
 	
 	/* Set up our standard file descriptors */
 	struct vnode *confile;
-	int flags, opened_flag, j;
-	int *ref_count;
+	int flags, opened_flag;
 	
-	char *filename = "con:";
+	const char *filename = "con:";
 	char *filename_cp = kmalloc(strlen(filename) + 1);
 	if(filename_cp == NULL) return ENOMEM;
-	
-	struct lock *con_lock;
-	char *lock_name = kmalloc(strlen(filename) + 6);
-	if(lock_name == NULL){
-		kfree(filename_cp);
-		return ENOMEM;
-	}
-	strcpy(lock_name, filename);
-	strcat(lock_name, "_lock"); 
-	con_lock = lock_create(lock_name);
-	/* lock_create makes an internal copy of lock_name */
-	kfree(lock_name);
-	if(con_lock == NULL){
-		kfree(filename_cp);
-		return ENOMEM;
-	}
 
 	strcpy(filename_cp, filename);
 	result = vfs_open(filename_cp, O_RDWR, &confile);
         kfree(filename_cp);
-	if (result) {
-		lock_destroy(con_lock);
-                return result;
-        }
+	if (result) return result;
 
-	/* Set up our reference count */
-	ref_count = kmalloc(sizeof(int));
-	if(ref_count == NULL){
-		lock_destroy(con_lock);
-                vfs_close(confile);
-                return ENOMEM;
-	}
-	*ref_count = 3;
-	
-	/* Add con: to our file_table structure */
-	result = add_file_node(confile, con_lock, ref_count);
-	if (result) {
-		kfree(ref_count);
-		lock_destroy(con_lock);
-		vfs_close(confile);
-		return result;
-	}
-	
 	for(i = 0; i < 3; i++){
-		assert(curthread->file_descriptors[i] == NULL);
+		result = check_to_add_file_node(confile, filename);
+		if(result){
+			vfs_close(confile);
+			return result;
+		}
 
+		assert(curthread->file_descriptors[i] == NULL);
 		/* stdin is read only, the other two are write only */
 		if(i == 0){ 
 			flags = O_RDONLY;
@@ -189,11 +156,7 @@ runprogram(char *progname, char **args, int argc)
 		}
 		result = init_fd(i, confile, filename, 0, flags, opened_flag);
 		if(result){
-			for(j = 0; j == i; j++){
-				release_fd(i);
-			}
-			kfree(ref_count);
-			lock_destroy(con_lock);
+			check_to_remove_file_node(confile);
 			vfs_close(confile);
 			return result;
 		}

@@ -129,9 +129,49 @@ mips_syscall(struct trapframe *tf)
 		break;
 	  
 	    case SYS_lseek:
-		retval = sys_lseek(tf->tf_a0, tf->tf_a1, tf->tf_a2);
+		err = sys_lseek(tf->tf_a0, tf->tf_a1, tf->tf_a2, &retval);
+		break;
+
+	    case SYS_remove:
+		err = sys_remove((char *)tf->tf_a0, &retval);
+		break;
+
+	    case SYS_chdir:
+		err = sys_chdir((char *)tf->tf_a0, &retval);
+		break;
+
+	    case SYS___getcwd:
+		err = sys___getcwd((char *)tf->tf_a0, tf->tf_a1, &retval);
+		break;
+
+	    case SYS_mkdir:
+		err = sys_mkdir((char *)tf->tf_a0, tf->tf_a1, &retval);
+		break;
+
+	    case SYS_rmdir:
+                err = sys_rmdir((char *)tf->tf_a0, &retval);
+                break;
+
+	    case SYS_rename:
+		err = sys_rename((char *)tf->tf_a0, (char *)tf->tf_a1, &retval);
 		break;
  
+	    case SYS_sync:
+		err = sys_sync(&retval);
+		break;
+
+	    case SYS_fsync:
+		err = sys_fsync(tf->tf_a0, &retval);
+		break;
+
+	    case SYS_getdirentry:
+		err = sys_getdirentry(tf->tf_a0, (char *)tf->tf_a1, tf->tf_a2, &retval);
+		break;
+
+	    case SYS_dup2:
+		err = sys_dup2(tf->tf_a0, tf->tf_a1, &retval);
+		break;
+
 	    /* Add stuff here */
  
 	    default:

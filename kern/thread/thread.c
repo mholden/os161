@@ -333,6 +333,8 @@ thread_fork(const char *name,
 		/* Deep copy filename */
 		newguy->file_descriptors[i]->filename = kstrdup(curthread->file_descriptors[i]->filename);
 		if(newguy->file_descriptors[i]->filename == NULL){
+			kfree(newguy->file_descriptors[i]);
+			newguy->file_descriptors[i] = NULL;
 			if (newguy->t_cwd != NULL) {
                                 VOP_DECREF(newguy->t_cwd);
                         }
@@ -343,15 +345,18 @@ thread_fork(const char *name,
 		}
 
 		/* Increment refcounts as necessary */
-		result = inc_refcount(newguy->file_descriptors[i]->file);
+		result = check_to_add_file_node(newguy->file_descriptors[i]->file, newguy->file_descriptors[i]->filename);
 		if(result){
+			kfree(newguy->file_descriptors[i]->filename);
+			kfree(newguy->file_descriptors[i]);
+                        newguy->file_descriptors[i] = NULL;
 			if (newguy->t_cwd != NULL) {
                                 VOP_DECREF(newguy->t_cwd);
                         }
                         kfree(newguy->t_stack);
                         kfree(newguy->t_name);
                         kfree(newguy);
-                        return ENOMEM;
+                        return result;
 		}
 		VOP_INCREF(newguy->file_descriptors[i]->file);
 	}

@@ -13,6 +13,110 @@
 struct file_node *file_table[MAX_NUM_PROCESSES * MAX_FILES_PER_THREAD];
 struct lock *file_table_lock;
 
+int init_fd(int filehandle, struct vnode *file, const char *filename, off_t offset, int flags, int opened_flag){
+	struct fd *fd;
+	
+	assert(filehandle >= 0);
+	assert(file != NULL);
+	assert(filename != NULL);
+
+	fd = kmalloc(sizeof(struct fd));
+	if(fd == NULL) return ENOMEM;
+
+	fd->file = file;
+	
+	fd->filename = kstrdup(filename);
+	if(fd->filename == NULL){
+		kfree(fd);
+		return ENOMEM;	
+	}
+
+	fd->curr_offset = offset;
+	fd->rw_flags = flags;
+	fd->opened = kmalloc(sizeof(int));
+	if(fd->opened == NULL){
+		kfree(fd->filename);
+		kfree(fd);
+		return ENOMEM;
+	}
+	*(fd->opened) = opened_flag;
+
+	curthread->file_descriptors[filehandle] = fd;
+
+	return 0;
+}
+
+int dup_fd(int filehandle, int newhandle){
+	assert(filehandle >= 0 && newhandle >= 0);
+        assert(curthread->file_descriptors[filehandle] != NULL);
+	assert(curthread->file_descriptors[newhandle] == NULL);
+
+	int index, err;
+	struct vnode *file;	
+
+	curthread->file_descriptors[newhandle] = curthread->file_descriptors[filehandle];
+	
+	/* We weren't opened, though */
+	curthread->file_descriptors[newhandle]->opened = kmalloc(sizeof(int));
+	if(curthread->file_descriptors[newhandle]->opened == NULL){
+                curthread->file_descriptors[newhandle] = NULL;
+                return ENOMEM;
+        }
+	*(curthread->file_descriptors[newhandle]->opened) = 0;
+	
+	/* Increment reference counters */
+	file = curthread->file_descriptors[newhandle]->file;
+	err = find_file_index(file, &index);
+	if(err){
+		curthread->file_descriptors[newhandle] = NULL;
+		return err;
+	}
+	inc_refcount(index);
+	VOP_INCREF(file);
+
+	return 0;
+}
+
+int acquire_fd(int *fd){
+	int i;
+
+	assert(fd != NULL);
+ 
+	for(i=0; i < MAX_FILES_PER_THREAD; i++){
+		if(curthread->file_descriptors[i] == NULL) break;
+	}
+	if(i == MAX_FILES_PER_THREAD) return ENOSPC;	
+
+	*fd = i;
+	return 0;
+}
+
+void release_fd(int filehandle){
+	assert(filehandle >= 0);
+	assert(curthread->file_descriptors[filehandle] != NULL);
+	
+	int i, last_link = 1;
+	for(i = 0; i < MAX_FILES_PER_THREAD; i++){
+		if(curthread->file_descriptors[i] == curthread->file_descriptors[filehandle]){
+			if(i != filehandle){
+				last_link = 0;
+				break;
+			}
+		}
+	}
+	if(last_link){
+		/* Only free these if there are no other links to this struct fd (dup2 could cause this) */
+                kfree(curthread->file_descriptors[filehandle]->filename);
+                kfree(curthread->file_descriptors[filehandle]);
+	}
+	
+	/* opened is only thing not shared by dup2 file descriptors */
+	kfree(curthread->file_descriptors[filehandle]->opened);
+	curthread->file_descriptors[filehandle] = NULL;
+	
+	return;
+}
+
 /* 
  * All static functions below are used by functions that have already acquired
  * file_table_lock, so don't acquire it again 
@@ -117,109 +221,19 @@ void dec_refcount(int index){
         return;
 }
 
-int init_fd(int filehandle, struct vnode *file, const char *filename, off_t offset, int flags, int opened_flag){
-	struct fd *fd;
-	
-	assert(filehandle >= 0);
-	assert(file != NULL);
-	assert(filename != NULL);
-
-	fd = kmalloc(sizeof(struct fd));
-	if(fd == NULL) return ENOMEM;
-
-	fd->file = file;
-	
-	fd->filename = kstrdup(filename);
-	if(fd->filename == NULL){
-		kfree(fd);
-		return ENOMEM;	
-	}
-
-	fd->curr_offset = offset;
-	fd->rw_flags = flags;
-	fd->opened = opened_flag;
-	fd->ref_count = 1;
-
-	curthread->file_descriptors[filehandle] = fd;
-
-	return 0;
-}
-
-int dup_fd(int filehandle, int newhandle){
-	assert(filehandle >= 0 && newhandle >= 0);
-        assert(curthread->file_descriptors[filehandle] != NULL);
-	assert(curthread->file_descriptors[newhandle] == NULL);
-
-	int index, err;
-	struct vnode *file;	
-
-	curthread->file_descriptors[newhandle] = curthread->file_descriptors[filehandle];
-	
-	/* Increment reference counters */
-	curthread->file_descriptors[newhandle]->ref_count += 1;
-
-	file = curthread->file_descriptors[newhandle]->file;
-	
-	lock_acquire(file_table_lock);
-	err = find_file_index(file, &index);
-	if(err){
-		lock_release(file_table_lock);
-		curthread->file_descriptors[newhandle] = NULL;
-		return err;
-	}
-	inc_refcount(index);
-	lock_release(file_table_lock);
-	VOP_INCREF(file);
-
-	return 0;
-}
-
-int acquire_fd(int *fd){
-	int i;
-
-	assert(fd != NULL);
- 
-	for(i=0; i < MAX_FILES_PER_THREAD; i++){
-		if(curthread->file_descriptors[i] == NULL) break;
-	}
-	if(i == MAX_FILES_PER_THREAD) return ENOSPC;	
-
-	*fd = i;
-	return 0;
-}
-
-void release_fd(int filehandle){
-	assert(filehandle >= 0);
-	assert(curthread->file_descriptors[filehandle] != NULL);
-	
-	int ref_count;
-
-	ref_count = curthread->file_descriptors[filehandle]->ref_count;
-
-	if(ref_count == 1){
-                kfree(curthread->file_descriptors[filehandle]->filename);
-        	kfree(curthread->file_descriptors[filehandle]);
-	} else curthread->file_descriptors[filehandle]->ref_count -= 1;
-
-	curthread->file_descriptors[filehandle] = NULL;
-	
-	return;
-}
-
 void close_file(int filehandle){
-	int opened, ref_count;
+	int opened;
         struct vnode *file;
 
 	assert(filehandle >= 0);
 
         file = curthread->file_descriptors[filehandle]->file;
-        opened = curthread->file_descriptors[filehandle]->opened;
-	ref_count = curthread->file_descriptors[filehandle]->ref_count;
+        opened = *(curthread->file_descriptors[filehandle]->opened);
 
         release_fd(filehandle);
 	check_to_remove_file_node(file);
-        if(opened && (ref_count == 1)) vfs_close(file);
-        else VOP_DECREF(file);	
+        if(!opened) VOP_DECREF(file);
+        else vfs_close(file);	
 }
 
 int check_to_add_file_node(struct vnode *file, const char *filename){

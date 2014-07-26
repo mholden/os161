@@ -27,7 +27,10 @@ struct lock;
  *    calling vfs_close) if opened == 1. there are many 
  *    situations in which a process will have a file in its
  *    file table and not have actually vfs_opened it (after
- *    a fork, for example). 
+ *    a fork, for example). dup2 shares struct fds, though,
+ *    which complicates things even further. Not only do we 
+ *    need to check that opened == 1, but also that ref_count
+ *    of the struct fd == 1 (logic in close_file() is correct). 
  * 4. vn->refcount and ref_count are incremented any time a 
  *    process starts referencing the file, even if the process 
  *    did not vfs_open it. 
@@ -39,23 +42,29 @@ struct lock;
  *    file_node wouldn't work like we want it to because the 
  *    system may have references to the vnode even when all 
  *    userland references are gone). vn->refcount >= ref_count
+ * 6. To confuse things even further, I've added a ref_count to 
+ *    struct fd for use with dup2.. so this ref_count refers
+ *    to the number of file descriptor pointers in 
+ *    curthread->file_descriptors that are pointing to this
+ *    particular struct fd. 
  */
 
 #define MAX_FILES_PER_THREAD 20
 
 struct fd{
-	struct vnode* file;
+	struct vnode *file;
 	char *filename;
 	off_t curr_offset;
 	int rw_flags;
 	int opened;
+	int ref_count;
 };
 
 
 struct file_node{
 	struct vnode *file;
 	struct lock *lock;
-	int *ref_count;
+	int ref_count;
 };
 
 
@@ -69,31 +78,25 @@ int acquire_fd(int *fd);
 /* Initialize a file descriptor */
 int init_fd(int filehandle, struct vnode *file, const char *filename, off_t offset, int flags, int opened_flag);
 
+/* Duplicate a file descriptor (to be used in sys_dup2) */
+int dup_fd(int filehandle, int newhandle);
+
 /* Release/free a file descriptor */
 void release_fd(int filehandle);
 
-/* Do all the work for sys_close, handling reference counters, etc. carefully */
+/* Do all the work for sys_close */
 void close_file(int filehandle);
 
-/* Add a file_node to file_table */
-int add_file_node(struct vnode *file, struct lock *lock, int *ref_count);
+/* If file does not exist in file table, add it. Otherwise increment ref count */
+int check_to_add_file_node(struct vnode *file, const char *filename);
 
-/* Remove a file_node from file_table */
-void remove_file_node(struct vnode *file);
+/* If ref count == 1, remove file from file table. Otherwise decrement ref count */
+void check_to_remove_file_node(struct vnode *file);
 
-/* Get the lock from file_table corresponding to file */
-int get_file_lock(struct vnode *file, struct lock **ret);
+/* Acquire the lock associated with file */
+int acquire_file_lock(struct vnode *file);
 
-/* Get the ref_count from file_table corresponding to file */
-int get_file_refcount(struct vnode *file, int **ret);
-
-/* Return true if file is in file_table, false otherwise */
-int file_node_exists(struct vnode *file);
-
-/* Increment the ref_count corresponding to file by one */
-int inc_refcount(struct vnode *file);
-
-/* Decrement the ref_count corresponding to file by one */
-int dec_refcount(struct vnode *file);
+/* Release the lock associated with file */
+void release_file_lock(struct vnode *file);
 
 #endif /* _FD_H_ */

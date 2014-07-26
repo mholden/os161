@@ -12,19 +12,15 @@
  * The lseek syscall.
  */
 
-off_t sys_lseek(int filehandle, off_t pos, int code){
-	
-	/* 
-	 * 1. error check inputs
-	 * 2. based on code, adjust pos correctly, and call VOP_TRYSEEK
-	 * 3. if tryseek returns w/o error, adjust offset in fd structure
-	 */
-
+off_t sys_lseek(int filehandle, off_t pos, int code, int *ret){
 	int err;
 	off_t offset;
 	struct stat statbuf;
 
-	if(filehandle < 0 || !(curthread->file_descriptors[filehandle])) return EBADF;
+	if(filehandle < 0 || !(curthread->file_descriptors[filehandle])){
+		*ret = -1;
+		return EBADF;
+	}
 	
 	switch(code){
 		case SEEK_SET:
@@ -35,17 +31,26 @@ off_t sys_lseek(int filehandle, off_t pos, int code){
 			break;
 		case SEEK_END:
 			err = VOP_STAT(curthread->file_descriptors[filehandle]->file, &statbuf);
-			if(err) return -1; // What should I return here??
+			if(err){ 
+				*ret = -1;
+				return err;
+			}
 			offset = statbuf.st_size + pos;
 			break;
 		default:
+			*ret = -1;
 			return EINVAL;
 			break;
 	}
 	
 	err = VOP_TRYSEEK(curthread->file_descriptors[filehandle]->file, offset);	
-	if(err) return EINVAL;	
+	if(err){
+		*ret = -1;
+		return err;	
+	}
 
 	curthread->file_descriptors[filehandle]->curr_offset = offset;
-	return offset;
+	
+	*ret = offset;
+	return 0;
 }

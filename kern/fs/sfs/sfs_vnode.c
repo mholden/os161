@@ -880,7 +880,11 @@ sfs_reclaim(struct vnode *v)
 	
 
 	/* If there are no on-disk references to the file either, erase it. */
-	if (sv->sv_i.sfi_linkcount==0) {
+	if (sv->sv_i.sfi_linkcount==0 && sv->sv_i.sfi_type==SFS_TYPE_FILE) {
+		/* 
+		 * VOP_TRUNCATE doesn't work on directories, which is why I added
+		 * the second requirement to the above if statement.
+		 */
 		result = VOP_TRUNCATE(&sv->sv_v, 0);
 		if (result) {
 			return result;
@@ -1435,6 +1439,139 @@ sfs_lookup(struct vnode *v, char *path, struct vnode **ret)
 	return 0;
 }
 
+/* 
+ * Based on uio->uio_offset, get the name of the next directory entry,
+ * if one exists.
+ */
+static
+int
+sfs_getdirentry(struct vnode *vv, struct uio *uio)
+{
+	struct sfs_vnode *sv;
+	struct sfs_dir tsd;
+        int nentries, slot, err;
+
+	assert(uio->uio_iovec.iov_ubase != NULL);
+	assert(uio->uio_rw == UIO_READ);
+
+	sv = vv->vn_data;
+	if(sv->sv_i.sfi_type != SFS_TYPE_DIR) return ENOTDIR;
+
+	nentries = sfs_dir_nentries(sv);
+	if(nentries == 0) return ENOENT;	
+
+	/* Get slot of interest */
+	if((uio->uio_offset % sizeof(struct sfs_dir)) <= 4){
+		/* Use dir entry in which we are currently pointing to */
+		slot = uio->uio_offset/sizeof(struct sfs_dir);
+	} else{
+		/* Use next dir entry */
+		slot = uio->uio_offset/sizeof(struct sfs_dir) + 1;
+	}
+
+	while(slot < nentries){
+		err = sfs_readdir(sv, &tsd, slot);
+		if(err) return err;
+
+		if(tsd.sfd_ino != SFS_NOINO) break;
+		slot++;
+	}
+
+	if(slot >= nentries){
+		/* EOF - just return */
+		return 0;
+	}
+	
+	/* Set things up and do the move */
+	tsd.sfd_name[sizeof(tsd.sfd_name)-1] = 0;
+	uio->uio_offset = 0;
+	err = uiomove(tsd.sfd_name, sizeof(tsd.sfd_name), uio);
+	if(err) return err;
+
+	/* Reset offset */
+	uio->uio_offset = ((slot + 1) * sizeof(struct sfs_dir));
+
+	return 0;
+}
+
+static
+int
+sfs_mkdir(struct vnode *vv, const char *name){
+	struct sfs_fs *sfs = vv->vn_fs->fs_data;
+        struct sfs_vnode *sv = vv->vn_data;
+        struct sfs_vnode *newguy;
+        u_int32_t ino;
+        int result;
+
+        /* Look up the name */
+        result = sfs_dir_findname(sv, name, &ino, NULL, NULL);
+        if (result!=0 && result!=ENOENT) {
+                return result;
+        }
+
+        if (result==0) {
+                /* Directory or file of same name already exists */
+                return EINVAL;
+        }
+
+        /* Didn't exist - create it */
+        result = sfs_makeobj(sfs, SFS_TYPE_DIR, &newguy);
+        if (result) {
+                return result;
+        }
+
+        /* Link it into the directory */
+        result = sfs_dir_link(sv, name, newguy->sv_ino, NULL);
+        if (result) {
+                VOP_DECREF(&newguy->sv_v);
+                return result;
+        }
+
+        /* Update the linkcount of the new file */
+        newguy->sv_i.sfi_linkcount++;
+
+        /* and consequently mark it dirty. */
+        newguy->sv_dirty = 1;
+
+	return 0;
+}
+
+static
+int
+sfs_rmdir(struct vnode *vv, const char *name){
+	struct sfs_vnode *sv = vv->vn_data;
+        struct sfs_vnode *victim;
+        int slot;
+        int result;
+
+        /* Look for the directory and fetch a vnode for it. */
+        result = sfs_lookonce(sv, name, &victim, &slot);
+        if (result) {
+                return result;
+        }
+
+	/* Make sure it's an empty directory */
+	if(victim->sv_i.sfi_type != SFS_TYPE_DIR) return ENOTDIR;
+	if(sfs_dir_nentries(victim)) return ENOTEMPTY;
+
+        /* Erase its directory entry. */
+        result = sfs_dir_unlink(sv, slot);
+        if (result==0) {
+                /* If we succeeded, decrement the link count. */
+                assert(victim->sv_i.sfi_linkcount > 0);
+                victim->sv_i.sfi_linkcount--;
+                victim->sv_dirty = 1;
+        }
+
+        /* Discard the reference that sfs_lookonce got us */
+        VOP_DECREF(&victim->sv_v);
+
+	/* And decrement again to actually reclaim the vnode? */
+	VOP_DECREF(&victim->sv_v);
+
+	return result;
+}
+
 //////////////////////////////////////////////////
 
 static
@@ -1515,7 +1652,7 @@ static const struct vnode_ops sfs_dirops = {
 	
 	ISDIR,   /* read */
 	ISDIR,   /* readlink */
-	UNIMP,   /* getdirentry */
+	sfs_getdirentry,   /* getdirentry */
 	ISDIR,   /* write */
 	sfs_ioctl,
 	sfs_stat,
@@ -1528,10 +1665,10 @@ static const struct vnode_ops sfs_dirops = {
 
 	sfs_creat,
 	UNIMP,   /* symlink */
-	UNIMP,   /* mkdir */
+	sfs_mkdir,   /* mkdir */
 	sfs_link,
 	sfs_remove,
-	UNIMP,   /* rmdir */
+	sfs_rmdir,   /* rmdir */
 	sfs_rename,
 
 	sfs_lookup,

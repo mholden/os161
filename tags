@@ -379,7 +379,7 @@ MAXPROCS	./testbin/farm/farm.c	17;"	d	file:
 MAXPROCS	./testbin/kitchen/kitchen.c	14;"	d	file:
 MAXPROCS	./testbin/sty/sty.c	15;"	d	file:
 MAXSTRING	./testbin/tictac/tictac.c	23;"	d	file:
-MAX_FILES_PER_THREAD	./kern/include/fd.h	15;"	d
+MAX_FILES_PER_THREAD	./kern/include/fd.h	44;"	d
 MAX_NUM_PROCESSES	./kern/include/pcb_list.h	18;"	d
 MAX_PARAMS_EXECV	./kern/include/syscall.h	12;"	d
 MAX_STRLENGHT_EXECV	./kern/include/syscall.h	13;"	d
@@ -920,9 +920,10 @@ a1	./kern/arch/mips/include/asmdefs.h	15;"	d
 a2	./kern/arch/mips/include/asmdefs.h	16;"	d
 a3	./kern/arch/mips/include/asmdefs.h	17;"	d
 abort	./lib/libc/abort.c	/^abort(void)$/;"	f
-acquire_fd	./kern/thread/fd.c	/^int acquire_fd(){$/;"	f
+acquire_fd	./kern/thread/fd.c	/^int acquire_fd(int *fd){$/;"	f
+acquire_file_lock	./kern/thread/fd.c	/^int acquire_file_lock(struct vnode *file){$/;"	f
 acquire_pid	./kern/thread/pcb_list.c	/^pid_t acquire_pid(void){$/;"	f
-add_file_node	./kern/thread/fd.c	/^int add_file_node(struct vnode *file, struct lock *lock, int *ref_count){$/;"	f
+add_file_node	./kern/thread/fd.c	/^int add_file_node(struct vnode *file, struct lock *lock, int ref_count){$/;"	f	file:
 addeq	./testbin/parallelvm/parallelvm.c	/^addeq(struct matrix *m1, const struct matrix *m2)$/;"	f	file:
 addrspace	./kern/include/addrspace.h	/^struct addrspace {$/;"	s
 alignment_error	./testbin/crash/crash.c	/^alignment_error(void)$/;"	f	file:
@@ -1106,7 +1107,7 @@ buildversion	./kern/compile/ASST0/vers.c	/^const int buildversion = 36;$/;"	v
 buildversion	./kern/compile/ASST1/vers.c	/^const int buildversion = 30;$/;"	v
 buildversion	./kern/compile/ASST2/vers.c	/^const int buildversion = 74;$/;"	v
 buildversion	./kern/compile/ASST3/vers.c	/^const int buildversion = 193;$/;"	v
-buildversion	./kern/compile/ASST4/vers.c	/^const int buildversion = 71;$/;"	v
+buildversion	./kern/compile/ASST4/vers.c	/^const int buildversion = 88;$/;"	v
 bus_map_area	./kern/arch/mips/include/bus.h	20;"	d
 bus_read_register	./kern/arch/mips/include/bus.h	17;"	d
 bus_write_register	./kern/arch/mips/include/bus.h	14;"	d
@@ -1146,6 +1147,8 @@ check	./testbin/forktest/forktest.c	/^check(void)$/;"	f	file:
 check	./testbin/sort/sort.c	/^check(void)$/;"	f	file:
 check_buffer	./testbin/f_test/f_read.c	/^check_buffer(void)$/;"	f	file:
 check_page_table	./kern/vm/vm.c	/^check_page_table(struct addrspace* as, vaddr_t faultaddr)$/;"	f	file:
+check_to_add_file_node	./kern/thread/fd.c	/^int check_to_add_file_node(struct vnode *file, const char *filename){$/;"	f
+check_to_remove_file_node	./kern/thread/fd.c	/^void check_to_remove_file_node(struct vnode *file){$/;"	f
 checkblock	./testbin/malloctest/malloctest.c	/^checkblock(volatile void *ptr, size_t size, unsigned bias, int doprint)$/;"	f	file:
 checkfilesystem	./kern/test/fstest.c	/^checkfilesystem(int nargs, char **args)$/;"	f	file:
 checksubpage	./kern/lib/kheap.c	/^checksubpage(struct pageref *pr)$/;"	f	file:
@@ -1268,7 +1271,7 @@ data	./kern/include/addrspace.h	/^	struct region* data;$/;"	m	struct:addrspace	t
 data	./kern/lib/queue.c	/^	void **data;$/;"	m	struct:queue	file:
 dbflags	./kern/lib/kprintf.c	/^u_int32_t dbflags = 0;$/;"	v
 dbfmenu	./kern/main/menu.c	/^static const char *dbfmenu[] = {$/;"	v	file:
-dec_refcount	./kern/thread/fd.c	/^int dec_refcount(struct vnode *file){$/;"	f
+dec_refcount	./kern/thread/fd.c	/^void dec_refcount(int index){$/;"	f	file:
 degrees	./lib/libc/random.c	/^static const int degrees[MAX_TYPES] =	{ DEG_0, DEG_1, DEG_2, DEG_3, DEG_4 };$/;"	v	file:
 delayed_outbuf	./kern/dev/generic/console.c	/^static char delayed_outbuf[DELAYBUFSIZE];$/;"	v	file:
 delayed_outbuf_pos	./kern/dev/generic/console.c	/^static size_t delayed_outbuf_pos=0;$/;"	v	file:
@@ -1456,14 +1459,16 @@ fd	./sbin/mksfs/disk.c	/^static int fd=-1;$/;"	v	file:
 file	./kern/include/fd.h	/^	struct vnode *file;$/;"	m	struct:file_node	typeref:struct:file_node::vnode
 file	./kern/include/fd.h	/^	struct vnode* file;$/;"	m	struct:fd	typeref:struct:fd::vnode
 file_descriptors	./kern/include/thread.h	/^	struct fd* file_descriptors[MAX_FILES_PER_THREAD];$/;"	m	struct:thread	typeref:struct:thread::fd
-file_exists	./kern/thread/fd.c	/^int file_exists(struct vnode *file){$/;"	f
 file_node	./kern/include/fd.h	/^struct file_node{$/;"	s
+file_node_exists	./kern/thread/fd.c	/^int file_node_exists(struct vnode *file, int *index){$/;"	f	file:
 file_table	./kern/thread/fd.c	/^struct file_node *file_table[MAX_NUM_PROCESSES * MAX_FILES_PER_THREAD];$/;"	v	typeref:struct:file_node
 file_table_lock	./kern/thread/fd.c	/^struct lock *file_table_lock;$/;"	v	typeref:struct:lock
 filename	./kern/include/fd.h	/^	char *filename;$/;"	m	struct:fd
 fill_deadbeef	./kern/lib/kheap.c	/^fill_deadbeef(void *vptr, size_t len)$/;"	f	file:
 fillchar	./lib/libc/__printf.c	/^	int fillchar;$/;"	m	struct:__anon11	file:
 fillrand	./testbin/randcall/main.c	/^fillrand(void *p, size_t len)$/;"	f	file:
+find_file_index	./kern/thread/fd.c	/^int find_file_index(struct vnode *file, int *index){$/;"	f	file:
+find_free_index	./kern/thread/fd.c	/^int find_free_index(int *index){$/;"	f	file:
 find_region	./kern/vm/vm.c	/^find_region (vaddr_t faultaddress, struct addrspace *as){$/;"	f
 findentry	./testbin/dirseek/dirseek.c	/^findentry(const char *name)$/;"	f	file:
 finderror	./testbin/badcall/driver.c	/^finderror(int rv, int error)$/;"	f	file:
@@ -1513,8 +1518,6 @@ funcs2	./testbin/randcall/calls.c	/^static tryfunc funcs2[] = {$/;"	v	file:
 funcs3	./testbin/randcall/calls.c	/^static tryfunc funcs3[] = {$/;"	v	file:
 funcs4	./testbin/randcall/calls.c	/^static tryfunc funcs4[] = {$/;"	v	file:
 funcs5	./testbin/randcall/calls.c	/^static tryfunc funcs5[] = {$/;"	v	file:
-get_file_lock	./kern/thread/fd.c	/^int get_file_lock(struct vnode *file, struct lock **ret){$/;"	f
-get_file_refcount	./kern/thread/fd.c	/^int get_file_refcount(struct vnode *file, int **ret){$/;"	f
 get_status	./kern/arch/mips/mips/spl.c	18;"	d	file:
 getch	./kern/dev/generic/console.c	/^getch(void)$/;"	f
 getch_intr	./kern/dev/generic/console.c	/^getch_intr(struct con_softc *cs)$/;"	f	file:
@@ -1565,7 +1568,7 @@ ibuffer	./testbin/f_test/f_test.c	/^char ibuffer[32];$/;"	v
 illegal_instruction	./testbin/crash/crash.c	/^illegal_instruction(void)$/;"	f	file:
 in_interrupt	./kern/arch/mips/mips/interrupt.c	/^int in_interrupt;$/;"	v
 in_pct	./lib/libc/__printf.c	/^	int in_pct;$/;"	m	struct:__anon11	file:
-inc_refcount	./kern/thread/fd.c	/^int inc_refcount(struct vnode *file){$/;"	f
+inc_refcount	./kern/thread/fd.c	/^void inc_refcount(int index){$/;"	f	file:
 init_fd	./kern/thread/fd.c	/^int init_fd(int filehandle, struct vnode *file, const char *filename, off_t offset, int flags, int opened_flag){$/;"	f
 init_sem	./kern/test/threadtest.c	/^init_sem(void)$/;"	f	file:
 init_threadsem	./kern/test/fstest.c	/^init_threadsem(void)$/;"	f	file:
@@ -1785,7 +1788,7 @@ main	./testbin/kitchen/kitchen.c	/^main(void)$/;"	f
 main	./testbin/malloctest/malloctest.c	/^main(int argc, char *argv[])$/;"	f
 main	./testbin/matmult/matmult-orig.c	/^main()$/;"	f
 main	./testbin/matmult/matmult.c	/^main()$/;"	f
-main	./testbin/openclosetest/openclosetest.c	/^main(int argc, char *argv[])$/;"	f
+main	./testbin/openclosetest/openclosetest.c	/^main()$/;"	f
 main	./testbin/palin/palin.c	/^main()$/;"	f
 main	./testbin/parallelvm/parallelvm.c	/^main()$/;"	f
 main	./testbin/randcall/main.c	/^main(int argc, char *argv[])$/;"	f
@@ -1803,7 +1806,7 @@ main	./testbin/triplehuge/triplehuge.c	/^main()$/;"	f
 main	./testbin/triplemat/triplemat.c	/^main()$/;"	f
 main	./testbin/triplesort/triplesort.c	/^main()$/;"	f
 main	./testbin/userthreads/userthreads.c	/^main(int argc, char *argv[])$/;"	f
-main	./testbin/writetest/writetest.c	/^main(int argc, char *argv[])$/;"	f
+main	./testbin/writereadtest/writereadtest.c	/^main()$/;"	f
 mainmenu	./kern/main/menu.c	/^static const char *mainmenu[] = {$/;"	v	file:
 make_computes	./kern/test/tt3.c	/^make_computes(int howmany)$/;"	f	file:
 make_it	./testbin/dirseek/dirseek.c	/^	int make_it;$/;"	m	struct:__anon14	file:
@@ -2132,16 +2135,17 @@ reboot_badflags	./testbin/badcall/bad_reboot.c	/^reboot_badflags(void)$/;"	f	fil
 recurse_inf	./testbin/crash/crash.c	/^recurse_inf(void)$/;"	f	file:
 recursedir	./bin/ls/ls.c	/^recursedir(const char *path)$/;"	f	file:
 recursive_cleanup	./testbin/dirconc/dirconc.c	/^recursive_cleanup(const char *sofar, int depth)$/;"	f	file:
-ref_count	./kern/include/fd.h	/^	int *ref_count;$/;"	m	struct:file_node
+ref_count	./kern/include/fd.h	/^	int ref_count;$/;"	m	struct:file_node
 region	./kern/include/addrspace.h	/^struct region {$/;"	s
 release_fd	./kern/thread/fd.c	/^void release_fd(int filehandle){$/;"	f
+release_file_lock	./kern/thread/fd.c	/^void release_file_lock(struct vnode *file){$/;"	f
 remove	./testbin/badcall/common_path.c	/^T(remove);$/;"	v
 remove_badpath	./testbin/badcall/common_path.c	/^remove_badpath(const char *path)$/;"	f	file:
 remove_dir	./testbin/badcall/bad_remove.c	/^remove_dir(void)$/;"	f	file:
 remove_dot	./testbin/badcall/bad_remove.c	/^remove_dot(void)$/;"	f	file:
 remove_dotdot	./testbin/badcall/bad_remove.c	/^remove_dotdot(void)$/;"	f	file:
 remove_empty	./testbin/badcall/bad_remove.c	/^remove_empty(void)$/;"	f	file:
-remove_file_node	./kern/thread/fd.c	/^void remove_file_node(struct vnode *file){$/;"	f
+remove_file_node	./kern/thread/fd.c	/^void remove_file_node(int index){$/;"	f	file:
 remove_lists	./kern/lib/kheap.c	/^remove_lists(struct pageref *pr, int blktype)$/;"	f	file:
 rename	./testbin/badcall/common_path.c	/^T2(rename);$/;"	v
 rename_badpath1	./testbin/badcall/common_path.c	/^rename_badpath1(const char *path)$/;"	f	file:
@@ -2391,12 +2395,12 @@ sys_fstat	./kern/userprog/syscalls_asst4/sys_fstat.c	/^int sys_fstat(int fd, str
 sys_getpid	./kern/userprog/syscalls_asst2/sys_getpid.c	/^pid_t sys_getpid(void){$/;"	f
 sys_lseek	./kern/userprog/syscalls_asst4/sys_lseek.c	/^off_t sys_lseek(int filehandle, off_t pos, int code){$/;"	f
 sys_nerr	./kern/include/kern/errmsg.h	/^const int sys_nerr = sizeof(sys_errlist)\/sizeof(const char *);$/;"	v
-sys_open	./kern/userprog/syscalls_asst4/sys_open.c	/^int sys_open(const char *filename, int flags){$/;"	f
-sys_read	./kern/userprog/syscalls_asst2/sys_read.c	/^int sys_read(int filehandle, void *buf, size_t max_size){$/;"	f
+sys_open	./kern/userprog/syscalls_asst4/sys_open.c	/^int sys_open(const char *filename, int flags, int *ret){$/;"	f
+sys_read	./kern/userprog/syscalls_asst2/sys_read.c	/^int sys_read(int filehandle, void *buf, size_t size, int *ret){$/;"	f
 sys_reboot	./kern/main/main.c	/^sys_reboot(int code)$/;"	f
 sys_sbrk	./kern/userprog/syscalls_asst3/sys_sbrk.c	/^void* sys_sbrk(intptr_t amount){$/;"	f
 sys_waitpid	./kern/userprog/syscalls_asst2/sys_waitpid.c	/^int sys_waitpid(pid_t pid, int *returncode, int options){$/;"	f
-sys_write	./kern/userprog/syscalls_asst2/sys_write.c	/^int sys_write(int filehandle, const void *buf, size_t size){$/;"	f
+sys_write	./kern/userprog/syscalls_asst2/sys_write.c	/^int sys_write(int filehandle, const void *buf, size_t size, int *ret){$/;"	f
 system	./lib/libc/system.c	/^system(const char *cmd)$/;"	f
 t0	./kern/arch/mips/include/asmdefs.h	18;"	d
 t1	./kern/arch/mips/include/asmdefs.h	19;"	d

@@ -4,6 +4,7 @@
 #include <vnode.h>
 #include <kern/errno.h>
 #include <kern/types.h>
+#include <kern/unistd.h>
 #include <uio.h>
 #include <synch.h>
 #include <curthread.h>
@@ -18,12 +19,13 @@ int sys_read(int filehandle, void *buf, size_t size, int *ret){
 	struct vnode *file;
         off_t curr_offset;
         struct uio u;
-        struct lock *lock;
-        int err;
+        int err, rw_flags;
 
         /* Error check */
         if(filehandle < 0 || !(curthread->file_descriptors[filehandle])) return EBADF;
         if(buf == NULL) return EINVAL;
+	rw_flags = curthread->file_descriptors[filehandle]->rw_flags;
+	if(!((rw_flags == O_RDONLY) || (rw_flags == O_RDWR))) return EINVAL;
 
         file = curthread->file_descriptors[filehandle]->file;
         curr_offset = curthread->file_descriptors[filehandle]->curr_offset;
@@ -38,13 +40,15 @@ int sys_read(int filehandle, void *buf, size_t size, int *ret){
         u.uio_space = curthread->t_vmspace;
 
         /* Find and acquire the file lock, then do the write */
-        err = get_file_lock(file, &lock);
+        err = acquire_file_lock(file);
         if(err) return err;
 
-        lock_acquire(lock);
         err = VOP_READ(file, &u);
-        lock_release(lock);
+	release_file_lock(file);
         if(err) return err;
+
+	/* Update our offset */
+	curthread->file_descriptors[filehandle]->curr_offset = u.uio_offset;
 
         *ret = size - u.uio_resid;
         return 0;
