@@ -26,6 +26,7 @@ BREAK_3	./lib/libc/random.c	138;"	d	file:
 BREAK_4	./lib/libc/random.c	143;"	d	file:
 BUFFER_SIZE	./testbin/f_test/f_test.c	25;"	d	file:
 BUFSIZE	./testbin/tail/tail.c	14;"	d	file:
+BUF_SIZE	./testbin/filesyscalls/filesyscalls.c	13;"	d	file:
 BladeRunner	./testbin/userthreads/userthreads.c	/^BladeRunner()$/;"	f
 C	./testbin/matmult/matmult-orig.c	/^int C[Dim][Dim];$/;"	v
 C	./testbin/matmult/matmult.c	/^int C[Dim][Dim];$/;"	v
@@ -284,7 +285,7 @@ INVAL_INSN	./testbin/crash/crash.c	23;"	d	file:
 INVAL_PTR	./testbin/badcall/config.h	10;"	d
 IOCTL	./testbin/badcall/bad_ioctl.c	36;"	d	file:
 ISDIR	./kern/dev/lamebus/emu.c	833;"	d	file:
-ISDIR	./kern/fs/sfs/sfs_vnode.c	1467;"	d	file:
+ISDIR	./kern/fs/sfs/sfs_vnode.c	1618;"	d	file:
 ITEMSIZE	./kern/test/malloctest.c	22;"	d	file:
 JOBSIZE	./testbin/parallelvm/parallelvm.c	23;"	d	file:
 K1	./kern/dev/generic/pseudorand.c	17;"	d	file:
@@ -379,7 +380,7 @@ MAXPROCS	./testbin/farm/farm.c	17;"	d	file:
 MAXPROCS	./testbin/kitchen/kitchen.c	14;"	d	file:
 MAXPROCS	./testbin/sty/sty.c	15;"	d	file:
 MAXSTRING	./testbin/tictac/tictac.c	23;"	d	file:
-MAX_FILES_PER_THREAD	./kern/include/fd.h	44;"	d
+MAX_FILES_PER_THREAD	./kern/include/fd.h	52;"	d
 MAX_NUM_PROCESSES	./kern/include/pcb_list.h	18;"	d
 MAX_PARAMS_EXECV	./kern/include/syscall.h	12;"	d
 MAX_STRLENGHT_EXECV	./kern/include/syscall.h	13;"	d
@@ -427,7 +428,7 @@ NORTH	./kern/asst1/stoplight.c	/^enum { NORTH, EAST, SOUTH, WEST }; \/\/ approac
 NOSUCHPID_ERROR	./testbin/badcall/config.h	29;"	d
 NOSUCHPID_ERROR	./testbin/badcall/config.h	31;"	d
 NOTDIR	./kern/dev/lamebus/emu.c	834;"	d	file:
-NOTDIR	./kern/fs/sfs/sfs_vnode.c	1468;"	d	file:
+NOTDIR	./kern/fs/sfs/sfs_vnode.c	1619;"	d	file:
 NPAGEREFS	./kern/lib/kheap.c	104;"	d	file:
 NPROCS	./testbin/dirconc/dirconc.c	19;"	d	file:
 NSEMLOOPS	./kern/test/synchtest.c	12;"	d	file:
@@ -707,7 +708,7 @@ UIO_USERISPACE	./kern/include/uio.h	/^	UIO_USERISPACE,$/;"	e	enum:uio_seg
 UIO_USERSPACE	./kern/include/uio.h	/^	UIO_USERSPACE,$/;"	e	enum:uio_seg
 UIO_WRITE	./kern/include/uio.h	/^	UIO_WRITE,$/;"	e	enum:uio_rw
 UNIMP	./kern/dev/lamebus/emu.c	835;"	d	file:
-UNIMP	./kern/fs/sfs/sfs_vnode.c	1469;"	d	file:
+UNIMP	./kern/fs/sfs/sfs_vnode.c	1620;"	d	file:
 UNLOCKME	./lib/libc/random.c	50;"	d	file:
 USERSTACK	./kern/arch/mips/include/vm.h	53;"	d
 USERTOP	./kern/arch/mips/include/vm.h	43;"	d
@@ -1107,7 +1108,7 @@ buildversion	./kern/compile/ASST0/vers.c	/^const int buildversion = 36;$/;"	v
 buildversion	./kern/compile/ASST1/vers.c	/^const int buildversion = 30;$/;"	v
 buildversion	./kern/compile/ASST2/vers.c	/^const int buildversion = 74;$/;"	v
 buildversion	./kern/compile/ASST3/vers.c	/^const int buildversion = 193;$/;"	v
-buildversion	./kern/compile/ASST4/vers.c	/^const int buildversion = 88;$/;"	v
+buildversion	./kern/compile/ASST4/vers.c	/^const int buildversion = 120;$/;"	v
 bus_map_area	./kern/arch/mips/include/bus.h	20;"	d
 bus_read_register	./kern/arch/mips/include/bus.h	17;"	d
 bus_write_register	./kern/arch/mips/include/bus.h	14;"	d
@@ -1353,6 +1354,7 @@ dup2_badfd	./testbin/badcall/common_fds.c	/^dup2_badfd(int fd)$/;"	f	file:
 dup2_cleanup	./testbin/badcall/common_fds.c	/^dup2_cleanup(void)$/;"	f	file:
 dup2_fd2	./testbin/badcall/bad_dup2.c	/^dup2_fd2(int fd, const char *desc)$/;"	f	file:
 dup2_self	./testbin/badcall/bad_dup2.c	/^dup2_self(void)$/;"	f	file:
+dup_fd	./kern/thread/fd.c	/^int dup_fd(int filehandle, int newhandle){$/;"	f
 e	./testbin/ctest/ctest.c	/^	struct entry *e;$/;"	m	struct:entry	typeref:struct:entry::entry	file:
 e_busdata	./kern/dev/lamebus/emu.h	/^	void *e_busdata;$/;"	m	struct:emu_softc
 e_buspos	./kern/dev/lamebus/emu.h	/^	u_int32_t e_buspos;$/;"	m	struct:emu_softc
@@ -1456,8 +1458,8 @@ fbuffer	./testbin/f_test/f_test.c	/^char fbuffer[BUFFER_SIZE];$/;"	v
 fd	./kern/include/fd.h	/^struct fd{$/;"	s
 fd	./sbin/dumpsfs/disk.c	/^static int fd=-1;$/;"	v	file:
 fd	./sbin/mksfs/disk.c	/^static int fd=-1;$/;"	v	file:
+file	./kern/include/fd.h	/^	struct vnode *file;$/;"	m	struct:fd	typeref:struct:fd::vnode
 file	./kern/include/fd.h	/^	struct vnode *file;$/;"	m	struct:file_node	typeref:struct:file_node::vnode
-file	./kern/include/fd.h	/^	struct vnode* file;$/;"	m	struct:fd	typeref:struct:fd::vnode
 file_descriptors	./kern/include/thread.h	/^	struct fd* file_descriptors[MAX_FILES_PER_THREAD];$/;"	m	struct:thread	typeref:struct:thread::fd
 file_node	./kern/include/fd.h	/^struct file_node{$/;"	s
 file_node_exists	./kern/thread/fd.c	/^int file_node_exists(struct vnode *file, int *index){$/;"	f	file:
@@ -1775,6 +1777,7 @@ main	./testbin/dirtest/dirtest.c	/^main(void)$/;"	f
 main	./testbin/f_test/f_test.c	/^main(int argc, char * argv[])$/;"	f
 main	./testbin/farm/farm.c	/^main()$/;"	f
 main	./testbin/faulter/faulter.c	/^main(void) $/;"	f
+main	./testbin/filesyscalls/filesyscalls.c	/^main()$/;"	f
 main	./testbin/filetest/filetest.c	/^main(int argc, char *argv[])$/;"	f
 main	./testbin/forkbomb/forkbomb.c	/^main()$/;"	f
 main	./testbin/forkexecbomb/forkexecbomb.c	/^main(int argc, char *argv[])$/;"	f
@@ -2135,6 +2138,7 @@ reboot_badflags	./testbin/badcall/bad_reboot.c	/^reboot_badflags(void)$/;"	f	fil
 recurse_inf	./testbin/crash/crash.c	/^recurse_inf(void)$/;"	f	file:
 recursedir	./bin/ls/ls.c	/^recursedir(const char *path)$/;"	f	file:
 recursive_cleanup	./testbin/dirconc/dirconc.c	/^recursive_cleanup(const char *sofar, int depth)$/;"	f	file:
+ref_count	./kern/include/fd.h	/^	int ref_count;$/;"	m	struct:fd
 ref_count	./kern/include/fd.h	/^	int ref_count;$/;"	m	struct:file_node
 region	./kern/include/addrspace.h	/^struct region {$/;"	s
 release_fd	./kern/thread/fd.c	/^void release_fd(int filehandle){$/;"	f
@@ -2267,6 +2271,7 @@ sfs_freemap	./kern/include/sfs.h	/^	struct bitmap *sfs_freemap;     \/* blocks i
 sfs_freemapdirty	./kern/include/sfs.h	/^	int sfs_freemapdirty;           \/* true if freemap modified *\/$/;"	m	struct:sfs_fs
 sfs_fs	./kern/include/sfs.h	/^struct sfs_fs {$/;"	s
 sfs_fsync	./kern/fs/sfs/sfs_vnode.c	/^sfs_fsync(struct vnode *v)$/;"	f	file:
+sfs_getdirentry	./kern/fs/sfs/sfs_vnode.c	/^sfs_getdirentry(struct vnode *vv, struct uio *uio)$/;"	f	file:
 sfs_getroot	./kern/fs/sfs/sfs_vnode.c	/^sfs_getroot(struct fs *fs)$/;"	f
 sfs_gettype	./kern/fs/sfs/sfs_vnode.c	/^sfs_gettype(struct vnode *v, u_int32_t *ret)$/;"	f	file:
 sfs_getvolname	./kern/fs/sfs/sfs_fs.c	/^sfs_getvolname(struct fs *fs)$/;"	f	file:
@@ -2281,6 +2286,7 @@ sfs_lookparent	./kern/fs/sfs/sfs_vnode.c	/^sfs_lookparent(struct vnode *v, char 
 sfs_lookup	./kern/fs/sfs/sfs_vnode.c	/^sfs_lookup(struct vnode *v, char *path, struct vnode **ret)$/;"	f	file:
 sfs_makeobj	./kern/fs/sfs/sfs_vnode.c	/^sfs_makeobj(struct sfs_fs *sfs, int type, struct sfs_vnode **ret)$/;"	f	file:
 sfs_mapio	./kern/fs/sfs/sfs_fs.c	/^sfs_mapio(struct sfs_fs *sfs, enum uio_rw rw)$/;"	f	file:
+sfs_mkdir	./kern/fs/sfs/sfs_vnode.c	/^sfs_mkdir(struct vnode *vv, const char *name){$/;"	f	file:
 sfs_mmap	./kern/fs/sfs/sfs_vnode.c	/^sfs_mmap(struct vnode *v   \/* add stuff as needed *\/)$/;"	f	file:
 sfs_mount	./kern/fs/sfs/sfs_fs.c	/^sfs_mount(const char *device)$/;"	f
 sfs_namefile	./kern/fs/sfs/sfs_vnode.c	/^sfs_namefile(struct vnode *vv, struct uio *uio)$/;"	f	file:
@@ -2294,6 +2300,7 @@ sfs_readdir	./kern/fs/sfs/sfs_vnode.c	/^sfs_readdir(struct sfs_vnode *sv, struct
 sfs_reclaim	./kern/fs/sfs/sfs_vnode.c	/^sfs_reclaim(struct vnode *v)$/;"	f	file:
 sfs_remove	./kern/fs/sfs/sfs_vnode.c	/^sfs_remove(struct vnode *dir, const char *name)$/;"	f	file:
 sfs_rename	./kern/fs/sfs/sfs_vnode.c	/^sfs_rename(struct vnode *d1, const char *n1, $/;"	f	file:
+sfs_rmdir	./kern/fs/sfs/sfs_vnode.c	/^sfs_rmdir(struct vnode *vv, const char *name){$/;"	f	file:
 sfs_rwblock	./kern/fs/sfs/sfs_io.c	/^sfs_rwblock(struct sfs_fs *sfs, struct uio *uio)$/;"	f
 sfs_stat	./kern/fs/sfs/sfs_vnode.c	/^sfs_stat(struct vnode *v, struct stat *statbuf)$/;"	f	file:
 sfs_super	./kern/include/kern/sfs.h	/^struct sfs_super {$/;"	s
@@ -2386,19 +2393,29 @@ symlink_badpath1	./testbin/badcall/common_path.c	/^symlink_badpath1(const char *
 symlink_badpath2	./testbin/badcall/common_path.c	/^symlink_badpath2(const char *path)$/;"	f	file:
 symlink_empty1	./testbin/badcall/bad_symlink.c	/^symlink_empty1(void)$/;"	f	file:
 symlink_empty2	./testbin/badcall/bad_symlink.c	/^symlink_empty2(void)$/;"	f	file:
+sys___getcwd	./kern/userprog/syscalls_asst4/sys___getcwd.c	/^int sys___getcwd(char *buf, size_t buflen, int *ret){$/;"	f
 sys__exit	./kern/userprog/syscalls_asst2/sys__exit.c	/^void sys__exit(int exit_code){$/;"	f
+sys_chdir	./kern/userprog/syscalls_asst4/sys_chdir.c	/^int sys_chdir(const char *path, int *ret){$/;"	f
 sys_close	./kern/userprog/syscalls_asst4/sys_close.c	/^int sys_close(int filehandle){$/;"	f
+sys_dup2	./kern/userprog/syscalls_asst4/sys_dup2.c	/^int sys_dup2(int filehandle, int newhandle, int *ret){$/;"	f
 sys_errlist	./kern/include/kern/errmsg.h	/^const char *const sys_errlist[] = {$/;"	v
 sys_execv	./kern/userprog/syscalls_asst2/sys_execv.c	/^sys_execv(struct trapframe *tf)$/;"	f
 sys_fork	./kern/userprog/syscalls_asst2/sys_fork.c	/^pid_t sys_fork(struct trapframe *tf){$/;"	f
 sys_fstat	./kern/userprog/syscalls_asst4/sys_fstat.c	/^int sys_fstat(int fd, struct stat *buf){$/;"	f
+sys_fsync	./kern/userprog/syscalls_asst4/sys_fsync.c	/^int sys_fsync(int filehandle, int *ret){$/;"	f
+sys_getdirentry	./kern/userprog/syscalls_asst4/sys_getdirentry.c	/^int sys_getdirentry(int filehandle, char *buf, size_t buflen, int *ret){$/;"	f
 sys_getpid	./kern/userprog/syscalls_asst2/sys_getpid.c	/^pid_t sys_getpid(void){$/;"	f
-sys_lseek	./kern/userprog/syscalls_asst4/sys_lseek.c	/^off_t sys_lseek(int filehandle, off_t pos, int code){$/;"	f
+sys_lseek	./kern/userprog/syscalls_asst4/sys_lseek.c	/^off_t sys_lseek(int filehandle, off_t pos, int code, int *ret){$/;"	f
+sys_mkdir	./kern/userprog/syscalls_asst4/sys_mkdir.c	/^int sys_mkdir(const char *dirname, int ignore, int *ret){$/;"	f
 sys_nerr	./kern/include/kern/errmsg.h	/^const int sys_nerr = sizeof(sys_errlist)\/sizeof(const char *);$/;"	v
 sys_open	./kern/userprog/syscalls_asst4/sys_open.c	/^int sys_open(const char *filename, int flags, int *ret){$/;"	f
 sys_read	./kern/userprog/syscalls_asst2/sys_read.c	/^int sys_read(int filehandle, void *buf, size_t size, int *ret){$/;"	f
 sys_reboot	./kern/main/main.c	/^sys_reboot(int code)$/;"	f
+sys_remove	./kern/userprog/syscalls_asst4/sys_remove.c	/^int sys_remove(const char *filename, int *ret){$/;"	f
+sys_rename	./kern/userprog/syscalls_asst4/sys_rename.c	/^int sys_rename(const char *oldfile, const char *newfile, int *ret){$/;"	f
+sys_rmdir	./kern/userprog/syscalls_asst4/sys_rmdir.c	/^int sys_rmdir(const char *dirname, int *ret){$/;"	f
 sys_sbrk	./kern/userprog/syscalls_asst3/sys_sbrk.c	/^void* sys_sbrk(intptr_t amount){$/;"	f
+sys_sync	./kern/userprog/syscalls_asst4/sys_sync.c	/^int sys_sync(int *ret){$/;"	f
 sys_waitpid	./kern/userprog/syscalls_asst2/sys_waitpid.c	/^int sys_waitpid(pid_t pid, int *returncode, int options){$/;"	f
 sys_write	./kern/userprog/syscalls_asst2/sys_write.c	/^int sys_write(int filehandle, const void *buf, size_t size, int *ret){$/;"	f
 system	./lib/libc/system.c	/^system(const char *cmd)$/;"	f

@@ -71,6 +71,16 @@
 ./userprog/syscalls_asst4/sys_fstat.c
 ./userprog/syscalls_asst4/sys_close.c
 ./userprog/syscalls_asst4/sys_lseek.c
+./userprog/syscalls_asst4/sys_getdirentry.c
+./userprog/syscalls_asst4/sys___getcwd.c
+./userprog/syscalls_asst4/sys_remove.c
+./userprog/syscalls_asst4/sys_chdir.c
+./userprog/syscalls_asst4/sys_mkdir.c
+./userprog/syscalls_asst4/sys_rmdir.c
+./userprog/syscalls_asst4/sys_rename.c
+./userprog/syscalls_asst4/sys_sync.c
+./userprog/syscalls_asst4/sys_fsync.c
+./userprog/syscalls_asst4/sys_dup2.c
 ./thread/pcb_list.c
 ./thread/scheduler.c
 ./thread/synch.c

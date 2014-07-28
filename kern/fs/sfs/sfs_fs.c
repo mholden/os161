@@ -292,7 +292,7 @@ sfs_domount(void *options, struct device *dev, struct fs **ret)
 		kfree(sfs);
 		return result;
 	}
-
+	
 	/* Set up abstract fs calls */
 	sfs->sfs_absfs.fs_sync = sfs_sync;
 	sfs->sfs_absfs.fs_getvolname = sfs_getvolname;
@@ -303,6 +303,15 @@ sfs_domount(void *options, struct device *dev, struct fs **ret)
 	/* the other fields */
 	sfs->sfs_superdirty = 0;
 	sfs->sfs_freemapdirty = 0;
+
+	/* Set up . and .. in root dir */
+        result = sfs_setup_root(sfs);
+        if (result) {
+                bitmap_destroy(sfs->sfs_freemap);
+                array_destroy(sfs->sfs_vnodes);
+                kfree(sfs);
+                return result;
+        }
 
 	/* Hand back the abstract fs */
 	*ret = &sfs->sfs_absfs;

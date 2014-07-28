@@ -52,4 +52,7 @@ int sfs_wblock(struct sfs_fs *sfs, void *data, u_int32_t block);
 /* Get root vnode */
 struct vnode *sfs_getroot(struct fs *fs);
 
+/* Setup root directory on first mount */
+int sfs_setup_root(struct sfs_fs *sfs);
+
 #endif /* _SFS_H_ */

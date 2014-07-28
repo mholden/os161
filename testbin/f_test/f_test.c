@@ -23,7 +23,7 @@
 
 
 #define BUFFER_SIZE  (2 * SECTOR_SIZE + 1)
-#define BIGFILE_SIZE (270 * BUFFER_SIZE)
+#define BIGFILE_SIZE (60 * BUFFER_SIZE)
 #define BIGFILE_NAME "large-f"
 
 #define LETTER(x) ('a' + (x % 31))
@@ -89,7 +89,7 @@ dowait(int pid)
 void
 big_file(int size)
 {
-	int i, j, fileid;
+	int i, j, fileid, tot, len;
 	
 	printf("[BIGFILE] test starting :\n");
 	printf("\tCreating a file of size: %d\n", size);
@@ -105,7 +105,12 @@ big_file(int size)
 
 	printf("\tWriting to file.\n");
 	for (i = 0; i < size; i += BUFFER_SIZE) {
-		write(fileid, fbuffer, BUFFER_SIZE);
+		tot = 0;
+        	while((BUFFER_SIZE - tot) > 0){
+                	len = write(fileid, fbuffer + tot, BUFFER_SIZE - tot);
+                	if(len < 0) err(1, "[BIGFILE]: write");
+			tot += len;
+        	}
 
 		if (!(i % (10 * BUFFER_SIZE))) {
 			printf("\rBW : %d", i);
@@ -121,13 +126,13 @@ big_file(int size)
 	}
 	
 	for (i = 0; i < size; i += BUFFER_SIZE) {
-		j = read(fileid, fbuffer, BUFFER_SIZE);
-		if (j<0) {
-			err(1, "[BIGFILE]: read");
-		}
-		if (j != BUFFER_SIZE) {
-			errx(1, "[BIGFILE]: read: only %d bytes", j);
-		}
+		tot = 0;
+        	while((BUFFER_SIZE - tot) > 0){
+                	len = read(fileid, fbuffer + tot, BUFFER_SIZE - tot);
+                	if(len < 0) err(1, "[BIGFILE]: read");
+			if(len == 0) break; // EOF
+                	tot += len;
+        	}
 	}
 
 	if (!(i % (10 * BUFFER_SIZE))) {

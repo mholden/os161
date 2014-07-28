@@ -1170,12 +1170,70 @@ static
 int
 sfs_namefile(struct vnode *vv, struct uio *uio)
 {
+	/* 
+	 * 1. All you really have is inode number of directory passed in.
+	 * 2. Get inode number of parent by reading directory slot 0 (..)
+	 * 3. loadvnode of parent
+	 * 4. Get our name by reading through parent directory for our inode
+	 *    number
+	 * 5. Add this name to string
+	 * 6. Repeat 2 through 5 until we hit root
+	 * 7. uiomove
+	 *	Deal with reference counters as you need to, as loadvnode
+	 *	increments refcount on vnode that we load. 
+	 */
+	
 	struct sfs_vnode *sv = vv->vn_data;
-	assert(sv->sv_ino == SFS_ROOT_LOCATION);
+	struct sfs_vnode *child_dir, *parent_dir;
+	struct sfs_dir tsd;
+	int err, nentries, slot;
+	char to_add[SFS_NAMELEN + 1], pathname[(SFS_NAMELEN + 1) * SFS_DIR_DEPTH];
+	
+	/* If we're root, do nothing */
+	if(sv->sv_ino == SFS_ROOT_LOCATION) return 0;
 
-	/* send back the empty string - just return */
+	child_dir = sv;
+	VOP_INCREF(&child_dir->sv_v);
 
-	(void)uio;
+	while(1){
+		err = sfs_readdir(child_dir, &tsd, 1);
+        	if(err) return err;	
+
+		assert(!strcmp(tsd.sfd_name, ".."));
+
+		err = sfs_loadvnode(child_dir->sv_v.vn_fs->fs_data, tsd.sfd_ino, SFS_TYPE_INVAL, &parent_dir);
+		if(err) return err;
+
+		nentries = sfs_dir_nentries(parent_dir);
+		slot = 2;
+		while (slot < nentries){
+			err = sfs_readdir(parent_dir, &tsd, slot);
+        		if(err) return err;
+
+			if(tsd.sfd_ino == child_dir->sv_ino) break;
+                	slot++;
+        	}
+
+		/* 
+	 	 * Doesn't make sense if we don't find our directory listed in our
+	 	 * parent directory..
+	 	 */
+        	assert(slot < nentries);
+
+		strcpy(to_add, tsd.sfd_name);
+		strcat(to_add, "/");
+		strcat(to_add, pathname);
+		strcpy(pathname, to_add);
+	
+		VOP_DECREF(&child_dir->sv_v);
+		if(parent_dir->sv_ino == SFS_ROOT_LOCATION){
+			VOP_DECREF(&parent_dir->sv_v);
+                        break;
+		} else child_dir = parent_dir;
+	}
+
+	err = uiomove(pathname, strlen(pathname) + 1, uio);
+	if(err) return err;
 
 	return 0;
 }
@@ -1302,41 +1360,33 @@ sfs_remove(struct vnode *dir, const char *name)
 
 /*
  * Rename a file.
- *
- * Since we don't support subdirectories, assumes that the two
- * directories passed are the same.
  */
 static
 int
 sfs_rename(struct vnode *d1, const char *n1, 
 	   struct vnode *d2, const char *n2)
 {
-	struct sfs_vnode *sv = d1->vn_data;
+	struct sfs_vnode *sv1 = d1->vn_data;
+	struct sfs_vnode *sv2 = d2->vn_data;
 	struct sfs_vnode *g1;
 	int slot1, slot2;
 	int result, result2;
 
-	assert(d1==d2);
-	assert(sv->sv_ino == SFS_ROOT_LOCATION);
-
 	/* Look up the old name of the file and get its inode and slot number*/
-	result = sfs_lookonce(sv, n1, &g1, &slot1);
+	result = sfs_lookonce(sv1, n1, &g1, &slot1);
 	if (result) {
 		return result;
 	}
 
-	/* We don't support subdirectories */
-	assert(g1->sv_i.sfi_type == SFS_TYPE_FILE);
-
 	/*
-	 * Link it under the new name.
+	 * Link it to the 'new' directory under the new name.
 	 *
 	 * We could theoretically just overwrite the original
 	 * directory entry, except that we need to check to make sure
 	 * the new name doesn't already exist; might as well use the
 	 * existing link routine.
 	 */
-	result = sfs_dir_link(sv, n2, g1->sv_ino, &slot2);
+	result = sfs_dir_link(sv2, n2, g1->sv_ino, &slot2);
 	if (result) {
 		goto puke;
 	}
@@ -1346,7 +1396,7 @@ sfs_rename(struct vnode *d1, const char *n1,
 	g1->sv_dirty = 1;
 
 	/* Unlink the old slot */
-	result = sfs_dir_unlink(sv, slot1);
+	result = sfs_dir_unlink(sv1, slot1);
 	if (result) {
 		goto puke_harder;
 	}
@@ -1368,7 +1418,7 @@ sfs_rename(struct vnode *d1, const char *n1,
 	/*
 	 * Error recovery: try to undo what we already did
 	 */
-	result2 = sfs_dir_unlink(sv, slot2);
+	result2 = sfs_dir_unlink(sv2, slot2);
 	if (result2) {
 		kprintf("sfs: rename: %s\n", strerror(result));
 		kprintf("sfs: rename: while cleaning up: %s\n", 
@@ -1385,9 +1435,6 @@ sfs_rename(struct vnode *d1, const char *n1,
 /*
  * lookparent returns the last path component as a string and the
  * directory it's in as a vnode.
- *
- * Since we don't support subdirectories, this is very easy - 
- * return the root dir and copy the path.
  */
 static
 int
@@ -1395,9 +1442,43 @@ sfs_lookparent(struct vnode *v, char *path, struct vnode **ret,
 		  char *buf, size_t buflen)
 {
 	struct sfs_vnode *sv = v->vn_data;
+	struct sfs_vnode *parent, *child;
+	char name[SFS_NAMELEN];
+	int i, err;
 
 	if (sv->sv_i.sfi_type != SFS_TYPE_DIR) {
 		return ENOTDIR;
+	}
+
+	parent = sv;
+	VOP_INCREF(&parent->sv_v);
+	child = NULL; //just to be safe
+
+	while(1){
+		i = 0;
+		while(path[i] != '/' && path[i] != '\0' && i < SFS_NAMELEN) i++;
+		if(i >= SFS_NAMELEN){
+			VOP_DECREF(&parent->sv_v);
+			return ENAMETOOLONG;
+		}
+		else if(path[i] == '/'){
+			path[i] = 0;
+			strcpy(name, path);
+			path = &path[i + 1];
+
+			err = sfs_lookonce(parent, name, &child, NULL);
+			if(err){
+				VOP_DECREF(&parent->sv_v);
+				return err;
+			}
+
+			VOP_DECREF(&parent->sv_v);
+			parent = child;
+			if(parent->sv_i.sfi_type != SFS_TYPE_DIR) return ENOTDIR;
+		} else{ /* Hit NULL, so this is our last time through */
+			assert(path[i] == '\0');
+			break;
+		}
 	}
 
 	if (strlen(path)+1 > buflen) {
@@ -1405,36 +1486,68 @@ sfs_lookparent(struct vnode *v, char *path, struct vnode **ret,
 	}
 	strcpy(buf, path);
 
-	VOP_INCREF(&sv->sv_v);
-	*ret = &sv->sv_v;
+	*ret = &parent->sv_v;
 
 	return 0;
 }
 
 /*
  * Lookup gets a vnode for a pathname.
- *
- * Since we don't support subdirectories, it's easy - just look up the
- * name.
  */
 static
 int
 sfs_lookup(struct vnode *v, char *path, struct vnode **ret)
 {
 	struct sfs_vnode *sv = v->vn_data;
-	struct sfs_vnode *final;
-	int result;
+	struct sfs_vnode *parent, *child;
+        char name[SFS_NAMELEN];
+        int i, err;
 
-	if (sv->sv_i.sfi_type != SFS_TYPE_DIR) {
-		return ENOTDIR;
-	}
-	
-	result = sfs_lookonce(sv, path, &final, NULL);
-	if (result) {
-		return result;
-	}
+        if (sv->sv_i.sfi_type != SFS_TYPE_DIR) {
+                return ENOTDIR;
+        }
 
-	*ret = &final->sv_v;
+        parent = sv; 
+        VOP_INCREF(&parent->sv_v);
+        child = NULL; //just to be safe
+
+        while(1){
+                i = 0;  
+                while(path[i] != '/' && path[i] != '\0' && i < SFS_NAMELEN) i++;
+                if(i >= SFS_NAMELEN){
+                        VOP_DECREF(&parent->sv_v);
+                        return ENAMETOOLONG;
+                }
+                else if(path[i] == '/'){
+                        path[i] = 0;
+                        strcpy(name, path);
+                        path = &path[i + 1];
+         
+                        err = sfs_lookonce(parent, name, &child, NULL);
+                        if(err){
+                                VOP_DECREF(&parent->sv_v);
+                                return err;
+                        }
+
+                        VOP_DECREF(&parent->sv_v);
+                        parent = child;
+                        if(parent->sv_i.sfi_type != SFS_TYPE_DIR) return ENOTDIR;
+                } else{ /* Hit NULL, so this is our last time through */
+                        assert(path[i] == '\0');
+                        
+			err = sfs_lookonce(parent, path, &child, NULL);
+                        if(err){
+                                VOP_DECREF(&parent->sv_v);
+                                return err;
+                        }       
+         
+                        VOP_DECREF(&parent->sv_v);
+
+			break;
+                }
+        }
+
+	*ret = &child->sv_v;
 
 	return 0;
 }
@@ -1501,7 +1614,7 @@ sfs_mkdir(struct vnode *vv, const char *name){
         struct sfs_vnode *sv = vv->vn_data;
         struct sfs_vnode *newguy;
         u_int32_t ino;
-        int result;
+        int result, result2, slot1, slot2;
 
         /* Look up the name */
         result = sfs_dir_findname(sv, name, &ino, NULL, NULL);
@@ -1521,17 +1634,57 @@ sfs_mkdir(struct vnode *vv, const char *name){
         }
 
         /* Link it into the directory */
-        result = sfs_dir_link(sv, name, newguy->sv_ino, NULL);
+        result = sfs_dir_link(sv, name, newguy->sv_ino, &slot1);
         if (result) {
                 VOP_DECREF(&newguy->sv_v);
                 return result;
         }
 
-        /* Update the linkcount of the new file */
+        /* Increment linkcount of the new directory and mark it dirty */
         newguy->sv_i.sfi_linkcount++;
-
-        /* and consequently mark it dirty. */
         newguy->sv_dirty = 1;
+
+	/* Link . and .. into our directory */
+	result = sfs_dir_link(newguy, ".", newguy->sv_ino, &slot2);
+        if (result) {
+		result2 = sfs_dir_unlink(sv, slot1);
+                if(result2){
+			VOP_DECREF(&newguy->sv_v);
+			return result2;
+		}
+		newguy->sv_i.sfi_linkcount--;
+        	newguy->sv_dirty = 1;
+		VOP_DECREF(&newguy->sv_v);
+                return result;
+        }
+
+	newguy->sv_i.sfi_linkcount++;
+        newguy->sv_dirty = 1;
+
+	result = sfs_dir_link(newguy, "..", sv->sv_ino, NULL);
+        if (result) {
+		result2 = sfs_dir_unlink(newguy, slot2);
+		if(result2){
+			VOP_DECREF(&newguy->sv_v);
+			return result2;
+		}
+                newguy->sv_i.sfi_linkcount--; 
+                newguy->sv_dirty = 1;
+                result2 = sfs_dir_unlink(sv, slot1);
+		if(result2){
+                        VOP_DECREF(&newguy->sv_v);
+                        return result2;
+                }
+                newguy->sv_i.sfi_linkcount--;
+                newguy->sv_dirty = 1;
+		VOP_DECREF(&newguy->sv_v);
+                return result;
+        }
+
+        sv->sv_i.sfi_linkcount++;
+        sv->sv_dirty = 1;
+
+	VOP_DECREF(&newguy->sv_v);
 
 	return 0;
 }
@@ -1541,7 +1694,8 @@ int
 sfs_rmdir(struct vnode *vv, const char *name){
 	struct sfs_vnode *sv = vv->vn_data;
         struct sfs_vnode *victim;
-        int slot;
+	struct sfs_dir tsd;
+        int slot, slot2, nentries;
         int result;
 
         /* Look for the directory and fetch a vnode for it. */
@@ -1550,9 +1704,49 @@ sfs_rmdir(struct vnode *vv, const char *name){
                 return result;
         }
 
-	/* Make sure it's an empty directory */
-	if(victim->sv_i.sfi_type != SFS_TYPE_DIR) return ENOTDIR;
-	if(sfs_dir_nentries(victim)) return ENOTEMPTY;
+	/* Make sure it's a directory and that only . and .. are left */
+	if(victim->sv_i.sfi_type != SFS_TYPE_DIR){
+		VOP_DECREF(&victim->sv_v);
+		return ENOTDIR;
+	}
+
+	nentries = sfs_dir_nentries(victim);
+	if(nentries != 2){
+		slot2 = 2; 
+		while(slot2 < nentries){
+			/* Ensure all other entries are blank */
+			result = sfs_readdir(victim, &tsd, slot2);
+                	if(result){
+				VOP_DECREF(&victim->sv_v);
+				return result;
+			}
+
+                	if(tsd.sfd_ino != SFS_NOINO){
+				VOP_DECREF(&victim->sv_v);
+                                return ENOTEMPTY;
+			}
+                	slot2++;
+		}	
+	}
+
+	/* Get rid of . and .. (should always be in slot 0 and 1) */
+	result = sfs_dir_unlink(victim, 0);
+	if(result){
+		VOP_DECREF(&victim->sv_v);
+		return result;
+	}
+	assert(victim->sv_i.sfi_linkcount > 0);
+        victim->sv_i.sfi_linkcount--;
+        victim->sv_dirty = 1;
+
+	result = sfs_dir_unlink(victim, 1);
+        if(result){
+                VOP_DECREF(&victim->sv_v);
+                return result;
+        }       
+	assert(sv->sv_i.sfi_linkcount > 0);
+        sv->sv_i.sfi_linkcount--;
+        sv->sv_dirty = 1;
 
         /* Erase its directory entry. */
         result = sfs_dir_unlink(sv, slot);
@@ -1565,9 +1759,6 @@ sfs_rmdir(struct vnode *vv, const char *name){
 
         /* Discard the reference that sfs_lookonce got us */
         VOP_DECREF(&victim->sv_v);
-
-	/* And decrement again to actually reclaim the vnode? */
-	VOP_DECREF(&victim->sv_v);
 
 	return result;
 }
@@ -1804,4 +1995,48 @@ sfs_getroot(struct fs *fs)
 	}
 
 	return &sv->sv_v;
+}
+
+/* Setup . and .. in root directory if this is the first mount */
+int
+sfs_setup_root(struct sfs_fs *sfs)
+{
+	struct fs *fs = &sfs->sfs_absfs;
+	struct vnode *root_vv;
+	struct sfs_vnode *root_sv;
+	int result;
+
+	root_vv = sfs_getroot(fs);
+	root_sv = root_vv->vn_data;
+
+	if(sfs_dir_nentries(root_sv) != 0){
+		VOP_DECREF(root_vv);
+		return 0;
+	}
+
+	result = sfs_dir_link(root_sv, ".", SFS_ROOT_LOCATION, NULL);
+        if (result) {
+                VOP_DECREF(root_vv);
+                return result;
+        }
+
+        root_sv->sv_i.sfi_linkcount++;
+        root_sv->sv_dirty = 1;
+
+        result = sfs_dir_link(root_sv, "..", SFS_ROOT_LOCATION, NULL);
+        if (result) {
+                sfs_dir_unlink(root_sv, 0); /* Hope this doesn't fail?? */
+                root_sv->sv_i.sfi_linkcount--;
+                root_sv->sv_dirty = 1;
+                VOP_DECREF(root_vv);
+                return result;
+        }
+
+        root_sv->sv_i.sfi_linkcount++;
+        root_sv->sv_dirty = 1;	
+
+	/* Decrement reference that sfs_getroot incremented */
+	VOP_DECREF(root_vv);
+
+	return 0;
 }

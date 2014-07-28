@@ -7,6 +7,7 @@
 #define SFS_NDIRECT       15            /* # of direct blocks in inode */
 #define SFS_DBPERIDB      128           /* # direct blks per indirect blk */
 #define SFS_NAMELEN       60            /* max length of filename */
+#define SFS_DIR_DEPTH     12		/* max directory depth */
 #define SFS_SB_LOCATION    0            /* block the superblock lives in */
 #define SFS_ROOT_LOCATION  1            /* loc'n of the root dir inode */
 #define SFS_MAP_LOCATION   2            /* 1st block of the freemap */
