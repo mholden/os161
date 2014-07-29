@@ -163,7 +163,7 @@ big_file(int size)
 void
 concur(void)
 {
-	int i, fd;
+	int i, fd, tot, len;
 	int r1, r2, w1;
 
 	printf("Spawning 2 readers, 1 writer.\n");
@@ -181,7 +181,12 @@ concur(void)
 	}
 
 	for (i = 0; i < TMULT; i++) {
-		write(fd, cbuffer, SECTOR_SIZE + 1);
+		tot = 0;
+                while(((SECTOR_SIZE + 1) - tot) > 0){
+                        len = write(fd, cbuffer + tot, (SECTOR_SIZE + 1) - tot);
+                        if(len < 0) err(1, "[CONCUR]: write");
+                        tot += len;
+                }
 	}
 
 

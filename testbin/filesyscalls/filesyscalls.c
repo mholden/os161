@@ -19,13 +19,12 @@ main()
 	char write_buf[BUF_SIZE] = { NULL }, read_buf[BUF_SIZE] = { NULL };
 	void *pointer_err;
 
-	/* Run this from cwd = emu0: */
 	pointer_err = getcwd(read_buf, sizeof(read_buf));
 	if(pointer_err == NULL){
 		printf("getcwd error!\n");
 		return -1;
 	} //else printf("getcwd success! cwd = %s\n", read_buf);
-	
+	/*	
 	err = chdir("vol0:");
 	if(err){
                 printf("chdir error!\n");
@@ -37,14 +36,14 @@ main()
                 printf("getcwd error!\n");
                 return -1;
         } //else printf("getcwd success! cwd = %s\n", read_buf);
-
-	fd0 = open("vol0:file0", O_RDWR | O_CREAT);
+	*/
+	fd0 = open("file0", O_RDWR | O_CREAT);
 	if (fd0 < 0){
 		printf("open fd0 error!\n");
 		return -1;
 	} //else printf("open fd0 success!\n");
 
-	fd1 = open("vol0:file1", O_RDWR | O_CREAT);
+	fd1 = open("file1", O_RDWR | O_CREAT);
         if (fd1 < 0){
                 printf("open fd1 error!\n");
                 return -1;
@@ -130,13 +129,13 @@ main()
                 return -1;
         }
 
-	fd3 = open("vol0:file3", O_RDWR | O_CREAT);
+	fd3 = open("file3", O_RDWR | O_CREAT);
         if (fd3 < 0){
                 printf("open fd0 error!\n");
                 return -1;
         }
 
-	fd4 = open("vol0:file4", O_RDWR | O_CREAT);
+	fd4 = open("file4", O_RDWR | O_CREAT);
         if (fd4 < 0){
                 printf("open fd0 error!\n");
                 return -1;
