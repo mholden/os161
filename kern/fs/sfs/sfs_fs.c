@@ -13,6 +13,7 @@
 #include <dev.h>
 #include <sfs.h>
 #include <vfs.h>
+#include <synch.h>
 
 /* Shortcuts for the size macros in kern/sfs.h */
 #define SFS_FS_BITMAPSIZE(sfs)  SFS_BITMAPSIZE((sfs)->sfs_super.sp_nblocks)
@@ -184,6 +185,10 @@ sfs_unmount(struct fs *fs)
 	/* The vfs layer takes care of the device for us */
 	(void)sfs->sfs_device;
 
+	lock_destroy(sfs->sfs_super_lock);
+	lock_destroy(sfs->sfs_vnodes_lock);
+	lock_destroy(sfs->sfs_freemap_lock);
+
 	/* Destroy the fs object */
 	kfree(sfs);
 
@@ -292,6 +297,33 @@ sfs_domount(void *options, struct device *dev, struct fs **ret)
 		kfree(sfs);
 		return result;
 	}
+
+	sfs->sfs_super_lock = lock_create("super_lock");
+	if(sfs->sfs_super_lock == NULL){
+		bitmap_destroy(sfs->sfs_freemap);
+                array_destroy(sfs->sfs_vnodes);
+                kfree(sfs);
+                return ENOMEM;
+	}
+
+	sfs->sfs_vnodes_lock = lock_create("vnodes_lock");
+        if(sfs->sfs_vnodes_lock == NULL){
+                lock_destroy(sfs->sfs_super_lock);
+		bitmap_destroy(sfs->sfs_freemap);
+                array_destroy(sfs->sfs_vnodes);
+                kfree(sfs);
+                return ENOMEM;
+        }
+
+	sfs->sfs_freemap_lock = lock_create("freemap_lock");
+        if(sfs->sfs_freemap_lock == NULL){
+		lock_destroy(sfs->sfs_vnodes_lock);
+		lock_destroy(sfs->sfs_super_lock);
+                bitmap_destroy(sfs->sfs_freemap);
+                array_destroy(sfs->sfs_vnodes);
+                kfree(sfs);
+                return ENOMEM;
+        }
 	
 	/* Set up abstract fs calls */
 	sfs->sfs_absfs.fs_sync = sfs_sync;
@@ -307,6 +339,9 @@ sfs_domount(void *options, struct device *dev, struct fs **ret)
 	/* Set up . and .. in root dir */
         result = sfs_setup_root(sfs);
         if (result) {
+		lock_destroy(sfs->sfs_freemap_lock);
+		lock_destroy(sfs->sfs_vnodes_lock);
+                lock_destroy(sfs->sfs_super_lock);
                 bitmap_destroy(sfs->sfs_freemap);
                 array_destroy(sfs->sfs_vnodes);
                 kfree(sfs);

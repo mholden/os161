@@ -63,11 +63,15 @@ sfs_balloc(struct sfs_fs *sfs, u_int32_t *diskblock)
 {
 	int result;
 
+	lock_acquire(sfs->sfs_freemap_lock);
+
 	result = bitmap_alloc(sfs->sfs_freemap, diskblock);
 	if (result) {
 		return result;
 	}
 	sfs->sfs_freemapdirty = 1;
+
+	lock_release(sfs->sfs_freemap_lock);
 
 	if (*diskblock >= sfs->sfs_super.sp_nblocks) {
 		panic("sfs: balloc: invalid block %u\n", *diskblock);
@@ -84,6 +88,7 @@ static
 void
 sfs_bfree(struct sfs_fs *sfs, u_int32_t diskblock)
 {
+	/* Don't think we need to synchronize this */
 	bitmap_unmark(sfs->sfs_freemap, diskblock);
 	sfs->sfs_freemapdirty = 1;
 }
@@ -95,6 +100,7 @@ static
 int
 sfs_bused(struct sfs_fs *sfs, u_int32_t diskblock)
 {
+	/* Don't think we need to synchronize this */
 	if (diskblock >= sfs->sfs_super.sp_nblocks) {
 		panic("sfs: sfs_bused called on out of range block %u\n", 
 		      diskblock);
@@ -861,6 +867,8 @@ sfs_reclaim(struct vnode *v)
 	struct sfs_fs *sfs = v->vn_fs->fs_data;
 	int ix, i, num, result;
 
+	lock_acquire(sfs->sfs_vnodes_lock);
+
 	/*
 	 * Make sure someone else hasn't picked up the vnode since the
 	 * decision was made to reclaim it. (You must also synchronize
@@ -874,6 +882,8 @@ sfs_reclaim(struct vnode *v)
 		v->vn_refcount--;
 
 		lock_release(v->vn_countlock);
+		lock_release(sfs->sfs_vnodes_lock);
+
 		return EBUSY;
 	}
 	lock_release(v->vn_countlock);
@@ -887,6 +897,7 @@ sfs_reclaim(struct vnode *v)
 		 */
 		result = VOP_TRUNCATE(&sv->sv_v, 0);
 		if (result) {
+			lock_release(sfs->sfs_vnodes_lock);
 			return result;
 		}
 	}
@@ -894,6 +905,7 @@ sfs_reclaim(struct vnode *v)
 	/* Sync the inode to disk */
 	result = sfs_sync_inode(sv);
 	if (result) {
+		lock_release(sfs->sfs_vnodes_lock);
 		return result;
 	}
 
@@ -922,6 +934,8 @@ sfs_reclaim(struct vnode *v)
 
 	/* Release the storage for the vnode structure itself. */
 	kfree(sv);
+
+	lock_release(sfs->sfs_vnodes_lock);
 
 	/* Done */
 	return 0;
@@ -1293,7 +1307,6 @@ sfs_creat(struct vnode *v, const char *name, int excl, struct vnode **ret)
 	newguy->sv_dirty = 1;
 
 	*ret = &newguy->sv_v;
-	
 	return 0;
 }
 
@@ -1880,6 +1893,8 @@ sfs_loadvnode(struct sfs_fs *sfs, u_int32_t ino, int forcetype,
 	int i, num;
 	int result;
 
+	lock_acquire(sfs->sfs_vnodes_lock);
+
 	/* Look in the vnodes table */
 	num = array_getnum(sfs->sfs_vnodes);
 
@@ -1900,6 +1915,9 @@ sfs_loadvnode(struct sfs_fs *sfs, u_int32_t ino, int forcetype,
 			assert(forcetype==SFS_TYPE_INVAL);
 
 			VOP_INCREF(&sv->sv_v);
+
+			lock_release(sfs->sfs_vnodes_lock);
+
 			*ret = sv;
 			return 0;
 		}
@@ -1909,6 +1927,7 @@ sfs_loadvnode(struct sfs_fs *sfs, u_int32_t ino, int forcetype,
 
 	sv = kmalloc(sizeof(struct sfs_vnode));
 	if (sv==NULL) {
+		lock_release(sfs->sfs_vnodes_lock);
 		return ENOMEM;
 	}
 
@@ -1922,6 +1941,7 @@ sfs_loadvnode(struct sfs_fs *sfs, u_int32_t ino, int forcetype,
 	result = sfs_rblock(sfs, &sv->sv_i, ino);
 	if (result) {
 		kfree(sv);
+		lock_release(sfs->sfs_vnodes_lock);
 		return result;
 	}
 
@@ -1959,6 +1979,7 @@ sfs_loadvnode(struct sfs_fs *sfs, u_int32_t ino, int forcetype,
 	result = VOP_INIT(&sv->sv_v, ops, &sfs->sfs_absfs, sv);
 	if (result) {
 		kfree(sv);
+		lock_release(sfs->sfs_vnodes_lock);
 		return result;
 	}
 
@@ -1970,8 +1991,11 @@ sfs_loadvnode(struct sfs_fs *sfs, u_int32_t ino, int forcetype,
 	if (result) {
 		VOP_KILL(&sv->sv_v);
 		kfree(sv);
+		lock_release(sfs->sfs_vnodes_lock);
 		return result;
 	}
+
+	lock_release(sfs->sfs_vnodes_lock);
 
 	/* Hand it back */
 	*ret = sv;

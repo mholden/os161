@@ -638,6 +638,7 @@ page_free(int free_type, vaddr_t vaddr){
 
 		if(vaddr < PADDR_TO_KVADDR(first_free_page*PAGE_SIZE)){
 			/* These pages are all fixed, anyways. Don't worry about it */
+			lock_release(CoreMapLock);
 			return;
 		} else {
 			/* 
@@ -655,6 +656,7 @@ page_free(int free_type, vaddr_t vaddr){
 				 * It wasn't even in the core map. Kernel is trying to free an
 				 * address that was never even allocated. Do nothing. 
 				 */
+				lock_release(CoreMapLock);
 				return;
 			}
 			for(j = i; j < (i + (int) pages[i].number); j++){

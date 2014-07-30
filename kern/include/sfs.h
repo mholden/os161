@@ -24,10 +24,13 @@ struct sfs_fs {
 	struct fs sfs_absfs;            /* abstract filesystem structure */
 	struct sfs_super sfs_super;	/* on-disk superblock */
 	int sfs_superdirty;             /* true if superblock modified */
+	struct lock *sfs_super_lock;	/* lock for sfs_super and sfs_superdirty */
 	struct device *sfs_device;      /* device mounted on */
 	struct array *sfs_vnodes;       /* vnodes loaded into memory */
+	struct lock *sfs_vnodes_lock;	/* lock for sfs_vnodes */
 	struct bitmap *sfs_freemap;     /* blocks in use are marked 1 */
 	int sfs_freemapdirty;           /* true if freemap modified */
+	struct lock *sfs_freemap_lock;	/* lock for sfs_freemap and sfs_freemapdirty */
 };
 
 /*

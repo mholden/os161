@@ -10,9 +10,15 @@
  * The waitpid() syscall.
  */
 
-int sys_waitpid(pid_t pid, int *returncode, int options){
-	if(options != 0) return EINVAL;
-	if(returncode == NULL) return EFAULT; // CHECK OTHER VALIDITY ISSUES WITH THE RETURNCODE POINTER HERE TOO!
+int sys_waitpid(pid_t pid, int *returncode, int options, int *ret){
+	if(options != 0){
+		*ret = -1;
+		return EINVAL;
+	}
+	if(returncode == NULL){
+		*ret = -1;
+                return EINVAL;
+	}
 	
 	lock_acquire(pcb_list_lock);
 	struct pcb_node *curr_node = pcb_list_root;
@@ -20,7 +26,10 @@ int sys_waitpid(pid_t pid, int *returncode, int options){
 		if(curr_node->pid == pid) break;
 		curr_node = curr_node->next;
 	}
-	if(curr_node == NULL) return EINVAL; // pid not found
+	if(curr_node == NULL){
+		*ret = -1;
+                return EINVAL;
+        }
 
 	// wait
 	while(curr_node->exited == 0) cv_wait(curr_node->exit_cv, pcb_list_lock);
@@ -31,5 +40,6 @@ int sys_waitpid(pid_t pid, int *returncode, int options){
 	destroy_node(curr_node);
 	lock_release(pcb_list_lock);
 
+	*ret = pid;
 	return 0;
 }

@@ -285,7 +285,7 @@ INVAL_INSN	./testbin/crash/crash.c	23;"	d	file:
 INVAL_PTR	./testbin/badcall/config.h	10;"	d
 IOCTL	./testbin/badcall/bad_ioctl.c	36;"	d	file:
 ISDIR	./kern/dev/lamebus/emu.c	833;"	d	file:
-ISDIR	./kern/fs/sfs/sfs_vnode.c	1618;"	d	file:
+ISDIR	./kern/fs/sfs/sfs_vnode.c	1795;"	d	file:
 ITEMSIZE	./kern/test/malloctest.c	22;"	d	file:
 JOBSIZE	./testbin/parallelvm/parallelvm.c	23;"	d	file:
 K1	./kern/dev/generic/pseudorand.c	17;"	d	file:
@@ -428,7 +428,7 @@ NORTH	./kern/asst1/stoplight.c	/^enum { NORTH, EAST, SOUTH, WEST }; \/\/ approac
 NOSUCHPID_ERROR	./testbin/badcall/config.h	29;"	d
 NOSUCHPID_ERROR	./testbin/badcall/config.h	31;"	d
 NOTDIR	./kern/dev/lamebus/emu.c	834;"	d	file:
-NOTDIR	./kern/fs/sfs/sfs_vnode.c	1619;"	d	file:
+NOTDIR	./kern/fs/sfs/sfs_vnode.c	1796;"	d	file:
 NPAGEREFS	./kern/lib/kheap.c	104;"	d	file:
 NPROCS	./testbin/dirconc/dirconc.c	19;"	d	file:
 NSEMLOOPS	./kern/test/synchtest.c	12;"	d	file:
@@ -538,10 +538,10 @@ RIGHT	./kern/asst1/stoplight.c	/^enum { RIGHT, STRAIGHT, LEFT }; \/\/ turn direc
 RIGHT	./testbin/matmult/matmult-orig.c	26;"	d	file:
 RIGHT	./testbin/matmult/matmult.c	20;"	d	file:
 ROUNDUP	./kern/include/lib.h	210;"	d
-RUNBIGFILE	./testbin/f_test/f_test.c	267;"	d	file:
-RUNCONCUR	./testbin/f_test/f_test.c	269;"	d	file:
-RUNDIRTEST	./testbin/f_test/f_test.c	268;"	d	file:
-RUNTHEMALL	./testbin/f_test/f_test.c	270;"	d	file:
+RUNBIGFILE	./testbin/f_test/f_test.c	277;"	d	file:
+RUNCONCUR	./testbin/f_test/f_test.c	279;"	d	file:
+RUNDIRTEST	./testbin/f_test/f_test.c	278;"	d	file:
+RUNTHEMALL	./testbin/f_test/f_test.c	280;"	d	file:
 Ropt	./bin/ls/ls.c	/^static int Ropt=0;$/;"	v	file:
 SAME_STACK	./kern/arch/mips/include/pcb.h	17;"	d
 SECTOR_SIZE	./testbin/f_test/f_test.c	22;"	d	file:
@@ -554,25 +554,26 @@ SEP_2	./lib/libc/random.c	135;"	d	file:
 SEP_3	./lib/libc/random.c	140;"	d	file:
 SEP_4	./lib/libc/random.c	145;"	d	file:
 SE_block_sem	./kern/asst1/stoplight.c	/^static struct semaphore *SE_block_sem = NULL;$/;"	v	typeref:struct:semaphore	file:
-SFSUIO	./kern/include/sfs.h	44;"	d
-SFS_BITBLOCKS	./kern/include/kern/sfs.h	25;"	d
-SFS_BITMAPSIZE	./kern/include/kern/sfs.h	22;"	d
-SFS_BLOCKBITS	./kern/include/kern/sfs.h	16;"	d
+SFSUIO	./kern/include/sfs.h	47;"	d
+SFS_BITBLOCKS	./kern/include/kern/sfs.h	26;"	d
+SFS_BITMAPSIZE	./kern/include/kern/sfs.h	23;"	d
+SFS_BLOCKBITS	./kern/include/kern/sfs.h	17;"	d
 SFS_BLOCKSIZE	./kern/include/kern/sfs.h	5;"	d
 SFS_DBPERIDB	./kern/include/kern/sfs.h	8;"	d
-SFS_FS_BITBLOCKS	./kern/fs/sfs/sfs_fs.c	19;"	d	file:
-SFS_FS_BITMAPSIZE	./kern/fs/sfs/sfs_fs.c	18;"	d	file:
+SFS_DIR_DEPTH	./kern/include/kern/sfs.h	10;"	d
+SFS_FS_BITBLOCKS	./kern/fs/sfs/sfs_fs.c	20;"	d	file:
+SFS_FS_BITMAPSIZE	./kern/fs/sfs/sfs_fs.c	19;"	d	file:
 SFS_MAGIC	./kern/include/kern/sfs.h	4;"	d
-SFS_MAP_LOCATION	./kern/include/kern/sfs.h	12;"	d
+SFS_MAP_LOCATION	./kern/include/kern/sfs.h	13;"	d
 SFS_NAMELEN	./kern/include/kern/sfs.h	9;"	d
 SFS_NDIRECT	./kern/include/kern/sfs.h	7;"	d
-SFS_NOINO	./kern/include/kern/sfs.h	13;"	d
-SFS_ROOT_LOCATION	./kern/include/kern/sfs.h	11;"	d
-SFS_ROUNDUP	./kern/include/kern/sfs.h	19;"	d
-SFS_SB_LOCATION	./kern/include/kern/sfs.h	10;"	d
-SFS_TYPE_DIR	./kern/include/kern/sfs.h	30;"	d
-SFS_TYPE_FILE	./kern/include/kern/sfs.h	29;"	d
-SFS_TYPE_INVAL	./kern/include/kern/sfs.h	28;"	d
+SFS_NOINO	./kern/include/kern/sfs.h	14;"	d
+SFS_ROOT_LOCATION	./kern/include/kern/sfs.h	12;"	d
+SFS_ROUNDUP	./kern/include/kern/sfs.h	20;"	d
+SFS_SB_LOCATION	./kern/include/kern/sfs.h	11;"	d
+SFS_TYPE_DIR	./kern/include/kern/sfs.h	31;"	d
+SFS_TYPE_FILE	./kern/include/kern/sfs.h	30;"	d
+SFS_TYPE_INVAL	./kern/include/kern/sfs.h	29;"	d
 SFS_VOLNAME_SIZE	./kern/include/kern/sfs.h	6;"	d
 SIZE	./testbin/ctest/ctest.c	18;"	d	file:
 SIZE	./testbin/sort/sort.c	15;"	d	file:
@@ -708,7 +709,7 @@ UIO_USERISPACE	./kern/include/uio.h	/^	UIO_USERISPACE,$/;"	e	enum:uio_seg
 UIO_USERSPACE	./kern/include/uio.h	/^	UIO_USERSPACE,$/;"	e	enum:uio_seg
 UIO_WRITE	./kern/include/uio.h	/^	UIO_WRITE,$/;"	e	enum:uio_rw
 UNIMP	./kern/dev/lamebus/emu.c	835;"	d	file:
-UNIMP	./kern/fs/sfs/sfs_vnode.c	1620;"	d	file:
+UNIMP	./kern/fs/sfs/sfs_vnode.c	1797;"	d	file:
 UNLOCKME	./lib/libc/random.c	50;"	d	file:
 USERSTACK	./kern/arch/mips/include/vm.h	53;"	d
 USERTOP	./kern/arch/mips/include/vm.h	43;"	d
@@ -1108,7 +1109,7 @@ buildversion	./kern/compile/ASST0/vers.c	/^const int buildversion = 36;$/;"	v
 buildversion	./kern/compile/ASST1/vers.c	/^const int buildversion = 30;$/;"	v
 buildversion	./kern/compile/ASST2/vers.c	/^const int buildversion = 74;$/;"	v
 buildversion	./kern/compile/ASST3/vers.c	/^const int buildversion = 193;$/;"	v
-buildversion	./kern/compile/ASST4/vers.c	/^const int buildversion = 120;$/;"	v
+buildversion	./kern/compile/ASST4/vers.c	/^const int buildversion = 139;$/;"	v
 bus_map_area	./kern/arch/mips/include/bus.h	20;"	d
 bus_read_register	./kern/arch/mips/include/bus.h	17;"	d
 bus_write_register	./kern/arch/mips/include/bus.h	14;"	d
@@ -1810,6 +1811,7 @@ main	./testbin/triplemat/triplemat.c	/^main()$/;"	f
 main	./testbin/triplesort/triplesort.c	/^main()$/;"	f
 main	./testbin/userthreads/userthreads.c	/^main(int argc, char *argv[])$/;"	f
 main	./testbin/writereadtest/writereadtest.c	/^main()$/;"	f
+main	./testbin/writetest/writetest.c	/^main(int argc, char *argv[])$/;"	f
 mainmenu	./kern/main/menu.c	/^static const char *mainmenu[] = {$/;"	v	file:
 make_computes	./kern/test/tt3.c	/^make_computes(int howmany)$/;"	f	file:
 make_it	./testbin/dirseek/dirseek.c	/^	int make_it;$/;"	m	struct:__anon14	file:
@@ -2268,6 +2270,7 @@ sfs_dirops	./kern/fs/sfs/sfs_vnode.c	/^static const struct vnode_ops sfs_dirops 
 sfs_domount	./kern/fs/sfs/sfs_fs.c	/^sfs_domount(void *options, struct device *dev, struct fs **ret)$/;"	f	file:
 sfs_fileops	./kern/fs/sfs/sfs_vnode.c	/^static const struct vnode_ops sfs_fileops = {$/;"	v	typeref:struct:vnode_ops	file:
 sfs_freemap	./kern/include/sfs.h	/^	struct bitmap *sfs_freemap;     \/* blocks in use are marked 1 *\/$/;"	m	struct:sfs_fs	typeref:struct:sfs_fs::bitmap
+sfs_freemap_lock	./kern/include/sfs.h	/^	struct lock *sfs_freemap_lock;	\/* lock for sfs_freemap and sfs_freemapdirty *\/$/;"	m	struct:sfs_fs	typeref:struct:sfs_fs::lock
 sfs_freemapdirty	./kern/include/sfs.h	/^	int sfs_freemapdirty;           \/* true if freemap modified *\/$/;"	m	struct:sfs_fs
 sfs_fs	./kern/include/sfs.h	/^struct sfs_fs {$/;"	s
 sfs_fsync	./kern/fs/sfs/sfs_vnode.c	/^sfs_fsync(struct vnode *v)$/;"	f	file:
@@ -2302,9 +2305,11 @@ sfs_remove	./kern/fs/sfs/sfs_vnode.c	/^sfs_remove(struct vnode *dir, const char 
 sfs_rename	./kern/fs/sfs/sfs_vnode.c	/^sfs_rename(struct vnode *d1, const char *n1, $/;"	f	file:
 sfs_rmdir	./kern/fs/sfs/sfs_vnode.c	/^sfs_rmdir(struct vnode *vv, const char *name){$/;"	f	file:
 sfs_rwblock	./kern/fs/sfs/sfs_io.c	/^sfs_rwblock(struct sfs_fs *sfs, struct uio *uio)$/;"	f
+sfs_setup_root	./kern/fs/sfs/sfs_vnode.c	/^sfs_setup_root(struct sfs_fs *sfs)$/;"	f
 sfs_stat	./kern/fs/sfs/sfs_vnode.c	/^sfs_stat(struct vnode *v, struct stat *statbuf)$/;"	f	file:
 sfs_super	./kern/include/kern/sfs.h	/^struct sfs_super {$/;"	s
 sfs_super	./kern/include/sfs.h	/^	struct sfs_super sfs_super;	\/* on-disk superblock *\/$/;"	m	struct:sfs_fs	typeref:struct:sfs_fs::sfs_super
+sfs_super_lock	./kern/include/sfs.h	/^	struct lock *sfs_super_lock;	\/* lock for sfs_super and sfs_superdirty *\/$/;"	m	struct:sfs_fs	typeref:struct:sfs_fs::lock
 sfs_superdirty	./kern/include/sfs.h	/^	int sfs_superdirty;             \/* true if superblock modified *\/$/;"	m	struct:sfs_fs
 sfs_sync	./kern/fs/sfs/sfs_fs.c	/^sfs_sync(struct fs *fs)$/;"	f	file:
 sfs_sync_inode	./kern/fs/sfs/sfs_vnode.c	/^sfs_sync_inode(struct sfs_vnode *sv)$/;"	f	file:
@@ -2314,6 +2319,7 @@ sfs_unimp	./kern/fs/sfs/sfs_vnode.c	/^sfs_unimp(void)$/;"	f	file:
 sfs_unmount	./kern/fs/sfs/sfs_fs.c	/^sfs_unmount(struct fs *fs)$/;"	f	file:
 sfs_vnode	./kern/include/sfs.h	/^struct sfs_vnode {$/;"	s
 sfs_vnodes	./kern/include/sfs.h	/^	struct array *sfs_vnodes;       \/* vnodes loaded into memory *\/$/;"	m	struct:sfs_fs	typeref:struct:sfs_fs::array
+sfs_vnodes_lock	./kern/include/sfs.h	/^	struct lock *sfs_vnodes_lock;	\/* lock for sfs_vnodes *\/$/;"	m	struct:sfs_fs	typeref:struct:sfs_fs::lock
 sfs_wblock	./kern/fs/sfs/sfs_io.c	/^sfs_wblock(struct sfs_fs *sfs, void *data, u_int32_t block)$/;"	f
 sfs_write	./kern/fs/sfs/sfs_vnode.c	/^sfs_write(struct vnode *v, struct uio *uio)$/;"	f	file:
 sfs_writedir	./kern/fs/sfs/sfs_vnode.c	/^sfs_writedir(struct sfs_vnode *sv, struct sfs_dir *sd, int slot)$/;"	f	file:
@@ -2416,7 +2422,7 @@ sys_rename	./kern/userprog/syscalls_asst4/sys_rename.c	/^int sys_rename(const ch
 sys_rmdir	./kern/userprog/syscalls_asst4/sys_rmdir.c	/^int sys_rmdir(const char *dirname, int *ret){$/;"	f
 sys_sbrk	./kern/userprog/syscalls_asst3/sys_sbrk.c	/^void* sys_sbrk(intptr_t amount){$/;"	f
 sys_sync	./kern/userprog/syscalls_asst4/sys_sync.c	/^int sys_sync(int *ret){$/;"	f
-sys_waitpid	./kern/userprog/syscalls_asst2/sys_waitpid.c	/^int sys_waitpid(pid_t pid, int *returncode, int options){$/;"	f
+sys_waitpid	./kern/userprog/syscalls_asst2/sys_waitpid.c	/^int sys_waitpid(pid_t pid, int *returncode, int options, int *ret){$/;"	f
 sys_write	./kern/userprog/syscalls_asst2/sys_write.c	/^int sys_write(int filehandle, const void *buf, size_t size, int *ret){$/;"	f
 system	./lib/libc/system.c	/^system(const char *cmd)$/;"	f
 t0	./kern/arch/mips/include/asmdefs.h	18;"	d

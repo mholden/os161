@@ -191,8 +191,8 @@ common_prog(int nargs, char **args)
 	lock_release(pcb_fork_lock);
 
 	// wait for the program to finish
-	int returncode;
-	sys_waitpid(pid_for_prog, &returncode, 0);
+	int returncode, ret;
+	sys_waitpid(pid_for_prog, &returncode, 0, &ret);
 	//kprintf("Number of times we actually replaced things in the TLB: %d.\n", TLB_replacement_counter);
 	return 0;
 }

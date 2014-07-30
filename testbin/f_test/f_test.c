@@ -298,26 +298,24 @@ main(int argc, char * argv[])
 	else {
 		tv = RUNTHEMALL;
 	}
-	 
+			 
 	if (tv & RUNBIGFILE) {
 		printf("[BIGFILE] : Run #1\n");
 		big_file(BIGFILE_SIZE); 
 		printf("[BIGFILE] : Run #2\n");
 		big_file(BIGFILE_SIZE);
 	}
-	 
+		 
 	if (tv & RUNDIRTEST) {
 		printf("[DIRTEST] : Run #1\n");
 		dir_test(DIR_DEPTH);
 		printf("[DIRTEST] : Run #2\n");
 		dir_test(DIR_DEPTH);
 	}
-	 
+	
 	if (tv & RUNCONCUR) {
 		printf("[CONCUR]\n");
 		concur();
 	}
 	return 0;
 }
-
-

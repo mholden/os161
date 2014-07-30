@@ -9,7 +9,9 @@
 #include <vfs.h>
 #include <vnode.h>
 #include <lib.h>
+#include <synch.h>
 
+struct lock *vfs_creat_lock;
 
 /* Does most of the work for open(). */
 int
@@ -44,7 +46,9 @@ vfs_open(char *path, int openflags, struct vnode **ret)
 			return result;
 		}
 
+		lock_acquire(vfs_creat_lock);
 		result = VOP_CREAT(dir, name, excl, &vn);
+		lock_release(vfs_creat_lock);
 
 		VOP_DECREF(dir);
 	}

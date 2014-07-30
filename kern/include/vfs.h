@@ -2,7 +2,7 @@
 #define _VFS_H_
 
 /*
- * Virtual File System layer functions.
+ * Virtual File System layer functions and variables.
  *
  * The VFS layer translates operations on abstract on-disk files or
  * pathnames to operations on specific files on specific filesystems.
@@ -12,6 +12,10 @@ struct uio;    /* kernel or userspace I/O buffer (uio.h) */
 struct device; /* abstract structure for a device (dev.h) */
 struct fs;     /* abstract structure for a filesystem (fs.h) */
 struct vnode;  /* abstract structure for an on-disk file (vnode.h) */
+struct lock;   /* abtract structure for synchronization (synch.h) */
+
+/* Lock to support atomic creates */
+extern struct lock *vfs_creat_lock;
 
 /*
  * VFS layer low-level operations. 

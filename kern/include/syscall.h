@@ -23,7 +23,7 @@ void sys__exit(int exit_code);
 pid_t sys_getpid(void);
 pid_t sys_fork(struct trapframe *tf);
 pid_t sys_execv(struct trapframe *tf);
-int sys_waitpid(pid_t pid, int *returncode, int options);
+int sys_waitpid(pid_t pid, int *returncode, int options, int *ret);
 int sys_read(int filehandle, void *buf, size_t size, int *ret);
 void* sys_sbrk(intptr_t amount);
 int sys_open(const char *filename, int flags, int *ret);

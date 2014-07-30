@@ -245,10 +245,10 @@ thread_bootstrap(void)
 void
 thread_shutdown(void)
 {
+	array_destroy(zombies);
+        zombies = NULL;
 	array_destroy(sleepers);
 	sleepers = NULL;
-	array_destroy(zombies);
-	zombies = NULL;
 	// Don't do this - it frees our stack and we blow up
 	//thread_destroy(curthread);
 }

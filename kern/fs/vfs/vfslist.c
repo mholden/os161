@@ -69,6 +69,11 @@ vfs_bootstrap(void)
 		panic("vfs: Could not create knowndevs lock\n");
 	}
 
+	vfs_creat_lock = lock_create("creat_lock");
+	if (vfs_creat_lock==NULL) {
+                panic("vfs: Could not create vfs_creat lock\n");
+        }
+
 	vfs_initbootfs();
 	devnull_create();
 }
