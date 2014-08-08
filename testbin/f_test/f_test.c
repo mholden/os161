@@ -196,18 +196,18 @@ concur(void)
 
 	r1 = forkoff(subproc_read);
 	w1 = forkoff(subproc_write);
-	r2 = forkoff(subproc_read);
+	//r2 = forkoff(subproc_read);
 
 	printf("Waiting for processes.\n");
 
 	dowait(r1);
-	dowait(r2);
+	//dowait(r2);
 	dowait(w1);
-
+	/*
 	if (remove(FNAME)) {
 		err(1, "[CONCUR]: %s: remove", FNAME);
 	}
-	 
+	*/
 	printf("[CONCUR] Done!\n");
 }
 

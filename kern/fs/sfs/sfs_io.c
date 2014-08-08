@@ -22,7 +22,7 @@ sfs_rwblock(struct sfs_fs *sfs, struct uio *uio)
 
 	DEBUG(DB_SFS, "sfs: %s %u\n", 
 	      uio->uio_rw == UIO_READ ? "read" : "write",
-	      uio->uio_offset / SFS_BLOCKSIZE);
+	      uio->uio_offset / SFS_BLOCKSIZE);	
 
  retry:
 	result = sfs->sfs_device->d_io(sfs->sfs_device, uio);
@@ -51,6 +51,7 @@ sfs_rwblock(struct sfs_fs *sfs, struct uio *uio)
 				uio->uio_offset / SFS_BLOCKSIZE, tries);
 		}
 	}
+
 	return result;
 }
 

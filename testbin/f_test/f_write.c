@@ -63,7 +63,8 @@ subproc_write(void)
 				 */
 				printf("Test is flawed - ignore results!\n");
 			}
-			tot += len;
+			if(len != SectorSize + 1) errx(1, "%s: write: short count", FNAME);
+			tot += len; 
                 }
 	}
 

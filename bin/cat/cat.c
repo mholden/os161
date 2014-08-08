@@ -14,7 +14,7 @@ static
 void
 docat(const char *name, int fd)
 {
-	char buf[1024];
+	char buf[512];
 	int len, wr, wrtot;
 
 	/*

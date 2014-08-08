@@ -20,7 +20,7 @@ int sys_write(int filehandle, const void *buf, size_t size, int *ret){
 	off_t curr_offset;
 	struct uio u;
 	int err, rw_flags;
-
+	
 	/* Error check */
 	if(filehandle < 0 || !(curthread->file_descriptors[filehandle])) return EBADF;
 	if(buf == NULL) return EINVAL;

@@ -322,6 +322,15 @@ sfs_partialio(struct sfs_vnode *sv, struct uio *uio,
 	/* f_test 3 debug */
 	u_int32_t i;
 	char ch;
+	/*
+	if(uio->uio_rw == UIO_WRITE && diskblock == 8){
+		kprintf("Writing %d bytes to block 8 (in partialio):\n", len);
+		for(i=0; i<len; i++){
+                        ch = ((char *)uio->uio_iovec.iov_ubase)[i];
+                        if(ch != 'w' && ch != 'r') kprintf("Block 8 read error, Byte %d: %c\n", i, ch);
+                }
+	}
+	*/
 
 	if (diskblock == 0) {
 		/*
@@ -340,14 +349,13 @@ sfs_partialio(struct sfs_vnode *sv, struct uio *uio,
 			return result;
 		}
 
-		/* f_test 3 debug
+		/* f_test 3 debug */
 		if(uio->uio_rw == UIO_READ && diskblock > 6){
                 	for(i=0; i<len; i++){
                         	ch = (iobuf+skipstart)[i];
                         	if(ch != 'w' && ch != 'r') kprintf("Read Error on diskblock %d - iobuf[%d]: %c\n", diskblock, i, ch);
                 	}       
         	}
-		*/
 	}
 
 	/*
@@ -357,6 +365,13 @@ sfs_partialio(struct sfs_vnode *sv, struct uio *uio,
 	if (result) {
 		return result;
 	}
+
+	/* f_test 3 debug
+	if(uio->uio_rw == UIO_READ && diskblock == 8){
+                kprintf("Read %d bytes from block 8 (in partialio):\n", len);
+                for(i=0; i<len; i++){
+			ch = ((char *)uio->uio_iovec.iov_ubase-len)[i];
+	*/
 	
 	/*
 	 * If it was a write, write back the modified block.
@@ -397,6 +412,16 @@ sfs_blockio(struct sfs_vnode *sv, struct uio *uio)
 		return result;
 	}
 
+	/* f_test 3 debug */
+	int i;
+	char ch;
+        if(uio->uio_rw == UIO_WRITE && diskblock == 8){
+                for(i=0; i<512; i++){
+                        ch = ((char *)uio->uio_iovec.iov_ubase)[i];
+                        if(ch != 'r' && ch != 'w') kprintf("Block 8 write error, Byte %d: %c\n", i, ch);
+        	}
+	}
+
 	if (diskblock == 0) {
 		/*
 		 * No block - fill with zeros.
@@ -425,6 +450,14 @@ sfs_blockio(struct sfs_vnode *sv, struct uio *uio)
 	uio->uio_resid = diskres;
 	
 	result = sfs_rwblock(sfs, uio);
+
+	/* f_test 3 debug */
+        if(uio->uio_rw == UIO_READ && diskblock == 8){
+                for(i=0; i<512; i++){
+			ch = ((char *)uio->uio_iovec.iov_ubase-512)[i];
+			if(ch != 'r' && ch != 'w') kprintf("Block 8 read error, Byte %d: %c\n", i, ch);
+		}
+	}
 
 	/*
 	 * Now, restore the original uio_offset and uio_resid and update 
@@ -468,6 +501,19 @@ sfs_io(struct sfs_vnode *sv, struct uio *uio)
 			uio->uio_resid -= extraresid;
 		}
 	}
+
+	/* f_test 3 debug
+	size_t size = uio->uio_iovec.iov_len;
+	char ch;
+	if(uio->uio_rw == UIO_WRITE){
+		for(i=0; i<size; i++){
+        	        ch = ((char*)uio->uio_iovec.iov_ubase)[i];
+	                if(ch != 'w' && ch != 'r'){
+                        	kprintf("Writing ! w or r, ch = %c\n", ch);
+                	}
+        	}
+	}
+	*/
 	
 	/*
 	 * First, do any leading partial block.
@@ -532,6 +578,17 @@ sfs_io(struct sfs_vnode *sv, struct uio *uio)
 
 	/* Add in any extra amount we couldn't read because of EOF */
 	uio->uio_resid += extraresid;
+
+	/* f_test 3 debug
+	if(uio->uio_rw == UIO_READ){
+                for(i=0; i<size; i++){
+                        ch = ((char*)uio->uio_iovec.iov_ubase-size)[i];
+                        if(ch != 'w' && ch != 'r' && size == 513){
+                                kprintf("Reading ! w or r, ch = %c\n", ch);
+                        }
+                }
+        }
+	*/
 
 	/* Done */
 	return result;

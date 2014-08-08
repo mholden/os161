@@ -41,7 +41,7 @@ check_buffer(void)
 		}
 	}
 	
-	putchar(ch);
+	//putchar(ch);
 }
 
 void
